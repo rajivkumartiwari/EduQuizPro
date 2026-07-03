@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .admin-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 2px solid var(--border);
+      border-radius: 0.5rem;
+      background: var(--background);
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.2s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
+    .question-builder {
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1.5rem;
+      background: var(--surface);
+      position: relative;
+    }
+    .remove-question-btn {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--danger);
+      color: white;
+      border: none;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      cursor: pointer;
+    }
+    .custom-quiz-list {
+      margin-top: 3rem;
+      border-top: 2px solid var(--border);
+      padding-top: 2rem;
+    }
+    .quiz-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="admin-container">
+    <!-- Login Screen -->
+    <div id="loginSection" class="card" style="max-width: 450px; margin: 4rem auto; padding: 2rem;">
+      <h2 style="text-align: center; margin-bottom: 2rem; color: var(--primary);">Admin Login</h2>
+      <div id="loginError" style="color: var(--danger); margin-bottom: 1rem; text-align: center; display: none; font-weight: bold;">
+        Invalid username or password!
+      </div>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" class="form-control" placeholder="Enter Admin Username">
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="Enter Admin Password">
+      </div>
+      <button onclick="handleLogin()" class="btn btn-primary" style="width: 100%; padding: 0.75rem;">Login</button>
+    </div>
+
+    <!-- Admin Control Panel -->
+    <div id="adminPanel" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+        <h2 style="color: var(--primary);">Admin Control Panel</h2>
+        <button onclick="handleLogout()" class="btn btn-outline">Logout</button>
+      </div>
+
+      <div class="card" style="padding: 2rem; margin-bottom: 2rem;">
+        <h3 style="margin-bottom: 1.5rem;">Create a New Quiz</h3>
+        
+        <div class="form-group">
+          <label for="quizType">Quiz Type</label>
+          <select id="quizType" class="form-control" onchange="handleTypeChange()">
+            <option value="mcq">Multiple Choice (MCQ)</option>
+            <option value="tf">True / False</option>
+            <option value="matching">Table Matching</option>
+            <option value="flashcard">Flashcard Review</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="quizTitle">Quiz Title</label>
+          <input type="text" id="quizTitle" class="form-control" placeholder="e.g. JavaScript Arrays Advanced">
+        </div>
+
+        <div class="form-group">
+          <label for="quizIcon">Quiz Icon (Emoji)</label>
+          <input type="text" id="quizIcon" class="form-control" placeholder="e.g.  or  ">
+        </div>
+
+        <div class="form-group">
+          <label for="quizDesc">Description</label>
+          <input type="text" id="quizDesc" class="form-control" placeholder="Brief tagline explaining what the quiz covers">
+        </div>
+
+        <div id="questionsContainer">
+          <h4 style="margin: 2rem 0 1rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Questions / Cards</h4>
+          <div id="questionsList"></div>
+          <button onclick="addQuestion()" class="btn btn-outline" style="width: 100%; margin-top: 1rem;">+ Add Question / Card</button>
+        </div>
+
+        <button onclick="saveQuiz()" class="btn btn-primary" style="width: 100%; margin-top: 2rem; padding: 1rem; font-size: 1.1rem;">Save & Publish Quiz</button>
+      </div>
+
+      <!-- Custom Quizzes Managed list -->
+      <div class="custom-quiz-list">
+        <h3 style="margin-bottom: 1.5rem;">Manage Your Custom Quizzes</h3>
+        <div id="customQuizzesContainer">
+          <p style="color: var(--text-muted);">No custom quizzes created yet.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Theme toggle
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = ' Light Mode';
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      themeToggle.textContent = isDark ? ' Dark Mode' : ' Light Mode';
+    });
+
+    // Authentication
+    function checkAuth() {
+      if (sessionStorage.getItem('isAdminLoggedIn') === 'true') {
+        document.getElementById('loginSection').style.display = 'none';
+        document.getElementById('adminPanel').style.display = 'block';
+        loadCustomQuizzes();
+        handleTypeChange();
+      } else {
+        document.getElementById('loginSection').style.display = 'block';
+        document.getElementById('adminPanel').style.display = 'none';
+      }
+    }
+
+    function handleLogin() {
+      const u = document.getElementById('username').value;
+      const p = document.getElementById('password').value;
+      if (u === 'rajivadmin25' && p === 'rajivadmin25') {
+        sessionStorage.setItem('isAdminLoggedIn', 'true');
+        document.getElementById('loginError').style.display = 'none';
+        checkAuth();
+      } else {
+        document.getElementById('loginError').style.display = 'block';
+      }
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('isAdminLoggedIn');
+      checkAuth();
+    }
+
+    // Question builders
+    let questionCount = 0;
+    
+    function handleTypeChange() {
+      document.getElementById('questionsList').innerHTML = '';
+      questionCount = 0;
+      addQuestion();
+    }
+
+    function addQuestion() {
+      questionCount++;
+      const type = document.getElementById('quizType').value;
+      const container = document.getElementById('questionsList');
+      const div = document.createElement('div');
+      div.className = 'question-builder';
+      div.id = `q-block-${questionCount}`;
+      
+      let html = `<button onclick="removeQuestion(${questionCount})" class="remove-question-btn">Remove</button>
+                  <h5 style="margin-bottom: 1rem; color: var(--primary);">Item #${questionCount}</h5>`;
+
+      if (type === 'mcq') {
+        html += `
+          <div class="form-group">
+            <label>Question Text</label>
+            <input type="text" class="form-control q-text" placeholder="e.g. Which keyword defines a constant in JavaScript?">
+          </div>
+          <div class="form-group">
+            <label>Option A</label>
+            <input type="text" class="form-control opt-a" placeholder="Option A">
+          </div>
+          <div class="form-group">
+            <label>Option B</label>
+            <input type="text" class="form-control opt-b" placeholder="Option B">
+          </div>
+          <div class="form-group">
+            <label>Option C</label>
+            <input type="text" class="form-control opt-c" placeholder="Option C">
+          </div>
+          <div class="form-group">
+            <label>Option D</label>
+            <input type="text" class="form-control opt-d" placeholder="Option D">
+          </div>
+          <div class="form-group">
+            <label>Correct Option (Exact text matching one option)</label>
+            <input type="text" class="form-control q-ans" placeholder="e.g. const">
+          </div>
+        `;
+      } else if (type === 'tf') {
+        html += `
+          <div class="form-group">
+            <label>True/False Statement</label>
+            <input type="text" class="form-control q-text" placeholder="e.g. Python lists are immutable.">
+          </div>
+          <div class="form-group">
+            <label>Correct Answer</label>
+            <select class="form-control q-ans">
+              <option value="True">True</option>
+              <option value="False">False</option>
+            </select>
+          </div>
+        `;
+      } else if (type === 'matching') {
+        html += `
+          <div class="form-group">
+            <label>Left Category (e.g. Keyboard)</label>
+            <input type="text" class="form-control match-left" placeholder="Left Side Item">
+          </div>
+          <div class="form-group">
+            <label>Right Match (e.g. Input Device)</label>
+            <input type="text" class="form-control match-right" placeholder="Right Side Matching Target">
+          </div>
+        `;
+      } else if (type === 'flashcard') {
+        html += `
+          <div class="form-group">
+            <label>Front Text / Concept</label>
+            <input type="text" class="form-control card-front" placeholder="e.g. RAM">
+          </div>
+          <div class="form-group">
+            <label>Back Text / Description</label>
+            <input type="text" class="form-control card-back" placeholder="e.g. Random Access Memory (Volatile)">
+          </div>
+        `;
+      }
+
+      div.innerHTML = html;
+      container.appendChild(div);
+    }
+
+    function removeQuestion(id) {
+      const block = document.getElementById(`q-block-${id}`);
+      if (block) block.remove();
+    }
+
+    // Save Quiz logic
+    function saveQuiz() {
+      const type = document.getElementById('quizType').value;
+      const title = document.getElementById('quizTitle').value.trim();
+      const icon = document.getElementById('quizIcon').value.trim() || '“';
+      const desc = document.getElementById('quizDesc').value.trim();
+
+      if (!title || !desc) {
+        alert('Please fill out Title and Description!');
+        return;
+      }
+
+      const questions = [];
+      const blocks = document.querySelectorAll('.question-builder');
+
+      if (blocks.length === 0) {
+        alert('Please add at least one question!');
+        return;
+      }
+
+      for (let block of blocks) {
+        if (type === 'mcq') {
+          const qText = block.querySelector('.q-text').value.trim();
+          const optA = block.querySelector('.opt-a').value.trim();
+          const optB = block.querySelector('.opt-b').value.trim();
+          const optC = block.querySelector('.opt-c').value.trim();
+          const optD = block.querySelector('.opt-d').value.trim();
+          const qAns = block.querySelector('.q-ans').value.trim();
+
+          if (!qText || !optA || !optB || !optC || !optD || !qAns) {
+            alert('Please fill out all question fields!');
+            return;
+          }
+          questions.push({
+            q: qText,
+            options: [optA, optB, optC, optD],
+            answer: qAns
+          });
+        } else if (type === 'tf') {
+          const qText = block.querySelector('.q-text').value.trim();
+          const qAns = block.querySelector('.q-ans').value;
+          if (!qText) {
+            alert('Please enter statement text!');
+            return;
+          }
+          questions.push({
+            q: qText,
+            answer: qAns
+          });
+        } else if (type === 'matching') {
+          const left = block.querySelector('.match-left').value.trim();
+          const right = block.querySelector('.match-right').value.trim();
+          if (!left || !right) {
+            alert('Please fill out all matching pairs!');
+            return;
+          }
+          questions.push({
+            id: questions.length + 1,
+            left: left,
+            right: right
+          });
+        } else if (type === 'flashcard') {
+          const front = block.querySelector('.card-front').value.trim();
+          const back = block.querySelector('.card-back').value.trim();
+          if (!front || !back) {
+            alert('Please fill out both sides of the flashcard!');
+            return;
+          }
+          questions.push({
+            front: front,
+            back: back
+          });
+        }
+      }
+
+      const customQuizzes = JSON.parse(localStorage.getItem('customQuizzes') || '[]');
+      const newQuiz = {
+        id: 'custom_' + Date.now(),
+        type: type,
+        title: title,
+        icon: icon,
+        description: desc,
+        questions: questions
+      };
+
+      customQuizzes.push(newQuiz);
+      localStorage.setItem('customQuizzes', JSON.stringify(customQuizzes));
+      alert('Quiz created and published successfully!');
+      
+      // Reset inputs
+      document.getElementById('quizTitle').value = '';
+      document.getElementById('quizIcon').value = '';
+      document.getElementById('quizDesc').value = '';
+      handleTypeChange();
+      loadCustomQuizzes();
+    }
+
+    function loadCustomQuizzes() {
+      const container = document.getElementById('customQuizzesContainer');
+      const customQuizzes = JSON.parse(localStorage.getItem('customQuizzes') || '[]');
+      
+      if (customQuizzes.length === 0) {
+        container.innerHTML = `<p style="color: var(--text-muted);">No custom quizzes created yet.</p>`;
+        return;
+      }
+
+      container.innerHTML = customQuizzes.map(q => `
+        <div class="quiz-item">
+          <div>
+            <strong>${q.icon} ${q.title}</strong> <span style="font-size: 0.8rem; background: var(--border); padding: 0.2rem 0.5rem; border-radius: 0.25rem; margin-left: 0.5rem;">${q.type.toUpperCase()}</span>
+            <div style="font-size: 0.9rem; color: var(--text-muted); margin-top: 0.25rem;">${q.description} (${q.questions.length} items)</div>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button onclick="playCustomQuiz('${q.id}')" class="btn btn-primary" style="padding: 0.4rem 0.8rem; font-size: 0.9rem;">Play</button>
+            <button onclick="deleteQuiz('${q.id}')" class="btn btn-outline" style="border-color: var(--danger); color: var(--danger); padding: 0.4rem 0.8rem; font-size: 0.9rem;">Delete</button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function playCustomQuiz(id) {
+      location.href = `dynamic_quiz.html?id=${id}`;
+    }
+
+    function deleteQuiz(id) {
+      if (confirm('Are you sure you want to delete this custom quiz?')) {
+        let customQuizzes = JSON.parse(localStorage.getItem('customQuizzes') || '[]');
+        customQuizzes = customQuizzes.filter(q => q.id !== id);
+        localStorage.setItem('customQuizzes', JSON.stringify(customQuizzes));
+        loadCustomQuizzes();
+      }
+    }
+
+    // Run auth check on page load
+    checkAuth();
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

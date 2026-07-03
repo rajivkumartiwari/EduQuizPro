@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduQuiz Pro - Interactive Learning</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="#" class="nav-link" data-target="dashboard">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link" data-target="about-view">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="#mission">Our Mission</a>
+            <a href="#vision">Our Vision</a>
+            <a href="#team">Teacher Team</a>
+            <a href="#policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Dashboard / Home -->
+    <section id="dashboard" class="page-section">
+      <div class="hero-section" style="text-align:center; margin-bottom: 3rem;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Welcome to the Interactive Learning Portal</h2>
+        <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Select a quiz category below to explore the 10 interactive modules for each type.</p>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="quiz-card" onclick="location.href='mcq_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Multiple Choice</h2>
+          <p>10 interactive quizzes covering HTML, CSS, JS, database systems, networks, and computer hardware.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='tf_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>True / False</h2>
+          <p>10 quick-fire True/False challenges testing Python fundamentals, storage media, and safety rules.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='matching_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Table Matching</h2>
+          <p>10 interactive column matching games. Drag and drop items to match tags, sizes, and shortcuts.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='flashcards_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Flashcards</h2>
+          <p>10 decks of visual computer hardware flashcards. Review with Study Mode and play the Test Game.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='java_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Java Performance</h2>
+          <p>10 topic-wise Java MCQ quizzes for Class 12 — OOPs, inheritance, AWT, multithreading, arrays, and more.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='class6_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Class 6 Quizzes</h2>
+          <p>10 interactive MCQ modules for Class 6 covering Fundamentals, MS Office, Windows 7, Internet &amp; Email, and more.</p>
+        </div>
+        <div class="quiz-card" onclick="location.href='class7_hub.html'" style="cursor: pointer;">
+          <div class="quiz-icon"></div>
+          <h2>Class 7 Quizzes</h2>
+          <p>10 detailed interactive MCQ modules for Class 7 covering the Impact of Information Technology.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about-view" class="page-section hidden">
+      <div style="padding: 2rem; background: var(--surface); border-radius: 1rem; border: 1px solid var(--border);">
+
+        <!-- Overview header -->
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">About EduQuiz Pro</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.7;">
+          A student-centred digital learning platform built by teachers, for students ” making computer science education engaging, structured, and accessible from Class 6 to Class 12.
+        </p>
+
+        <!-- Our Mission -->
+        <div id="sub-mission" class="about-sub">
+          <div class="about-sub-icon">&#127919;</div>
+          <h3 class="about-sub-title">Our Mission</h3>
+          <p class="about-sub-body">
+            Our mission is to deliver <strong>interactive, curriculum-aligned computer science education</strong> through quizzes, notes, and resources ” empowering every student to learn at their own pace and excel in board exams, practicals, and viva voce sessions.
+          </p>
+          <p class="about-sub-body" style="margin-top: 0.75rem;">
+            We believe that learning happens best when it is <em>active</em>, not passive. Every quiz on this platform is designed not just to test, but to teach ” with instant feedback, score reviews, and structured topic progression.
+          </p>
+          <ul class="about-list">
+            <li>&#10003; Curriculum aligned with CBSE &amp; ICSE syllabi</li>
+            <li>&#10003; Instant feedback on every answer</li>
+            <li>&#10003; Topic-wise progression from basics to advanced</li>
+            <li>&#10003; Viva and practical exam preparation built in</li>
+          </ul>
+        </div>
+        <hr class="about-divider">
+
+        <!-- Our Vision -->
+        <div id="sub-vision" class="about-sub">
+          <div class="about-sub-icon">&#128301;</div>
+          <h3 class="about-sub-title">Our Vision</h3>
+          <p class="about-sub-body">
+            To become the <strong>go-to digital companion</strong> for every computer science student ” a platform where learning feels like play, every concept is a challenge worth solving, and progress is always celebrated.
+          </p>
+          <p class="about-sub-body" style="margin-top: 0.75rem;">
+            We envision a future where every classroom in India has access to high-quality, freely available digital learning tools that match the rigour of modern computer science education ” and that every student, regardless of background, can walk into an exam with full confidence.
+          </p>
+        </div>
+        <hr class="about-divider">
+
+        <!-- Teacher Team -->
+        <div id="sub-team" class="about-sub">
+          <div class="about-sub-icon">&#128105;&#8205;&#127979;</div>
+          <h3 class="about-sub-title">Teacher Team</h3>
+          <p class="about-sub-body">
+            EduQuiz Pro is built and maintained by a dedicated team of <strong>computer science teachers</strong> with years of classroom experience across CBSE senior secondary schools.
+          </p>
+          <div class="teacher-grid">
+            <div class="teacher-card">
+              <div class="teacher-avatar">&#128105;&#8205;&#128187;</div>
+              <h4>Computer Science Faculty</h4>
+              <p>Specialises in Java, Python, and Data Structures for Class 11 &amp; 12. Designs all quiz banks and viva question sets.</p>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-avatar">&#128104;&#8205;&#127979;</div>
+              <h4>IT &amp; Networking Faculty</h4>
+              <p>Covers Class 9 &amp; 10 topics ” hardware, networking, MS Office, and internet safety. Manages flashcard and matching quizzes.</p>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-avatar">&#128105;&#8205;&#127979;</div>
+              <h4>Junior School CS Faculty</h4>
+              <p>Handles Class 6, 7 &amp; 8 curriculum ” BASIC-256 programming, Windows, MS Word, and PowerPoint fundamentals.</p>
+            </div>
+          </div>
+        </div>
+        <hr class="about-divider">
+
+        <!-- School Policies -->
+        <div id="sub-policies" class="about-sub">
+          <div class="about-sub-icon">&#128220;</div>
+          <h3 class="about-sub-title">School Policies</h3>
+          <p class="about-sub-body">
+            Our classroom is built on three pillars: <strong>Integrity</strong>, <strong>Curiosity</strong>, and <strong>Respect</strong>. These values guide how we teach and how we expect students to engage with this platform.
+          </p>
+          <div class="policy-list">
+            <div class="policy-item">
+              <span class="policy-icon">&#9654;</span>
+              <div>
+                <strong>Academic Honesty</strong>
+                <p>All quizzes are for practice and formative self-assessment only. Students are expected to attempt them independently and use the feedback to genuinely improve ” not to copy or share answers.</p>
+              </div>
+            </div>
+            <div class="policy-item">
+              <span class="policy-icon">&#9654;</span>
+              <div>
+                <strong>Respectful Engagement</strong>
+                <p>Students and teachers engage with this platform with mutual respect. Any misuse, tampering with quiz logic, or accessing admin areas without permission is strictly prohibited.</p>
+              </div>
+            </div>
+            <div class="policy-item">
+              <span class="policy-icon">&#9654;</span>
+              <div>
+                <strong>Data &amp; Privacy</strong>
+                <p>No personal data is collected or stored on any external server. All quiz scores are saved locally in your browser and are visible only to you.</p>
+              </div>
+            </div>
+            <div class="policy-item">
+              <span class="policy-icon">&#9654;</span>
+              <div>
+                <strong>Device Usage</strong>
+                <p>This platform is designed to be used on school computers and personal devices alike. Students are responsible for appropriate device use during school hours as per the school's IT usage policy.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses-view" class="page-section hidden">
+      <div style="padding: 2rem; background: var(--surface); border-radius: 1rem; border: 1px solid var(--border);">
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Available Courses</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Structured courses are being prepared by our teacher team. Check back soon!</p>
+        <div style="text-align: center; padding: 3rem; border: 2px dashed var(--border); border-radius: 1rem;">
+          <div style="font-size: 4rem; margin-bottom: 1rem;">&#128679;</div>
+          <h3 style="color: var(--primary); margin-bottom: 0.5rem;">Coming Soon</h3>
+          <p style="color: var(--text-muted); max-width: 520px; margin: 0 auto; line-height: 1.7;">Full course modules for <strong>HTML &amp; CSS</strong>, <strong>JavaScript</strong>, <strong>Python</strong>, <strong>Java</strong>, and <strong>Computer Fundamentals</strong> are currently being developed. They will include lesson videos, notes, and practice exercises.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources-view" class="page-section hidden">
+      <div style="padding: 2rem; background: var(--surface); border-radius: 1rem; border: 1px solid var(--border);">
+        <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Learning Resources</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Download notes, view study material, and prepare for your viva and board exams.</p>
+
+        <!-- Viva PDF -->
+        <div style="margin-bottom: 2rem; padding: 1.5rem; border-radius: 0.75rem; border: 1px solid var(--border); background: var(--background);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div>
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <span style="font-size: 1.8rem;"></span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.1rem;">Viva Based Questions &amp; Answers</h3>
+                  <p style="margin: 0; color: var(--text-muted); font-size: 0.9rem;">Comprehensive viva preparation — Class 12 Java &amp; CS topics</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <a href="assets/viva_qa.pdf" target="_blank" class="btn btn-outline" style="text-decoration: none; margin-right: 0.5rem;">Open PDF</a>
+              <a href="assets/viva_qa.pdf" download="Viva_QA.pdf" class="btn btn-primary" style="text-decoration: none;"> Download PDF</a>
+            </div>
+          </div>
+          <!-- Inline PDF Viewer -->
+          <div style="border-radius: 0.5rem; overflow: hidden; border: 1px solid var(--border); padding: 2rem; text-align: center; background: var(--background);">
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Browsers often block local PDF previews. Please click <strong>Open PDF</strong> above to read it in a new tab, or <strong>Download PDF</strong> to save it.</p>
+            <object data="assets/viva_qa.pdf" type="application/pdf" width="100%" height="500px">
+              <p>Your browser does not support inline PDFs.</p>
+            </object>
+          </div>
+        </div>
+
+        </div>
+    </section>
+
+    <!-- Student Tracking Section -->
+    <section id="tracking-view" class="page-section hidden">
+      <div style="padding: 2rem; background: var(--surface); border-radius: 1rem; border: 1px solid var(--border);">
+        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Student Tracking Dashboard</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Monitor your progress and recent scores.</p>
+        
+        <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+          <div style="flex: 1; padding: 1.5rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: bold; color: var(--primary);">4</div>
+            <div>Quizzes Completed</div>
+          </div>
+          <div style="flex: 1; padding: 1.5rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border); text-align: center;">
+            <div style="font-size: 2.5rem; font-weight: bold; color: var(--success);">85%</div>
+            <div>Average Score</div>
+          </div>
+        </div>
+
+        <table style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr style="background: var(--background); text-align: left;">
+              <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Date</th>
+              <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Quiz Module</th>
+              <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Score</th>
+              <th style="padding: 1rem; border-bottom: 2px solid var(--border);">Status</th>
+            </tr>
+          </thead>
+          <tbody id="tracking-history">
+            <!-- Dynamic entries injected here, static mock for now -->
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Today</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">HTML & CSS MCQ</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">5/5</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><span style="color: var(--success); font-weight: bold;">Passed</span></td>
+            </tr>
+            <tr>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Yesterday</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">Table Matching</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);">3/4</td>
+              <td style="padding: 1rem; border-bottom: 1px solid var(--border);"><span style="color: var(--primary); font-weight: bold;">Good</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Quiz View (Generic Container) -->
+    <section id="quiz-view" class="page-section hidden">
+      <div class="quiz-header">
+        <div>
+          <button id="backBtn" class="btn btn-outline"> Back</button>
+        </div>
+        <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;"></div>
+      </div>
+      
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <!-- Content injected by JS -->
+      <div id="quiz-content" class="quiz-content"></div>
+
+      <div class="quiz-footer">
+        <button id="prevBtn" class="btn btn-outline hidden">Previous</button>
+        <button id="actionBtn" class="btn btn-primary">Start</button>
+        <button id="nextBtn" class="btn btn-outline hidden">Next</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

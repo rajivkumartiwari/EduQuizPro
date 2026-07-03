@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quiz Play - EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Persistent theme loader
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+  <style>
+    /* Flashcard flipped card styles */
+    .flashcard-inner {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+    .flashcard-inner.flipped {
+      transform: rotateY(180deg);
+    }
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 1rem;
+      border: 2px solid var(--border);
+      padding: 2rem;
+      box-shadow: var(--card-shadow);
+    }
+    .flashcard-front {
+      background: linear-gradient(135deg, var(--surface) 0%, var(--background) 100%);
+      color: var(--text);
+    }
+    .flashcard-back {
+      background: linear-gradient(135deg, var(--primary) 0%, #8B5CF6 100%);
+      color: white;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      
+      <!-- Main Quiz Section -->
+      <section class="quiz-main-card">
+        <h2 id="dynamicTitle" style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">Loading Quiz...</h2>
+        <p id="dynamicDesc" style="color: var(--text-muted); margin-bottom: 2rem;">Please wait while we load your quiz...</p>
+        
+        <div class="quiz-header">
+          <div style="font-weight: 600; font-size: 1.1rem;" id="timer">Time: 00:00</div>
+          <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;">Question 1 of 1</div>
+        </div>
+
+        <div id="progress-container-wrapper" class="progress-container" style="display: none; margin-bottom: 2rem;">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <!-- Dynamic Content Injected here -->
+        <div id="quiz-content" class="quiz-content"></div>
+
+        <!-- Actions -->
+        <div class="quiz-footer" style="margin-top: 2rem;">
+          <button id="prevBtn" class="btn btn-outline" style="display: none;">Previous</button>
+          <button id="nextBtn" class="btn btn-primary" style="display: none;">Next</button>
+          <button id="reshuffleBtn" class="btn btn-outline" style="display: none;"> Reshuffle</button>
+          <button id="submitBtn" class="btn btn-primary" style="display: none;">Submit Quiz</button>
+        </div>
+      </section>
+
+      <!-- Sidebar Quiz Links -->
+      <aside class="sidebar-card">
+        <h3 id="sidebarTitle" class="sidebar-title">Other Quizzes</h3>
+        <ul id="sidebarList" class="sidebar-list"></ul>
+        <div style="margin-top: 1.5rem; text-align: center;">
+          <button id="backToHubBtn" class="btn btn-outline" style="width: 100%;">Back to Hub</button>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    // Retrieve custom quiz ID
+    const urlParams = new URLSearchParams(window.location.search);
+    const quizId = urlParams.get('id');
+
+    const customQuizzes = JSON.parse(localStorage.getItem('customQuizzes') || '[]');
+    const currentQuiz = customQuizzes.find(q => q.id === quizId);
+
+    if (!currentQuiz) {
+      document.getElementById('dynamicTitle').textContent = "Quiz Not Found!";
+      document.getElementById('dynamicDesc').textContent = "This custom quiz does not exist or has been deleted.";
+      document.querySelector('.quiz-header').style.display = 'none';
+      document.querySelector('.quiz-footer').style.display = 'none';
+    } else {
+      // Setup titles and tags
+      document.getElementById('dynamicTitle').textContent = `${currentQuiz.icon} ${currentQuiz.title}`;
+      document.getElementById('dynamicDesc').textContent = currentQuiz.description;
+      
+      // Back to hub configuration
+      const hubMap = { mcq: 'mcq_hub.html', tf: 'tf_hub.html', matching: 'matching_hub.html', flashcard: 'flashcards_hub.html' };
+      document.getElementById('backToHubBtn').onclick = () => {
+        location.href = hubMap[currentQuiz.type] || 'index.html';
+      };
+
+      // Sidebar links
+      const typeTitles = { mcq: 'MCQ', tf: 'True/False', matching: 'Matching', flashcard: 'Flashcard' };
+      document.getElementById('sidebarTitle').textContent = `Other ${typeTitles[currentQuiz.type]} Quizzes`;
+      
+      const sidebarList = document.getElementById('sidebarList');
+      const staticQuizNames = {
+        mcq: ['HTML Basics', 'CSS Styling', 'JavaScript Intro', 'Computer Hardware', 'Operating Systems', 'Networks', 'Cyber Security', 'Databases & SQL', 'Web Development', 'Computing History'],
+        tf: ['Python Basics', 'Data Structures', 'Input & Output', 'Networking', 'Algorithms', 'Software Categories', 'Storage Devices', 'Database Concepts', 'Computing History', 'Cyber Safety'],
+        matching: ['Input vs Output', 'Storage Media', 'Network Terms', 'HTML Tags', 'OS Developers', 'Programming Domains', 'Shortcuts', 'Storage Units', 'Cyber Threats', 'DB Schema'],
+        flashcard: ['Input Hardware', 'Output Hardware', 'Storage Disks', 'Special Scanners', 'Mobile Devices', 'Web Code', 'System Platforms', 'Net Devices', 'Storage Scales', 'Threat Signs']
+      };
+
+      // Append standard static links
+      const prefixMap = { mcq: 'mcq_quiz', tf: 'tf_quiz', matching: 'matching_quiz', flashcard: 'flashcard_quiz' };
+      staticQuizNames[currentQuiz.type].forEach((name, i) => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="${prefixMap[currentQuiz.type]}${i+1}.html" class="sidebar-item-link">Quiz ${i+1}: ${name}</a>`;
+        sidebarList.appendChild(li);
+      });
+
+      // Append other custom links
+      const otherCustoms = customQuizzes.filter(q => q.type === currentQuiz.type);
+      otherCustoms.forEach(q => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="dynamic_quiz.html?id=${q.id}" class="sidebar-item-link ${q.id === quizId ? 'active' : ''}">${q.icon} ${q.title}</a>`;
+        sidebarList.appendChild(li);
+      });
+
+      // Initialize game runners
+      let timerSeconds = 0;
+      let quizFinished = false;
+      const timerInterval = setInterval(() => {
+        if (quizFinished) return;
+        timerSeconds++;
+        const m = String(Math.floor(timerSeconds/60)).padStart(2,'0');
+        const s = String(timerSeconds%60).padStart(2,'0');
+        document.getElementById('timer').textContent = `Time: ${m}:${s}`;
+      }, 1000);
+
+      const quizContent = document.getElementById('quiz-content');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      const submitBtn = document.getElementById('submitBtn');
+      const reshuffleBtn = document.getElementById('reshuffleBtn');
+      const progressBar = document.getElementById('progress-bar');
+      const progressContainer = document.getElementById('progress-container-wrapper');
+      const quizStatus = document.getElementById('quiz-status');
+
+      if (currentQuiz.type === 'mcq' || currentQuiz.type === 'tf') {
+        progressContainer.style.display = 'block';
+        prevBtn.style.display = 'inline-flex';
+        nextBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'none';
+
+        let currentIdx = 0;
+        const userAnswers = new Array(currentQuiz.questions.length).fill(null);
+
+        function updateMultipleChoiceUI() {
+          const q = currentQuiz.questions[currentIdx];
+          const pct = ((currentIdx + 1) / currentQuiz.questions.length) * 100;
+          progressBar.style.width = pct + '%';
+          quizStatus.textContent = `Question ${currentIdx + 1} of ${currentQuiz.questions.length}`;
+
+          prevBtn.disabled = currentIdx === 0;
+          if (currentIdx === currentQuiz.questions.length - 1) {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'inline-flex';
+          } else {
+            nextBtn.style.display = 'inline-flex';
+            submitBtn.style.display = 'none';
+          }
+
+          const options = currentQuiz.type === 'mcq' ? q.options : ['True', 'False'];
+
+          quizContent.innerHTML = `
+            <div class="question-text">${currentIdx + 1}. ${q.q}</div>
+            <div class="options-grid">
+              ${options.map(opt => `
+                <button class="option-btn ${userAnswers[currentIdx] === opt ? 'selected' : ''}" onclick="selectOption('${opt.replace(/'/g, "\\'")}')">
+                  ${opt.replace(/</g, '&lt;').replace(/>/g, '&gt;')}
+                </button>
+              `).join('')}
+            </div>
+          `;
+        }
+
+        window.selectOption = function(opt) {
+          if (quizFinished) return;
+          userAnswers[currentIdx] = opt;
+          updateMultipleChoiceUI();
+        };
+
+        prevBtn.onclick = () => { if (currentIdx > 0) { currentIdx--; updateMultipleChoiceUI(); } };
+        nextBtn.onclick = () => { if (currentIdx < currentQuiz.questions.length - 1) { currentIdx++; updateMultipleChoiceUI(); } };
+
+        submitBtn.onclick = () => {
+          quizFinished = true;
+          clearInterval(timerInterval);
+
+          let score = 0;
+          currentQuiz.questions.forEach((q, i) => {
+            if (userAnswers[i] === q.answer) score++;
+          });
+
+          saveQuizResult(currentQuiz.title + " (Admin)", score, currentQuiz.questions.length);
+
+          let scorePercent = Math.round((score / currentQuiz.questions.length) * 100);
+          let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+          
+          if (scorePercent >= 70) {
+            startConfetti(); playVictorySound();
+          }
+
+          quizContent.innerHTML = `
+            <div style="text-align: center; margin-bottom: 2rem;">
+              <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">${heading}</h3>
+              <div style="font-size: 3rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${score} / ${currentQuiz.questions.length}</div>
+              <p style="font-size: 1.1rem; color: var(--text-muted);">You scored ${scorePercent}% in ${timerSeconds} seconds.</p>
+            </div>
+
+            <div class="feedback-list" style="margin-top: 2rem;">
+              <h4 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Question Review</h4>
+              ${currentQuiz.questions.map((q, i) => {
+                const isCorrect = userAnswers[i] === q.answer;
+                return `
+                  <div class="feedback-item" style="padding: 1rem 0; border-bottom: 1px solid var(--border);">
+                    <p><strong>Q${i+1}: ${q.q}</strong></p>
+                    <p style="margin-top: 0.25rem;">
+                      ${isCorrect 
+                        ? `<span style="color: var(--success); font-weight: bold;">“ Correct: ${q.answer}</span>` 
+                        : `<span style="color: var(--danger); font-weight: bold;">— Your answer: ${userAnswers[i] || 'Unanswered'}</span> | <span style="color: var(--success); font-weight: bold;">“ Correct: ${q.answer}</span>`
+                      }
+                    </p>
+                  </div>
+                `;
+              }).join('')}
+            </div>
+          `;
+
+          prevBtn.style.display = 'none';
+          submitBtn.style.display = 'none';
+          nextBtn.style.display = 'none';
+          
+          const restartBtn = document.createElement('button');
+          restartBtn.className = 'btn btn-primary';
+          restartBtn.textContent = 'Retry Quiz';
+          restartBtn.onclick = () => location.reload();
+          document.querySelector('.quiz-footer').appendChild(restartBtn);
+        };
+
+        updateMultipleChoiceUI();
+
+      } else if (currentQuiz.type === 'matching') {
+        reshuffleBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'inline-flex';
+        quizStatus.textContent = "Drag answers from right and drop to matching slots on left";
+
+        function shuffleArray(arr) { return arr.slice().sort(() => Math.random() - 0.5); }
+
+        function initMatchingUI() {
+          quizContent.innerHTML = `
+            <p style="margin-bottom: 1.5rem; font-style: italic; color: var(--text-muted);">Drag the boxes from the right side and drop them in the correct slots next to the questions on the left side.</p>
+            
+            <div style="display: flex; gap: 2rem; flex-wrap: wrap;">
+              <div id="matching-questions" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; min-width: 250px;"></div>
+              <div id="matching-answers" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; min-width: 250px;"></div>
+            </div>
+          `;
+
+          const qContainer = document.getElementById('matching-questions');
+          const aContainer = document.getElementById('matching-answers');
+
+          const shuffledQ = shuffleArray(currentQuiz.questions);
+          const shuffledAns = shuffleArray(currentQuiz.questions.map(p => p.right));
+
+          shuffledQ.forEach((p, idx) => {
+            const row = document.createElement('div');
+            row.style.display = 'flex';
+            row.style.alignItems = 'center';
+            row.style.gap = '1rem';
+            row.style.width = '100%';
+
+            row.innerHTML = `
+              <div style="flex: 1; font-weight: 600; padding: 1rem; background: var(--background); border-radius: 0.5rem; border: 1px solid var(--border);">
+                ${p.left}
+              </div>
+              <div class="matching-box" style="flex: 1; min-height: 54px; margin-bottom: 0;" data-correct="${p.right.replace(/"/g, '&quot;')}" id="dropzone-${idx}">
+                <span style="opacity: 0.5; font-size: 0.9rem;">Drop Match Here</span>
+              </div>
+            `;
+            qContainer.appendChild(row);
+          });
+
+          shuffledAns.forEach((ans, idx) => {
+            const dragItem = document.createElement('div');
+            dragItem.className = 'matching-box draggable';
+            dragItem.id = `draggable-${idx}`;
+            dragItem.draggable = true;
+            dragItem.textContent = ans;
+
+            dragItem.addEventListener('dragstart', (e) => {
+              e.dataTransfer.setData('text/plain', ans);
+              e.dataTransfer.setData('source-id', dragItem.id);
+            });
+
+            aContainer.appendChild(dragItem);
+          });
+
+          document.querySelectorAll('.matching-box:not(.draggable)').forEach(box => {
+            box.ondragover = e => e.preventDefault();
+            box.ondrop = e => {
+              e.preventDefault();
+              if (quizFinished) return;
+              
+              const answer = e.dataTransfer.getData('text/plain');
+              const sourceId = e.dataTransfer.getData('source-id');
+              const draggedEl = document.getElementById(sourceId);
+
+              const previousAnswer = box.dataset.current;
+              if (previousAnswer) {
+                const hiddenEl = [...document.querySelectorAll('.matching-box.draggable')]
+                  .find(el => el.textContent === previousAnswer && el.style.visibility === 'hidden');
+                if (hiddenEl) hiddenEl.style.visibility = 'visible';
+              }
+
+              box.innerHTML = `<strong style="color: var(--primary)">${answer}</strong>`;
+              box.dataset.current = answer;
+              box.style.borderStyle = 'solid';
+              box.style.borderColor = 'var(--primary)';
+
+              if (draggedEl) draggedEl.style.visibility = 'hidden';
+            };
+          });
+        }
+
+        reshuffleBtn.onclick = () => { if (!quizFinished) initMatchingUI(); };
+
+        submitBtn.onclick = () => {
+          let correct = 0;
+          let unanswered = false;
+
+          const dropzones = document.querySelectorAll('.matching-box:not(.draggable)');
+          dropzones.forEach(dz => {
+            const currentAnswer = dz.dataset.current;
+            if (!currentAnswer) {
+              unanswered = true;
+              dz.classList.add('wrong');
+              setTimeout(() => dz.classList.remove('wrong'), 1000);
+            } else if (currentAnswer === dz.dataset.correct) {
+              dz.classList.remove('wrong');
+              dz.classList.add('matched');
+              correct++;
+            } else {
+              dz.classList.remove('matched');
+              dz.classList.add('wrong');
+            }
+          });
+
+          if (unanswered) {
+            alert("Please drop items in all match boxes before checking!");
+            return;
+          }
+
+          quizFinished = true;
+          clearInterval(timerInterval);
+          saveQuizResult(currentQuiz.title + " (Admin)", correct, currentQuiz.questions.length);
+
+          let scorePercent = Math.round((correct / currentQuiz.questions.length) * 100);
+          let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+          
+          if (scorePercent >= 70) {
+            startConfetti(); playVictorySound();
+          }
+
+          const resultsDiv = document.createElement('div');
+          resultsDiv.innerHTML = `
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border);">
+              <h3 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">${heading}</h3>
+              <div style="font-size: 2.5rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${correct} / ${currentQuiz.questions.length} Matched</div>
+              <p style="color: var(--text-muted);">You completed it in ${timerSeconds} seconds.</p>
+            </div>
+          `;
+          document.querySelector('.quiz-main-card').appendChild(resultsDiv);
+
+          reshuffleBtn.style.display = 'none';
+          submitBtn.style.display = 'none';
+
+          const restartBtn = document.createElement('button');
+          restartBtn.className = 'btn btn-primary';
+          restartBtn.textContent = 'Retry Quiz';
+          restartBtn.onclick = () => location.reload();
+          document.querySelector('.quiz-footer').appendChild(restartBtn);
+        };
+
+        initMatchingUI();
+
+      } else if (currentQuiz.type === 'flashcard') {
+        prevBtn.style.display = 'inline-flex';
+        nextBtn.style.display = 'inline-flex';
+        quizStatus.textContent = "Flashcard deck study mode. Click card to flip!";
+
+        let cardIdx = 0;
+
+        function updateFlashcardUI() {
+          const card = currentQuiz.questions[cardIdx];
+          quizStatus.textContent = `Card ${cardIdx + 1} of ${currentQuiz.questions.length}`;
+          prevBtn.disabled = cardIdx === 0;
+          nextBtn.disabled = cardIdx === currentQuiz.questions.length - 1;
+
+          quizContent.innerHTML = `
+            <div style="display: flex; justify-content: center; margin: 2rem 0;">
+              <div class="flashcard-inner" id="fc-inner" onclick="flipCard()">
+                <div class="flashcard-front">
+                  <span style="font-size: 0.9rem; text-transform: uppercase; color: var(--text-muted); margin-bottom: 1rem;">Front</span>
+                  <h3 style="font-size: 1.8rem; text-align: center;">${card.front}</h3>
+                </div>
+                <div class="flashcard-back">
+                  <span style="font-size: 0.9rem; text-transform: uppercase; opacity: 0.8; margin-bottom: 1rem;">Back</span>
+                  <h3 style="font-size: 1.5rem; text-align: center; line-height: 1.4;">${card.back}</h3>
+                </div>
+              </div>
+            </div>
+            <p style="text-align: center; color: var(--text-muted); font-size: 0.9rem;">Tip: Click or tap the card to see the answer on the back.</p>
+          `;
+        }
+
+        window.flipCard = function() {
+          const inner = document.getElementById('fc-inner');
+          if (inner) inner.classList.toggle('flipped');
+        };
+
+        prevBtn.onclick = () => { if (cardIdx > 0) { cardIdx--; updateFlashcardUI(); } };
+        nextBtn.onclick = () => {
+          if (cardIdx < currentQuiz.questions.length - 1) {
+            cardIdx++;
+            updateFlashcardUI();
+          } else {
+            // Trigger celebration on completing deck
+            quizFinished = true;
+            clearInterval(timerInterval);
+            startConfetti(); playVictorySound();
+            alert('Congratulations! You completed reviewing this flashcard deck!');
+          }
+        };
+
+        updateFlashcardUI();
+      }
+    }
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

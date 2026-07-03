@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCQ Quizzes Hub - EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .back-nav {
+      margin-bottom: 2rem;
+    }
+    .quiz-card {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .quiz-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+    <div class="back-nav" style="display: flex; gap: 1rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration: none;"> Back to Home</a>
+    
+      <a href="index.html?section=resources-view" class="btn btn-primary" style="text-decoration: none; background: var(--secondary); border-color: var(--secondary);"> View Viva Notes</a>
+    </div>
+
+    <div class="hero-section" style="text-align:center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);">Multiple Choice Quizzes</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Select one of the 10 interactive MCQ modules below to test your web development and core computer science knowledge.</p>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="quiz-card" onclick="location.href='mcq_quiz1.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 1: HTML Basics</h2>
+        <p>Learn about tags, hierarchy, list elements, and structural attributes.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz2.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 2: CSS Styling</h2>
+        <p>Test your skills with layout structures, colors, sizes, and fonts.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz3.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 3: JavaScript Intro</h2>
+        <p>Check your understanding of functions, conditions, and loops.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz4.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 4: Computer Hardware</h2>
+        <p>Test knowledge of CPUs, RAM types, SSDs, and bios setup.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz5.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 5: Operating Systems</h2>
+        <p>Learn about kernel processes, file systems, and command terminals.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz6.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 6: Networks</h2>
+        <p>Test your knowledge on router mechanics, IP addresses, and DNS servers.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz7.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 7: Cyber Security</h2>
+        <p>Learn about safe browsing practices, phishing signs, and firewalls.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz8.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 8: Databases & SQL</h2>
+        <p>Check knowledge of tables, primary keys, and SELECT statements.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz9.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 9: Web Development</h2>
+        <p>Advance with DOM manipulation, JSON formatting, and REST API events.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='mcq_quiz10.html'">
+        <div class="quiz-icon"></div>
+        <h2>Quiz 10: Computing History</h2>
+        <p>Fascinating questions on vacuum tubes, ENIAC, Ada Lovelace, and more.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Theme toggle logic
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = ' Light Mode';
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      themeToggle.textContent = isDark ? ' Dark Mode' : ' Light Mode';
+    });
+  
+    // Load custom admin quizzes
+    const grid = document.querySelector('.dashboard-grid');
+    const customQuizzes = JSON.parse(localStorage.getItem('customQuizzes') || '[]');
+    const myCustomQuizzes = customQuizzes.filter(q => q.type === 'mcq');
+    myCustomQuizzes.forEach(q => {
+      const card = document.createElement('div');
+      card.className = 'quiz-card';
+      card.style.borderColor = 'var(--primary)';
+      card.style.borderWidth = '2px';
+      card.onclick = () => location.href = `dynamic_quiz.html?id=${q.id}`;
+      card.innerHTML = `
+        <div class="quiz-icon"></div>
+        <h2>${q.title}</h2>
+        <p>${q.description} <span style="display:block; margin-top:0.5rem; color:var(--primary); font-weight:bold;">Custom Admin Quiz</span></p>
+      `;
+      grid.appendChild(card);
+    });
+  
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

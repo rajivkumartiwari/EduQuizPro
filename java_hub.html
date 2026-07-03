@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Java Performance Quizzes Hub - EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .back-nav {
+      margin-bottom: 2rem;
+    }
+    .quiz-card {
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .quiz-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .java-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, #f89820, #e76f00);
+      color: white;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+    <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main style="padding: 2rem; max-width: 1200px; margin: 0 auto;">
+    <div class="back-nav" style="display: flex; gap: 1rem;">
+      <a href="index.html" class="btn btn-outline" style="text-decoration: none;"> Back to Home</a>
+    
+      <a href="index.html?section=resources-view" class="btn btn-primary" style="text-decoration: none; background: var(--secondary); border-color: var(--secondary);"> View Viva Notes</a>
+    </div>
+
+    <div class="hero-section" style="text-align:center; margin-bottom: 3rem;">
+      <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--primary);"> Java Performance Quizzes</h2>
+      <p style="color: var(--text-muted); font-size: 1.1rem; max-width: 640px; margin: 0 auto;">10 topic-wise Java MCQ modules for Class 12 — covering OOPs, inheritance, arrays, AWT, multithreading, and more. All questions sourced from the categorized Java performance quiz bank.</p>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="quiz-card" onclick="location.href='java_mcq1.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 1: Java Fundamentals &amp; Architecture</h2>
+        <p>JVM, JDK, JRE, bytecode, platform independence, and Java program structure.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq2.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 2: Data Types &amp; Variables</h2>
+        <p>Primitive types, type casting, operators, input/output methods, and Scanner class.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq3.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 3: OOP Concepts</h2>
+        <p>Classes, objects, constructors, method overloading, encapsulation, and abstraction.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq4.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 4: Inheritance</h2>
+        <p>Single, multilevel, hierarchical inheritance, super keyword, and method overriding.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq5.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 5: Encapsulation, Interface &amp; Abstraction</h2>
+        <p>Access modifiers, getters/setters, abstract classes, and interface implementation.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq6.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 6: Arrays &amp; String Manipulation</h2>
+        <p>1D/2D arrays, jagged arrays, String class, StringBuilder, and StringBuffer.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq7.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 7: Packages &amp; Exception Handling</h2>
+        <p>Built-in packages, import statements, try-catch-finally, checked vs unchecked exceptions.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq8.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 8: Multithreading &amp; Synchronization</h2>
+        <p>Thread lifecycle, Runnable interface, sleep(), synchronization, and deadlock.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq9.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 9: AWT &amp; Event Handling</h2>
+        <p>Frame, Button, TextField, Label, layouts, ActionListener, and event delegation model.</p>
+      </div>
+      <div class="quiz-card" onclick="location.href='java_mcq10.html'">
+        <div class="quiz-icon"></div>
+        <div class="java-badge">Class 12</div>
+        <h2>Quiz 10: Mixed Java Concepts</h2>
+        <p>Comprehensive revision covering constructors, polymorphism, collections, and I/O.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Theme toggle logic
+    const themeToggle = document.getElementById('themeToggle');
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.setAttribute('data-theme', 'dark');
+      themeToggle.textContent = ' Light Mode';
+    }
+    themeToggle.addEventListener('click', () => {
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      document.body.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+      themeToggle.textContent = isDark ? ' Dark Mode' : ' Light Mode';
+    });
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

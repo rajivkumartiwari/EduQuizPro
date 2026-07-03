@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards: Computer Storage Units | EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Persistent theme loader
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      
+      <!-- Main Quiz Section -->
+      <section class="quiz-main-card">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">Computer Storage Units (Flashcards)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Data unit sizes and representation.</p>
+        
+        <!-- Mode Tabs -->
+        <div class="fc-mode-tabs">
+          <button id="studyModeBtn" class="btn btn-primary">– Study Mode</button>
+          <button id="testModeBtn" class="btn btn-outline">® Test Game</button>
+        </div>
+
+        <div id="study-container">
+          <p style="text-align: center; margin-bottom: 2rem; font-style: italic; color: var(--text-muted);">Click on any card to flip and view the concept details.</p>
+          <div class="flashcards-grid">
+            
+              <div class="flashcard" id="fc-study-0">
+                <div class="fc-front">
+                  <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="%23EF4444"/><text x="50%" y="55%" fill="white" font-size="28" font-family="sans-serif" font-weight="bold" text-anchor="middle">Bit</text></svg>" alt="0 or 1 Digit" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect fill=\'%23ddd\' width=\'100\' height=\'100\'/><text x=\'50\' y=\'50\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\'>Image</text></svg>'">
+                  <div style="font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">0 or 1 Digit</div>
+                </div>
+                <div class="fc-back">
+                  <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.5rem;">Category</div>
+                  <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Storage Unit</div>
+                  <div style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">Click to flip</div>
+                </div>
+              </div>
+            
+            
+              <div class="flashcard" id="fc-study-1">
+                <div class="fc-front">
+                  <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="%23F59E0B"/><text x="50%" y="55%" fill="white" font-size="28" font-family="sans-serif" font-weight="bold" text-anchor="middle">Byte</text></svg>" alt="8 Bits (1 Char)" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect fill=\'%23ddd\' width=\'100\' height=\'100\'/><text x=\'50\' y=\'50\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\'>Image</text></svg>'">
+                  <div style="font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">8 Bits (1 Char)</div>
+                </div>
+                <div class="fc-back">
+                  <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.5rem;">Category</div>
+                  <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Storage Unit</div>
+                  <div style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">Click to flip</div>
+                </div>
+              </div>
+            
+            
+              <div class="flashcard" id="fc-study-2">
+                <div class="fc-front">
+                  <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="%2310B981"/><text x="50%" y="55%" fill="white" font-size="28" font-family="sans-serif" font-weight="bold" text-anchor="middle">KB</text></svg>" alt="1024 Bytes" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect fill=\'%23ddd\' width=\'100\' height=\'100\'/><text x=\'50\' y=\'50\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\'>Image</text></svg>'">
+                  <div style="font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">1024 Bytes</div>
+                </div>
+                <div class="fc-back">
+                  <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.5rem;">Category</div>
+                  <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Storage Unit</div>
+                  <div style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">Click to flip</div>
+                </div>
+              </div>
+            
+            
+              <div class="flashcard" id="fc-study-3">
+                <div class="fc-front">
+                  <img src="data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100%" height="100%" fill="%233B82F6"/><text x="50%" y="55%" fill="white" font-size="28" font-family="sans-serif" font-weight="bold" text-anchor="middle">MB</text></svg>" alt="1024 Kilobytes" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect fill=\'%23ddd\' width=\'100\' height=\'100\'/><text x=\'50\' y=\'50\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\'>Image</text></svg>'">
+                  <div style="font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">1024 Kilobytes</div>
+                </div>
+                <div class="fc-back">
+                  <div style="font-size: 1rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.8; margin-bottom: 0.5rem;">Category</div>
+                  <div style="font-size: 1.4rem; font-weight: bold; margin-bottom: 1rem;">Storage Unit</div>
+                  <div style="font-size: 0.8rem; background: rgba(255,255,255,0.2); padding: 0.25rem 0.5rem; border-radius: 0.25rem;">Click to flip</div>
+                </div>
+              </div>
+            
+          </div>
+        </div>
+
+        <div id="test-container" style="display: none;">
+          <div id="test-intro" style="text-align: center; margin-bottom: 2rem;">
+            <p style="margin-bottom: 1rem; color: var(--text-muted);">Select the cards that belong to the category below, then click check!</p>
+            <div style="display: inline-block; padding: 0.75rem 2rem; background: var(--background); border: 2px solid var(--primary); border-radius: 2rem; font-weight: bold; font-size: 1.2rem; color: var(--primary);">
+              Category: <span id="target-category-label">Input Device</span>
+            </div>
+          </div>
+          
+          <div class="flashcards-grid" id="test-grid">
+            <!-- Test cards injected here -->
+          </div>
+
+          <div style="text-align: center; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+            <button id="checkTestBtn" class="btn btn-primary" style="padding: 0.75rem 2.5rem; font-size: 1.1rem;">Check My Answers</button>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Sidebar Quiz Links -->
+      
+    <aside class="sidebar-card">
+      <h3 class="sidebar-title">Other FLASHCARD Quizzes</h3>
+      <ul class="sidebar-list">
+        <li><a href="flashcard_quiz1.html" class="sidebar-item-link ">Quiz 1: Key Input Devices</a></li>
+        <li><a href="flashcard_quiz2.html" class="sidebar-item-link ">Quiz 2: Key Output Devices</a></li>
+        <li><a href="flashcard_quiz3.html" class="sidebar-item-link ">Quiz 3: Storage Devices</a></li>
+        <li><a href="flashcard_quiz4.html" class="sidebar-item-link ">Quiz 4: Specialized Input Devices</a></li>
+        <li><a href="flashcard_quiz5.html" class="sidebar-item-link ">Quiz 5: Mobile & Smart Devices</a></li>
+        <li><a href="flashcard_quiz6.html" class="sidebar-item-link ">Quiz 6: Web Elements & Concepts</a></li>
+        <li><a href="flashcard_quiz7.html" class="sidebar-item-link ">Quiz 7: Operating Systems</a></li>
+        <li><a href="flashcard_quiz8.html" class="sidebar-item-link ">Quiz 8: Network Hardware</a></li>
+        <li><a href="flashcard_quiz9.html" class="sidebar-item-link active">Quiz 9: Computer Storage Units</a></li>
+        <li><a href="flashcard_quiz10.html" class="sidebar-item-link ">Quiz 10: Cyber Threat Signs</a></li>
+      </ul>
+      <div style="margin-top: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem;">
+        <button class="btn btn-outline" style="width: 100%;" onclick="location.href='index.html?section=flashcard-hub'">Back to Category Hub</button>
+      
+          <button class="btn btn-primary" style="width: 100%; background: var(--secondary); border-color: var(--secondary);" onclick="location.href='index.html?section=resources-view'">View Viva Notes</button>
+        </div>
+    </aside>
+
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    const flashcardsData = [{"img":"data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect width=\"100%\" height=\"100%\" fill=\"%23EF4444\"/><text x=\"50%\" y=\"55%\" fill=\"white\" font-size=\"28\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\">Bit</text></svg>","answer":"0 or 1 Digit","category":"Storage Unit"},{"img":"data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect width=\"100%\" height=\"100%\" fill=\"%23F59E0B\"/><text x=\"50%\" y=\"55%\" fill=\"white\" font-size=\"28\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\">Byte</text></svg>","answer":"8 Bits (1 Char)","category":"Storage Unit"},{"img":"data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect width=\"100%\" height=\"100%\" fill=\"%2310B981\"/><text x=\"50%\" y=\"55%\" fill=\"white\" font-size=\"28\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\">KB</text></svg>","answer":"1024 Bytes","category":"Storage Unit"},{"img":"data:image/svg+xml;utf8,<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"100\" height=\"100\" viewBox=\"0 0 100 100\"><rect width=\"100%\" height=\"100%\" fill=\"%233B82F6\"/><text x=\"50%\" y=\"55%\" fill=\"white\" font-size=\"28\" font-family=\"sans-serif\" font-weight=\"bold\" text-anchor=\"middle\">MB</text></svg>","answer":"1024 Kilobytes","category":"Storage Unit"}];
+    const quizTitle = "Computer Storage Units Flashcards";
+    
+    // Setup 3D Flip on Click in study mode
+    document.querySelectorAll('#study-container .flashcard').forEach(card => {
+      card.onclick = () => {
+        card.classList.toggle('flipped');
+      };
+    });
+
+    const studyModeBtn = document.getElementById('studyModeBtn');
+    const testModeBtn = document.getElementById('testModeBtn');
+    const studyContainer = document.getElementById('study-container');
+    const testContainer = document.getElementById('test-container');
+    const testGrid = document.getElementById('test-grid');
+    const targetCategoryLabel = document.getElementById('target-category-label');
+    const checkTestBtn = document.getElementById('checkTestBtn');
+
+    let currentTestCategory = '';
+    let testFinished = false;
+
+    // Toggle Modes
+    studyModeBtn.onclick = () => {
+      studyModeBtn.className = 'btn btn-primary';
+      testModeBtn.className = 'btn btn-outline';
+      studyContainer.style.display = 'block';
+      testContainer.style.display = 'none';
+    };
+
+    testModeBtn.onclick = () => {
+      testModeBtn.className = 'btn btn-primary';
+      studyModeBtn.className = 'btn btn-outline';
+      studyContainer.style.display = 'none';
+      testContainer.style.display = 'block';
+      initTestGame();
+    };
+
+    function initTestGame() {
+      testFinished = false;
+      checkTestBtn.style.display = 'inline-block';
+      testGrid.innerHTML = '';
+      
+      // Determine the target category based on cards
+      const categories = [...new Set(flashcardsData.map(c => c.category))];
+      currentTestCategory = categories[Math.floor(Math.random() * categories.length)];
+      targetCategoryLabel.textContent = currentTestCategory;
+
+      // Global distractor pool to make the game challenging and confusing
+      const distractorPool = [
+        {"img":"./assets/images/Monitor.jfif","answer":"Monitor","category":"Output Device"},
+        {"img":"./assets/images/Printer.jfif","answer":"Printer","category":"Output Device"},
+        {"img":"./assets/images/Speaker.jfif","answer":"Speaker","category":"Output Device"},
+        {"img":"./assets/images/Projector.jfif","answer":"Projector","category":"Output Device"},
+        {"img":"./assets/images/Keyboard.jfif","answer":"Keyboard","category":"Input Device"},
+        {"img":"./assets/images/Mouse.jfif","answer":"Mouse","category":"Input Device"},
+        {"img":"./assets/images/Webcam.jfif","answer":"Webcam","category":"Input Device"},
+        {"img":"./assets/images/Scanner.jfif","answer":"Scanner","category":"Input Device"},
+        {"img":"./assets/images/Harddisk.jfif","answer":"Hard Disk","category":"Storage Device"},
+        {"img":"./assets/images/SSD.jfif","answer":"SSD Drive","category":"Storage Device"},
+        {"img":"./assets/images/CD.jfif","answer":"CD Drive","category":"Storage Device"},
+        {"img":"./assets/images/USBDrive.jfif","answer":"USB Flash Drive","category":"Storage Device"},
+        {"img":"./assets/images/Laptop.jfif","answer":"Laptop PC","category":"Mobile Device"},
+        {"img":"./assets/images/Tablet.jfif","answer":"Tablet Computer","category":"Mobile Device"},
+        {"img":"./assets/images/Smartphone.jfif","answer":"Smartphone","category":"Mobile Device"},
+        {"img":"./assets/images/router_icon.png","answer":"Router","category":"Network Hardware"},
+        {"img":"./assets/images/html_icon.png","answer":"HTML","category":"Web Language"},
+        {"img":"./assets/images/windows_icon.png","answer":"Windows","category":"OS Platform"}
+      ];
+
+      // Filter distractors that belong to a different category than the target category
+      const validDistractors = distractorPool.filter(d => d.category !== currentTestCategory && !flashcardsData.some(f => f.answer === d.answer));
+      
+      // Select 4 random distractors
+      const selectedDistractors = validDistractors.sort(() => Math.random() - 0.5).slice(0, 4);
+
+      // Combine target cards with distractors
+      const challengeCards = [
+        ...flashcardsData.map(c => ({...c, selectState: false})),
+        ...selectedDistractors.map(d => ({...d, selectState: false}))
+      ];
+      
+      // Shuffle them
+      const shuffledCards = challengeCards.sort(() => Math.random() - 0.5);
+
+      shuffledCards.forEach((card, idx) => {
+        const cardEl = document.createElement('div');
+        cardEl.className = 'flashcard';
+        cardEl.id = `fc-test-${idx}`;
+        
+        cardEl.innerHTML = `
+          <div class="fc-front">
+            <img src="${card.img}" alt="${card.answer}" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\'><rect fill=\'%23ddd\' width=\'100\' height=\'100\'/><text x=\'50\' y=\'50\' font-size=\'12\' text-anchor=\'middle\' alignment-baseline=\'middle\'>Image</text></svg>'">
+            <div style="font-weight: 600; font-size: 1.1rem; margin-top: 0.5rem;">${card.answer}</div>
+          </div>
+          <div class="fc-back" style="background: var(--success); color: white;">
+            <div style="font-size: 1.5rem; font-weight: bold;">SELECTED</div>
+            <div style="font-size: 0.8rem; margin-top: 0.5rem; background: rgba(0,0,0,0.2); padding: 0.2rem 0.5rem; border-radius: 0.25rem;">Click to unselect</div>
+          </div>
+        `;
+
+        cardEl.onclick = () => {
+          if (testFinished) return;
+          card.selectState = !card.selectState;
+          cardEl.classList.toggle('flipped');
+        };
+
+        testGrid.appendChild(cardEl);
+      });
+
+      checkTestBtn.onclick = () => {
+        testFinished = true;
+        checkTestBtn.style.display = 'none';
+
+        let correctCount = 0;
+        let totalCategoryCount = challengeCards.filter(c => c.category === currentTestCategory).length;
+        let selectedCount = challengeCards.filter(c => c.selectState).length;
+
+        shuffledCards.forEach((card, idx) => {
+          const cardEl = document.getElementById(`fc-test-${idx}`);
+          
+          cardEl.classList.remove('flipped'); // Show front
+          const frontDiv = cardEl.querySelector('.fc-front');
+
+          const isTarget = card.category === currentTestCategory;
+          const isSelected = card.selectState;
+
+          if (isSelected && isTarget) {
+            frontDiv.style.borderColor = 'var(--success)';
+            frontDiv.style.borderWidth = '3px';
+            correctCount++;
+          } else if (isSelected && !isTarget) {
+            frontDiv.style.borderColor = 'var(--danger)';
+            frontDiv.style.borderWidth = '3px';
+          } else if (!isSelected && isTarget) {
+            frontDiv.style.borderColor = 'var(--danger)';
+            frontDiv.style.borderWidth = '3px';
+            frontDiv.innerHTML += `<div style="color:var(--danger); font-size:0.8rem; font-weight:bold; margin-top:0.25rem;">Missed!</div>`;
+          }
+        });
+
+        // Score is correct selections out of total category elements
+        let scorePercent = Math.round((correctCount / totalCategoryCount) * 100);
+        if (scorePercent > 100) scorePercent = 100;
+        
+        let displayScore = correctCount;
+        let displayTotal = totalCategoryCount;
+
+        saveQuizResult(quizTitle, displayScore, displayTotal);
+
+        if (scorePercent >= 70) {
+          startConfetti(); playVictorySound();
+        }
+
+        // Show Score popup
+        const resultsDiv = document.createElement('div');
+        resultsDiv.id = 'test-results';
+        resultsDiv.innerHTML = `
+          <div style="text-align: center; margin-top: 2rem; padding: 1.5rem; background: var(--background); border-radius: 1rem; border: 1px solid var(--border);">
+            <h4 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--primary);">Test Results</h4>
+            <div style="font-size: 2.5rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${displayScore} / ${displayTotal} Correct</div>
+            <p style="color: var(--text-muted); margin-bottom: 1rem;">Matched ${displayScore} of the ${displayTotal} ${currentTestCategory}s.</p>
+            <button class="btn btn-outline" onclick="initTestGame()">Play Again</button>
+          </div>
+        `;
+        
+        const existingResults = document.getElementById('test-results');
+        if (existingResults) existingResults.remove();
+        testContainer.appendChild(resultsDiv);
+      };
+    }
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

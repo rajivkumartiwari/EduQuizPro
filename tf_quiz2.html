@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>True/False: Python Data Structures | EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    // Persistent theme loader
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+    
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      
+      <!-- Main Quiz Section -->
+      <section class="quiz-main-card">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">Python Data Structures (True / False)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Lists, tuples, dictionaries, and sets.</p>
+        
+        <div class="quiz-header">
+          <div style="font-weight: 600; font-size: 1.1rem;" id="timer">Time: 00:00</div>
+          <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;">Question 1 of 10</div>
+        </div>
+
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+
+        <!-- Question & Options content -->
+        <div id="quiz-content" class="quiz-content">
+          <!-- Dynamic Content Injected here -->
+        </div>
+
+        <!-- Actions -->
+        <div class="quiz-footer" style="margin-top: 2rem;">
+          <button id="prevBtn" class="btn btn-outline">Previous</button>
+          <button id="nextBtn" class="btn btn-primary">Next</button>
+          <button id="submitBtn" class="btn btn-outline" style="background: var(--success); color: white; display: none;">Submit Quiz</button>
+        </div>
+      </section>
+
+      <!-- Sidebar Quiz Links -->
+      
+    <aside class="sidebar-card">
+      <h3 class="sidebar-title">Other TF Quizzes</h3>
+      <ul class="sidebar-list">
+        <li><a href="tf_quiz1.html" class="sidebar-item-link ">Quiz 1: Python Basics</a></li>
+        <li><a href="tf_quiz2.html" class="sidebar-item-link active">Quiz 2: Python Data Structures</a></li>
+        <li><a href="tf_quiz3.html" class="sidebar-item-link ">Quiz 3: Input & Output Devices</a></li>
+        <li><a href="tf_quiz4.html" class="sidebar-item-link ">Quiz 4: Networking & Internet</a></li>
+        <li><a href="tf_quiz5.html" class="sidebar-item-link ">Quiz 5: Algorithms & Flowcharts</a></li>
+        <li><a href="tf_quiz6.html" class="sidebar-item-link ">Quiz 6: Software Categories</a></li>
+        <li><a href="tf_quiz7.html" class="sidebar-item-link ">Quiz 7: Computer Storage</a></li>
+        <li><a href="tf_quiz8.html" class="sidebar-item-link ">Quiz 8: Database Concepts</a></li>
+        <li><a href="tf_quiz9.html" class="sidebar-item-link ">Quiz 9: History of Computing</a></li>
+        <li><a href="tf_quiz10.html" class="sidebar-item-link ">Quiz 10: Cyber Safety Rules</a></li>
+      </ul>
+      <div style="margin-top: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem;">
+        <button class="btn btn-outline" style="width: 100%;" onclick="location.href='tf_hub.html'">Back to Category Hub</button>
+      
+          <button class="btn btn-primary" style="width: 100%; background: var(--secondary); border-color: var(--secondary);" onclick="location.href='index.html?section=resources-view'">View Viva Notes</button>
+        </div>
+    </aside>
+
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    const quizData = [{"q":"Lists in Python are mutable, meaning their elements can be changed.","a":true},{"q":"Tuples in Python are mutable.","a":false},{"q":"A dictionary stores data in key-value pairs.","a":true},{"q":"Sets in Python allow duplicate elements.","a":false},{"q":"You can access list items by referring to their index, starting at 0.","a":true},{"q":"The 'append()' method adds an element to the beginning of a list.","a":false},{"q":"Dictionaries do not allow duplicate keys.","a":true},{"q":"You can create a list in Python using parentheses ().","a":false},{"q":"The 'len()' function returns the number of items in a collection.","a":true},{"q":"A tuple can contain different data types.","a":true}];
+    const quizTitle = "Python Data Structures T/F";
+    let currentIdx = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+    let quizFinished = false;
+
+    // Timer variables
+    let timerSeconds = 0;
+    const timerInterval = setInterval(() => {
+      if (quizFinished) return;
+      timerSeconds++;
+      const m = String(Math.floor(timerSeconds/60)).padStart(2,'0');
+      const s = String(timerSeconds%60).padStart(2,'0');
+      document.getElementById('timer').textContent = `Time: ${m}:${s}`;
+    }, 1000);
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const quizContent = document.getElementById('quiz-content');
+    const progressBar = document.getElementById('progress-bar');
+    const quizStatus = document.getElementById('quiz-status');
+
+    function updateUI() {
+      // Progress
+      const pct = ((currentIdx + 1) / quizData.length) * 100;
+      progressBar.style.width = pct + '%';
+      quizStatus.textContent = `Question ${currentIdx + 1} of ${quizData.length}`;
+
+      // Buttons
+      prevBtn.disabled = currentIdx === 0;
+      if (currentIdx === quizData.length - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'none';
+      }
+
+      // Render Question
+      const q = quizData[currentIdx];
+      quizContent.innerHTML = `
+        <div class="question-text">${currentIdx + 1}. ${q.q}</div>
+        <div class="options-grid" style="grid-template-columns: 1fr 1fr;">
+          <button class="option-btn ${userAnswers[currentIdx] === true ? 'selected' : ''}" onclick="selectAnswer(true)">
+             True
+          </button>
+          <button class="option-btn ${userAnswers[currentIdx] === false ? 'selected' : ''}" onclick="selectAnswer(false)">
+             False
+          </button>
+        </div>
+      `;
+    }
+
+    window.selectAnswer = function(val) {
+      if (quizFinished) return;
+      userAnswers[currentIdx] = val;
+      updateUI();
+    };
+
+    prevBtn.onclick = () => {
+      if (currentIdx > 0) { currentIdx--; updateUI(); }
+    };
+
+    nextBtn.onclick = () => {
+      if (currentIdx < quizData.length - 1) { currentIdx++; updateUI(); }
+    };
+
+    submitBtn.onclick = () => {
+      quizFinished = true;
+      clearInterval(timerInterval);
+      
+      let score = 0;
+      quizData.forEach((q, i) => {
+        if (userAnswers[i] === q.a) score++;
+      });
+
+      // Save score to tracking
+      saveQuizResult(quizTitle, score, quizData.length);
+
+      // Render results
+      let scorePercent = Math.round((score / quizData.length) * 100);
+      let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+      
+      if (scorePercent >= 70) {
+        startConfetti(); playVictorySound();
+      }
+
+      quizContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">${heading}</h3>
+          <div style="font-size: 3rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${score} / ${quizData.length}</div>
+          <p style="font-size: 1.1rem; color: var(--text-muted);">You scored ${scorePercent}% in ${timerSeconds} seconds.</p>
+        </div>
+
+        <div class="feedback-list">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Review Answers</h4>
+          ${quizData.map((q, i) => {
+            const isCorrect = userAnswers[i] === q.a;
+            const expectedStr = q.a ? 'True' : 'False';
+            const userStr = userAnswers[i] === null ? 'Unanswered' : (userAnswers[i] ? 'True' : 'False');
+            return `
+              <div class="feedback-item">
+                <p><strong>Q${i+1}: ${q.q}</strong></p>
+                <p style="margin-top: 0.25rem;">
+                  ${isCorrect 
+                    ? `<span class="correct-ans">“ Correct: ${expectedStr}</span>` 
+                    : `<span class="user-wrong">— Your answer: ${userStr}</span> <span class="correct-ans">“ Correct: ${expectedStr}</span>`
+                  }
+                </p>
+              </div>
+            `;
+          }).join('')}
+        </div>
+      `;
+
+      // Hide navigation buttons
+      prevBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      
+      const restartBtn = document.createElement('button');
+      restartBtn.className = 'btn btn-primary';
+      restartBtn.textContent = 'Retry Quiz';
+      restartBtn.onclick = () => location.reload();
+      document.querySelector('.quiz-footer').appendChild(restartBtn);
+    };
+
+    // Initial load
+    updateUI();
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>
