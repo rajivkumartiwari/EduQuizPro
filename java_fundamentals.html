@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Fundamentals - Online Mock Examination</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .code-font { font-family: 'Fira Code', monospace; }
+        /* Custom Scrollbars */
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: rgba(156, 163, 175, 0.5); border-radius: 9999px; }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(107, 114, 128, 0.8); }
+    </style>
+</head>
+<body class="h-full bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100 flex flex-col antialiased select-none transition-colors duration-200">
+
+    <!-- TOP HEADER / NAVBAR -->
+    <header class="h-14 border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 px-4 flex items-center justify-between shrink-0 shadow-sm z-20">
+        <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-blue-500/20">
+                J
+            </div>
+            <div>
+                <h1 class="font-bold text-base leading-tight tracking-tight text-slate-900 dark:text-white" id="header-title">Java Fundamentals Exam</h1>
+                <p class="text-xs text-slate-500 dark:text-slate-400 font-medium" id="header-subtitle">Module 2.2 • 50 Questions • 50 Minutes</p>
+            </div>
+        </div>
+
+        <!-- Controls: Language, Theme, Status -->
+        <div class="flex items-center gap-2 sm:gap-3">
+            <!-- Language Toggle Button -->
+            <button id="lang-toggle-btn" onclick="toggleLanguage()" class="px-2.5 py-1.5 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center gap-1.5">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/></svg>
+                <span id="lang-text">Hindi / English</span>
+            </button>
+
+            <!-- Theme Toggle Button -->
+            <button id="theme-toggle-btn" onclick="toggleTheme()" class="p-1.5 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition" title="Toggle Theme">
+                <svg id="sun-icon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                <svg id="moon-icon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+            </button>
+
+            <!-- Countdown Timer Badge (hidden on instructions screen) -->
+            <div id="timer-badge" class="hidden items-center gap-1.5 bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800/60 px-3 py-1 rounded-lg font-mono font-bold text-sm shadow-sm">
+                <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                <span id="time-display">50:00</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN VIEW CONTAINER -->
+    <main class="flex-1 overflow-hidden relative flex flex-col">
+
+        <!-- SCREEN 1: INSTRUCTIONS & START TEST -->
+        <div id="instructions-screen" class="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 flex items-center justify-center">
+            <div class="max-w-3xl w-full bg-white dark:bg-slate-950 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-xl overflow-hidden my-auto">
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white">
+                    <div class="inline-block px-3 py-1 bg-white/20 rounded-full text-xs font-semibold mb-2 backdrop-blur-sm">Official Mock Test</div>
+                    <h2 class="text-2xl font-bold" id="inst-heading">Java Programming Examination Guidelines</h2>
+                    <p class="text-blue-100 text-xs sm:text-sm mt-1" id="inst-subheading">Syllabus 2.2: Data Types, Identifiers, Operators, Loops, Control Statements, and Compilation</p>
+                </div>
+
+                <div class="p-6 space-y-6">
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                            <span class="text-xs text-slate-500 dark:text-slate-400 block" id="lbl-total-q">Total Questions</span>
+                            <span class="text-xl font-bold text-blue-600 dark:text-blue-400">50</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                            <span class="text-xs text-slate-500 dark:text-slate-400 block" id="lbl-total-m">Total Marks</span>
+                            <span class="text-xl font-bold text-emerald-600 dark:text-emerald-400">50</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                            <span class="text-xs text-slate-500 dark:text-slate-400 block" id="lbl-duration">Duration</span>
+                            <span class="text-xl font-bold text-indigo-600 dark:text-indigo-400">50 Mins</span>
+                        </div>
+                        <div class="p-3 bg-slate-50 dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                            <span class="text-xs text-slate-500 dark:text-slate-400 block" id="lbl-neg-mark">Negative Marking</span>
+                            <span class="text-xl font-bold text-rose-600 dark:text-rose-400">None</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3 text-sm text-slate-600 dark:text-slate-300">
+                        <h3 class="font-bold text-slate-900 dark:text-white text-base flex items-center gap-2" id="lbl-rules-title">
+                            <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                            Key Test Instructions
+                        </h3>
+                        <ul class="space-y-2 list-disc list-inside text-xs sm:text-sm leading-relaxed" id="inst-list">
+                            <li>Each question has 4 options (A, B, C, D) with exactly <strong>1 correct answer</strong>.</li>
+                            <li>The countdown timer starts immediately upon clicking <strong>Start Test</strong>.</li>
+                            <li>You can use the <strong>Question Palette</strong> to jump directly to any question.</li>
+                            <li>Mark questions for review if you want to inspect them before final submission.</li>
+                            <li>Technical terms like <code class="code-font text-blue-600 dark:text-blue-400">javac</code>, <code class="code-font text-blue-600 dark:text-blue-400">String</code>, and <code class="code-font text-blue-600 dark:text-blue-400">switch</code> are preserved in English even in Hindi mode.</li>
+                            <li>The exam automatically submits when the timer reaches 00:00.</li>
+                        </ul>
+                    </div>
+
+                    <div class="pt-2 flex justify-end">
+                        <button onclick="startTest()" class="w-full sm:w-auto px-8 py-3.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl shadow-lg shadow-blue-500/25 transition transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2">
+                            <span id="btn-start-text">Start Test Now</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 2: ACTIVE EXAMINATION INTERFACE -->
+        <div id="exam-screen" class="hidden flex-1 overflow-hidden flex flex-col md:flex-row">
+            
+            <!-- Left Pane: Question Area (Compact Vertically) -->
+            <div class="flex-1 flex flex-col h-full overflow-hidden border-r border-slate-200 dark:border-slate-800">
+                
+                <!-- Question Top Bar -->
+                <div class="px-4 py-2.5 bg-slate-100/70 dark:bg-slate-900/50 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between shrink-0">
+                    <span class="text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                        <span id="q-number-badge" class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded font-semibold text-xs">Q 1 / 50</span>
+                        <span id="lbl-question-tag" class="hidden sm:inline text-slate-400">| Multiple Choice Question</span>
+                    </span>
+                    <div class="flex items-center gap-2">
+                        <span class="text-xs text-slate-500 dark:text-slate-400 font-medium" id="lbl-marks-val">+1.0 Mark</span>
+                    </div>
+                </div>
+
+                <!-- Scrollable Question Content -->
+                <div class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+                    <!-- Question Prompt Card -->
+                    <div class="bg-white dark:bg-slate-950 p-4 sm:p-5 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
+                        <h3 id="question-text" class="text-base sm:text-lg font-semibold leading-relaxed text-slate-900 dark:text-slate-100">
+                            <!-- Question injected here -->
+                        </h3>
+                    </div>
+
+                    <!-- Options Container -->
+                    <div id="options-container" class="space-y-2.5">
+                        <!-- Options injected here dynamically -->
+                    </div>
+                </div>
+
+                <!-- Question Bottom Control Toolbar -->
+                <div class="p-3 bg-white dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 flex flex-wrap gap-2 items-center justify-between shrink-0">
+                    <div class="flex gap-2">
+                        <button onclick="markForReview()" id="btn-review" class="px-3 py-2 text-xs font-semibold rounded-lg border border-purple-300 dark:border-purple-800 text-purple-700 dark:text-purple-300 bg-purple-50 dark:bg-purple-950/40 hover:bg-purple-100 transition flex items-center gap-1">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"/></svg>
+                            <span id="btn-mark-text">Mark for Review</span>
+                        </button>
+                        <button onclick="clearResponse()" id="btn-clear" class="px-3 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+                            <span id="btn-clear-text">Clear Choice</span>
+                        </button>
+                    </div>
+
+                    <div class="flex gap-2 ml-auto">
+                        <button onclick="navigateQuestion(-1)" id="btn-prev" class="px-3.5 py-2 text-xs font-semibold rounded-lg border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition flex items-center gap-1">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                            <span id="btn-prev-text">Previous</span>
+                        </button>
+                        <button onclick="navigateQuestion(1)" id="btn-next" class="px-4 py-2 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-700 text-white transition flex items-center gap-1">
+                            <span id="btn-next-text">Next</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Pane: Question Navigation Palette -->
+            <div class="w-full md:w-80 lg:w-96 bg-white dark:bg-slate-950 flex flex-col h-auto md:h-full shrink-0 border-t md:border-t-0 border-slate-200 dark:border-slate-800">
+                <!-- Palette Header -->
+                <div class="p-3 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                    <span class="font-bold text-xs uppercase tracking-wider text-slate-500 dark:text-slate-400" id="lbl-palette-title">Question Palette</span>
+                    <button onclick="confirmSubmission()" class="px-3 py-1 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-lg text-xs transition shadow-sm">
+                        <span id="btn-submit-text">Submit Exam</span>
+                    </button>
+                </div>
+
+                <!-- Palette Legend -->
+                <div class="p-3 bg-slate-50 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 text-[11px] grid grid-cols-2 gap-2">
+                    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-slate-200 dark:bg-slate-700 border border-slate-300 dark:border-slate-600"></span><span id="leg-unvisited">Not Visited</span></div>
+                    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-rose-500"></span><span id="leg-unanswered">Not Answered</span></div>
+                    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-emerald-500"></span><span id="leg-answered">Answered</span></div>
+                    <div class="flex items-center gap-1.5"><span class="w-3 h-3 rounded-full bg-purple-600"></span><span id="leg-marked">Marked for Review</span></div>
+                </div>
+
+                <!-- Palette Grid Container -->
+                <div class="flex-1 overflow-y-auto p-3">
+                    <div id="palette-grid" class="grid grid-cols-5 sm:grid-cols-10 md:grid-cols-5 gap-2">
+                        <!-- 50 Palette Buttons rendered here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCREEN 3: RESULT DASHBOARD & ANSWER REVIEW -->
+        <div id="result-screen" class="hidden flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8">
+            <div class="max-w-5xl mx-auto space-y-6">
+                
+                <!-- Score Summary Banner -->
+                <div class="bg-white dark:bg-slate-950 rounded-2xl p-6 border border-slate-200 dark:border-slate-800 shadow-lg relative overflow-hidden">
+                    <div class="flex flex-col md:flex-row gap-6 items-center justify-between">
+                        <div>
+                            <span class="px-3 py-1 bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-bold text-xs rounded-full uppercase tracking-wider" id="lbl-result-badge">Exam Submission Complete</span>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 text-slate-900 dark:text-white" id="lbl-performance-title">Performance Summary</h2>
+                            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1" id="lbl-result-sub">Detailed breakdown of your Java fundamentals examination score.</p>
+                        </div>
+
+                        <!-- Score Gauge & Grade -->
+                        <div class="flex items-center gap-6 bg-slate-50 dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800">
+                            <div class="text-center">
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block" id="lbl-score-title">Final Score</span>
+                                <span class="text-3xl font-black text-blue-600 dark:text-blue-400"><span id="res-score">0</span> <span class="text-sm font-normal text-slate-400">/ 50</span></span>
+                            </div>
+                            <div class="h-10 w-px bg-slate-200 dark:bg-slate-800"></div>
+                            <div class="text-center">
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block" id="lbl-percentage-title">Percentage</span>
+                                <span class="text-3xl font-black text-emerald-600 dark:text-emerald-400" id="res-percentage">0%</span>
+                            </div>
+                            <div class="h-10 w-px bg-slate-200 dark:bg-slate-800"></div>
+                            <div class="text-center">
+                                <span class="text-xs text-slate-500 dark:text-slate-400 font-medium block" id="lbl-accuracy-title">Accuracy</span>
+                                <span class="text-3xl font-black text-indigo-600 dark:text-indigo-400" id="res-accuracy">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detailed Metrics Cards -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-total">Total Questions</span>
+                        <span class="text-lg font-bold text-slate-800 dark:text-slate-200">50</span>
+                    </div>
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-attempted">Attempted</span>
+                        <span class="text-lg font-bold text-blue-600 dark:text-blue-400" id="res-attempted">0</span>
+                    </div>
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-correct">Correct</span>
+                        <span class="text-lg font-bold text-emerald-600 dark:text-emerald-400" id="res-correct">0</span>
+                    </div>
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-wrong">Incorrect</span>
+                        <span class="text-lg font-bold text-rose-600 dark:text-rose-400" id="res-wrong">0</span>
+                    </div>
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-unanswered">Unanswered</span>
+                        <span class="text-lg font-bold text-amber-600 dark:text-amber-400" id="res-unanswered">0</span>
+                    </div>
+                    <div class="p-3 bg-white dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 text-center">
+                        <span class="text-[11px] text-slate-500 block" id="lbl-res-time">Time Taken</span>
+                        <span class="text-lg font-bold text-slate-800 dark:text-slate-200" id="res-time-taken">00:00</span>
+                    </div>
+                </div>
+
+                <!-- Action Controls (Retake / Review Toggle) -->
+                <div class="flex flex-wrap gap-3 items-center justify-between pt-2">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white" id="lbl-review-title">Detailed Solutions & Explanations</h3>
+                    <div class="flex gap-2">
+                        <button onclick="resetTest()" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs rounded-xl transition shadow-sm flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                            <span id="btn-retake-text">Retake Exam</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Review Items Container -->
+                <div id="review-container" class="space-y-4">
+                    <!-- Reviewed Questions Rendered Here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Comprehensive 50 Question Set based directly on syllabus:
+        // Syllabus: Data types, ranges, default values, storage, identifiers, comments, operators, reserved words, variables, literals, loops, control statements, compilation & execution.
+        const questions = [
+            {
+                id: 1,
+                question_en: "What is the default value of a local variable of type 'int' in Java?",
+                question_hi: "Java में 'int' प्रकार के Local Variable का default value क्या होता है?",
+                options_en: ["0", "0.0", "null", "Local variables have no default value and must be initialized"],
+                options_hi: ["0", "0.0", "null", "Local variables का कोई default value नहीं होता और उन्हें initialize करना अनिवार्य है"],
+                correct: 3,
+                explanation_en: "Unlike instance variables, local variables in Java do not get default values automatically. They must be explicitly initialized before use.",
+                explanation_hi: "Instance variables के विपरीत, Java में local variables को स्वतः default value नहीं मिलती। उपयोग से पहले उन्हें initialize करना आवश्यक है।"
+            },
+            {
+                id: 2,
+                question_en: "Which of the following represents the valid range for the 'byte' data type in Java?",
+                question_hi: "Java में 'byte' Data Type के लिए कौन सी वैध range होती है?",
+                options_en: ["-128 to 127", "-32768 to 32767", "0 to 255", "-2^31 to 2^31-1"],
+                options_hi: ["-128 से 127", "-32768 से 32767", "0 से 255", "-2^31 से 2^31-1"],
+                correct: 0,
+                explanation_en: "The byte data type in Java is an 8-bit signed integer with a range from -128 (-2^7) to 127 (2^7 - 1).",
+                explanation_hi: "Java में byte data type 8-bit का signed integer होता है जिसकी range -128 से 127 होती है।"
+            },
+            {
+                id: 3,
+                question_en: "What is the size of the 'char' data type in Java?",
+                question_hi: "Java में 'char' Data Type की size कितनी होती है?",
+                options_en: ["1 byte (8 bits)", "2 bytes (16 bits)", "4 bytes (32 bits)", "Depends on operating system"],
+                options_hi: ["1 byte (8 bits)", "2 bytes (16 bits)", "4 bytes (32 bits)", "Operating system पर निर्भर करता है"],
+                correct: 1,
+                explanation_en: "Java uses Unicode representation for characters, so the char data type occupies 2 bytes (16 bits).",
+                explanation_hi: "Java characters को स्टोर करने के लिए Unicode का उपयोग करता है, इसलिए char data type 2 bytes (16 bits) की जगह लेता है।"
+            },
+            {
+                id: 4,
+                question_en: "What is the default value of an uninitialized instance variable of type 'boolean'?",
+                question_hi: "एक uninitialized 'boolean' instance variable का default value क्या होता है?",
+                options_en: ["true", "false", "0", "null"],
+                options_hi: ["true", "false", "0", "null"],
+                correct: 1,
+                explanation_en: "In Java, instance variables of primitive boolean type default to 'false'.",
+                explanation_hi: "Java में primitive boolean type की instance variables की default value 'false' होती है।"
+            },
+            {
+                id: 5,
+                question_en: "Which of the following is a VALID Java identifier?",
+                question_hi: "निम्नलिखित में से कौन सा एक वैध (VALID) Java Identifier है?",
+                options_en: ["1stVariable", "total#Amount", "_my_var$2", "class"],
+                options_hi: ["1stVariable", "total#Amount", "_my_var$2", "class"],
+                correct: 2,
+                explanation_en: "Java identifiers can start with a letter, underscore (_), or currency character ($). They cannot start with digits, contain special symbols like #, or use reserved keywords like 'class'.",
+                explanation_hi: "Java identifiers का नाम अक्षर, underscore (_) या $ से शुरू हो सकता है। यह अंक से शुरू नहीं हो सकता और इसमें # जैसी स्पेशल symbols या 'class' जैसे keywords नहीं हो सकते।"
+            },
+            {
+                id: 6,
+                question_en: "Which syntax is used for Java Documentation Comment?",
+                question_hi: "Java Documentation Comment के लिए कौन सा syntax उपयोग किया जाता है?",
+                options_en: ["// comment", "/* comment */", "/** comment */", "# comment"],
+                options_hi: ["// comment", "/* comment */", "/** comment */", "# comment"],
+                correct: 2,
+                explanation_en: "/** ... */ is the syntax used for JavaDoc documentation comments.",
+                explanation_hi: "/** ... */ का उपयोग JavaDoc documentation comments लिखने के लिए किया जाता है।"
+            },
+            {
+                id: 7,
+                question_en: "What is the result of the expression: System.out.println(10 + 20 + \"Java\"); ?",
+                question_hi: "इस Expression का क्या परिणाम होगा: System.out.println(10 + 20 + \"Java\"); ?",
+                options_en: ["Java1020", "30Java", "1020Java", "Compilation Error"],
+                options_hi: ["Java1020", "30Java", "1020Java", "Compilation Error"],
+                correct: 1,
+                explanation_en: "Operators evaluate from left to right. 10 + 20 equals 30 (addition), then 30 + \"Java\" results in String concatenation: \"30Java\".",
+                explanation_hi: "Operators बाएँ से दाएँ (left to right) evaluate होते हैं। 10 + 20 = 30, फिर 30 + \"Java\" से String concatenation होकर \"30Java\" बनता है।"
+            },
+            {
+                id: 8,
+                question_en: "Which operator in Java is known as the Ternary Operator?",
+                question_hi: "Java में किस Operator को Ternary Operator कहा जाता है?",
+                options_en: ["&&", "instanceof", "? :", "=="],
+                options_hi: ["&&", "instanceof", "? :", "=="],
+                correct: 2,
+                explanation_en: "The condition ? expression1 : expression2 is the ternary conditional operator taking three operands.",
+                explanation_hi: "condition ? expr1 : expr2 तीन operands लेने वाला ternary conditional operator होता है।"
+            },
+            {
+                id: 9,
+                question_en: "Which of the following is NOT a reserved keyword in Java?",
+                question_hi: "निम्नलिखित में से कौन सा Java का Reserved Keyword नहीं है?",
+                options_en: ["goto", "const", "main", "strictfp"],
+                options_hi: ["goto", "const", "main", "strictfp"],
+                correct: 2,
+                explanation_en: "'main' is a method name, not a reserved keyword in Java. 'goto' and 'const' are reserved words, and 'strictfp' is a modifier keyword.",
+                explanation_hi: "'main' एक method का नाम है, keyword नहीं। 'goto' और 'const' reserved words हैं, तथा 'strictfp' एक modifier keyword है।"
+            },
+            {
+                id: 10,
+                question_en: "What type of literal is 0x1A in Java?",
+                question_hi: "Java में 0x1A किस प्रकार का Literal है?",
+                options_en: ["Octal Literal", "Hexadecimal Literal", "Binary Literal", "Decimal Literal"],
+                options_hi: ["Octal Literal", "Hexadecimal Literal", "Binary Literal", "Decimal Literal"],
+                correct: 1,
+                explanation_en: "Literals starting with '0x' or '0X' are Hexadecimal integer literals in Java.",
+                explanation_hi: "'0x' या '0X' से शुरू होने वाले literals Java में Hexadecimal integer literals होते हैं।"
+            },
+            {
+                id: 11,
+                question_en: "Which command is used to compile a Java source code file named 'Test.java'?",
+                question_hi: "'Test.java' नाम की Java Source Code फ़ाइल को compile करने के लिए किस command का प्रयोग किया जाता है?",
+                options_en: ["java Test.java", "javac Test.java", "compile Test.java", "run Test.java"],
+                options_hi: ["java Test.java", "javac Test.java", "compile Test.java", "run Test.java"],
+                correct: 1,
+                explanation_en: "The 'javac' command (Java Compiler) compiles source code files into Java bytecode (.class files).",
+                explanation_hi: "'javac' (Java Compiler) का प्रयोग source code फ़ाइलों को Java bytecode (.class फ़ाइलों) में compile करने के लिए किया जाता है।"
+            },
+            {
+                id: 12,
+                question_en: "What file extension is created after compiling a Java file?",
+                question_hi: "Java फ़ाइल को Compile करने के बाद किस Extension की फ़ाइल बनती है?",
+                options_en: [".exe", ".obj", ".class", ".java"],
+                options_hi: [".exe", ".obj", ".class", ".java"],
+                correct: 2,
+                explanation_en: "Compiling a .java file produces Java bytecode stored in a .class file.",
+                explanation_hi: ".java फ़ाइल को compile करने पर उत्पन्न Bytecode .class फ़ाइल में स्टोर होता है।"
+            },
+            {
+                id: 13,
+                question_en: "What is the correct syntax for the main method signature in Java?",
+                question_hi: "Java में main method का सही syntax signature क्या है?",
+                options_en: [
+                    "public void main(String[] args)",
+                    "public static void main(String[] args)",
+                    "static void main(String args)",
+                    "public static int main(String[] args)"
+                ],
+                options_hi: [
+                    "public void main(String[] args)",
+                    "public static void main(String[] args)",
+                    "static void main(String args)",
+                    "public static int main(String[] args)"
+                ],
+                correct: 1,
+                explanation_en: "The standard entry point in Java is 'public static void main(String[] args)'.",
+                explanation_hi: "Java में मानक Entry point 'public static void main(String[] args)' होता है।"
+            },
+            {
+                id: 14,
+                question_en: "What happens if a switch statement does not contain a 'break' statement in a matching case?",
+                question_hi: "यदि switch statement के किसी matching case में 'break' ना लगाया जाए तो क्या होगा?",
+                options_en: [
+                    "Compilation error occurs",
+                    "Execution stops immediately",
+                    "Fall-through occurs: execution continues into subsequent cases",
+                    "The default case is executed directly"
+                ],
+                options_en_alt: "",
+                options_hi: [
+                    "Compilation error आएगा",
+                    "Execution तुरंत रुक जाएगा",
+                    "Fall-through होगा: निष्पादन अगले केस में भी जारी रहेगा",
+                    "सीधे default case execute हो जाएगा"
+                ],
+                correct: 2,
+                explanation_en: "Without break, Java exhibits 'fall-through' behavior, executing subsequent cases sequentially until a break or switch block end.",
+                explanation_hi: "break न होने पर 'fall-through' होता है, जिससे निष्पादन अगले सभी केसों में बिना कंडीशन चेक किए चला जाता है।"
+            },
+            {
+                id: 15,
+                question_en: "Which loop in Java is guaranteed to execute at least once?",
+                question_hi: "Java में कौन सा Loop कम से कम एक बार ज़रूर Execute होता है?",
+                options_en: ["for loop", "while loop", "do-while loop", "enhanced for loop"],
+                options_hi: ["for loop", "while loop", "do-while loop", "enhanced for loop"],
+                correct: 2,
+                explanation_en: "The do-while loop is an exit-controlled loop that checks the condition after executing the loop body once.",
+                explanation_hi: "do-while loop एक exit-controlled loop है जो लूप बॉडी को एक बार चलाने के बाद कंडीशन चेक करता है।"
+            },
+            {
+                id: 16,
+                question_en: "What is the output of: int x = 5; System.out.println(x++); ?",
+                question_hi: "इस Code का Output क्या होगा: int x = 5; System.out.println(x++); ?",
+                options_en: ["5", "6", "4", "Compilation Error"],
+                options_hi: ["5", "6", "4", "Compilation Error"],
+                correct: 0,
+                explanation_en: "x++ is a post-increment operator. It returns the current value (5) first for printing, then increments x to 6.",
+                explanation_hi: "x++ post-increment operator है। यह पहले वर्तमान मान (5) को प्रिंट के लिए प्रयोग करता है, फिर x को बढ़ाकर 6 करता है।"
+            },
+            {
+                id: 17,
+                question_en: "What is the storage size of 'double' primitive data type in Java?",
+                question_hi: "Java में 'double' Primitive Data Type का Storage Size कितना होता है?",
+                options_en: ["2 bytes", "4 bytes", "8 bytes", "16 bytes"],
+                options_hi: ["2 bytes", "4 bytes", "8 bytes", "16 bytes"],
+                correct: 2,
+                explanation_en: "double is a 64-bit (8 bytes) IEEE 754 floating point data type.",
+                explanation_hi: "double 64-bit (8 bytes) का IEEE 754 floating point data type होता है।"
+            },
+            {
+                id: 18,
+                question_en: "Which keyword is used to declare a variable whose value cannot be modified after assignment?",
+                question_hi: "किस Keyword का उपयोग ऐसे Variable को घोषित करने के लिए किया जाता है जिसका मान असाइन करने के बाद बदला न जा सके?",
+                options_en: ["static", "final", "const", "immutable"],
+                options_hi: ["static", "final", "const", "immutable"],
+                correct: 1,
+                explanation_en: "The 'final' keyword makes a variable constant, preventing reassignment.",
+                explanation_hi: "'final' keyword किसी variable को constant बनाता है, जिससे उसका मान पुन: बदला नहीं जा सकता।"
+            },
+            {
+                id: 19,
+                question_en: "Where are Instance Variables stored in Java Memory Model?",
+                question_hi: "Java Memory Model में Instance Variables कहाँ स्टोर होते हैं?",
+                options_en: ["Stack Memory", "Heap Memory", "Method Area", "Register"],
+                options_hi: ["Stack Memory", "Heap Memory", "Method Area", "Register"],
+                correct: 1,
+                explanation_en: "Instance variables are created inside objects on the Heap memory.",
+                explanation_hi: "Instance variables Objects के भाग के रूप में Heap Memory में स्टोर होते हैं।"
+            },
+            {
+                id: 20,
+                question_en: "What is the result of the modulus expression: 17 % 5 ?",
+                question_hi: "Modulus expression 17 % 5 का परिणाम क्या होगा?",
+                options_en: ["3", "2", "3.4", "0"],
+                options_hi: ["3", "2", "3.4", "0"],
+                correct: 1,
+                explanation_en: "The modulus operator (%) returns the remainder of integer division. 17 divided by 5 is 3 with remainder 2.",
+                explanation_hi: "Modulus operator (%) विभाजन का शेषफल (remainder) देता है। 17 / 5 पर शेषफल 2 प्राप्त होता है।"
+            },
+            {
+                id: 21,
+                question_en: "Which data type is implicitly returned by logical operators (&&, ||, !)?",
+                question_hi: "Logical operators (&&, ||, !) द्वारा कौन सा Data Type प्राप्त होता है?",
+                options_en: ["int", "boolean", "String", "void"],
+                options_hi: ["int", "boolean", "String", "void"],
+                correct: 1,
+                explanation_en: "Logical operators in Java evaluate condition truths and return primitive boolean values (true or false).",
+                explanation_hi: "Java में Logical operators केवल true या false (boolean) मान लौटाते हैं।"
+            },
+            {
+                id: 22,
+                question_en: "What is the syntax for a Single-Line comment in Java?",
+                question_hi: "Java में Single-Line comment लिखने का syntax क्या है?",
+                options_en: ["# comment", "-- comment", "// comment", "<!-- comment -->"],
+                options_hi: ["# comment", "-- comment", "// comment", "<!-- comment -->"],
+                correct: 2,
+                explanation_en: "// is used for single line comments in Java.",
+                explanation_hi: "Java में single line comment के लिए // का उपयोग किया जाता है।"
+            },
+            {
+                id: 23,
+                question_en: "Which of the following data types CANNOT be used in a standard Java switch statement (prior to Java 7)?",
+                question_hi: "Java 7 से पहले कौन सा Data Type साधारण switch statement में उपयोग नहीं हो सकता था?",
+                options_en: ["int", "char", "byte", "float"],
+                options_hi: ["int", "char", "byte", "float"],
+                correct: 3,
+                explanation_en: "Floating point types (float and double) cannot be used in switch statements due to floating-point precision issues.",
+                explanation_hi: "Precision सम्बन्धी कारणों से floating point types (float और double) को switch statements में प्रयोग करने की अनुमति नहीं होती।"
+            },
+            {
+                id: 24,
+                question_en: "What is the range of 'short' data type in Java?",
+                question_hi: "Java में 'short' Data Type की range क्या है?",
+                options_en: ["-128 to 127", "-32,768 to 32,767", "-2,147,483,648 to 2,147,483,647", "0 to 65535"],
+                options_hi: ["-128 से 127", "-32,768 से 32,767", "-2,147,483,648 से 2,147,483,647", "0 से 65535"],
+                correct: 1,
+                explanation_en: "short is a 16-bit signed 2's complement integer ranging from -32,768 to 32,767.",
+                explanation_hi: "short 16-bit का signed integer होता है जिसकी सीमा -32,768 से 32,767 होती है।"
+            },
+            {
+                id: 25,
+                question_en: "What will happen during execution of: for( ; ; ) { System.out.println(\"Hi\"); } ?",
+                question_hi: "इसे चलाने पर क्या होगा: for( ; ; ) { System.out.println(\"Hi\"); } ?",
+                options_en: ["Prints Hi once", "Infinite loop printing Hi", "Compilation Error", "Does not execute"],
+                options_hi: ["Hi एक बार प्रिंट होगा", "अनंत लूप (Infinite loop) लगातार Hi प्रिंट करेगा", "Compilation Error", "Execute नहीं होगा"],
+                correct: 1,
+                explanation_en: "Omitting all three expressions in a for loop creates a valid infinite loop equivalent to while(true).",
+                explanation_hi: "for loop में तीनों expressions को खाली छोड़ना एक वैध Infinite Loop बनता है।"
+            },
+            {
+                id: 26,
+                question_en: "Which component of JDK is responsible for executing Java Bytecode?",
+                question_hi: "JDK का कौन सा घटक Java Bytecode को execute करने के लिए ज़िम्मेदार है?",
+                options_en: ["JDK Compiler", "JVM (Java Virtual Machine)", "Javadoc", "JDB"],
+                options_hi: ["JDK Compiler", "JVM (Java Virtual Machine)", "Javadoc", "JDB"],
+                correct: 1,
+                explanation_en: "The Java Virtual Machine (JVM) loads, verifies, interprets/compiles, and executes bytecode.",
+                explanation_hi: "JVM (Java Virtual Machine) bytecode को लोड तथा निष्पादित (execute) करने के लिए उत्तरदायी है।"
+            },
+            {
+                id: 27,
+                question_en: "What is the value of 'y' after executing: int x = 10; int y = ++x;",
+                question_hi: "इस Code के निष्पादन के बाद 'y' का मान क्या होगा: int x = 10; int y = ++x;",
+                options_en: ["10", "11", "9", "Compilation Error"],
+                options_hi: ["10", "11", "9", "Compilation Error"],
+                correct: 1,
+                explanation_en: "++x is pre-increment. x becomes 11 first, and then 11 is assigned to y.",
+                explanation_hi: "++x pre-increment है। पहले x का मान 11 होता है, फिर वह 11 y को असाइन हो जाता है।"
+            },
+            {
+                id: 28,
+                question_en: "Which literal suffix is required to specify a float literal in Java?",
+                question_hi: "Java में Float Literal निर्दिष्ट करने के लिए किस Suffix का उपयोग आवश्यक है?",
+                options_en: ["L or l", "F or f", "D or d", "E or e"],
+                options_hi: ["L or l", "F or f", "D or d", "E or e"],
+                correct: 1,
+                explanation_en: "Floating point literals are double by default in Java. 'f' or 'F' must be appended for float literals (e.g., 3.14f).",
+                explanation_hi: "Java में दशमलव संख्याएँ डिफॉल्ट रूप से double होती हैं। float literal दर्शाने के लिए 'f' या 'F' लगाना अनिवार्य है (जैसे 3.14f)।"
+            },
+            {
+                id: 29,
+                question_en: "What is the scope of a Local Variable in Java?",
+                question_hi: "Java में Local Variable का Scope क्या होता है?",
+                options_en: [
+                    "Entire application",
+                    "Entire Class",
+                    "Only within the block/method where it is declared",
+                    "Across all child classes"
+                ],
+                options_hi: [
+                    "पूरे एप्लिकेशन में",
+                    "पूरे Class में",
+                    "केवल उस block/method के अंदर जहाँ उसे declare किया गया है",
+                    "सभी Child Classes में"
+                ],
+                correct: 2,
+                explanation_en: "Local variables are created when entering their enclosing block/method and destroyed upon exiting it.",
+                explanation_hi: "Local variables केवल उस ब्लॉक या मेथड के अंदर ही पहुँच में रहते हैं जहाँ वे डिक्लेयर किए गए हैं।"
+            },
+            {
+                id: 30,
+                question_en: "Which bitwise operator performs Bitwise XOR in Java?",
+                question_hi: "Java में Bitwise XOR ऑपरेटर का प्रतीक कौन सा है?",
+                options_en: ["&", "|", "^", "~"],
+                options_hi: ["&", "|", "^", "~"],
+                correct: 2,
+                explanation_en: "The caret (^) represents Bitwise Exclusive-OR (XOR) operator.",
+                explanation_hi: "Caret (^) ऑपरेटर Bitwise Exclusive-OR (XOR) का प्रतीक है।"
+            },
+            {
+                id: 31,
+                question_en: "What is the default value of a reference variable (e.g. String s;) as an instance member?",
+                question_hi: "एक Instance member के रूप में Reference variable (जैसे String s;) का Default Value क्या होगा?",
+                options_en: ["\"\"", "null", "undefined", "0"],
+                options_hi: ["\"\"", "null", "undefined", "0"],
+                correct: 1,
+                explanation_en: "All uninitialized object references in Java default to 'null'.",
+                explanation_hi: "Java में सभी uninitialized object references की डिफॉल्ट वैल्यू 'null' होती है।"
+            },
+            {
+                id: 32,
+                question_en: "Which statement is used to skip the current iteration of a loop and move to the next iteration?",
+                question_hi: "किस Statement का उपयोग Loop के वर्तमान इटरेशन को छोड़कर अगले इटरेशन पर जाने के लिए होता है?",
+                options_en: ["break", "continue", "return", "exit"],
+                options_hi: ["break", "continue", "return", "exit"],
+                correct: 1,
+                explanation_en: "'continue' skips the remaining statements in the current iteration and jumps to condition evaluation.",
+                explanation_hi: "'continue' वर्तमान iteration के बचे हुए निर्देशों को छोड़ कर सीधे अगले iteration पर बढ़ा देता है।"
+            },
+            {
+                id: 33,
+                question_en: "What is the result of integer division: 5 / 2 in Java?",
+                question_hi: "Java में Integer division 5 / 2 का परिणाम क्या होगा?",
+                options_en: ["2.5", "2", "3", "2.0"],
+                options_hi: ["2.5", "2", "3", "2.0"],
+                correct: 1,
+                explanation_en: "Dividing two integers in Java truncates fractional parts and returns an integer (5 / 2 = 2).",
+                explanation_hi: "दो integers का विभाजन पूर्णांक (integer) ही परिणाम देता है और दशमलव भाग हट जाता है (5 / 2 = 2)।"
+            },
+            {
+                id: 34,
+                question_en: "Which of these keywords is used to declare static variables shared across all class instances?",
+                question_hi: "Class की सभी instances के बीच शेयर होने वाले Variables बनाने के लिए किस Keyword का उपयोग होता है?",
+                options_en: ["public", "static", "shared", "global"],
+                options_hi: ["public", "static", "shared", "global"],
+                correct: 1,
+                explanation_en: "The 'static' keyword binds variables to the class level rather than individual instances.",
+                explanation_hi: "'static' keyword चर (variable) को class स्तर पर बना देता है जिससे वह सभी objects द्वारा साझा किया जाता है।"
+            },
+            {
+                id: 35,
+                question_en: "Which relational operator checks if two primitive values are NOT equal in Java?",
+                question_hi: "Java में कौन सा Relational Operator दो Values के असमान (NOT equal) होने की जाँच करता है?",
+                options_en: ["<>", "!=", "==", "!=="],
+                options_hi: ["<>", "!=", "==", "!=="],
+                correct: 1,
+                explanation_en: "The != operator checks inequality in Java.",
+                explanation_hi: "!= ऑपरेटर असमानता की जाँच करने के लिए प्रयुक्त होता है।"
+            },
+            {
+                id: 36,
+                question_en: "What is the binary representation prefix for integer literals in Java (Java 7+)?",
+                question_hi: "Java 7+ में Binary Integer Literals के लिए किस Prefix का प्रयोग होता है?",
+                options_en: ["0x", "0b or 0B", "0o", "0n"],
+                options_hi: ["0x", "0b or 0B", "0o", "0n"],
+                correct: 1,
+                explanation_en: "Binary literals start with 0b or 0B in Java (e.g., 0b1010).",
+                explanation_hi: "Java में binary literals 0b या 0B से शुरू होते हैं (जैसे 0b1010)।"
+            },
+            {
+                id: 37,
+                question_en: "Which loop condition evaluation structure describes a 'while' loop?",
+                question_hi: "While loop की विशेषता कौन सा कथन दर्शाता है?",
+                options_en: ["Exit-controlled loop", "Entry-controlled loop", "Post-tested loop", "Count-controlled only"],
+                options_hi: ["Exit-controlled loop", "Entry-controlled loop", "Post-tested loop", "Count-controlled only"],
+                correct: 1,
+                explanation_en: "The while loop tests its condition BEFORE executing the body, making it an entry-controlled loop.",
+                explanation_hi: "while loop लूप में प्रवेश करने से पहले शर्त की जाँच करता है, इसलिए यह Entry-Controlled Loop कहलाता है।"
+            },
+            {
+                id: 38,
+                question_en: "Which keyword is used to transfer control out of a loop or switch structure immediately?",
+                question_hi: "Loop या Switch Structure से तुरंत बाहर निकलने के लिए किस Keyword का प्रयोग किया जाता है?",
+                options_en: ["exit", "break", "continue", "skip"],
+                options_hi: ["exit", "break", "continue", "skip"],
+                correct: 1,
+                explanation_en: "The 'break' statement terminates the execution of the nearest enclosing switch or loop.",
+                explanation_hi: "'break' statement लूप या switch केस के निष्पादन को तुरंत रोककर बाहर निकल जाता है।"
+            },
+            {
+                id: 39,
+                question_en: "What is the maximum positive value of 'int' data type in Java?",
+                question_hi: "Java में 'int' Data Type का अधिकतम धनात्मक मान (Maximum Value) कितना है?",
+                options_en: ["2,147,483,647", "32,767", "65,535", "9,223,372,036,854,775,807"],
+                options_hi: ["2,147,483,647", "32,767", "65,535", "9,223,372,036,854,775,807"],
+                correct: 0,
+                explanation_en: "int is 32-bit signed integer with maximum value 2^31 - 1 = 2,147,483,647.",
+                explanation_hi: "int 32-bit की signed वैल्यू है जिसकी अधिकतम सीमा 2^31 - 1 = 2,147,483,647 होती है।"
+            },
+            {
+                id: 40,
+                question_en: "What happens if a main class is executed with: 'java Test' when 'Test.class' does not exist?",
+                question_hi: "यदि 'Test.class' मौजूद नहीं है और 'java Test' कमांड चलाया जाए तो क्या होगा?",
+                options_en: ["Compilation Error", "java.lang.NoClassDefFoundError / Could not find or load main class", "Generates empty class file", "Infinite wait"],
+                options_hi: ["Compilation Error", "java.lang.NoClassDefFoundError / Could not find or load main class", "खाली class फ़ाइल बनाएगा", "अनंत प्रतीक्षा"],
+                correct: 1,
+                explanation_en: "The JVM runtime throws error 'Could not find or load main class' if the specified bytecode class file is absent.",
+                explanation_hi: "यदि .class फ़ाइल उपलब्ध नहीं है तो JVM Runtime द्वारा 'Could not find or load main class' एरर दिया जाएगा।"
+            },
+            {
+                id: 41,
+                question_en: "Which expression demonstrates short-circuit behavior with logical AND operator?",
+                question_hi: "Logical AND (&&) में Short-circuit गुण से क्या तात्पर्य है?",
+                options_en: [
+                    "If left operand is false, right operand is not evaluated",
+                    "If left operand is true, right operand is not evaluated",
+                    "Both operands are always evaluated",
+                    "Operands evaluate right to left"
+                ],
+                options_hi: [
+                    "यदि बायाँ operand false है, तो दायाँ operand evaluate नहीं किया जाता",
+                    "यदि बायाँ operand true है, तो दायाँ operand evaluate नहीं किया जाता",
+                    "दोनों operands हमेशा evaluate होते हैं",
+                    "Operands दाएँ से बाएँ निष्पादित होते हैं"
+                ],
+                correct: 0,
+                explanation_en: "In logical AND (&&), if the left condition evaluates to false, the outcome is guaranteed false, so Java skips evaluating the right condition.",
+                explanation_hi: "Logical AND (&&) में बायाँ हिस्सा false मिलते ही पूरा रिजल्ट false हो जाता है, इसलिए दायाँ हिस्सा निष्पादित नहीं होता।"
+            },
+            {
+                id: 42,
+                question_en: "Which of the following is an INVALID character literal in Java?",
+                question_hi: "निम्नलिखित में से कौन सा अमान्य (INVALID) Character Literal है?",
+                options_en: ["'a'", "'\\n'", "'ab'", "'\\u0041'"],
+                options_hi: ["'a'", "'\\n'", "'ab'", "'\\u0041'"],
+                correct: 2,
+                explanation_en: "Char literals accept only single characters. 'ab' contains two characters and requires a String literal in double quotes (\"ab\").",
+                explanation_hi: "Char literals केवल एक अक्षर ले सकते हैं। 'ab' दो अक्षरों का समूह है जिसे दर्शाने के लिए String (\"ab\") की आवश्यकता होगी।"
+            },
+            {
+                id: 43,
+                question_en: "What is the output of: System.out.println(10 > 5 && 3 < 2); ?",
+                question_hi: "इसका आउटपुट क्या होगा: System.out.println(10 > 5 && 3 < 2); ?",
+                options_en: ["true", "false", "1", "0"],
+                options_hi: ["true", "false", "1", "0"],
+                correct: 1,
+                explanation_en: "10 > 5 is true, but 3 < 2 is false. true && false evaluates to false.",
+                explanation_hi: "10 > 5 true है, किन्तु 3 < 2 false है। true && false का परिणाम false आएगा।"
+            },
+            {
+                id: 44,
+                question_en: "What is the primary feature of Java Bytecode?",
+                question_hi: "Java Bytecode की प्राथमिक विशेषता क्या है?",
+                options_en: ["Hardware dependent", "Platform independent / Write Once Run Anywhere", "Human readable text", "Direct CPU machine instructions"],
+                options_hi: ["Hardware dependent", "Platform independent / Write Once, Run Anywhere", "मानव द्वारा पठनीय सामान्य टेक्स्ट", "सीधे CPU मशीन निर्देश"],
+                correct: 1,
+                explanation_en: "Bytecode is intermediate platform-independent code that allows Java programs to run on any system with a compatible JVM.",
+                explanation_hi: "Bytecode मध्यवर्ती कोड है जो Java को प्लेटफार्म इंडिपेंडेंट बनाता है (Write Once, Run Anywhere)।"
+            },
+            {
+                id: 45,
+                question_en: "Which operator is used for Object Instantiation in Java?",
+                question_hi: "Java में Object तैयार (Instantiation) करने के लिए किस Operator का उपयोग होता है?",
+                options_en: ["create", "alloc", "new", "instance"],
+                options_hi: ["create", "alloc", "new", "instance"],
+                correct: 2,
+                explanation_en: "The 'new' operator allocates memory on heap for new objects.",
+                explanation_hi: "'new' ऑपरेटर Heap पर नए Object के लिए मेमोरी आवंटित करता है।"
+            },
+            {
+                id: 46,
+                question_en: "How many times will 'Hello' print in: int i=0; do { System.out.println(\"Hello\"); i++; } while(i < 0); ?",
+                question_hi: "यह कोड 'Hello' कितनी बार प्रिंट करेगा: int i=0; do { System.out.println(\"Hello\"); i++; } while(i < 0); ?",
+                options_en: ["0 times", "1 time", "Infinite times", "Compilation Error"],
+                options_hi: ["0 बार", "1 बार", "अनंत बार", "Compilation Error"],
+                correct: 1,
+                explanation_en: "The do-while loop executes the body once before evaluating the condition (0 < 0 = false), so 'Hello' prints exactly once.",
+                explanation_hi: "do-while शर्त जाँचने से पहले एक बार चलता है, इसलिए 'Hello' ठीक 1 बार प्रिंट होगा।"
+            },
+            {
+                id: 47,
+                question_en: "Which data type stores 64-bit signed 2's complement integers in Java?",
+                question_hi: "Java में 64-bit signed 2's complement integer के लिए किस Data Type का प्रयोग होता है?",
+                options_en: ["int", "long", "double", "float"],
+                options_hi: ["int", "long", "double", "float"],
+                correct: 1,
+                explanation_en: "'long' data type is a 64-bit signed integer.",
+                explanation_hi: "'long' data type 64-bit का पूर्णांक (integer) होता है।"
+            },
+            {
+                id: 48,
+                question_en: "What is the correct way to write an 'if...else if...else' chain syntax in Java?",
+                question_hi: "Java में 'if...else if...else' chain का सही syntax कौन सा है?",
+                options_en: [
+                    "if (cond1) { } elsif (cond2) { } else { }",
+                    "if (cond1) { } else if (cond2) { } else { }",
+                    "if (cond1) { } elif (cond2) { } else { }",
+                    "if cond1 then { } else { }"
+                ],
+                options_hi: [
+                    "if (cond1) { } elsif (cond2) { } else { }",
+                    "if (cond1) { } else if (cond2) { } else { }",
+                    "if (cond1) { } elif (cond2) { } else { }",
+                    "if cond1 then { } else { }"
+                ],
+                correct: 1,
+                explanation_en: "In Java, multi-branch conditional statements use 'if', followed by 'else if', and optionally end with 'else'.",
+                explanation_hi: "Java में बहु-शाखीय शर्तो के लिए 'if', उसके बाद 'else if', तथा अंत में 'else' लिखा जाता है।"
+            },
+            {
+                id: 49,
+                question_en: "Which Java operator shifts bits to the right while filling top bits with zero (unsigned right shift)?",
+                question_hi: "Java में कौन सा ऑपरेटर Unsigned Right Shift (जीरो से भरने वाला) करता है?",
+                options_en: [">>", "<<", ">>>", "<<<"],
+                options_hi: [">>", "<<", ">>>", "<<<"],
+                correct: 2,
+                explanation_en: "The >>> operator is the unsigned right shift operator in Java, shifting zero into the leftmost position.",
+                explanation_hi: ">>> ऑपरेटर Java में Unsigned Right Shift करता है जो बाईं ओर खाली स्थान में 0 भरता है।"
+            },
+            {
+                id: 50,
+                question_en: "What is the default value of float primitive data type when declared as class member?",
+                question_hi: "Class member के रूप में घोषित किए जाने पर float data type की default value क्या होती है?",
+                options_en: ["0.0", "0.0f", "0", "null"],
+                options_hi: ["0.0", "0.0f", "0", "null"],
+                correct: 1,
+                explanation_en: "Default value for float primitive instance fields in Java is 0.0f.",
+                explanation_hi: "Java में float primitive fields का डिफ़ॉल्ट मान 0.0f होता है।"
+            }
+        ];
+
+        // Application State Variables
+        let currentLanguage = 'en'; // 'en' or 'hi'
+        let currentQuestionIndex = 0;
+        let userAnswers = new Array(questions.length).fill(null); // stores 0, 1, 2, 3 or null
+        let markedForReview = new Array(questions.length).fill(false);
+        let visitedQuestions = new Array(questions.length).fill(false);
+        
+        let examTimeSeconds = 50 * 60; // 50 minutes = 3000 seconds
+        let timerInterval = null;
+        let timeTakenSeconds = 0;
+        let isSubmitted = false;
+
+        // UI Translations Dictionary for static UI elements
+        const uiText = {
+            en: {
+                title: "Java Fundamentals Exam",
+                subtitle: "Module 2.2 • 50 Questions • 50 Minutes",
+                instHeading: "Java Programming Examination Guidelines",
+                instSubheading: "Syllabus 2.2: Data Types, Identifiers, Operators, Loops, Control Statements, and Compilation",
+                totalQ: "Total Questions",
+                totalM: "Total Marks",
+                duration: "Duration",
+                negMarking: "Negative Marking",
+                none: "None",
+                rulesTitle: "Key Test Instructions",
+                startBtn: "Start Test Now",
+                questionTag: "| Multiple Choice Question",
+                marksVal: "+1.0 Mark",
+                markBtn: "Mark for Review",
+                unmarkBtn: "Unmark Review",
+                clearBtn: "Clear Choice",
+                prevBtn: "Previous",
+                nextBtn: "Next",
+                submitBtn: "Submit Exam",
+                paletteTitle: "Question Palette",
+                unvisited: "Not Visited",
+                unanswered: "Not Answered",
+                answered: "Answered",
+                marked: "Marked for Review",
+                resultBadge: "Exam Submission Complete",
+                perfTitle: "Performance Summary",
+                perfSub: "Detailed breakdown of your Java fundamentals examination score.",
+                finalScore: "Final Score",
+                percentage: "Percentage",
+                accuracy: "Accuracy",
+                timeTaken: "Time Taken",
+                retakeBtn: "Retake Exam",
+                solutionsTitle: "Detailed Solutions & Explanations",
+                correct: "Correct",
+                incorrect: "Incorrect",
+                unattempted: "Unattempted",
+                yourAns: "Your Answer:",
+                correctAns: "Correct Answer:",
+                explanation: "Explanation:"
+            },
+            hi: {
+                title: "जावा मूल बातें परीक्षा (Java Fundamentals)",
+                subtitle: "Module 2.2 • 50 प्रश्न • 50 मिनट",
+                instHeading: "Java Programming परीक्षा दिशानिर्देश",
+                instSubheading: "पाठ्यक्रम 2.2: Data Types, Identifiers, Operators, Loops, Control Statements एवं Compilation",
+                totalQ: "कुल प्रश्न",
+                totalM: "कुल अंक",
+                duration: "समय अवधि",
+                negMarking: "ऋणात्मक अंक",
+                none: "कोई नहीं",
+                rulesTitle: "मुख्य परीक्षा निर्देश",
+                startBtn: "परीक्षा प्रारम्भ करें",
+                questionTag: "| बहुविकल्पीय प्रश्न (MCQ)",
+                marksVal: "+1.0 अंक",
+                markBtn: "पुनरावलोकन के लिए चिह्न (Mark)",
+                unmarkBtn: "चिह्न हटाएँ",
+                clearBtn: "उत्तर साफ़ करें",
+                prevBtn: "पिछला",
+                nextBtn: "अगला",
+                submitBtn: "परीक्षा जमा करें",
+                paletteTitle: "प्रश्न पैलेट (Question Palette)",
+                unvisited: "देखा नहीं गया",
+                unanswered: "उत्तर नहीं दिया",
+                answered: "उत्तर दिया गया",
+                marked: "पुनरावलोकन हेतु अंकित",
+                resultBadge: "परीक्षा सफलतापूर्वक पूर्ण हुई",
+                perfTitle: "प्रदर्शन विवरण (Performance Summary)",
+                perfSub: "आपके जावा बुनियादी ढांचा परीक्षा स्कोर का पूर्ण विवरण।",
+                finalScore: "अंतिम अंक",
+                percentage: "प्रतिशत",
+                accuracy: "सटीकता (Accuracy)",
+                timeTaken: "लिया गया समय",
+                retakeBtn: "पुनः परीक्षा दें",
+                solutionsTitle: "विस्तृत समाधान एवं व्याख्या (Solutions)",
+                correct: "सही उत्तर",
+                incorrect: "गलत उत्तर",
+                unattempted: "अनुत्तरित",
+                yourAns: "आपका उत्तर:",
+                correctAns: "सही उत्तर:",
+                explanation: "व्याख्या (Explanation):"
+            }
+        };
+
+        // Initialize Theme from System or Storage
+        function initTheme() {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+            }
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.theme = 'light';
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.theme = 'dark';
+            }
+        }
+
+        // Toggle Language & Refresh Rendered Content
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'hi' : 'en';
+            document.getElementById('lang-text').innerText = currentLanguage === 'en' ? 'Hindi / English' : 'English / हिन्दी';
+            updateStaticText();
+            if (!document.getElementById('exam-screen').classList.contains('hidden')) {
+                renderQuestion();
+                renderPalette();
+            } else if (!document.getElementById('result-screen').classList.contains('hidden')) {
+                renderResultDashboard();
+            }
+        }
+
+        // Update static UI text labels
+        function updateStaticText() {
+            const txt = uiText[currentLanguage];
+            document.getElementById('header-title').innerText = txt.title;
+            document.getElementById('header-subtitle').innerText = txt.subtitle;
+            document.getElementById('inst-heading').innerText = txt.instHeading;
+            document.getElementById('inst-subheading').innerText = txt.instSubheading;
+            document.getElementById('lbl-total-q').innerText = txt.totalQ;
+            document.getElementById('lbl-total-m').innerText = txt.totalM;
+            document.getElementById('lbl-duration').innerText = txt.duration;
+            document.getElementById('lbl-neg-mark').innerText = txt.negMarking;
+            document.getElementById('lbl-rules-title').innerText = txt.rulesTitle;
+            document.getElementById('btn-start-text').innerText = txt.startBtn;
+            
+            document.getElementById('lbl-question-tag').innerText = txt.questionTag;
+            document.getElementById('lbl-marks-val').innerText = txt.marksVal;
+            document.getElementById('btn-clear-text').innerText = txt.clearBtn;
+            document.getElementById('btn-prev-text').innerText = txt.prevBtn;
+            document.getElementById('btn-next-text').innerText = txt.nextBtn;
+            document.getElementById('btn-submit-text').innerText = txt.submitBtn;
+            document.getElementById('lbl-palette-title').innerText = txt.paletteTitle;
+            document.getElementById('leg-unvisited').innerText = txt.unvisited;
+            document.getElementById('leg-unanswered').innerText = txt.unanswered;
+            document.getElementById('leg-answered').innerText = txt.answered;
+            document.getElementById('leg-marked').innerText = txt.marked;
+
+            document.getElementById('lbl-result-badge').innerText = txt.resultBadge;
+            document.getElementById('lbl-performance-title').innerText = txt.perfTitle;
+            document.getElementById('lbl-result-sub').innerText = txt.perfSub;
+            document.getElementById('lbl-score-title').innerText = txt.finalScore;
+            document.getElementById('lbl-percentage-title').innerText = txt.percentage;
+            document.getElementById('lbl-accuracy-title').innerText = txt.accuracy;
+            document.getElementById('lbl-res-total').innerText = txt.totalQ;
+            document.getElementById('lbl-res-attempted').innerText = txt.answered;
+            document.getElementById('lbl-res-correct').innerText = txt.correct;
+            document.getElementById('lbl-res-wrong').innerText = txt.incorrect;
+            document.getElementById('lbl-res-unanswered').innerText = txt.unattempted;
+            document.getElementById('lbl-res-time').innerText = txt.timeTaken;
+            document.getElementById('lbl-review-title').innerText = txt.solutionsTitle;
+            document.getElementById('btn-retake-text').innerText = txt.retakeBtn;
+        }
+
+        // Start Test Controller
+        function startTest() {
+            document.getElementById('instructions-screen').classList.add('hidden');
+            document.getElementById('exam-screen').classList.remove('hidden');
+            document.getElementById('timer-badge').classList.remove('hidden');
+            document.getElementById('timer-badge').classList.add('flex');
+
+            visitedQuestions[0] = true;
+            currentQuestionIndex = 0;
+
+            renderQuestion();
+            renderPalette();
+            startTimer();
+        }
+
+        // Live Timer Functionality
+        function startTimer() {
+            const timeDisplay = document.getElementById('time-display');
+            timerInterval = setInterval(() => {
+                if (examTimeSeconds <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmitTest();
+                    return;
+                }
+                examTimeSeconds--;
+                timeTakenSeconds++;
+
+                const mins = Math.floor(examTimeSeconds / 60);
+                const secs = examTimeSeconds % 60;
+                timeDisplay.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+
+                if (examTimeSeconds < 300) { // Less than 5 mins alert state
+                    document.getElementById('timer-badge').classList.remove('bg-amber-50', 'text-amber-700');
+                    document.getElementById('timer-badge').classList.add('bg-rose-100', 'text-rose-700', 'dark:bg-rose-950', 'dark:text-rose-300');
+                }
+            }, 1000);
+        }
+
+        // Render Current Question
+        function renderQuestion() {
+            const q = questions[currentQuestionIndex];
+            const txt = uiText[currentLanguage];
+
+            document.getElementById('q-number-badge').innerText = `Q ${currentQuestionIndex + 1} / ${questions.length}`;
+            
+            // Set Question Text based on active language
+            document.getElementById('question-text').innerText = currentLanguage === 'hi' ? q.question_hi : q.question_en;
+
+            // Render Options
+            const container = document.getElementById('options-container');
+            container.innerHTML = '';
+
+            const optionsList = currentLanguage === 'hi' ? q.options_hi : q.options_en;
+            const optionPrefixes = ['A', 'B', 'C', 'D'];
+
+            optionsList.forEach((optText, idx) => {
+                const isSelected = userAnswers[currentQuestionIndex] === idx;
+
+                const optCard = document.createElement('div');
+                optCard.className = `p-3.5 sm:p-4 rounded-xl border transition cursor-pointer flex items-center gap-3 ${
+                    isSelected 
+                        ? 'border-blue-600 bg-blue-50/70 dark:bg-blue-950/40 dark:border-blue-500 shadow-sm' 
+                        : 'border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 hover:bg-slate-50 dark:hover:bg-slate-900'
+                }`;
+                optCard.onclick = () => selectOption(idx);
+
+                optCard.innerHTML = `
+                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ${
+                        isSelected 
+                            ? 'bg-blue-600 text-white' 
+                            : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-700'
+                    }">
+                        ${optionPrefixes[idx]}
+                    </div>
+                    <span class="text-xs sm:text-sm text-slate-800 dark:text-slate-200 leading-relaxed font-medium">${optText}</span>
+                `;
+                container.appendChild(optCard);
+            });
+
+            // Update Review Button State
+            const isMarked = markedForReview[currentQuestionIndex];
+            document.getElementById('btn-mark-text').innerText = isMarked ? txt.unmarkBtn : txt.markBtn;
+
+            // Enable/Disable Previous Button
+            document.getElementById('btn-prev').disabled = currentQuestionIndex === 0;
+            document.getElementById('btn-prev').style.opacity = currentQuestionIndex === 0 ? '0.5' : '1';
+        }
+
+        // Option Selection Handler
+        function selectOption(index) {
+            if (isSubmitted) return;
+            userAnswers[currentQuestionIndex] = index;
+            renderQuestion();
+            renderPalette();
+        }
+
+        // Clear Selection
+        function clearResponse() {
+            if (isSubmitted) return;
+            userAnswers[currentQuestionIndex] = null;
+            renderQuestion();
+            renderPalette();
+        }
+
+        // Toggle Mark for Review
+        function markForReview() {
+            if (isSubmitted) return;
+            markedForReview[currentQuestionIndex] = !markedForReview[currentQuestionIndex];
+            renderQuestion();
+            renderPalette();
+        }
+
+        // Navigate Questions
+        function navigateQuestion(step) {
+            const nextIdx = currentQuestionIndex + step;
+            if (nextIdx >= 0 && nextIdx < questions.length) {
+                currentQuestionIndex = nextIdx;
+                visitedQuestions[currentQuestionIndex] = true;
+                renderQuestion();
+                renderPalette();
+            }
+        }
+
+        // Jump to Question from Palette
+        function jumpToQuestion(index) {
+            currentQuestionIndex = index;
+            visitedQuestions[currentQuestionIndex] = true;
+            renderQuestion();
+            renderPalette();
+        }
+
+        // Render Question Navigation Palette
+        function renderPalette() {
+            const grid = document.getElementById('palette-grid');
+            grid.innerHTML = '';
+
+            questions.forEach((_, idx) => {
+                const isCurrent = idx === currentQuestionIndex;
+                const isAnswered = userAnswers[idx] !== null;
+                const isMarked = markedForReview[idx];
+                const isVisited = visitedQuestions[idx];
+
+                let bgClass = 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 border-slate-300 dark:border-slate-700'; // Unvisited default
+
+                if (isMarked) {
+                    bgClass = 'bg-purple-600 text-white border-purple-700 shadow-sm';
+                } else if (isAnswered) {
+                    bgClass = 'bg-emerald-500 text-white border-emerald-600 shadow-sm';
+                } else if (isVisited) {
+                    bgClass = 'bg-rose-500 text-white border-rose-600 shadow-sm';
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `w-full h-8 rounded-lg font-bold text-xs flex items-center justify-center border transition transform active:scale-95 ${bgClass} ${
+                    isCurrent ? 'ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-slate-900 font-extrabold' : ''
+                }`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+        }
+
+        // Submission Confirmation
+        function confirmSubmission() {
+            const answeredCount = userAnswers.filter(a => a !== null).length;
+            const unansweredCount = questions.length - answeredCount;
+            
+            const msg = currentLanguage === 'hi' 
+                ? `क्या आप निश्चित रूप से परीक्षा जमा करना चाहते हैं?\n\nउत्तर दिए गए प्रश्न: ${answeredCount}\nअनुत्तरित प्रश्न: ${unansweredCount}`
+                : `Are you sure you want to submit the examination?\n\nAnswered Questions: ${answeredCount}\nUnanswered Questions: ${unansweredCount}`;
+
+            if (window.confirm(msg)) {
+                submitExam();
+            }
+        }
+
+        function autoSubmitTest() {
+            alert(currentLanguage === 'hi' ? "समय समाप्त हो गया है! आपकी परीक्षा स्वतः जमा की जा रही है।" : "Time is up! Your test is being automatically submitted.");
+            submitExam();
+        }
+
+        // Final Exam Submission Execution
+        function submitExam() {
+            isSubmitted = true;
+            clearInterval(timerInterval);
+
+            document.getElementById('exam-screen').classList.add('hidden');
+            document.getElementById('timer-badge').classList.add('hidden');
+            document.getElementById('result-screen').classList.remove('hidden');
+
+            renderResultDashboard();
+        }
+
+        // Render Comprehensive Result Dashboard
+        function renderResultDashboard() {
+            let correctCount = 0;
+            let wrongCount = 0;
+            let unansweredCount = 0;
+
+            userAnswers.forEach((ans, idx) => {
+                if (ans === null) {
+                    unansweredCount++;
+                } else if (ans === questions[idx].correct) {
+                    correctCount++;
+                } else {
+                    wrongCount++;
+                }
+            });
+
+            const totalScore = correctCount; // 1 mark each
+            const percentage = ((totalScore / questions.length) * 100).toFixed(1);
+            const attempted = correctCount + wrongCount;
+            const accuracy = attempted > 0 ? ((correctCount / attempted) * 100).toFixed(1) : 0;
+
+            // Update Cards
+            document.getElementById('res-score').innerText = totalScore;
+            document.getElementById('res-percentage').innerText = `${percentage}%`;
+            document.getElementById('res-accuracy').innerText = `${accuracy}%`;
+            document.getElementById('res-attempted').innerText = attempted;
+            document.getElementById('res-correct').innerText = correctCount;
+            document.getElementById('res-wrong').innerText = wrongCount;
+            document.getElementById('res-unanswered').innerText = unansweredCount;
+
+            // Time Taken Formatting
+            const minsSpent = Math.floor(timeTakenSeconds / 60);
+            const secsSpent = timeTakenSeconds % 60;
+            document.getElementById('res-time-taken').innerText = `${minsSpent}m ${secsSpent}s`;
+
+            // Render Answers Review List
+            renderAnswerReview();
+        }
+
+        // Render Itemized Review with Answers & Explanations
+        function renderAnswerReview() {
+            const container = document.getElementById('review-container');
+            container.innerHTML = '';
+            const txt = uiText[currentLanguage];
+
+            questions.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                const isCorrect = userAns === q.correct;
+                const isUnattempted = userAns === null;
+
+                const qText = currentLanguage === 'hi' ? q.question_hi : q.question_en;
+                const optionsList = currentLanguage === 'hi' ? q.options_hi : q.options_en;
+                const expText = currentLanguage === 'hi' ? q.explanation_hi : q.explanation_en;
+                const optionPrefixes = ['A', 'B', 'C', 'D'];
+
+                let statusBadge = '';
+                if (isUnattempted) {
+                    statusBadge = `<span class="px-2.5 py-1 bg-amber-100 dark:bg-amber-950 text-amber-700 dark:text-amber-300 font-bold text-xs rounded-md">${txt.unattempted}</span>`;
+                } else if (isCorrect) {
+                    statusBadge = `<span class="px-2.5 py-1 bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300 font-bold text-xs rounded-md">${txt.correct} (+1.0)</span>`;
+                } else {
+                    statusBadge = `<span class="px-2.5 py-1 bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 font-bold text-xs rounded-md">${txt.incorrect} (0.0)</span>`;
+                }
+
+                const item = document.createElement('div');
+                item.className = 'bg-white dark:bg-slate-950 p-5 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm space-y-4';
+
+                let optionsHTML = '';
+                optionsList.forEach((opt, oIdx) => {
+                    let optStyle = 'border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 text-slate-700 dark:text-slate-300';
+                    let badge = '';
+
+                    if (oIdx === q.correct) {
+                        optStyle = 'border-emerald-500 bg-emerald-50/80 dark:bg-emerald-950/40 text-emerald-900 dark:text-emerald-200 font-semibold';
+                        badge = `<span class="ml-auto text-xs font-bold text-emerald-600 dark:text-emerald-400">✓ ${txt.correctAns}</span>`;
+                    } else if (oIdx === userAns && !isCorrect) {
+                        optStyle = 'border-rose-500 bg-rose-50/80 dark:bg-rose-950/40 text-rose-900 dark:text-rose-200 font-semibold';
+                        badge = `<span class="ml-auto text-xs font-bold text-rose-600 dark:text-rose-400">✗ ${txt.yourAns}</span>`;
+                    }
+
+                    optionsHTML += `
+                        <div class="p-3 rounded-xl border text-xs sm:text-sm flex items-center gap-2.5 ${optStyle}">
+                            <span class="font-bold shrink-0">${optionPrefixes[oIdx]}.</span>
+                            <span class="leading-relaxed">${opt}</span>
+                            ${badge}
+                        </div>
+                    `;
+                });
+
+                item.innerHTML = `
+                    <div class="flex items-start justify-between gap-4">
+                        <h4 class="font-bold text-sm sm:text-base text-slate-900 dark:text-white flex gap-2">
+                            <span class="text-blue-600 dark:text-blue-400 shrink-0">Q${idx + 1}.</span>
+                            <span>${qText}</span>
+                        </h4>
+                        ${statusBadge}
+                    </div>
+
+                    <div class="space-y-2">
+                        ${optionsHTML}
+                    </div>
+
+                    <div class="p-3.5 bg-blue-50/50 dark:bg-blue-950/30 rounded-xl border border-blue-100 dark:border-blue-900/50 text-xs sm:text-sm">
+                        <strong class="text-blue-800 dark:text-blue-300 font-bold block mb-1">${txt.explanation}</strong>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">${expText}</p>
+                    </div>
+                `;
+
+                container.appendChild(item);
+            });
+        }
+
+        // Reset Test Engine for Retaking
+        function resetTest() {
+            isSubmitted = false;
+            currentQuestionIndex = 0;
+            userAnswers = new Array(questions.length).fill(null);
+            markedForReview = new Array(questions.length).fill(false);
+            visitedQuestions = new Array(questions.length).fill(false);
+            examTimeSeconds = 50 * 60;
+            timeTakenSeconds = 0;
+
+            if (timerInterval) clearInterval(timerInterval);
+
+            document.getElementById('result-screen').classList.add('hidden');
+            document.getElementById('instructions-screen').classList.remove('hidden');
+            document.getElementById('time-display').innerText = '50:00';
+            updateStaticText();
+        }
+
+        // On Page Load Initialization
+        window.onload = function() {
+            initTheme();
+            updateStaticText();
+        };
+    </script>
+</body>
+</html>
