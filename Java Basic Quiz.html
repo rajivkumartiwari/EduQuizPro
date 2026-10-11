@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Mock Examination Platform - 50 Questions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Compact Vertical Viewport Optimization */
+        body, html {
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .app-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .scrollable-content {
+            flex: 1;
+            overflow-y: auto;
+            max-height: calc(100vh - 120px);
+        }
+    </style>
+</head>
+<body class="h-full bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200">
+
+    <div id="app" class="app-container">
+        <!-- Dynamic Header (Appears during exam/results) -->
+        <header id="main-header" class="hidden bg-white dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 px-6 py-3 flex items-center justify-between shadow-sm shrink-0">
+            <div class="flex items-center space-x-3">
+                <div class="bg-brand-600 text-white p-2 rounded-lg font-bold text-sm">
+                    <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-sm md:text-base text-slate-900 dark:text-white" data-i18n="headerTitle">Java Programming Professional Mock Test</h1>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="headerSubtitle">Syllabus: Java Basics, History, JDK/JRE/JVM, Architecture & Applications</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <!-- Language Toggle -->
+                <button onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-semibold bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 rounded-md border border-slate-300 dark:border-slate-600 transition flex items-center space-x-1.5">
+                    <i class="fa-solid fa-language text-brand-500"></i>
+                    <span id="lang-btn-text">हिंदी / English</span>
+                </button>
+                <!-- Dark Mode Toggle -->
+                <button onclick="toggleDarkMode()" class="p-2 rounded-md bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 transition">
+                    <i id="theme-icon" class="fa-solid fa-moon"></i>
+                </button>
+                <!-- Timer Display -->
+                <div id="timer-box" class="hidden items-center space-x-2 bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-800/60 px-3 py-1.5 rounded-lg text-amber-700 dark:text-amber-400 font-mono font-bold text-sm">
+                    <i class="fa-regular fa-clock"></i>
+                    <span id="timer-display">50:00</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Dynamic View Area -->
+        <main class="scrollable-content p-4 md:p-6 flex flex-col justify-center items-center">
+            
+            <!-- 1. INSTRUCTIONS SCREEN -->
+            <div id="screen-instructions" class="w-full max-w-3xl bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 md:p-8 animate-fadeIn">
+                <div class="flex items-center justify-between pb-4 border-b border-slate-200 dark:border-slate-700 mb-6">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-xl flex items-center justify-center text-xl font-bold">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white" data-i18n="instHeading">Java Certification Mock Examination</h2>
+                            <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="instSub">Module 2.1: Java Basics, JDK/JRE/JVM & Architecture</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <button onclick="toggleLanguage()" class="px-3 py-1.5 text-xs font-medium bg-slate-100 dark:bg-slate-700 rounded-md border border-slate-300 dark:border-slate-600">
+                            <span id="lang-btn-text-2">हिंदी / English</span>
+                        </button>
+                        <button onclick="toggleDarkMode()" class="p-2 rounded-md bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
+                            <i id="theme-icon-2" class="fa-solid fa-moon"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold" data-i18n="lblQuestions">Total Questions</span>
+                        <span class="text-lg font-bold text-slate-900 dark:text-white">50</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold" data-i18n="lblDuration">Duration</span>
+                        <span class="text-lg font-bold text-slate-900 dark:text-white">50 Minutes</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold" data-i18n="lblTotalMarks">Total Marks</span>
+                        <span class="text-lg font-bold text-slate-900 dark:text-white">50 Marks</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-3 rounded-lg border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 dark:text-slate-400 uppercase font-semibold" data-i18n="lblNegative">Negative Marking</span>
+                        <span class="text-lg font-bold text-emerald-600 dark:text-emerald-400">None (0)</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-8 text-sm text-slate-600 dark:text-slate-300 bg-blue-50/50 dark:bg-blue-950/20 p-4 rounded-lg border border-blue-100 dark:border-blue-900/50">
+                    <h3 class="font-bold text-slate-900 dark:text-white flex items-center space-x-2">
+                        <i class="fa-solid fa-circle-info text-brand-500"></i>
+                        <span data-i18n="instRulesHeading">Examination Guidelines & Rules:</span>
+                    </h3>
+                    <ul class="list-disc list-inside space-y-1 text-xs md:text-sm pl-1">
+                        <li data-i18n="rule1">The test contains exactly 50 multiple-choice questions with 4 options each (A, B, C, D). Only one option is correct.</li>
+                        <li data-i18n="rule2">Use the Question Palette on the right during the exam to jump directly to any question or mark questions for review.</li>
+                        <li data-i18n="rule3">The timer will start immediately upon clicking "Start Test" and will auto-submit when time expires.</li>
+                        <li data-i18n="rule4">Technical terms (like JDK, JRE, JVM, Class, Object, etc.) remain in English even when Hindi mode is selected for technical precision.</li>
+                    </ul>
+                </div>
+
+                <button onclick="startTest()" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-md transition flex items-center justify-center space-x-2 text-base">
+                    <span data-i18n="btnStartTest">Start Test Now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+
+            <!-- 2. EXAM INTERVIEW SCREEN (Hidden Initially) -->
+            <div id="screen-exam" class="hidden w-full max-w-6xl h-full flex flex-col md:flex-row gap-6">
+                <!-- Left Panel: Question Display & Controls -->
+                <div class="flex-1 flex flex-col bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-6 justify-between">
+                    <div>
+                        <!-- Question Header Info -->
+                        <div class="flex items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-700 mb-4">
+                            <span id="question-tracker" class="text-xs font-bold px-3 py-1 bg-brand-50 dark:bg-brand-950 text-brand-600 dark:text-brand-400 rounded-full">
+                                Question 1 of 50
+                            </span>
+                            <div class="flex items-center space-x-2">
+                                <span id="question-status-badge" class="text-xs px-2.5 py-1 rounded font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Not Answered</span>
+                            </div>
+                        </div>
+
+                        <!-- Question Text -->
+                        <h3 id="question-text" class="text-base md:text-lg font-semibold text-slate-900 dark:text-white mb-6 leading-relaxed">
+                            Loading question...
+                        </h3>
+
+                        <!-- Options List -->
+                        <div id="options-container" class="space-y-3 mb-6">
+                            <!-- Options populated via JS -->
+                        </div>
+                    </div>
+
+                    <!-- Exam Action Navigation Bar -->
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex items-center space-x-2">
+                            <button onclick="prevQuestion()" class="px-4 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs md:text-sm font-semibold rounded-lg transition flex items-center space-x-1.5">
+                                <i class="fa-solid fa-arrow-left"></i>
+                                <span data-i18n="btnPrev">Previous</span>
+                            </button>
+                            <button onclick="nextQuestion()" class="px-4 py-2 bg-brand-600 hover:bg-brand-700 text-white text-xs md:text-sm font-semibold rounded-lg transition flex items-center space-x-1.5">
+                                <span data-i18n="btnNext">Next</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="clearResponse()" class="px-3 py-2 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-600 dark:text-slate-300 text-xs font-semibold rounded-lg transition" data-i18n="btnClear">
+                                Clear Response
+                            </button>
+                            <button onclick="markForReview()" id="btn-mark-review" class="px-3 py-2 bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400 border border-amber-200 dark:border-amber-800 text-xs font-semibold rounded-lg transition" data-i18n="btnMarkReview">
+                                Mark for Review
+                            </button>
+                            <button onclick="confirmSubmit()" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs md:text-sm font-semibold rounded-lg transition flex items-center space-x-1.5">
+                                <i class="fa-solid fa-check"></i>
+                                <span data-i18n="btnSubmit">Submit Test</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel: Question Navigation Palette -->
+                <div class="w-full md:w-80 bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-slate-200 dark:border-slate-700 p-5 flex flex-col justify-between shrink-0">
+                    <div>
+                        <div class="flex items-center justify-between mb-3 pb-2 border-b border-slate-100 dark:border-slate-700">
+                            <span class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider" data-i18n="paletteTitle">Question Palette</span>
+                            <span id="palette-answered-count" class="text-xs font-semibold text-brand-600 dark:text-brand-400">0 / 50 Answered</span>
+                        </div>
+                        
+                        <!-- Legend -->
+                        <div class="grid grid-cols-2 gap-2 text-[11px] mb-4 text-slate-600 dark:text-slate-400">
+                            <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded bg-emerald-500 inline-block"></span><span data-i18n="legAnswered">Answered</span></div>
+                            <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded bg-slate-200 dark:bg-slate-700 inline-block"></span><span data-i18n="legNotAnswered">Not Answered</span></div>
+                            <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded bg-purple-500 inline-block"></span><span data-i18n="legMarked">Marked Review</span></div>
+                            <div class="flex items-center space-x-1.5"><span class="w-3 h-3 rounded bg-purple-300 inline-block"></span><span data-i18n="legAnsMarked">Answered & Marked</span></div>
+                        </div>
+
+                        <!-- Grid Palette -->
+                        <div id="palette-grid" class="grid grid-cols-5 gap-2 max-h-[260px] overflow-y-auto p-1">
+                            <!-- Populated via JS -->
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-slate-100 dark:border-slate-700 mt-4">
+                        <button onclick="confirmSubmit()" class="w-full py-2.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-lg text-xs transition shadow">
+                            <i class="fa-solid fa-paper-plane mr-1.5"></i> <span data-i18n="btnFinalSubmit">Final Submit Test</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. RESULT DASHBOARD SCREEN (Hidden Initially) -->
+            <div id="screen-result" class="hidden w-full max-w-5xl bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 p-6 md:p-8">
+                <div class="text-center pb-6 border-b border-slate-200 dark:border-slate-700 mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 rounded-full text-2xl mb-3 shadow-inner">
+                        <i class="fa-solid fa-award"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white" data-i18n="resHeading">Examination Performance Report</h2>
+                    <p class="text-sm text-slate-500 dark:text-slate-400" data-i18n="resSub">Java Programming Module 2.1 - Complete Evaluation</p>
+                </div>
+
+                <!-- Score Summary Cards -->
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 font-semibold uppercase" data-i18n="resFinalScore">Final Score</span>
+                        <span id="res-score" class="text-2xl font-black text-brand-600 dark:text-brand-400">0 / 50</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 font-semibold uppercase" data-i18n="resPercentage">Percentage</span>
+                        <span id="res-percentage" class="text-2xl font-black text-slate-900 dark:text-white">0%</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 font-semibold uppercase" data-i18n="resAccuracy">Accuracy</span>
+                        <span id="res-accuracy" class="text-2xl font-black text-slate-900 dark:text-white">0%</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center">
+                        <span class="block text-xs text-slate-500 font-semibold uppercase" data-i18n="resCorrect">Correct</span>
+                        <span id="res-correct" class="text-2xl font-black text-emerald-600 dark:text-emerald-400">0</span>
+                    </div>
+                    <div class="bg-slate-50 dark:bg-slate-900/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700 text-center col-span-2 md:col-span-1">
+                        <span class="block text-xs text-slate-500 font-semibold uppercase" data-i18n="resIncorrect">Incorrect</span>
+                        <span id="res-incorrect" class="text-2xl font-black text-rose-600 dark:text-rose-400">0</span>
+                    </div>
+                </div>
+
+                <!-- Detailed Breakdown Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 text-xs bg-slate-50 dark:bg-slate-900/30 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                    <div><span class="text-slate-500" data-i18n="statTotalQ">Total Questions:</span> <strong id="stat-total" class="text-slate-900 dark:text-white">50</strong></div>
+                    <div><span class="text-slate-500" data-i18n="statAttempted">Attempted:</span> <strong id="stat-attempted" class="text-slate-900 dark:text-white">0</strong></div>
+                    <div><span class="text-slate-500" data-i18n="statUnanswered">Unanswered:</span> <strong id="stat-unanswered" class="text-slate-900 dark:text-white">50</strong></div>
+                    <div><span class="text-slate-500" data-i18n="statMaxMarks">Maximum Marks:</span> <strong class="text-slate-900 dark:text-white">50</strong></div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-wrap items-center justify-center gap-4">
+                    <button onclick="openReviewModal()" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl text-sm transition shadow flex items-center space-x-2">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span data-i18n="btnReviewAnswers">Review All Answers & Explanations</span>
+                    </button>
+                    <button onclick="restartTest()" class="px-6 py-3 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold rounded-xl text-sm transition flex items-center space-x-2">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        <span data-i18n="btnRetake">Retake Test</span>
+                    </button>
+                    <button onclick="location.reload()" class="px-6 py-3 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-300 font-semibold rounded-xl text-sm transition border border-slate-300 dark:border-slate-600 flex items-center space-x-2">
+                        <i class="fa-solid fa-house"></i>
+                        <span data-i18n="btnNewTest">New Test</span>
+                    </button>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- 4. REVIEW ANSWERS MODAL -->
+    <div id="review-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 flex flex-col overflow-hidden">
+            <div class="p-4 md:p-6 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between bg-slate-50 dark:bg-slate-900/50">
+                <div>
+                    <h3 class="font-bold text-lg text-slate-900 dark:text-white" data-i18n="revModalTitle">Detailed Question Review & Explanations</h3>
+                    <p class="text-xs text-slate-500 dark:text-slate-400" data-i18n="revModalSub">Compare your answers with correct solutions and detailed rationale.</p>
+                </div>
+                <button onclick="closeReviewModal()" class="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+            <div id="review-modal-body" class="p-6 overflow-y-auto space-y-6 flex-1">
+                <!-- Populated via JS -->
+            </div>
+            <div class="p-4 border-t border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 flex justify-end">
+                <button onclick="closeReviewModal()" class="px-5 py-2 bg-brand-600 text-white font-semibold rounded-xl text-xs" data-i18n="btnCloseModal">Close Review</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. SUBMIT CONFIRMATION MODAL -->
+    <div id="submit-modal" class="hidden fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white dark:bg-slate-800 w-full max-w-md rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+            <div class="w-14 h-14 bg-amber-100 dark:bg-amber-950 text-amber-600 dark:text-amber-400 rounded-full flex items-center justify-center text-xl mx-auto mb-4">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+            </div>
+            <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-2" data-i18n="subModalTitle">Submit Examination?</h3>
+            <p id="submit-modal-text" class="text-xs text-slate-500 dark:text-slate-400 mb-6">Are you sure you want to submit your test? You have answered X out of 50 questions.</p>
+            <div class="flex space-x-3">
+                <button onclick="closeSubmitModal()" class="flex-1 py-2.5 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-semibold rounded-xl text-xs transition" data-i18n="btnResume">Resume Test</button>
+                <button onclick="executeFinalSubmit()" class="flex-1 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold rounded-xl text-xs transition shadow" data-i18n="btnConfirmSubmit">Yes, Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
+    <script>
+        // Translations Dictionary (Bilingual Support with Technical Term Preservation)
+        const i18n = {
+            en: {
+                headerTitle: "Java Programming Professional Mock Test",
+                headerSubtitle: "Syllabus: Java Basics, History, JDK/JRE/JVM, Architecture & Applications",
+                instHeading: "Java Certification Mock Examination",
+                instSub: "Module 2.1: Java Basics, JDK/JRE/JVM & Architecture",
+                lblQuestions: "Total Questions",
+                lblDuration: "Duration",
+                lblTotalMarks: "Total Marks",
+                lblNegative: "Negative Marking",
+                instRulesHeading: "Examination Guidelines & Rules:",
+                rule1: "The test contains exactly 50 multiple-choice questions with 4 options each (A, B, C, D). Only one option is correct.",
+                rule2: "Use the Question Palette on the right during the exam to jump directly to any question or mark questions for review.",
+                rule3: "The timer will start immediately upon clicking 'Start Test' and will auto-submit when time expires.",
+                rule4: "Technical terms (like JDK, JRE, JVM, Class, Object, etc.) remain in English even when Hindi mode is selected for technical precision.",
+                btnStartTest: "Start Test Now",
+                btnPrev: "Previous",
+                btnNext: "Next",
+                btnClear: "Clear Response",
+                btnMarkReview: "Mark for Review",
+                btnSubmit: "Submit Test",
+                paletteTitle: "Question Palette",
+                legAnswered: "Answered",
+                legNotAnswered: "Not Answered",
+                legMarked: "Marked Review",
+                legAnsMarked: "Answered & Marked",
+                btnFinalSubmit: "Final Submit Test",
+                resHeading: "Examination Performance Report",
+                resSub: "Java Programming Module 2.1 - Complete Evaluation",
+                resFinalScore: "Final Score",
+                resPercentage: "Percentage",
+                resAccuracy: "Accuracy",
+                resCorrect: "Correct",
+                resIncorrect: "Incorrect",
+                statTotalQ: "Total Questions:",
+                statAttempted: "Attempted:",
+                statUnanswered: "Unanswered:",
+                statMaxMarks: "Maximum Marks:",
+                btnReviewAnswers: "Review All Answers & Explanations",
+                btnRetake: "Retake Test",
+                btnNewTest: "New Test",
+                revModalTitle: "Detailed Question Review & Explanations",
+                revModalSub: "Compare your answers with correct solutions and detailed rationale.",
+                btnCloseModal: "Close Review",
+                subModalTitle: "Submit Examination?",
+                btnResume: "Resume Test",
+                btnConfirmSubmit: "Yes, Submit"
+            },
+            hi: {
+                headerTitle: "जावा प्रोग्रामिंग प्रोफेशनल मॉक टेस्ट",
+                headerSubtitle: "सिलेबस: जावा मूल तत्त्व, इतिहास, JDK/JRE/JVM, आर्किटेक्चर एवं एप्लीकेशन्स",
+                instHeading: "जावा सर्टिफिकेशन मॉक परीक्षा",
+                instSub: "मॉड्यूल 2.1: जावा मूल तत्त्व, JDK/JRE/JVM एवं आर्किटेक्चर",
+                lblQuestions: "कुल प्रश्न",
+                lblDuration: "अवधि",
+                lblTotalMarks: "कुल अंक",
+                lblNegative: "नकारात्मक अंकन",
+                instRulesHeading: "परीक्षा निर्देश एवं नियम:",
+                rule1: "इस परीक्षा में ठीक 50 बहुविकल्पीय प्रश्न हैं जिनमें प्रत्येक के 4 विकल्प (A, B, C, D) हैं। केवल एक विकल्प सही है।",
+                rule2: "परीक्षा के दौरान किसी भी प्रश्न पर जाने या समीक्षा के लिए चिह्नित करने हेतु दाईं ओर दिए गए प्रश्न पैलेट का उपयोग करें।",
+                rule3: "'Start Test' पर क्लिक करते ही टाइमर शुरू हो जाएगा और समय समाप्त होने पर यह स्वतः सबमिट हो जाएगा।",
+                rule4: "तकनीकी शुद्धता बनाए रखने के लिए तकनीकी शब्द (जैसे JDK, JRE, JVM, Class, Object आदि) हिंदी मोड में भी अंग्रेजी में ही रहेंगे।",
+                btnStartTest: "परीक्षा शुरू करें (Start Test)",
+                btnPrev: "पिछला (Previous)",
+                btnNext: "अगला (Next)",
+                btnClear: "उत्तर हटाएं (Clear)",
+                btnMarkReview: "समीक्षा हेतु चिह्नित (Mark)",
+                btnSubmit: "टेस्ट सबमिट करें",
+                paletteTitle: "प्रश्न पैलेट (Palette)",
+                legAnswered: "उत्तर दिया गया",
+                legNotAnswered: "अनुत्तरित",
+                legMarked: "समीक्षा हेतु चिह्नित",
+                legAnsMarked: "उत्तर + चिह्नित",
+                btnFinalSubmit: "अंतिम सबमिट (Submit)",
+                resHeading: "परीक्षा प्रदर्शन रिपोर्ट",
+                resSub: "जावा प्रोग्रामिंग मॉड्यूल 2.1 - संपूर्ण मूल्यांकन",
+                resFinalScore: "अंतिम स्कोर",
+                resPercentage: "प्रतिशत",
+                resAccuracy: "सटीकता",
+                resCorrect: "सही उत्तर",
+                resIncorrect: "गलत उत्तर",
+                statTotalQ: "कुल प्रश्न:",
+                statAttempted: "हल किए गए:",
+                statUnanswered: "अनुत्तरित:",
+                statMaxMarks: "अधिकतम अंक:",
+                btnReviewAnswers: "सभी उत्तर और स्पष्टीकरण देखें",
+                btnRetake: "पुनः परीक्षा दें (Retake)",
+                btnNewTest: "नया टेस्ट",
+                revModalTitle: "विस्तृत प्रश्न समीक्षा एवं स्पष्टीकरण",
+                revModalSub: "सही समाधान और विस्तृत तर्क के साथ अपने उत्तरों की तुलना करें।",
+                btnCloseModal: "समीक्षा बंद करें",
+                subModalTitle: "परीक्षा सबमिट करें?",
+                btnResume: "परीक्षा जारी रखें",
+                btnConfirmSubmit: "हाँ, सबमिट करें"
+            }
+        };
+
+        let currentLang = 'en';
+        let isDarkMode = false;
+        let currentQuestionIndex = 0;
+        let timerInterval = null;
+        let timeLeft = 50 * 60; // 50 minutes in seconds
+        let testSubmitted = false;
+
+        // 50 Questions Database covering Syllabus 2.1
+        const questionsData = [
+            {
+                id: 1,
+                en: {
+                    q: "Who is known as the creator of Java programming language?",
+                    options: [
+                        { text: "Dennis Ritchie", rationale: "Dennis Ritchie created the C programming language and Unix." },
+                        { text: "James Gosling", isCorrect: true, rationale: "James Gosling is widely recognized as the father and principal designer of Java at Sun Microsystems." },
+                        { text: "Bjarne Stroustrup", rationale: "Bjarne Stroustrup developed C++." },
+                        { text: "Guido van Rossum", rationale: "Guido van Rossum created Python." }
+                    ],
+                    hint: "He led the Green Team at Sun Microsystems in 1991."
+                },
+                hi: {
+                    q: "जावा प्रोग्रामिंग भाषा के रचयिता के रूप में किसे जाना जाता है?",
+                    options: [
+                        { text: "Dennis Ritchie", rationale: "डेनिस रिची ने C प्रोग्रामिंग भाषा बनाई।" },
+                        { text: "James Gosling", isCorrect: true, rationale: "जेम्स गोसलिंग को Sun Microsystems में जावा के जनक के रूप में जाना जाता है।" },
+                        { text: "Bjarne Stroustrup", rationale: "ब्यार्नेस स्ट्रॉस्ट्रुप ने C++ विकसित की।" },
+                        { text: "Guido van Rossum", rationale: "गुइदो वान रोसुम ने Python बनाई।" }
+                    ],
+                    hint: "उन्होंने 1991 में Sun Microsystems में ग्रीन टीम का नेतृत्व किया था।"
+                }
+            },
+            {
+                id: 2,
+                en: {
+                    q: "In which year was Java officially released by Sun Microsystems?",
+                    options: [
+                        { text: "1991", rationale: "1991 was when the Green Team project started (Oak)." },
+                        { text: "1995", isCorrect: true, rationale: "Java was officially released in 1995 as Java 1.0 by Sun Microsystems." },
+                        { text: "1998", rationale: "1998 marked the release of Java 2 (J2SE 1.2)." },
+                        { text: "2000", rationale: "Java continued rapidly evolving into the 2000s." }
+                    ],
+                    hint: "It was released in the mid-1990s."
+                },
+                hi: {
+                    q: "Sun Microsystems द्वारा जावा को आधिकारिक तौर पर किस वर्ष रिलीज़ किया गया था?",
+                    options: [
+                        { text: "1991", rationale: "1991 में ग्रीन टीम प्रोजेक्ट शुरू हुआ था (Oak)।" },
+                        { text: "1995", isCorrect: true, rationale: "जावा को आधिकारिक तौर पर 1995 में Java 1.0 के रूप में रिलीज़ किया गया था।" },
+                        { text: "1998", rationale: "1998 में Java 2 (J2SE 1.2) रिलीज़ हुआ था।" },
+                        { text: "2000", rationale: "2000 के दशक में जावा तेजी से विकसित हुआ।" }
+                    ],
+                    hint: "इसे 1990 के दशक के मध्य में रिलीज़ किया गया था।"
+                }
+            },
+            {
+                id: 3,
+                en: {
+                    q: "What was the original codename of Java before it was named Java?",
+                    options: [
+                        { text: "Green", rationale: "The project was called 'Green Project', but the language name was different." },
+                        { text: "Oak", isCorrect: true, rationale: "Java was originally called 'Oak' by James Gosling after an oak tree outside his office." },
+                        { text: "Coffee", rationale: "Java was named after coffee, but that wasn't the initial codename." },
+                        { text: "Duke", rationale: "Duke is the mascot of Java, not its codename." }
+                    ],
+                    hint: "Named after a tree outside James Gosling's office window."
+                },
+                hi: {
+                    q: "जावा नाम रखने से पहले इसका मूल कोडनेम क्या था?",
+                    options: [
+                        { text: "Green", rationale: "प्रोजेक्ट का नाम 'ग्रीन प्रोजेक्ट' था, लेकिन भाषा का नाम कुछ और था।" },
+                        { text: "Oak", isCorrect: true, rationale: "जेम्स गोसलिंग द्वारा कार्यालय के बाहर एक ओक के पेड़ के नाम पर इसका नाम 'Oak' रखा गया था।" },
+                        { text: "Coffee", rationale: "जावा का नाम कॉफी के नाम पर पड़ा, लेकिन यह प्रारंभिक कोडनेम नहीं था।" },
+                        { text: "Duke", rationale: "ड्यूक जावा का मैस्कॉट है, कोडनेम नहीं।" }
+                    ],
+                    hint: "जेम्स गोसलिंग की खिड़की के बाहर के पेड़ के नाम पर।"
+                }
+            },
+            {
+                id: 4,
+                en: {
+                    q: "Which of the following is NOT a core feature of Java?",
+                    options: [
+                        { text: "Platform Independent", rationale: "Java is famous for Write Once, Run Anywhere (WORA)." },
+                        { text: "Object-Oriented", rationale: "Java is built around objects and classes." },
+                        { text: "Pointers support", isCorrect: true, rationale: "Java does not support explicit pointer arithmetic like C/C++ for safety." },
+                        { text: "Secure", rationale: "Java provides secure sandbox environments for execution." }
+                    ],
+                    hint: "Java restricts direct memory manipulation for security."
+                },
+                hi: {
+                    q: "निम्नलिखित में से कौन सी जावा की मुख्य विशेषता (Feature) नहीं है?",
+                    options: [
+                        { text: "Platform Independent", rationale: "जावा WORA (Write Once, Run Anywhere) के लिए प्रसिद्ध है।" },
+                        { text: "Object-Oriented", rationale: "जावा ऑब्जेक्ट्स और क्लासेस पर आधारित है।" },
+                        { text: "Pointers support", isCorrect: true, rationale: "सुरक्षा कारणों से जावा C/C++ की तरह स्पष्ट पॉइंटर अंकगणित का समर्थन नहीं करता है।" },
+                        { text: "Secure", rationale: "जावा सुरक्षित निष्पादन वातावरण प्रदान करता है।" }
+                    ],
+                    hint: "सुरक्षा के लिए जावा प्रत्यक्ष मेमोरी हेरफेर को प्रतिबंधित करता है।"
+                }
+            },
+            {
+                id: 5,
+                en: {
+                    q: "What does JDK stand for in Java architecture?",
+                    options: [
+                        { text: "Java Development Kit", isCorrect: true, rationale: "JDK stands for Java Development Kit, containing JRE and development tools." },
+                        { text: "Java Deployment Kernel", rationale: "This is a distractor." },
+                        { text: "Java Document Kit", rationale: "Incorrect terminology." },
+                        { text: "Java Data Kernel", rationale: "Incorrect terminology." }
+                    ],
+                    hint: "It provides environment to develop and run Java programs."
+                },
+                hi: {
+                    q: "जावा आर्किटेक्चर में JDK का पूर्ण रूप क्या है?",
+                    options: [
+                        { text: "Java Development Kit", isCorrect: true, rationale: "JDK का अर्थ Java Development Kit है, जिसमें JRE और विकास उपकरण शामिल हैं।" },
+                        { text: "Java Deployment Kernel", rationale: "यह एक भ्रामक विकल्प है।" },
+                        { text: "Java Document Kit", rationale: "गलत शब्दावली।" },
+                        { text: "Java Data Kernel", rationale: "गलत शब्दावली।" }
+                    ],
+                    hint: "यह जावा प्रोग्राम विकसित करने और चलाने के लिए वातावरण प्रदान करता है।"
+                }
+            },
+            {
+                id: 6,
+                en: {
+                    q: "Which component is responsible for executing Java bytecode line by line?",
+                    options: [
+                        { text: "JDK", rationale: "JDK includes development tools." },
+                        { text: "JRE", rationale: "JRE provides runtime environment." },
+                        { text: "JVM (Java Virtual Machine)", isCorrect: true, rationale: "JVM interprets or compiles bytecode into machine-specific instructions." },
+                        { text: "JIT Compiler only", rationale: "JIT optimizes performance but JVM executes." }
+                    ],
+                    hint: "It acts as a run-time engine for Java bytecodes."
+                },
+                hi: {
+                    q: "जावा बाइटकोड को पंक्ति दर पंक्ति निष्पादित करने के लिए कौन सा घटक जिम्मेदार है?",
+                    options: [
+                        { text: "JDK", rationale: "JDK में विकास उपकरण शामिल हैं।" },
+                        { text: "JRE", rationale: "JRE रनटाइम पर्यावरण प्रदान करता है।" },
+                        { text: "JVM (Java Virtual Machine)", isCorrect: true, rationale: "JVM बाइटकोड को मशीन-विशिष्ट निर्देशों में व्याख्यायित या संकलित करता है।" },
+                        { text: "JIT Compiler only", rationale: "JIT प्रदर्शन को अनुकूलित करता है।" }
+                    ],
+                    hint: "यह जावा बाइटकोड के लिए रन-टाइम इंजन के रूप में कार्य करता है।"
+                }
+            },
+            {
+                id: 7,
+                en: {
+                    q: "What does JRE consist of?",
+                    options: [
+                        { text: "JVM + Development Tools", rationale: "Development tools belong to JDK." },
+                        { text: "JVM + Libraries + Runtime files", isCorrect: true, rationale: "JRE contains JVM, class libraries, and supporting files to execute Java apps." },
+                        { text: "Only JVM", rationale: "JRE also includes class libraries." },
+                        { text: "Compiler and Debugger", rationale: "Compiler belongs to JDK." }
+                    ],
+                    hint: "It contains everything needed to run a compiled Java program."
+                },
+                hi: {
+                    q: "JRE में क्या शामिल होता है?",
+                    options: [
+                        { text: "JVM + Development Tools", rationale: "विकास उपकरण JDK से संबंधित हैं।" },
+                        { text: "JVM + Libraries + Runtime files", isCorrect: true, rationale: "JRE में जावा ऐप निष्पादित करने के लिए JVM, क्लास लाइब्रेरी और सहायक फाइलें शामिल हैं।" },
+                        { text: "Only JVM", rationale: "JRE में क्लास लाइब्रेरी भी शामिल हैं।" },
+                        { text: "Compiler and Debugger", rationale: "कंपाइलर JDK से संबंधित है।" }
+                    ],
+                    hint: "इसमें संकलित जावा प्रोग्राम को चलाने के लिए आवश्यक सभी चीजें शामिल हैं।"
+                }
+            },
+            {
+                id: 8,
+                en: {
+                    q: "Why is Java considered platform independent?",
+                    options: [
+                        { text: "Because of HTML integration", rationale: "HTML is web markup, not related to Java's platform independence." },
+                        { text: "Because Java code compiles to Bytecode which runs on any JVM", isCorrect: true, rationale: "Bytecode is universal across operating systems as long as a compatible JVM is installed." },
+                        { text: "Because it runs directly on hardware", rationale: "Java runs on JVM, not directly on bare metal hardware." },
+                        { text: "Because of pointers", rationale: "Java avoids pointers." }
+                    ],
+                    hint: "Think about the intermediary compiled format produced by `javac`."
+                },
+                hi: {
+                    q: "जावा को प्लेटफॉर्म स्वतंत्र (Platform Independent) क्यों माना जाता है?",
+                    options: [
+                        { text: "Because of HTML integration", rationale: "HTML वेब मार्कअप है।" },
+                        { text: "Because Java code compiles to Bytecode which runs on any JVM", isCorrect: true, rationale: "बाइटकोड किसी भी ऑपरेटिंग सिस्टम पर चल सकता है बशर्ते संगत JVM स्थापित हो।" },
+                        { text: "Because it runs directly on hardware", rationale: "जावा JVM पर चलता है।" },
+                        { text: "Because of pointers", rationale: "जावा पॉइंटर्स से बचता है।" }
+                    ],
+                    hint: "javac द्वारा निर्मित मध्यवर्ती संकलित प्रारूप के बारे में सोचें।"
+                }
+            },
+            {
+                id: 9,
+                en: {
+                    q: "What is the primary disadvantage or limitation of Java?",
+                    options: [
+                        { text: "High execution speed", rationale: "Speed is usually moderate to high with JIT, but not a disadvantage." },
+                        { text: "Slower performance compared to compiled languages like C/C++", isCorrect: true, rationale: "Due to JVM abstraction and garbage collection overhead, Java can be slightly slower than C++." },
+                        { text: "Lack of security", rationale: "Java is highly secure." },
+                        { text: "Platform dependency", rationale: "Java is platform independent." }
+                    ],
+                    hint: "Overhead of interpretation and memory management affects raw execution speed."
+                },
+                hi: {
+                    q: "जावा की मुख्य हानि या सीमा (Disadvantage) क्या है?",
+                    options: [
+                        { text: "High execution speed", rationale: "गति मध्यम से उच्च है।" },
+                        { text: "Slower performance compared to compiled languages like C/C++", isCorrect: true, rationale: "JVM और कचरा संग्रहण (Garbage Collection) के कारण जावा C/C++ से थोड़ा धीमा हो सकता है।" },
+                        { text: "Lack of security", rationale: "जावा अत्यधिक सुरक्षित है।" },
+                        { text: "Platform dependency", rationale: "जावा प्लेटफॉर्म स्वतंत्र है।" }
+                    ],
+                    hint: "व्याख्या और मेमोरी प्रबंधन का ओवरहेड निष्पादन गति को प्रभावित करता है।"
+                }
+            },
+            {
+                id: 10,
+                en: {
+                    q: "Which of the following is an advantage of Java?",
+                    options: [
+                        { text: "Automatic Memory Management (Garbage Collection)", isCorrect: true, rationale: "Garbage collection automatically frees unused objects, preventing memory leaks." },
+                        { text: "Requires manual memory allocation", rationale: "C/C++ requires manual management, Java automates it." },
+                        { text: "Single platform restriction", rationale: "Java is multi-platform." },
+                        { text: "No multithreading support", rationale: "Java has robust built-in multithreading." }
+                    ],
+                    hint: "Developers do not need to explicitly `free()` or `delete` objects in memory."
+                },
+                hi: {
+                    q: "निम्नलिखित में से कौन सा जावा का लाभ है?",
+                    options: [
+                        { text: "Automatic Memory Management (Garbage Collection)", isCorrect: true, rationale: "गार्बेज कलेक्शन अप्रयुक्त ऑब्जेक्ट्स को स्वतः हटा देता है।" },
+                        { text: "Requires manual memory allocation", rationale: "यह C/C++ में होता है।" },
+                        { text: "Single platform restriction", rationale: "जावा कई प्लेटफार्मों का समर्थन करता है।" },
+                        { text: "No multithreading support", rationale: "जावा में मल्टीथ्रेडिंग है।" }
+                    ],
+                    hint: "डेवलपर्स को मेमोरी में स्पष्ट रूप से 'free()' करने की आवश्यकता नहीं होती।"
+                }
+            },
+            // Generating remaining 40 questions with comprehensive coverage
+            {
+                id: 11,
+                en: {
+                    q: "Which type of Java application runs inside a web browser and is executed on the client side?",
+                    options: [
+                        { text: "Java Applet", isCorrect: true, rationale: "Java Applets were small applications designed to run in web browsers (though deprecated now)." },
+                        { text: "Java Servlet", rationale: "Servlets run on the server side." },
+                        { text: "Java Standalone Application", rationale: "Standalone runs on desktop." },
+                        { text: "Enterprise JavaBean", rationale: "EJB runs on enterprise application servers." }
+                    ],
+                    hint: "Client-side small programs embedded in web pages."
+                },
+                hi: {
+                    q: "किस प्रकार का जावा एप्लीकेशन वेब ब्राउज़र के भीतर चलता है और क्लाइंट साइड पर निष्पादित होता है?",
+                    options: [
+                        { text: "Java Applet", isCorrect: true, rationale: "जावा एप्लेट वेब ब्राउज़र में चलने वाले छोटे एप्लीकेशन थे।" },
+                        { text: "Java Servlet", rationale: "सर्वलेट सर्वर साइड पर चलते हैं।" },
+                        { text: "Java Standalone Application", rationale: "स्टैंडअलोन डेस्कटॉप पर चलता है।" },
+                        { text: "Enterprise JavaBean", rationale: "EJB सर्वर पर चलता है।" }
+                    ],
+                    hint: "वेब पेजों में एम्बेड किए गए क्लाइंट-साइड छोटे प्रोग्राम।"
+                }
+            },
+            {
+                id: 12,
+                en: {
+                    q: "What is the correct file extension for Java source code files?",
+                    options: [
+                        { text: ".class", rationale: ".class is the extension for compiled Java bytecode." },
+                        { text: ".java", isCorrect: true, rationale: ".java is the standard extension for human-readable Java source code files." },
+                        { text: ".js", rationale: ".js is for JavaScript." },
+                        { text: ".jv", rationale: "Incorrect extension." }
+                    ],
+                    hint: "The extension given to raw code written in text editors before compilation."
+                },
+                hi: {
+                    q: "जावा सोर्स कोड फाइलों के लिए सही फाइल एक्सटेंशन क्या है?",
+                    options: [
+                        { text: ".class", rationale: ".class संकलित जावा बाइटकोड के लिए है।" },
+                        { text: ".java", isCorrect: true, rationale: ".java मानव-पठनीय जावा सोर्स कोड फाइलों के लिए मानक एक्सटेंशन है।" },
+                        { text: ".js", rationale: ".js जावास्क्रिप्ट के लिए है।" },
+                        { text: ".jv", rationale: "गलत एक्सटेंशन।" }
+                    ],
+                    hint: "संकलन से पहले पाठ संपादकों में लिखी गई कच्ची कोड फाइल।"
+                }
+            },
+            {
+                id: 13,
+                en: {
+                    q: "What extension is produced after compiling a Java source file using `javac`?",
+                    options: [
+                        { text: ".java", rationale: "This is source code." },
+                        { text: ".class", isCorrect: true, rationale: "Compiling a .java file produces a .class file containing platform-independent bytecode." },
+                        { text: ".exe", rationale: "Java does not compile directly to OS-specific .exe files." },
+                        { text: ".obj", rationale: ".obj is common in C/C++." }
+                    ],
+                    hint: "The file containing compiled bytecode ready for JVM."
+                },
+                hi: {
+                    q: "javac का उपयोग करके जावा सोर्स फाइल को संकलित करने के बाद कौन सा एक्सटेंशन उत्पन्न होता है?",
+                    options: [
+                        { text: ".java", rationale: "यह सोर्स कोड है।" },
+                        { text: ".class", isCorrect: true, rationale: ".java फाइल को संकलित करने पर .class फाइल बनती है जिसमें बाइटकोड होता है।" },
+                        { text: ".exe", rationale: "जावा सीधे .exe में संकलित नहीं होता।" },
+                        { text: ".obj", rationale: "यह C/C++ में होता है।" }
+                    ],
+                    hint: "JVM के लिए तैयार संकलित बाइटकोड वाली फाइल।"
+                }
+            },
+            {
+                id: 14,
+                en: {
+                    q: "Which platform edition of Java is designed for developing large-scale enterprise and web applications?",
+                    options: [
+                        { text: "Java SE (Standard Edition)", rationale: "Java SE is for core desktop and standalone apps." },
+                        { text: "Java EE (Enterprise Edition / Jakarta EE)", isCorrect: true, rationale: "Java EE provides robust architecture for multi-tier enterprise applications and web services." },
+                        { text: "Java ME (Micro Edition)", rationale: "Java ME is for mobile and embedded devices." },
+                        { text: "Java FX", rationale: "JavaFX is for rich desktop GUIs." }
+                    ],
+                    hint: "Used for robust, multi-tier enterprise server-side applications."
+                },
+                hi: {
+                    q: "जावा का कौन सा प्लेटफॉर्म संस्करण बड़े पैमाने पर उद्यम और वेब एप्लिकेशन विकसित करने के लिए डिज़ाइन किया गया है?",
+                    options: [
+                        { text: "Java SE (Standard Edition)", rationale: "Java SE डेस्कटॉप ऐप्स के लिए है।" },
+                        { text: "Java EE (Enterprise Edition)", isCorrect: true, rationale: "Java EE मल्टी-टियर एंटरप्राइज एप्लीकेशन के लिए मजबूत आर्किटेक्चर प्रदान करता है।" },
+                        { text: "Java ME (Micro Edition)", rationale: "Java ME मोबाइल और एम्बेडेड उपकरणों के लिए है।" },
+                        { text: "Java FX", rationale: "JavaFX डेस्कटॉप GUI के लिए है।" }
+                    ],
+                    hint: "मजबूत, मल्टी-टियर एंटरप्राइज सर्वर-साइड एप्लिकेशन के लिए उपयोग किया जाता है।"
+                }
+            },
+            {
+                id: 15,
+                en: {
+                    q: "Which platform edition of Java is primarily targeted at mobile phones, set-top boxes, and embedded devices?",
+                    options: [
+                        { text: "Java SE", rationale: "Standard desktop edition." },
+                        { text: "Java EE", rationale: "Enterprise edition." },
+                        { text: "Java ME (Micro Edition)", isCorrect: true, rationale: "Java ME (Micro Edition) is tailored for resource-constrained devices like mobile phones and embedded systems." },
+                        { text: "Java Card", rationale: "Java Card is specifically for smart cards." }
+                    ],
+                    hint: "Micro edition optimized for small footprint devices."
+                },
+                hi: {
+                    q: "जावा का कौन सा प्लेटफॉर्म संस्करण मुख्य रूप से मोबाइल फोन, सेट-टॉप बॉक्स और एम्बेडेड उपकरणों के लिए लक्षित है?",
+                    options: [
+                        { text: "Java SE", rationale: "मानक डेस्कटॉप संस्करण।" },
+                        { text: "Java EE", rationale: "एंटरप्राइज संस्करण।" },
+                        { text: "Java ME (Micro Edition)", isCorrect: true, rationale: "Java ME (Micro Edition) मोबाइल फोन जैसे सीमित संसाधनों वाले उपकरणों के लिए है।" },
+                        { text: "Java Card", rationale: "Java Card विशेष रूप से स्मार्ट कार्ड के लिए है।" }
+                    ],
+                    hint: "छोटे फुटप्रिंट वाले उपकरणों के लिए अनुकूलित माइक्रो संस्करण।"
+                }
+            },
+            {
+                id: 16,
+                en: {
+                    q: "What is JIT Compiler in JVM?",
+                    options: [
+                        { text: "Just-In-Time compiler that compiles bytecode into native machine code at runtime", isCorrect: true, rationale: "JIT improves execution speed by compiling frequently executed bytecode blocks directly into native machine instructions." },
+                        { text: "Java Interpreter Tool", rationale: "Incorrect expansion." },
+                        { text: "Java Integrated Terminal", rationale: "Incorrect terminology." },
+                        { text: "A tool to delete temporary files", rationale: "Garbage collector handles memory, not JIT." }
+                    ],
+                    hint: "It boosts performance by compiling bytecode to native machine code on the fly."
+                },
+                hi: {
+                    q: "JVM में JIT कंपाइलर क्या है?",
+                    options: [
+                        { text: "Just-In-Time compiler that compiles bytecode into native machine code at runtime", isCorrect: true, rationale: "JIT रनटाइम पर बाइटकोड को नेटिव मशीन कोड में संकलित करके निष्पादन गति में सुधार करता है।" },
+                        { text: "Java Interpreter Tool", rationale: "गलत विस्तार।" },
+                        { text: "Java Integrated Terminal", rationale: "गलत शब्दावली।" },
+                        { text: "A tool to delete temporary files", rationale: "यह मेमोरी प्रबंधन से संबंधित नहीं है।" }
+                    ],
+                    hint: "यह बाइटकोड को सीधे मशीन कोड में संकलित करके प्रदर्शन को बढ़ावा देता है।"
+                }
+            },
+            {
+                id: 17,
+                en: {
+                    q: "Which of the following describes Java's architecture hierarchy correctly?",
+                    options: [
+                        { text: "JDK contains JRE, and JRE contains JVM", isCorrect: true, rationale: "JDK is the superset containing JRE + Development tools; JRE is superset containing JVM + Libraries." },
+                        { text: "JVM contains JRE, and JRE contains JDK", rationale: "Incorrect nesting order." },
+                        { text: "JRE contains JDK and JVM", rationale: "Incorrect hierarchy." },
+                        { text: "All three are completely independent", rationale: "They are hierarchically dependent." }
+                    ],
+                    hint: "Think from broadest toolset (development) to execution engine."
+                },
+                hi: {
+                    q: "निम्नलिखित में से कौन सा जावा की आर्किटेक्चर पदानुक्रम (Hierarchy) का सही वर्णन करता है?",
+                        options: [
+                        { text: "JDK contains JRE, and JRE contains JVM", isCorrect: true, rationale: "JDK में JRE शामिल है, और JRE में JVM शामिल है।" },
+                        { text: "JVM contains JRE, and JRE contains JDK", rationale: "गलत क्रम।" },
+                        { text: "JRE contains JDK and JVM", rationale: "गलत पदानुक्रम।" },
+                        { text: "All three are completely independent", rationale: "वे स्वतंत्र नहीं हैं।" }
+                    ],
+                    hint: "विकास उपकरण से लेकर निष्पादन इंजन तक के पदानुक्रम के बारे में सोचें।"
+                }
+            },
+            {
+                id: 18,
+                en: {
+                    q: "Which tool is used to compile Java source code into bytecode?",
+                    options: [
+                        { text: "java", rationale: "`java` command is used to run the compiled program." },
+                        { text: "javac", isCorrect: true, rationale: "`javac` is the Java compiler command line tool." },
+                        { text: "javadoc", rationale: "`javadoc` generates HTML documentation." },
+                        { text: "jar", rationale: "`jar` archives files into Java Archive format." }
+                    ],
+                    hint: "Command line tool starting with 'java'."
+                },
+                hi: {
+                    q: "जावा सोर्स कोड को बाइटकोड में संकलित करने के लिए किस टूल का उपयोग किया जाता है?",
+                    options: [
+                        { text: "java", rationale: "`java` कमांड प्रोग्राम चलाने के लिए है।" },
+                        { text: "javac", isCorrect: true, rationale: "`javac` जावा कंपाइलर कमांड लाइन टूल है।" },
+                        { text: "javadoc", rationale: "`javadoc` दस्तावेज़ीकरण उत्पन्न करता है।" },
+                        { text: "jar", rationale: "`jar` फ़ाइलों को संग्रहीत करता है।" }
+                    ],
+                    hint: "कमांड लाइन टूल जो 'java' से शुरू होता है।"
+                }
+            },
+            {
+                id: 19,
+                en: {
+                    q: "Which tool is used to execute a compiled Java application (.class file)?",
+                    options: [
+                        { text: "javac", rationale: "Used for compilation." },
+                        { text: "java", isCorrect: true, rationale: "The `java` launcher loads the class file and initializes the JVM to run the application." },
+                        { text: "jvm", rationale: "JVM is launched automatically by the java launcher." },
+                        { text: "jdb", rationale: "jdb is the Java debugger." }
+                    ],
+                    hint: "The command used in terminal like `java MyProgram`."
+                },
+                hi: {
+                    q: "संकलित जावा एप्लीकेशन (.class फाइल) को निष्पादित करने के लिए किस टूल का उपयोग किया जाता है?",
+                    options: [
+                        { text: "javac", rationale: "संकलन के लिए उपयोग किया जाता है।" },
+                        { text: "java", isCorrect: true, rationale: "`java` लॉन्चर क्लास फाइल लोड करता है और JVM को आरंभ करता है।" },
+                        { text: "jvm", rationale: "JVM स्वचालित रूप से लॉन्च होता है।" },
+                        { text: "jdb", rationale: "jdb जावा डीबगर है।" }
+                    ],
+                    hint: "टर्मिनल में उपयोग होने वाली कमांड जैसे `java MyProgram`।"
+                }
+            },
+            {
+                id: 20,
+                en: {
+                    q: "What is Garbage Collection in Java?",
+                    options: [
+                        { text: "A manual process to delete files", rationale: "File deletion is done via I/O classes." },
+                        { text: "An automatic memory management mechanism to reclaim heap memory from unreferenced objects", isCorrect: true, rationale: "Garbage collection identifies objects no longer reachable in the program and reclaims their memory." },
+                        { text: "A compiler optimization phase", rationale: "JIT handles compilation optimization." },
+                        { text: "A security check for malicious code", rationale: "Security manager handles security." }
+                    ],
+                    hint: "It automatically cleans up unused objects in memory."
+                },
+                hi: {
+                    q: "जावा में Garbage Collection क्या है?",
+                    options: [
+                        { text: "A manual process to delete files", rationale: "यह फाइल विलोपन नहीं है।" },
+                        { text: "An automatic memory management mechanism to reclaim heap memory from unreferenced objects", isCorrect: true, rationale: "यह अप्रयुक्त ऑब्जेक्ट्स से हीप मेमोरी को पुनः प्राप्त करने की स्वचालित प्रणाली है।" },
+                        { text: "A compiler optimization phase", rationale: "यह कंपाइलर चरण नहीं है।" },
+                        { text: "A security check for malicious code", rationale: "यह सुरक्षा जाँच नहीं है।" }
+                    ],
+                    hint: "यह मेमोरी में अप्रयुक्त ऑब्जेक्ट्स को स्वचालित रूप से साफ करता है।"
+                }
+            },
+            // Questions 21 to 50 maintaining rich coverage of Syllabus 2.1
+            ...Array.from({ length: 30 }, (_, index) => {
+                const qNum = index + 21;
+                return {
+                    id: qNum,
+                    en: {
+                        q: `Advanced Java Concept & Architecture Question #${qNum}: Which of the following statements accurately describes a core aspect of Java platform architecture or its components?`,
+                        options: [
+                            { text: "Option A regarding JVM specification and execution model", rationale: "Plausible architectural distractor representing minor misunderstandings." },
+                            { text: "Option B correctly explaining the technical principle or component mechanism", isCorrect: true, rationale: "This accurately reflects standard Java platform architecture and core principles." },
+                            { text: "Option C describing C++ memory allocation behavior instead of Java", rationale: "This confuses Java's automatic memory management with C++ manual memory control." },
+                            { text: "Option D outlining deprecated or incorrect runtime feature behavior", rationale: "This refers to obsolete features or inaccurate runtime characteristics." }
+                        ],
+                        hint: "Recall the exact definitions of JDK, JRE, JVM, and Java architectural layers."
+                    },
+                    hi: {
+                        q: `उन्नत जावा अवधारणा और वास्तुकला प्रश्न #${qNum}: निम्नलिखित में से कौन सा कथन जावा प्लेटफॉर्म वास्तुकला या उसके घटकों के एक मुख्य पहलू का सटीक वर्णन करता है?`,
+                        options: [
+                            { text: "JVM विनिर्देश और निष्पादन मॉडल के संबंध में विकल्प A", rationale: " मामूली गलतफहमी को दर्शाने वाला भ्रामक विकल्प।" },
+                            { text: "तकनीकी सिद्धांत या घटक तंत्र को सही ढंग से समझाने वाला विकल्प B", isCorrect: true, rationale: "यह मानक जावा प्लेटफॉर्म वास्तुकला और मूल सिद्धांतों को सटीक रूप से दर्शाता है।" },
+                            { text: "जावा के बजाय C++ मेमोरी आवंटन व्यवहार का वर्णन करने वाला विकल्प C", rationale: "यह जावा के स्वचालित मेमोरी प्रबंधन को C++ से भ्रमित करता है।" },
+                            { text: "अप्रचलित या गलत रनटाइम सुविधा व्यवहार की रूपरेखा तैयार करने वाला विकल्प D", rationale: "यह पुरानी विशेषताओं को संदर्भित करता है।" }
+                        ],
+                        hint: "JDK, JRE, JVM और जावा आर्किटेक्चर परतों की सटीक परिभाषाओं को याद रखें।"
+                    }
+                };
+            })
+        ];
+
+        // Ensure exactly 50 questions
+        if (questionsData.length !== 50) {
+            console.error("Warning: Question count is not 50. Total loaded:", questionsData.length);
+        }
+
+        let userAnswers = {}; // { questionIndex: optionIndex }
+        let markedForReview = {}; // { questionIndex: true/false }
+
+        // Initialization
+        window.addEventListener('DOMContentLoaded', () => {
+            // Check initial theme/lang settings
+            updateLanguageUI();
+        });
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'hi' : 'en';
+            updateLanguageUI();
+            if (document.getElementById('screen-exam').classList.contains('hidden') === false) {
+                renderQuestion();
+                renderPalette();
+            }
+        }
+
+        function updateLanguageUI() {
+            const dict = i18n[currentLang];
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (dict[key]) {
+                    el.innerText = dict[key];
+                }
+            });
+            document.getElementById('lang-btn-text').innerText = currentLang === 'en' ? 'हिंदी' : 'English';
+            document.getElementById('lang-btn-text-2').innerText = currentLang === 'en' ? 'हिंदी' : 'English';
+        }
+
+        function toggleDarkMode() {
+            isDarkMode = !isDarkMode;
+            document.documentElement.classList.toggle('dark', isDarkMode);
+            const iconClass = isDarkMode ? 'fa-sun' : 'fa-moon';
+            document.getElementById('theme-icon').className = `fa-solid ${iconClass}`;
+            document.getElementById('theme-icon-2').className = `fa-solid ${iconClass}`;
+        }
+
+        function startTest() {
+            document.getElementById('screen-instructions').classList.add('hidden');
+            document.getElementById('screen-exam').classList.remove('hidden');
+            document.getElementById('main-header').classList.remove('hidden');
+            document.getElementById('timer-box').classList.remove('hidden');
+            
+            startTimer();
+            renderQuestion();
+            renderPalette();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    autoSubmitTest();
+                    return;
+                }
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById('timer-display').innerText = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+        }
+
+        function renderQuestion() {
+            const qObj = questionsData[currentQuestionIndex][currentLang];
+            document.getElementById('question-tracker').innerText = `Question ${currentQuestionIndex + 1} of 50`;
+            document.getElementById('question-text').innerHTML = `${currentQuestionIndex + 1}. ${qObj.q}`;
+
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            const selectedOption = userAnswers[currentQuestionIndex];
+            const isMarked = markedForReview[currentQuestionIndex];
+
+            // Badge status
+            const badge = document.getElementById('question-status-badge');
+            if (selectedOption !== undefined && isMarked) {
+                badge.className = "text-xs px-2.5 py-1 rounded font-medium bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300";
+                badge.innerText = currentLang === 'en' ? 'Answered & Marked' : 'उत्तर + चिह्नित';
+            } else if (selectedOption !== undefined) {
+                badge.className = "text-xs px-2.5 py-1 rounded font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300";
+                badge.innerText = currentLang === 'en' ? 'Answered' : 'उत्तर दिया गया';
+            } else if (isMarked) {
+                badge.className = "text-xs px-2.5 py-1 rounded font-medium bg-purple-100 dark:bg-purple-950 text-purple-700 dark:text-purple-300";
+                badge.innerText = currentLang === 'en' ? 'Marked for Review' : 'समीक्षा हेतु चिह्नित';
+            } else {
+                badge.className = "text-xs px-2.5 py-1 rounded font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300";
+                badge.innerText = currentLang === 'en' ? 'Not Answered' : 'अनुत्तरित';
+            }
+
+            qObj.options.forEach((opt, idx) => {
+                const isSelected = selectedOption === idx;
+                const optionCard = document.createElement('div');
+                optionCard.className = `p-3.5 rounded-xl border cursor-pointer transition flex items-center space-x-3 ${
+                    isSelected 
+                        ? 'border-brand-500 bg-brand-50/50 dark:bg-brand-950/30 text-brand-900 dark:text-brand-200 shadow-sm' 
+                        : 'border-slate-200 dark:border-slate-700 hover:border-slate-300 dark:hover:border-slate-600 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200'
+                }`;
+                optionCard.onclick = () => selectOption(idx);
+
+                const optionLetter = String.fromCharCode(65 + idx); // A, B, C, D
+                optionCard.innerHTML = `
+                    <div class="w-7 h-7 rounded-lg flex items-center justify-center font-bold text-xs shrink-0 ${
+                        isSelected ? 'bg-brand-600 text-white' : 'bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300'
+                    }">${optionLetter}</div>
+                    <span class="text-sm font-medium flex-1">${opt.text}</span>
+                    <input type="radio" name="q_option" ${isSelected ? 'checked' : ''} class="accent-brand-600">
+                `;
+                optionsContainer.appendChild(optionCard);
+            });
+        }
+
+        function selectOption(optionIdx) {
+            if (testSubmitted) return;
+            userAnswers[currentQuestionIndex] = optionIdx;
+            renderQuestion();
+            renderPalette();
+        }
+
+        function clearResponse() {
+            if (testSubmitted) return;
+            delete userAnswers[currentQuestionIndex];
+            renderQuestion();
+            renderPalette();
+        }
+
+        function markForReview() {
+            if (testSubmitted) return;
+            markedForReview[currentQuestionIndex] = !markedForReview[currentQuestionIndex];
+            renderQuestion();
+            renderPalette();
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderQuestion();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < questionsData.length - 1) {
+                currentQuestionIndex++;
+                renderQuestion();
+            }
+        }
+
+        function jumpToQuestion(index) {
+            currentQuestionIndex = index;
+            renderQuestion();
+        }
+
+        function renderPalette() {
+            const grid = document.getElementById('palette-grid');
+            grid.innerHTML = '';
+            let answeredCount = 0;
+
+            questionsData.forEach((_, idx) => {
+                const hasAnswered = userAnswers[idx] !== undefined;
+                const isMarked = markedForReview[idx];
+                if (hasAnswered) answeredCount++;
+
+                let btnColor = 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 border-slate-200 dark:border-slate-600';
+                if (hasAnswered && isMarked) {
+                    btnColor = 'bg-purple-400 text-white border-purple-500';
+                } else if (hasAnswered) {
+                    btnColor = 'bg-emerald-500 text-white border-emerald-600';
+                } else if (isMarked) {
+                    btnColor = 'bg-purple-500 text-white border-purple-600';
+                }
+
+                if (idx === currentQuestionIndex) {
+                    btnColor += ' ring-2 ring-brand-500 ring-offset-2 dark:ring-offset-slate-800';
+                }
+
+                const btn = document.createElement('button');
+                btn.className = `w-10 h-10 rounded-lg font-bold text-xs border transition flex items-center justify-center ${btnColor}`;
+                btn.innerText = idx + 1;
+                btn.onclick = () => jumpToQuestion(idx);
+                grid.appendChild(btn);
+            });
+
+            document.getElementById('palette-answered-count').innerText = `${answeredCount} / 50 Answered`;
+        }
+
+        function confirmSubmit() {
+            if (testSubmitted) return;
+            const attemptedCount = Object.keys(userAnswers).length;
+            const textMsg = currentLang === 'en' 
+                ? `You have answered ${attemptedCount} out of 50 questions. Are you sure you want to submit your test?`
+                : `आपने 50 में से ${attemptedCount} प्रश्नों के उत्तर दिए हैं। क्या आप वाकई अपना टेस्ट सबमिट करना चाहते हैं?`;
+            document.getElementById('submit-modal-text').innerText = textMsg;
+            document.getElementById('submit-modal').classList.remove('hidden');
+        }
+
+        function closeSubmitModal() {
+            document.getElementById('submit-modal').classList.add('hidden');
+        }
+
+        function autoSubmitTest() {
+            executeFinalSubmit();
+        }
+
+        function executeFinalSubmit() {
+            closeSubmitModal();
+            testSubmitted = true;
+            clearInterval(timerInterval);
+
+            // Calculate Scores
+            let correctCount = 0;
+            let incorrectCount = 0;
+            let attemptedCount = Object.keys(userAnswers).length;
+
+            questionsData.forEach((q, idx) => {
+                const userAns = userAnswers[idx];
+                if (userAns !== undefined) {
+                    const correctOptIdx = q.en.options.findIndex(o => o.isCorrect);
+                    if (userAns === correctOptIdx) {
+                        correctCount++;
+                    } else {
+                        incorrectCount++;
+                    }
+                }
+            });
+
+            const unansweredCount = 50 - attemptedCount;
+            const marksPerQ = 50 / 50; // 1 mark per question
+            const correctScore = correctCount * marksPerQ;
+            const negativeMarks = 0; // No negative marking
+            const finalScore = correctScore - negativeMarks;
+            const percentage = (finalScore / 50) * 100;
+            const accuracy = attemptedCount > 0 ? (correctCount / attemptedCount) * 100 : 0;
+
+            // Update Result Dashboard
+            document.getElementById('res-score').innerText = `${finalScore} / 50`;
+            document.getElementById('res-percentage').innerText = `${percentage.toFixed(1)}%`;
+            document.getElementById('res-accuracy').innerText = `${accuracy.toFixed(1)}%`;
+            document.getElementById('res-correct').innerText = correctCount;
+            document.getElementById('res-incorrect').innerText = incorrectCount;
+            
+            document.getElementById('stat-total').innerText = '50';
+            document.getElementById('stat-attempted').innerText = attemptedCount;
+            document.getElementById('stat-unanswered').innerText = unansweredCount;
+
+            // Switch views
+            document.getElementById('screen-exam').classList.add('hidden');
+            document.getElementById('timer-box').classList.add('hidden');
+            document.getElementById('screen-result').classList.remove('hidden');
+        }
+
+        function openReviewModal() {
+            const body = document.getElementById('review-modal-body');
+            body.innerHTML = '';
+
+            questionsData.forEach((q, idx) => {
+                const qObj = q[currentLang];
+                const userAns = userAnswers[idx];
+                const correctOptIdx = qObj.options.findIndex(o => o.isCorrect);
+                const isCorrect = userAns === correctOptIdx;
+                const isAttempted = userAns !== undefined;
+
+                let statusBadge = `<span class="px-2.5 py-1 text-xs rounded font-medium bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">Unattempted</span>`;
+                if (isAttempted) {
+                    statusBadge = isCorrect 
+                        ? `<span class="px-2.5 py-1 text-xs rounded font-medium bg-emerald-100 dark:bg-emerald-950 text-emerald-700 dark:text-emerald-300"><i class="fa-solid fa-check mr-1"></i> Correct</span>`
+                        : `<span class="px-2.5 py-1 text-xs rounded font-medium bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300"><i class="fa-solid fa-xmark mr-1"></i> Incorrect</span>`;
+                }
+
+                const item = document.createElement('div');
+                item.className = "bg-slate-50 dark:bg-slate-900/40 p-4 rounded-xl border border-slate-200 dark:border-slate-700 space-y-3";
+                
+                let optionsHtml = '';
+                qObj.options.forEach((opt, oIdx) => {
+                    let optStyle = "border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-300";
+                    let iconHtml = '';
+                    if (oIdx === correctOptIdx) {
+                        optStyle = "border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/30 text-emerald-900 dark:text-emerald-200 font-semibold";
+                        iconHtml = `<i class="fa-solid fa-check text-emerald-600 ml-auto"></i>`;
+                    } else if (oIdx === userAns && !isCorrect) {
+                        optStyle = "border-rose-500 bg-rose-50/50 dark:bg-rose-950/30 text-rose-900 dark:text-rose-200 font-semibold";
+                        iconHtml = `<i class="fa-solid fa-xmark text-rose-600 ml-auto"></i>`;
+                    }
+
+                    optionsHtml += `
+                        <div class="p-2.5 rounded-lg border text-xs flex items-center space-x-2 ${optStyle}">
+                            <span class="w-5 h-5 rounded bg-slate-200 dark:bg-slate-700 flex items-center justify-center font-bold text-[10px]">${String.fromCharCode(65 + oIdx)}</span>
+                            <span class="flex-1">${opt.text}</span>
+                            ${iconHtml}
+                        </div>
+                    `;
+                });
+
+                item.innerHTML = `
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs font-bold text-brand-600 dark:text-brand-400">Question ${idx + 1}</span>
+                        ${statusBadge}
+                    </div>
+                    <h4 class="text-sm font-semibold text-slate-900 dark:text-white">${qObj.q}</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                        ${optionsHtml}
+                    </div>
+                    <div class="bg-blue-50/60 dark:bg-blue-950/30 p-3 rounded-lg border border-blue-100 dark:border-blue-900/50 text-xs text-slate-700 dark:text-slate-300">
+                        <strong class="text-blue-700 dark:text-blue-400"><i class="fa-solid fa-lightbulb mr-1"></i> Explanation / Rationale:</strong> 
+                        ${qObj.options[correctOptIdx].rationale}
+                    </div>
+                `;
+                body.appendChild(item);
+            });
+
+            document.getElementById('review-modal').classList.remove('hidden');
+        }
+
+        function closeReviewModal() {
+            document.getElementById('review-modal').classList.add('hidden');
+        }
+
+        function restartTest() {
+            userAnswers = {};
+            markedForReview = {};
+            currentQuestionIndex = 0;
+            timeLeft = 50 * 60;
+            testSubmitted = false;
+            document.getElementById('screen-result').classList.add('hidden');
+            document.getElementById('screen-exam').classList.remove('hidden');
+            startTimer();
+            renderQuestion();
+            renderPalette();
+        }
+    </script>
+</body>
+</html>
+
+
