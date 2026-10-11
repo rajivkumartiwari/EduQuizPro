@@ -1,0 +1,2355 @@
+{
+  "title": "Java Class 10 & 12 Complete Chapter-wise Question Bank 2026-27",
+  "questions": [
+    {
+      "id": 1,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOP में डाटा व फंक्शन के सम्मिलित रूप को क्या कहते हैं?",
+      "options": [],
+      "answer": "क्लास (Class) या ऑब्जेक्ट (Object): डेटा और फंक्शन के सम्मिलित रूप को प्रोग्रामिंग के संदर्भ में 'क्लास' कहा जाता है और इसके रन-टाइम स्वरूप को 'ऑब्जेक्ट' कहते हैं। (अक्सर इसे इनकैप्सुलेशन भी कहा जाता है)"
+    },
+    {
+      "id": 2,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "प्रोसीजर ओरियेण्टेड भाषाओं के दो उदाहरण दीजिए।",
+      "options": [],
+      "answer": "C, FORTRAN, Pascal और BASIC"
+    },
+    {
+      "id": 3,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्लास में वेरिएबल कितने प्रकार के हो सकते हैं?",
+      "options": [],
+      "answer": "क्लास में वेरिएबल तीन प्रकार के होते हैं- लोकल वेरिएबल (Local), इन्स्टांस वेरिएबल (Instance) और क्लास/स्टेटिक वेरिएबल (Class/Static)।"
+    },
+    {
+      "id": 4,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "डाटा हाइडिंग (data hiding) का अर्थ बताइए।",
+      "options": [],
+      "answer": "डाटा हाइडिंग (Data Hiding) वह तकनीक है जिससे क्लास के डेटा को बाहरी दुनिया या अनधिकृत एक्सेस से सुरक्षित रखा जाता है। यह 'Private' कीवर्ड का उपयोग करके प्राप्त किया जाता है।"
+    },
+    {
+      "id": 5,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "डायनैमिक बाइण्डिग से क्या तात्पर्य है?",
+      "options": [],
+      "answer": "डायनैमिक बाइंडिंग (Dynamic Binding) का अर्थ है कि प्रोग्राम के रन-टाइम (चलते समय) पर यह तय होना कि कौन सा फंक्शन कॉल होगा। यह मुख्य रूप से वर्चुअल फंक्शन्स के साथ उपयोग होता है।"
+    },
+    {
+      "id": 6,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOP का उपयोग क्यों करते हैं?",
+      "options": [],
+      "answer": "OOP का उपयोग जटिल सॉफ्टवेयर को आसानी से मैनेज करने, कोड को सुरक्षित बनाने और पुराने कोड को बार-बार इस्तेमाल (reusability) करने के लिए किया जाता है।"
+    },
+    {
+      "id": 7,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "OOP में किस प्रकार approach का प्रयोग होता है?",
+      "options": [],
+      "answer": "Bottom-up (बॉटम-अप) अप्रोच"
+    },
+    {
+      "id": 8,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "डाटा व फंक्शन को एक साथ जोड़ना क्या कहलाता है?",
+      "options": [],
+      "answer": "Encapsulation (एनकैप्सुलेशन)"
+    },
+    {
+      "id": 9,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "ऑपरेटर ओवरलोडिंग में किसका प्रयोग होता है?",
+      "options": [],
+      "answer": "Polymorphism (पॉलीमॉर्फिज्म) के सिद्धांत का प्रयोग"
+    },
+    {
+      "id": 10,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "OOP में प्रोग्रामिंग का मुख्य केन्द्र क्या होते हैं?",
+      "options": [],
+      "answer": "Objects (ऑब्जेक्ट्स)"
+    },
+    {
+      "id": 11,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "OOP पर आधारित भाषा के दो उदाहरण दीजिए।",
+      "options": [],
+      "answer": "C++, C#, Python और Java"
+    },
+    {
+      "id": 12,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "क्लास (Class) से क्या तात्पर्य है?",
+      "options": [],
+      "answer": "Class किसी object का एक blueprint है जिसका उपयोग objects को निर्मित करने के लिये किया जाता है।"
+    },
+    {
+      "id": 13,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "कोड के पुनः प्रयोग से आप क्या समझते हैं? OOPs में इसे किस प्रकार किया जाता है?",
+      "options": [],
+      "answer": "कोड के पुनः प्रयोग (Code Reusability) का मतलब है एक बार लिखे गए कोड को बार-बार इस्तेमाल करना। इसे Inheritance के माध्यम से किया जाता है।"
+    },
+    {
+      "id": 14,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "उदाहरण सहित ऑब्जेक्ट का अर्थ समझाइए।",
+      "options": [],
+      "answer": "ऑब्जेक्ट (Object) क्लास का एक वास्तविक रूप (Instance) है। उदाहरण के लिए, यदि 'Car' एक क्लास है, तो आपकी 'सफेद स्विफ्ट' या 'लाल थार' एक ऑब्जेक्ट है।"
+    },
+    {
+      "id": 15,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "डाटा ऐब्सट्रैक्शन से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "उपयोगकर्ता को केवल आवश्यक जानकारी दिखाना और बैकग्राउंड की जटिलता को छिपाना डेटा ऐब्सट्रैक्शन कहलाता है।"
+    },
+    {
+      "id": 16,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "इनहेरिटेन्स को परिभाषित कीजिए।",
+      "options": [],
+      "answer": "जब एक नई क्लास (Child Class) किसी पुरानी क्लास (Parent Class) के गुणों और विशेषताओं को अपना लेती है, तो उसे इनहेरिटेन्स कहते हैं।"
+    },
+    {
+      "id": 17,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "पॉलीमॉर्फिज्म को समझाइए।",
+      "options": [],
+      "answer": "पॉलीमॉर्फिज्म (Polymorphism) का अर्थ है 'एक नाम, अनेक रूप'। जब एक ही फंक्शन या ऑपरेटर अलग-अलग परिस्थितियों में अलग-अलग व्यवहार करता है तो इस गुण को पॉलीमॉर्फिज्म कहते हैं।"
+    },
+    {
+      "id": 18,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "ऑब्जेक्ट ओरियेण्टेड प्रोग्रामिंग (OOP) का संक्षिप्त वर्णन कीजिए।",
+      "options": [],
+      "answer": "ऑब्जेक्ट ओरियेण्टेड प्रोग्रामिंग (OOP) एक programming paradigm है जिसमें program को class और object के माध्यम से बनाया जाता है। इसमें data और functions को encapsulation के द्वारा एक साथ रखा जाता है।"
+    },
+    {
+      "id": 19,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "OOP के लाभ बताइए।",
+      "options": [],
+      "answer": "a) कोड को दोबारा इस्तेमाल करना आसान (Inheritance)\nb) डेटा पूरी तरह सुरक्षित रहता है (Encapsulation)\nc) बड़े प्रोग्राम्स को मैनेज करना आसान होता है।"
+    },
+    {
+      "id": 20,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "क्लास एवं ऑब्जेक्ट में अंतर समझाइए।",
+      "options": [],
+      "answer": "1. क्लास एक ब्लूप्रिंट या लॉजिकल फ्रेमवर्क है, जबकि ऑब्जेक्ट क्लास का वास्तविक भौतिक उदाहरण है。\n2. क्लास बनाने पर मेमोरी एलोकेट नहीं होती, जबकि ऑब्जेक्ट बनाने पर RAM में जगह मिलती है।"
+    },
+    {
+      "id": 21,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "स्ट्रक्चर्ड तथा ऑब्जेक्ट ओरियेण्टेड प्रोग्रामिंग में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "1. Structured programming में top-down approach होती है, जबकि OOP में bottom-up approach होती है。\n2. Structured programming में फंक्शन्स पर बल दिया जाता है, जबकि OOP में objects और data सुरक्षा पर बल दिया जाता है।"
+    },
+    {
+      "id": 22,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "डाटा एनकैप्सुलेशन को समझाइए।",
+      "options": [],
+      "answer": "Encapsulation वह प्रक्रिया है जिसमें एक Single Entity या Unit में डेटा एवं Functions/Methods को store किया जाता है और बाहरी हस्तक्षेप से सुरक्षित रखा जाता है।"
+    },
+    {
+      "id": 23,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "क्लासेस तथा ऑब्जेक्ट्स का विस्तृत वर्णन कीजिए।",
+      "options": [],
+      "answer": "1. क्लास (Class): यह एक blueprint है जिसके द्वारा ऑब्जेक्ट बनाए जाते हैं। इसमें Data Members और Methods होते हैं। Public भाग को बाहर से एक्सेस किया जा सकता है जबकि Private केवल अंदर।\n2. ऑब्जेक्ट (Object): यह Real-world entity होते हैं जो किसी क्लास के instance होते हैं। यह memory में स्थान लेते हैं और रन-टाइम में संदेश भेजकर सम्पर्क स्थापित करते हैं।"
+    },
+    {
+      "id": 24,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "उदाहरण सहित इनहेरिटेन्स व पॉलीमॉर्फिज्म की व्याख्या कीजिए।",
+      "options": [],
+      "answer": "इनहेरिटेंस: इसके द्वारा एक Class की Properties एवं Functions को किसी दूसरे Class में प्राप्त कर सकते हैं। Base Class (Parent) से Derived Class (Child) बनती है।\nपॉलीमॉर्फिज्म: यह क्षमता प्रदान करता है कि एक ही नाम अनेक रूप ग्रहण कर सके। जावा में यह दो प्रकार से कार्य करता है- फंक्शन ओवरलोडिंग और ऑपरेटर ओवरलोडिंग।"
+    },
+    {
+      "id": 25,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "डाटा एनकैप्सुलेशन व डाटा ऐब्सट्रैक्शन से आप क्या समझते हैं? व्याख्या कीजिए।",
+      "options": [],
+      "answer": "Encapsulation: यह Data और Code को Class में एक साथ Bind करने की प्रक्रिया है। Access Modifiers (Private, Protected, Public) तथा getter/setter का प्रयोग होता है।\nData Abstraction: इसमें User को केवल जरूरी Data दिखाया जाता है और Implementation Details को छिपाया जाता है (उदा. pow() फंक्शन)।"
+    },
+    {
+      "id": 26,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Object Oriented Programming (OOP) की मूल संकल्पनाओं को समझाइए।",
+      "options": [],
+      "answer": "1. Class: Object का Blueprint।\n2. Object: Class का Real-world Instance।\n3. Encapsulation: Data और Method का एक Unit में Binding।\n4. Inheritance: Parent से Child Class में गुणों का हस्तांतरण।\n5. Abstraction: आवश्यक जानकारी दिखाना, पृष्ठभूमि छिपाना।\n6. Polymorphism: एक नाम, अनेक कार्य करने की क्षमता।"
+    },
+    {
+      "id": 27,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्लास को कौन परिभाषित (define) करता है?",
+      "options": [],
+      "answer": "Class को Programmer define करता है।"
+    },
+    {
+      "id": 28,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Object क्या है?",
+      "options": [],
+      "answer": "Class का Instance होता है एवं Object एक Real-world entity है जिसके लिये Memory allocated की जाती है।"
+    },
+    {
+      "id": 29,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Class क्या है?",
+      "options": [],
+      "answer": "Class एक Blueprint / User Defined Data Type है जिसके द्वारा Object निर्मित किया जाता है।"
+    },
+    {
+      "id": 30,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOP के दो मुख्य उपयोग क्या हैं?",
+      "options": [],
+      "answer": "1. Code Reusability\n2. Security (Data Hiding)\n3. Real-world Modeling"
+    },
+    {
+      "id": 31,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "स्कोप रिजोल्यूशन ऑपरेटर को संक्षेप में समझाइए।",
+      "options": [],
+      "answer": "Scope Resolution (::) Operator का उपयोग Class Name के साथ member function को class के बाहर define या access करने के लिये किया जाता है।"
+    },
+    {
+      "id": 32,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "क्लास में वेरिएबल कितने प्रकार के हो सकते हैं?",
+      "options": [],
+      "answer": "2 प्रकार (Data Members और Static Data Members)"
+    },
+    {
+      "id": 33,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "ऑब्जेक्ट द्वारा क्लास के मेम्बर फंक्शनों का प्रयोग करने के लिए किस ऑपरेटर का प्रयोग किया जाता है?",
+      "options": [],
+      "answer": "Dot (.) Operator"
+    },
+    {
+      "id": 34,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "किस फंक्शन में एक ही नाम के फंक्शन को अलग-अलग पैरामीटर्स के साथ डिफाइन किया जा सकता है?",
+      "options": [],
+      "answer": "Function Overloading"
+    },
+    {
+      "id": 35,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "किसी क्लास का कोई मेम्बर बाय डिफॉल्ट (By Default) क्या होता है?",
+      "options": [],
+      "answer": "Private"
+    },
+    {
+      "id": 36,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "सदस्य या मेम्बर फंक्शन को कितने प्रकार से परिभाषित किया जा सकता है? नाम लिखिए।",
+      "options": [],
+      "answer": "दो प्रकार से परिभाषित किया जा सकता है:\n1. Inside Class Definition\n2. Outside Class Definition (using :: Operator)"
+    },
+    {
+      "id": 37,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "पब्लिक सदस्य, प्राइवेट सदस्य व प्रोटेक्टेड सदस्य में अंतर कीजिए।",
+      "options": [],
+      "answer": "1. Public: प्रोग्राम में कहीं से भी access किया जा सकता है।\n2. Private: केवल उसी Class के अंदर access किया जा सकता है।\n3. Protected: Class और उसकी Derived Classes में access किया जा सकता है।"
+    },
+    {
+      "id": 38,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "फ्रेण्ड फंक्शन (Friend Function) क्या है?",
+      "options": [],
+      "answer": "Friend Function वह Function होता है जो किसी Class का Member नहीं होता, लेकिन वह उस Class के Private और Protected Members को access कर सकता है।"
+    },
+    {
+      "id": 39,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "किसी Function में Object को Argument के रूप में कितने प्रकार से पास किया जाता है? समझाइए।",
+      "options": [],
+      "answer": "तीन प्रकार से pass किया जाता है:\n1. Pass by Value: Object की copy भेजी जाती है, original में बदलाव नहीं होता।\n2. Pass by Reference: Reference भेजा जाता है, डायरेक्ट original object modify होता है।\n3. Pass by Pointer: Object का address pass किया जाता है (-> operator का उपयोग होता है)।"
+    },
+    {
+      "id": 40,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Method Declaration में public शब्द का क्या प्रयोग है?",
+      "options": [],
+      "answer": "public एक Access Specifier है। इसका प्रयोग Method को दूसरी Classes से भी Access करने की अनुमति देने के लिए किया जाता है।"
+    },
+    {
+      "id": 41,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "print() किस प्रकार का Function है?",
+      "options": [],
+      "answer": "print() एक Pre-defined Method है। इसका प्रयोग Output को Screen पर प्रदर्शित करने के लिए किया जाता है।"
+    },
+    {
+      "id": 42,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Instance Method कितने प्रकार के होते हैं? नाम लिखिए।",
+      "options": [],
+      "answer": "दो प्रकार के होते हैं: 1. Accessor Method (getter), 2. Mutator Method (setter)।"
+    },
+    {
+      "id": 43,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "this Keyword क्या है?",
+      "options": [],
+      "answer": "this Java का एक Keyword है, जो वर्तमान Object को Refer करता है।"
+    },
+    {
+      "id": 44,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Method को Overload करने के दो तरीके लिखिए।",
+      "options": [],
+      "answer": "1. Arguments की संख्या बदलना।\n2. Arguments के Data Type बदलना।"
+    },
+    {
+      "id": 45,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Default Constructor का प्रारूप (Syntax) लिखिए।",
+      "options": [],
+      "answer": "ClassName() {\n  // statements\n}"
+    },
+    {
+      "id": 46,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Access Specifier क्या है?",
+      "options": [],
+      "answer": "Access Specifier वह Keyword है जो किसी Class, Method या Variable की पहुंच (Visibility Level) को निर्धारित करता है।"
+    },
+    {
+      "id": 47,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Pre-defined Method के दो उदाहरण लिखिए।",
+      "options": [],
+      "answer": "Math.sqrt() और String.length()"
+    },
+    {
+      "id": 48,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Static Method में किस Keyword का प्रयोग किया जाता है?",
+      "options": [],
+      "answer": "static"
+    },
+    {
+      "id": 49,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Abstract Method में किस Keyword का प्रयोग किया जाता है?",
+      "options": [],
+      "answer": "abstract"
+    },
+    {
+      "id": 50,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Constructor का नाम किस प्रकार का होता है?",
+      "options": [],
+      "answer": "Class के नाम के समान"
+    },
+    {
+      "id": 51,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Constructor का Return Type क्या होता है?",
+      "options": [],
+      "answer": "कोई Return Type नहीं होता"
+    },
+    {
+      "id": 52,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Accessor Method और Mutator Method में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "Accessor Method (get) डेटा मेम्बर की मान को प्राप्त/रीड करने के लिए उपयोग होता है, जबकि Mutator Method (set) मान को बदलने/राइट करने के लिए प्रयोग होता है।"
+    },
+    {
+      "id": 53,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Abstract Method की मुख्य विशेषता क्या है?",
+      "options": [],
+      "answer": "Abstract Method में केवल Declaration (प्रारूप) होता है, उसकी कोई Body/Implementation नहीं होती। इसकी बडी बाद में Subclass में परिभाषित की जाती है।"
+    },
+    {
+      "id": 54,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Parameterized Constructor से क्या तात्पर्य है?",
+      "options": [],
+      "answer": "जिस Constructor में एक या अधिक Parameters पास किए जाते हैं, उसे Parameterized Constructor कहते हैं। इसका प्रयोग Object निर्माण के समय मान असाइन करने हेतु होता है।"
+    },
+    {
+      "id": 55,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Constructor और Method के बीच अन्तर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "1. Constructor का नाम Class जैसा होता है, जबकि Method का नाम अलग हो सकता है。\n2. Constructor का कोई Return Type नहीं होता, जबकि Method का Return Type होना अनिवार्य है。\n3. Constructor ऑटोमैटिक कॉल होता है, Method को कॉल करना पड़ता है।"
+    },
+    {
+      "id": 56,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Java में Method Overloading क्या है? उदाहरण सहित विस्तार से समझाइए।",
+      "options": [],
+      "answer": "एक ही Class में समान नाम के multiple methods को अलग-अलग parameter list (संख्या या data type) के साथ परिभाषित करना Method Overloading कहलाता है। यह Compile-time Polymorphism का उदाहरण है।"
+    },
+    {
+      "id": 57,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Copy Constructor क्या है? Java में इसे किस प्रकार लागू किया जाता है? उदाहरण दीजिए।",
+      "options": [],
+      "answer": "Copy Constructor वह कन्सट्रक्टर है जो किसी दूसरे Existing Object का मान नए Object में कॉपी करके उसे Initialize करता है। Java में इसके लिए Parameter के रूप में उसी Class के Object का Reference पास किया जाता है।"
+    },
+    {
+      "id": 58,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Is-a Relationship क्या है?",
+      "options": [],
+      "answer": "Is-a Relationship वह संबंध है जिसमें एक Subclass, किसी दूसरी Class की विशेषताओं और व्यवहार को inherit करती है। (जैसे: Bicycle is-a Vehicle)"
+    },
+    {
+      "id": 59,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Superclass से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "वह Class जिसकी properties और methods किसी दूसरी Class द्वारा inherit किए जाते हैं, उसे Superclass या Parent Class कहते हैं।"
+    },
+    {
+      "id": 60,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Subclass बनाने का Syntax लिखिए।",
+      "options": [],
+      "answer": "class SubclassName extends SuperclassName { \n  // body \n}"
+    },
+    {
+      "id": 61,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Java में कौन-सी Class अन्य सभी Classes की Root Superclass है?",
+      "options": [],
+      "answer": "java.lang.Object Class"
+    },
+    {
+      "id": 62,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्या एक Class एक से अधिक Classes को extend कर सकती है? कारण बताइए।",
+      "options": [],
+      "answer": "नहीं। Java में Diamond Problem और method ambiguity से बचने के लिए Multiple Inheritance अनुमति नहीं है।"
+    },
+    {
+      "id": 63,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Subclass को define करने के लिए किस keyword का उपयोग करते हैं?",
+      "options": [],
+      "answer": "extends"
+    },
+    {
+      "id": 64,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Immediate parent class के members या constructor को access करने के लिए किस keyword का प्रयोग होता है?",
+      "options": [],
+      "answer": "super"
+    },
+    {
+      "id": 65,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Subclass के object को Superclass के reference variable में assign करना क्या कहलाता है?",
+      "options": [],
+      "answer": "Upcasting"
+    },
+    {
+      "id": 66,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "protected घोषित Class Member किस प्रकार की Subclass में access किया जा सकता है?",
+      "options": [],
+      "answer": "protected member को उसी package की Classes access कर सकती हैं तथा दूसरे package की Subclass भी inheritance के माध्यम से access कर सकती है।"
+    },
+    {
+      "id": 67,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "super keyword के दो मुख्य उपयोग लिखिए।",
+      "options": [],
+      "answer": "1. Parent Class के variable या overridden method को access करना。\n2. Parent Class के constructor को call करना (super())।"
+    },
+    {
+      "id": 68,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Constructor Chaining क्या है?",
+      "options": [],
+      "answer": "जब inheritance chain में Subclass का object बनाया जाता है, तो constructors का execution parent से child की दिशा में (Superclass -> Subclass) होता है। इसे Constructor Chaining कहते हैं।"
+    },
+    {
+      "id": 69,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "this और super keyword में अंतर बताइए।",
+      "options": [],
+      "answer": "this current class के object/members को refer करता है, जबकि super immediate parent class के members/constructor को refer करने के लिए उपयोग किया जाता है।"
+    },
+    {
+      "id": 70,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Java में Inheritance के सभी प्रकारों को उदाहरण सहित विस्तार से समझाइए।",
+      "options": [],
+      "answer": "1. Single Inheritance: एक Parent -> एक Child।\n2. Multilevel Inheritance: A -> B -> C की चेन।\n3. Hierarchical Inheritance: एक Parent -> Multiple Children।\n4. Multiple Inheritance: Classes के साथ संभव नहीं, Interfaces द्वारा लागू।\n5. Hybrid Inheritance: Multiple प्रकारों का संयोजन, Interfaces से संभव।"
+    },
+    {
+      "id": 71,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Typecasting (Upcasting और Downcasting) को जावा इनहेरिटेंस के संदर्भ में समझाइए।",
+      "options": [],
+      "answer": "Upcasting: Child class object को Parent reference में रखना (Implicit, Safe)।\nDowncasting: Parent reference को Child reference में बदलना (Explicit cast आवश्यक, असावधानी पर ClassCastException संभव)।"
+    },
+    {
+      "id": 72,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "ऐरे कितने प्रकार के होते हैं? प्रत्येक का नाम लिखिए।",
+      "options": [],
+      "answer": "ऐरे मुख्य रूप से दो प्रकार के होते हैं: 1. एकविमीय ऐरे (Single-dimensional Array) और 2. बहुआयामी ऐरे (Multi-dimensional Array)।"
+    },
+    {
+      "id": 73,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "ऐरे में किस प्रकार के एलिमेण्ट्स होते हैं?",
+      "options": [],
+      "answer": "ऐरे में हमेशा समान डेटा प्रकार (Same Data Type) के एलिमेण्ट्स होते हैं।"
+    },
+    {
+      "id": 74,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऐरे का इंस्टेंटिएशन का प्रारूप लिखिए।",
+      "options": [],
+      "answer": "arrayName = new DataType[size]; (उदा. arr = new int[5];)"
+    },
+    {
+      "id": 75,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "स्ट्रिंग ऑब्जेक्ट बनाने के दो तरीके कौन से हैं?",
+      "options": [],
+      "answer": "1. String Literal\n2. new कीवर्ड का उपयोग करके"
+    },
+    {
+      "id": 76,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "char charAt() का उपयोग लिखिए।",
+      "options": [],
+      "answer": "charAt() मेथड का उपयोग स्ट्रिंग में किसी विशेष इंडेक्स पर मौजूद एकल कैरेक्टर प्राप्त करने के लिए किया जाता है।"
+    },
+    {
+      "id": 77,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऐरे का निर्माण किस मेमोरी में होता है?",
+      "options": [],
+      "answer": "Heap Memory में"
+    },
+    {
+      "id": 78,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "ArrayIndexOutOfBoundsException कब उत्पन्न होता है?",
+      "options": [],
+      "answer": "जब हम ऐरे की वैध इंडेक्स सीमा (0 से length-1) से बाहर के किसी इंडेक्स को एक्सेस करने की कोशिश करते हैं।"
+    },
+    {
+      "id": 79,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऐरे में इंडेक्स कहाँ से प्रारम्भ होता है?",
+      "options": [],
+      "answer": "0 (Zero) से"
+    },
+    {
+      "id": 80,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "स्ट्रिंग की तुलना करने के लिए मुख्य रूप से किस मेथड का उपयोग किया जाता है?",
+      "options": [],
+      "answer": "equals()"
+    },
+    {
+      "id": 81,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "क्या जावा में String mutable होती है या immutable?",
+      "options": [],
+      "answer": "Immutable (अपरिवर्तनशील)"
+    },
+    {
+      "id": 82,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऐरे मेमोरी आवंटित करने के लिए किस ऑपरेटर का प्रयोग होता है?",
+      "options": [],
+      "answer": "new ऑपरेटर"
+    },
+    {
+      "id": 83,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "एकविमीय ऐरे (1D) और बहुआयामी ऐरे (Multi-D) में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "1D Array केवल एक पंक्ति में linear डाटा दिखाता है, जबकि Multi-dimensional Array डाटा को टेबल या मैट्रिक्स (Rows एवं Columns) के रूप में स्टोर करता है।"
+    },
+    {
+      "id": 84,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "StringBuffer और StringBuilder में मुख्य अंतर क्या है?",
+      "options": [],
+      "answer": "StringBuffer Thread-safe और Synchronized होता है, जबकि StringBuilder Non-synchronized होता है और सिंगल-थ्रेडेड वातावरण में अधिक तेज काम करता है।"
+    },
+    {
+      "id": 85,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Jagged Array (जैग्ड ऐरे) से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "Jagged Array एक ऐसा बहुआयामी ऐरे है जिसमें प्रत्येक पंक्ति (Row) में कॉलम की संख्या अलग-अलग हो सकती है।"
+    },
+    {
+      "id": 86,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Arrays Class के मुख्य Static Methods और उनके कार्यों का विस्तार से वर्णन कीजिए।",
+      "options": [],
+      "answer": "1. sort(): तत्वों को आरोही क्रम में सॉर्ट करता है。\n2. binarySearch(): तत्व खोजने हेतु बाइनरी सर्च उपयोग करता है。\n3. equals(): दो ऐरे के तत्वों व आकार की तुलना करता है。\n4. fill(): निर्दिष्ट मान से ऐरे भरता है。\n5. copyOf(): ऐरे की कॉपी बनाता है।"
+    },
+    {
+      "id": 87,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "String Constant Pool (SCP) और String Immutability की अवधारणा को विस्तार से समझाइए।",
+      "options": [],
+      "answer": "SCP जावा की Heap memory का विशेष भाग है जहाँ String Literals स्टोर होते हैं। यदि समान सामग्री वाली स्ट्रिंग दोबारा बनाई जाती है तो JVM नया ऑब्जेक्ट न बनाकर SCP से पुराना Reference देती है। स्ट्रिंग ऑब्जेक्ट्स Immutable होते हैं, जिससे सुरक्षा और बहु-थ्रेडिंग में डेटा अखंडता बनी रहती है।"
+    },
+    {
+      "id": 88,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "डिफॉल्ट रूप से कौन-सा पैकेज import किया जाता है?",
+      "options": [],
+      "answer": "java.lang पैकेज"
+    },
+    {
+      "id": 89,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "थ्रेड (Thread) क्या है?",
+      "options": [],
+      "answer": "थ्रेड (Thread) निष्पादन (Execution) की सबसे छोटी स्वतंत्र यूनिट है, जो प्रोसेस के भीतर चलती है।"
+    },
+    {
+      "id": 90,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "एक्सेप्शन (Exception) से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "एक्सेप्शन प्रोग्राम के सामान्य प्रवाह को बाधित करने वाली असामान्य रनटाइम स्थिति है।"
+    },
+    {
+      "id": 91,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "try ब्लॉक का क्या उपयोग है?",
+      "options": [],
+      "answer": "उस कोड को घेरने के लिए जिसमें एक्सेप्शन उत्पन्न होने की संभावना होती है।"
+    },
+    {
+      "id": 92,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में पैकेज को परिभाषित करने के लिए किस की-वर्ड का उपयोग किया जाता है?",
+      "options": [],
+      "answer": "package"
+    },
+    {
+      "id": 93,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "थ्रेड का निष्पादन आरंभ करने के लिए किस मेथड का उपयोग किया जाता है?",
+      "options": [],
+      "answer": "start()"
+    },
+    {
+      "id": 94,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में सभी एरर्स और एक्सेप्शन्स की सुपर क्लास का नाम क्या है?",
+      "options": [],
+      "answer": "java.lang.Throwable"
+    },
+    {
+      "id": 95,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Process और Thread में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "Process heavy-weight प्रोग्राम है जिसका अपना अलग memory space होता है। Thread process का हल्का (lightweight) भाग है जो अपने प्रोसेस की मेमोरी शेयर करता है।"
+    },
+    {
+      "id": 96,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "throw और throws कीवर्ड में अंतर बताइए।",
+      "options": [],
+      "answer": "throw का प्रयोग method body के अंदर मैन्युअली एक्सेप्शन फेंकने हेतु होता है। throws का उपयोग method signature में एक्सेप्शन घोषित करने के लिए होता है।"
+    },
+    {
+      "id": 97,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Exception और Error में क्या अंतर है?",
+      "options": [],
+      "answer": "Exception एक रिकवरेबल स्थिति है जिसे प्रोग्राम कैच और हैंडल कर सकता है। Error एक नॉन-रिकवरेबल गंभीर स्थिति है (उदा. OutOfMemoryError) जिसे कैच नहीं किया जा सकता।"
+    },
+    {
+      "id": 98,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Checked Exception और Unchecked Exception को उदाहरण सहित समझाइए।",
+      "options": [],
+      "answer": "Checked Exceptions: कम्पाल-टाइम पर चेक होते हैं, इन्हें handle करना अनिवार्य है (उदा. IOException, FileNotFoundException)।\nUnchecked Exceptions: रनटाइम पर होते हैं, हैंडल करना compulsory नहीं है (उदा. ArithmeticException, NullPointerException)।"
+    },
+    {
+      "id": 99,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Thread के जीवन-चक्र (Life Cycle) की 5 अवस्थाओं का वर्णन कीजिए।",
+      "options": [],
+      "answer": "1. New State: थ्रेड ऑब्जेक्ट निर्मित होना。\n2. Runnable State: start() कॉल के बाद execution हेतु तैयार होना。\n3. Running State: CPU समय मिलना व कोड निष्पादित होना。\n4. Blocked/Waiting State: sleep/wait के कारण रुकना。\n5. Terminated State: run() पूरा होना या समाप्त होना।"
+    },
+    {
+      "id": 100,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Java Exception Class Hierarchy को विस्तारपूर्वक रेखांकित कीजिए।",
+      "options": [],
+      "answer": "सुपर क्लास Throwable है, जिसके दो भाग हैं: Error और Exception। Exception के दो उपवर्ग हैं: Checked Exceptions (जैसे IOException) और Unchecked Exceptions (RuntimeException जैसे ArithmeticException, NullPointerException)।"
+    },
+    {
+      "id": 101,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "AWT का पूरा नाम क्या है?",
+      "options": [],
+      "answer": "Abstract Window Toolkit"
+    },
+    {
+      "id": 102,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "AWT में कंटेनर से किसी कंपोनेंट को हटाने के लिए किस मेथड का प्रयोग करते हैं?",
+      "options": [],
+      "answer": "remove() मेथड"
+    },
+    {
+      "id": 103,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "setLayout() का प्रयोग क्यों किया जाता है?",
+      "options": [],
+      "answer": "कंटेनर के लेआउट मैनेजर (Layout Manager) को सेट करने के लिए।"
+    },
+    {
+      "id": 104,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "java.awt पैकेज में कितने Standard Layout Managers परिभाषित हैं?",
+      "options": [],
+      "answer": "5 (FlowLayout, BorderLayout, GridLayout, CardLayout, GridBagLayout)"
+    },
+    {
+      "id": 105,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "कम्पोनेण्ट का आकार सेट करने के लिए प्रयुक्त मेथड कौन-सा है?",
+      "options": [],
+      "answer": "setSize()"
+    },
+    {
+      "id": 106,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Choice (चॉइस) और List (लिस्ट) में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "Choice एक ड्रापडाउन मेनू है जिसमें केवल एक समय में एक ही आइटम चुना जा सकता है। List में multiple आइटम्स प्रदर्शित होते हैं और single या multiple selection मोड हो सकता है।"
+    },
+    {
+      "id": 107,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Label component का क्या प्रयोग है? इसका निर्माण कैसे करते हैं?",
+      "options": [],
+      "answer": "Label एक गैर-इंटरैक्टिव टेक्स्ट कंपोनेंट है जो केवल जानकारी/टेक्स्ट दिखाने के लिए उपयोग किया जाता है। Syntax: Label lbl = new Label(\"Text\");"
+    },
+    {
+      "id": 108,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "AWT के लाभ तथा हानियों का विस्तार से वर्णन कीजिए।",
+      "options": [],
+      "answer": "लाभ: Simple programming, Native Look & Feel, तेज परफॉरमेंस।\nहानियाँ: Platform-dependent होने से विभिन्न OS पर अलग दिखता है, कॉम्पोनेंट्स सीमित हैं (Heavyweight components), सीमित लेआउट प्रबंधन।"
+    },
+    {
+      "id": 109,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "AWT Canvas क्लास क्या है? Graphics विधियों का उपयोग करके Canvas पर आकृतियां बनाने का वर्णन करें।",
+      "options": [],
+      "answer": "Canvas एक Blank rectangular क्षेत्र प्रदान करता है। paint(Graphics g) विधि को ओवरराइड करके drawLine(), drawRect(), fillOval(), drawString() जैसी विधियों द्वारा रेखाएं, आयत, वृत्त और टेक्स्ट बनाए जा सकते हैं।"
+    },
+    {
+      "id": 110,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "ऐरे को घोषित करने का सामान्य सिंटैक्स/प्रारूप लिखिए।",
+      "options": [],
+      "answer": "DataType[] arrayName; या DataType arrayName[];"
+    },
+    {
+      "id": 111,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्या हम बिना आकार निर्दिष्ट किए केवल घोषित ऐरे का उपयोग कर सकते हैं?",
+      "options": [],
+      "answer": "नहीं, यह केवल एक Reference Variable बनता है। उपयोग से पहले new द्वारा Size और मेमोरी आवंटन अनिवार्य है।"
+    },
+    {
+      "id": 112,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्या किसी ऐरे का आकार नकारात्मक (Negative) घोषित किया जा सकता है?",
+      "options": [],
+      "answer": "नहीं, ऐसा करने पर रनटाइम पर NegativeArraySizeException उत्पन्न होता है।"
+    },
+    {
+      "id": 113,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा में किसी ऐरे की लंबाई (Length) ज्ञात करने के लिए किस प्रॉपर्टी का प्रयोग होता है?",
+      "options": [],
+      "answer": "length प्रॉपर्टी (उदा. arr.length)"
+    },
+    {
+      "id": 114,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "स्ट्रिंग की लंबाई ज्ञात करने के लिए किस मेथड का उपयोग किया जाता है?",
+      "options": [],
+      "answer": "length() मेथड (उदा. str.length())"
+    },
+    {
+      "id": 115,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में इंटीजर ऐरे (int array) के एलिमेंट्स का डिफॉल्ट मान (Default Value) क्या होता है?",
+      "options": [],
+      "answer": "0"
+    },
+    {
+      "id": 116,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऑब्जेक्ट या स्ट्रिंग ऐरे का डिफॉल्ट मान क्या होता है?",
+      "options": [],
+      "answer": "null"
+    },
+    {
+      "id": 117,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में ऐरे को एक स्थान से दूसरे स्थान पर तेज़ी से कॉपी करने के लिए किस सिस्टम मेथड का उपयोग किया जाता है?",
+      "options": [],
+      "answer": "System.arraycopy()"
+    },
+    {
+      "id": 118,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "int array[] और int[] array के बीच क्या अंतर है?",
+      "options": [],
+      "answer": "कार्यात्मक रूप से दोनों समान हैं, लेकिन int[] array जावा की अनुशंसित (Recommended) शैली है क्योंकि यह स्पष्ट दर्शाती है कि डेटा प्रकार integer array (int[]) है।"
+    },
+    {
+      "id": 119,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "जावा में ऐरे की क्लोनिंग (Cloning) से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "ऐरे की हूबहू नकल बनाना क्लोनिंग कहलाता है। 1D ऐरे की क्लोनिंग Deep Copy (स्वतंत्र कॉपी) बनाती है, जबकि Multi-Dimensional ऐरे की क्लोनिंग Shallow Copy बनाती है।"
+    },
+    {
+      "id": 120,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "lastIndexOf() और trim() मेथड का संक्षिप्त विवरण दीजिए।",
+      "options": [],
+      "answer": "lastIndexOf() किसी सबस्ट्रिंग या कैरेक्टर की अंतिम घटना का इंडेक्स लौटाता है। trim() स्ट्रिंग के शुरुआत और अंत से Whitespaces को हटाता है।"
+    },
+    {
+      "id": 121,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "जावा में बहुआयामी ऐरे (Multi-dimensional Array) को घोषित करने, इंस्टेंटिएट करने और ट्रैवर्स (Traverse) करने की प्रक्रिया उदाहरण सहित समझाइए।",
+      "options": [],
+      "answer": "बहुआयामी ऐरे को 'ऐरे का ऐरे' कहा जाता है। प्रारूप: int[][] arr = new int[2][3];। इसे प्रोसेस या प्रिंट करने के लिए नेस्टेड फॉर लूप (Nested Loops) का उपयोग किया जाता है।"
+    },
+    {
+      "id": 122,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा एप्लीकेशन डेवलपमेंट में पैकेज बनाने के लिए किस कीवर्ड का उपयोग होता है?",
+      "options": [],
+      "answer": "package"
+    },
+    {
+      "id": 123,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "किसी दूसरे पैकेज की क्लासेस और इंटरफेस तक पहुँचने के लिए किस स्टेटमेण्ट का प्रयोग किया जाता है?",
+      "options": [],
+      "answer": "import स्टेटमेण्ट"
+    },
+    {
+      "id": 124,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा में OutOfMemoryError कब उत्पन्न होता है?",
+      "options": [],
+      "answer": "जब JVM के पास Heap Memory में नए ऑब्जेक्ट को आवंटित करने के लिए स्थान नहीं बचता।"
+    },
+    {
+      "id": 125,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "शून्य से विभाजन करने (Division by Zero) पर कौन सा एक्सेप्शन उत्पन्न होता है?",
+      "options": [],
+      "answer": "ArithmeticException"
+    },
+    {
+      "id": 126,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जो पैकेज किसी दूसरे पैकेज के अंदर मौजूद होते हैं, वे क्या कहलाते हैं?",
+      "options": [],
+      "answer": "Sub-packages"
+    },
+    {
+      "id": 127,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Thread बनाने के लिए जावा में Thread क्लास के अलावा किस इंटरफेस का प्रयोग किया जाता है?",
+      "options": [],
+      "answer": "java.lang.Runnable"
+    },
+    {
+      "id": 128,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "try ब्लॉक द्वारा फेंके गए एक्सेप्शन को हैंडल करने के लिए किस ब्लॉक का प्रयोग होता है?",
+      "options": [],
+      "answer": "catch ब्लॉक"
+    },
+    {
+      "id": 129,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "CLASSPATH क्या है और इसे सेट करना क्यों आवश्यक है?",
+      "options": [],
+      "answer": "CLASSPATH एक एनवायरनमेंट वेरिएबल है जो JVM को बताता है कि user-defined classes और packages को कहाँ खोजना है।"
+    },
+    {
+      "id": 130,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "क्या केवल try ब्लॉक का प्रयोग बिना catch या finally के किया जा सकता है?",
+      "options": [],
+      "answer": "नहीं, try ब्लॉक के साथ कम से कम एक catch ब्लॉक या एक finally ब्लॉक होना अनिवार्य है, अन्यथा Compile Error आएगा।"
+    },
+    {
+      "id": 131,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "finally ब्लॉक का क्या उद्देश्य है?",
+      "options": [],
+      "answer": "finally ब्लॉक में लिखा गया कोड हमेशा निष्पादित होता है, चाहे try में एक्सेप्शन उत्पन्न हुआ हो या न हुआ हो।"
+    },
+    {
+      "id": 132,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "यूजर डिफाइंड पैकेज (User-defined Package) बनाने और दूसरे प्रोग्राम में इम्पोर्ट करने के चरणों का वर्णन कीजिए।",
+      "options": [],
+      "answer": "1. package mypack; डिक्लेयर करना। 2. Public class बनाना। 3. javac -d . ClassName.java कमांड से कम्पाइल करना। 4. import mypack.ClassName; द्वारा दूसरे प्रोग्राम में उपयोग करना।"
+    },
+    {
+      "id": 133,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "क्या एक Thread को दो बार start() किया जा सकता है? परिणाम की व्याख्या कीजिए।",
+      "options": [],
+      "answer": "नहीं, यदि किसी थ्रेड पर दोबारा start() कॉल किया जाता है, तो IllegalThreadStateException उत्पन्न होता है, क्योंकि डेड/टर्मिनेटेड थ्रेड को दोबारा रीस्टार्ट नहीं किया जा सकता।"
+    },
+    {
+      "id": 134,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Window क्लास किस क्लास की सबक्लास है?",
+      "options": [],
+      "answer": "Container क्लास की"
+    },
+    {
+      "id": 135,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "AWT बटन बनाने का सिंटैक्स लिखिए।",
+      "options": [],
+      "answer": "Button b = new Button(\"Click Me\");"
+    },
+    {
+      "id": 136,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "TextField में टेक्स्ट सेट करने और प्राप्त करने के लिए किन मेथड्स का प्रयोग होता है?",
+      "options": [],
+      "answer": "setText() और getText()"
+    },
+    {
+      "id": 137,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "GUI में वह स्पेशल कॉम्पोनेंट जो अन्य कॉम्पोनेंट्स को होल्ड/स्टोर करता है?",
+      "options": [],
+      "answer": "Container"
+    },
+    {
+      "id": 138,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "फ्रेम को स्क्रीन पर दृश्यमान (Visible) बनाने के लिए किस मेथड का प्रयोग होता है?",
+      "options": [],
+      "answer": "setVisible(true)"
+    },
+    {
+      "id": 139,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Panel और Frame में मुख्य अंतर क्या है?",
+      "options": [],
+      "answer": "Frame एक टॉप-लेवल विंडो है जिसमें Title Bar, Border और Menu Bar हो सकते हैं। Panel एक इनर कंटेनर है जिसका अपना कोई Title Bar या Border नहीं होता।"
+    },
+    {
+      "id": 140,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "CheckboxGroup का उपयोग रेडियो बटन बनाने के लिए कैसे किया जाता है?",
+      "options": [],
+      "answer": "CheckboxGroup का ऑब्जेक्ट बनाकर उसे Checkbox के कंस्ट्रक्टर में पास करने से multiple checkboxes में से केवल एक ही चुने जाने योग्य रेडियो बटन का समूह बनता है।"
+    },
+    {
+      "id": 141,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Java AWT क्लास हाइरारकी (Hierarchy) का संक्षेप में वर्णन कीजिए।",
+      "options": [],
+      "answer": "Java.lang.Object सबक्लास Component है। Component से Container और इंडिविजुअल कण्ट्रोल्स बनते हैं। Container से Window और Panel, और Window से Frame व Dialog बनते हैं।"
+    },
+    {
+      "id": 142,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "C++ और Java में मुख्य अंतर क्या है?",
+      "options": [],
+      "answer": "C++ में Pointing और Multiple Inheritance सीधे समर्थित है जबकि Java प्लेटफ़ॉर्म इंडिपेंडेंट है और Interfaces द्वारा Multiple Inheritance हासिल करती है।"
+    },
+    {
+      "id": 143,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "प्रोग्राम निष्पादन के समय निर्मित लॉजिकल इकाई जो मेमोरी लेती है?",
+      "options": [],
+      "answer": "Object"
+    },
+    {
+      "id": 144,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Static Binding और Dynamic Binding में क्या अंतर है?",
+      "options": [],
+      "answer": "Static Binding कम्पाईल-टाइम पर फंक्शन कॉल तय करती है। Dynamic Binding रन-टाइम पर फंक्शन ओवरराइडिंग के अनुसार तय करती है।"
+    },
+    {
+      "id": 145,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "User-defined Method से आप क्या समझते हैं?",
+      "options": [],
+      "answer": "प्रोग्रामर द्वारा अपनी आवश्यकतानुसार बनाया गया मेथड।"
+    },
+    {
+      "id": 146,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Math.sqrt() किस प्रकार का मेथड है?",
+      "options": [],
+      "answer": "Pre-defined Static Method"
+    },
+    {
+      "id": 147,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Constructor Overloading को परिभाषित कीजिए।",
+      "options": [],
+      "answer": "एक ही क्लास में एक से अधिक कन्सट्रक्टर्स को अलग-अलग पैरामीटर लिस्ट के साथ परिभाषित करना।"
+    },
+    {
+      "id": 148,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्या final घोषित Class को inherit किया जा सकता है?",
+      "options": [],
+      "answer": "नहीं, final Class को आगे extend नहीं किया जा सकता।"
+    },
+    {
+      "id": 149,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Interface को Class में लागू करने के लिए किस कीवर्ड का प्रयोग होता है?",
+      "options": [],
+      "answer": "implements"
+    },
+    {
+      "id": 150,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Method Overriding और Method Overloading में अंतर बताइए।",
+      "options": [],
+      "answer": "Overloading समान क्लास में अलग पैरामीटर्स के साथ होती है। Overriding Parent और Child क्लास में समान सिग्नेचर के साथ होती है।"
+    },
+    {
+      "id": 151,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "String toUpperCase() मेथड का कार्य क्या है?",
+      "options": [],
+      "answer": "स्ट्रिंग के सभी अक्षरों को अपरकेस (कैपिटल) में बदलना।"
+    },
+    {
+      "id": 152,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "दो स्ट्रिंग्स को आपस में जोड़ने (Concatenate) के लिए स्ट्रिंग क्लास का मेथड?",
+      "options": [],
+      "answer": "concat()"
+    },
+    {
+      "id": 153,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "ऐरे ट्रैवर्सल (Array Traversal) का क्या अर्थ है?",
+      "options": [],
+      "answer": "ऐरे के प्रत्येक एलिमेंट को एक-एक करके एक्सेस करना या प्रोसेस करना।"
+    },
+    {
+      "id": 154,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "java.io पैकेज का मुख्य उपयोग क्या है?",
+      "options": [],
+      "answer": "इनपुट और आउटपुट ऑपरेशन्स (File Handling) प्रबंधित करना।"
+    },
+    {
+      "id": 155,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Thread की priority सेट करने वाला मेथड?",
+      "options": [],
+      "answer": "setPriority()"
+    },
+    {
+      "id": 156,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "wait() और sleep() मेथड्स में क्या अंतर है?",
+      "options": [],
+      "answer": "sleep() निश्चित समय के लिए थ्रेड को रोकता है और लॉक रिलीज़ नहीं करता। wait() तब तक रोकता है जब तक notify() न मिले और लॉक रिलीज़ कर देता है।"
+    },
+    {
+      "id": 157,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "AWT में Button पर क्लिक इवेंट हैंडल करने के लिए कौन-सा Listener उपयोग होता है?",
+      "options": [],
+      "answer": "ActionListener"
+    },
+    {
+      "id": 158,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "TextArea में पंक्तियों व कॉलमों की संख्या सेट करने हेतु प्रयुक्त क्लास?",
+      "options": [],
+      "answer": "TextArea"
+    },
+    {
+      "id": 159,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "FlowLayout की मुख्य विशेषता क्या है?",
+      "options": [],
+      "answer": "यह कॉम्पोनेंट्स को एक पंक्ति में बाएँ से दाएँ व्यवस्थित करता है। स्थान खत्म होने पर अगली पंक्ति में भेज देता है।"
+    },
+    {
+      "id": 160,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOPs का मुख्य लक्ष्य क्या है?",
+      "options": [],
+      "answer": "सॉफ्टवेयर की जटिलता कम करना, सुरक्षा बढ़ाना और कोड reusability प्रदान करना।"
+    },
+    {
+      "id": 161,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "प्रोसीजरल प्रोग्रामिंग किस अप्रोच पर कार्य करती है?",
+      "options": [],
+      "answer": "Top-down"
+    },
+    {
+      "id": 162,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "क्लास में Private मेम्बर्स कहाँ एक्सेस किए जा सकते हैं?",
+      "options": [],
+      "answer": "केवल उसी क्लास के भीतर।"
+    },
+    {
+      "id": 163,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Main method का सिंटैक्स क्या है?",
+      "options": [],
+      "answer": "public static void main(String args[])"
+    },
+    {
+      "id": 164,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Hierarchical Inheritance में कितने सुपर क्लास होते हैं?",
+      "options": [],
+      "answer": "1"
+    },
+    {
+      "id": 165,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "String trim() क्या करता है?",
+      "options": [],
+      "answer": "आगे और पीछे के व्हाइटस्पेस हटाता है।"
+    },
+    {
+      "id": 166,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "कस्टम एक्सेप्शन फेंकने का कीवर्ड?",
+      "options": [],
+      "answer": "throw"
+    },
+    {
+      "id": 167,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Graphics क्लास किस पैकेज में होती है?",
+      "options": [],
+      "answer": "java.awt"
+    },
+    {
+      "id": 168,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Encapsulation कैसे डेटा सुरक्षा प्रदान करता है?",
+      "options": [],
+      "answer": "डेटा वेरिएबल्स को private बनाकर और उनके एक्सेस को सार्वजनिक getter/setter मेथड्स तक सीमित करके।"
+    },
+    {
+      "id": 169,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Static Method और Instance Method में क्या अंतर है?",
+      "options": [],
+      "answer": "Static method बिना ऑब्जेक्ट बनाए Class.method() से कॉल होता है। Instance method हेतु ऑब्जेक्ट बनाना अनिवार्य है।"
+    },
+    {
+      "id": 170,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Single और Multilevel Inheritance में अंतर बताइए।",
+      "options": [],
+      "answer": "Single में एक पैरेंट व एक चाइल्ड होता है। Multilevel में विरासत की श्रृंखला होती है (A -> B -> C)।"
+    },
+    {
+      "id": 171,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Arrays.sort() मेथड कैसे कार्य करता है?",
+      "options": [],
+      "answer": "यह दिए गए न्यूमेरिकल या स्ट्रिंग ऐरे के एलिमेंट्स को आरोही (Ascending) क्रम में व्यवस्थित करता है।"
+    },
+    {
+      "id": 172,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Multithreading के क्या लाभ हैं?",
+      "options": [],
+      "answer": "CPU का बेहतर उपयोग, एप्लिकेशन की प्रतिक्रियाशीलता में सुधार और संसाधनों की बचत।"
+    },
+    {
+      "id": 173,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "BorderLayout में 5 क्षेत्र कौन से होते हैं?",
+      "options": [],
+      "answer": "NORTH, SOUTH, EAST, WEST, और CENTER"
+    },
+    {
+      "id": 174,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOP की 4 मुख्य स्तंभ (Pillars) कौन से हैं?",
+      "options": [],
+      "answer": "Encapsulation, Abstraction, Inheritance, Polymorphism"
+    },
+    {
+      "id": 175,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "क्लास का इंस्टेंस क्या कहलाता है?",
+      "options": [],
+      "answer": "Object"
+    },
+    {
+      "id": 176,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Method Signature का क्या अर्थ है?",
+      "options": [],
+      "answer": "Method Name और उसकी Parameter List का संयोजन।"
+    },
+    {
+      "id": 177,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Diamond Problem किस प्रकार के इनहेरिटेंस में आती है?",
+      "options": [],
+      "answer": "Multiple Inheritance"
+    },
+    {
+      "id": 178,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "String equalsIgnoreCase() मेथड का कार्य?",
+      "options": [],
+      "answer": "केस (Case) को नजरअंदाज करते हुए दो स्ट्रिंग्स की सामग्री की तुलना करना।"
+    },
+    {
+      "id": 179,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "NullPointer reference से बचने वाला runtime exception?",
+      "options": [],
+      "answer": "NullPointerException"
+    },
+    {
+      "id": 180,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "setSize(int w, int h) में w और h क्या दर्शाते हैं?",
+      "options": [],
+      "answer": "w = Width (चौड़ाई), h = Height (ऊँचाई)"
+    },
+    {
+      "id": 181,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "OOP में ऑब्जेक्ट्स आपस में बातचीत कैसे करते हैं?",
+      "options": [],
+      "answer": "संदेश भेजकर (Message Passing या Calling Methods द्वारा)।"
+    },
+    {
+      "id": 182,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "क्लास का रन-टाइम (Run-time) स्वरूप क्या कहलाता है?",
+      "options": [],
+      "answer": "Object"
+    },
+    {
+      "id": 183,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "reusability (पुनः प्रयोगशीलता) का सॉफ्टवेयर विकास में क्या महत्व है?",
+      "options": [],
+      "answer": "यह नया कोड बार-बार लिखने के समय और श्रम को बचाती है, कोड को मॉड्यूलर बनाती है और प्रोग्राम में बग्स की संभावना कम करती है।"
+    },
+    {
+      "id": 184,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "एक ही प्रोग्राम में एक नाम की कितनी क्लासेस हो सकती हैं?",
+      "options": [],
+      "answer": "केवल एक क्लास।"
+    },
+    {
+      "id": 185,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "एक क्लास के कितने ऑब्जेक्ट्स बनाए जा सकते हैं?",
+      "options": [],
+      "answer": "असंख्य (Uncountable / As per memory limit)।"
+    },
+    {
+      "id": 186,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "क्लास डिक्लेयर करने के लिए किस कीवर्ड का प्रयोग होता है?",
+      "options": [],
+      "answer": "class"
+    },
+    {
+      "id": 187,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Static Data Members की मुख्य विशेषता क्या होती है?",
+      "options": [],
+      "answer": "Static Data Member क्लास के सभी ऑब्जेक्ट्स द्वारा शेयर किया जाता है और इसके लिए मेमोरी केवल एक बार क्लास लोडिंग पर आवंटित होती है।"
+    },
+    {
+      "id": 188,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "System.out.println() में println() क्या है?",
+      "options": [],
+      "answer": "एक Pre-defined Method जो आउटपुट प्रिंट करके कर्सर को नई लाइन में भेजता है।"
+    },
+    {
+      "id": 189,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "बिना ऑब्जेक्ट बनाए किस प्रकार का मेथड सीधे क्लास नाम से कॉल किया जा सकता है?",
+      "options": [],
+      "answer": "Static Method"
+    },
+    {
+      "id": 190,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Mutator Method (Setter) को उदाहरण सहित समझाइए।",
+      "options": [],
+      "answer": "वह मेथड जो क्लास के प्राइवेट डेटा मेम्बर का मान सेट करने या बदलने के लिए उपयोग किया जाता है। उदा. void setAge(int a) { this.age = a; }"
+    },
+    {
+      "id": 191,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Java में Method Declaration की पूरी संरचना (Components) का विस्तारपूर्वक वर्णन कीजिए।",
+      "options": [],
+      "answer": "संरचना: accessSpecifier returnType methodName(parameterList) { method body }। इसके मुख्य घटक Access Modifier, Return Type, Method Name, Parameter List और Exception List हैं।"
+    },
+    {
+      "id": 192,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Base class और Superclass में क्या अंतर है?",
+      "options": [],
+      "answer": "दोनों एक ही हैं; जिस क्लास से दूसरी क्लास inherit करती है उसे Base Class या Superclass कहते हैं।"
+    },
+    {
+      "id": 193,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Derived class और Subclass में क्या अंतर है?",
+      "options": [],
+      "answer": "दोनों एक ही हैं; जो क्लास सुपरक्लास से गुण प्राप्त करती है उसे Subclass या Derived Class कहते हैं।"
+    },
+    {
+      "id": 194,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "किस प्रकार के इनहेरिटेंस में A -> B -> C की संरचना (Chain) बनती है?",
+      "options": [],
+      "answer": "Multilevel Inheritance"
+    },
+    {
+      "id": 195,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जब Parent Reference को Child Reference में Explicitly बदला जाता है, तो उसे क्या कहते हैं?",
+      "options": [],
+      "answer": "Downcasting"
+    },
+    {
+      "id": 196,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "क्या Superclass के Private Members Subclass में एक्सेस हो सकते हैं?",
+      "options": [],
+      "answer": "नहीं, Private members Subclass से सीधे Accessible नहीं होते। उन्हें उपयोग करने के लिए Superclass के public getter/setter पद्धतियों का प्रयोग करना पड़ता है।"
+    },
+    {
+      "id": 197,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Inheritance का Real World Modeling में क्या उपयोग है?",
+      "options": [],
+      "answer": "वास्तविक दुनिया के संबंधों (जैसे Vehicle-Car, Animal-Dog) को प्रोग्रामिंग संरचना में सरलता और स्पष्टता से मॉडल करने में मदद करता है।"
+    },
+    {
+      "id": 198,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Inheritance में Access Specifiers (Private, Default, Protected, Public) की भूमिका की विस्तृत व्याख्या कीजिए।",
+      "options": [],
+      "answer": "Private: केवल समान क्लास में। Default: समान पैकेज में। Protected: समान पैकेज और दूसरे पैकेज की Subclass में। Public: कहीं भी।"
+    },
+    {
+      "id": 199,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "समान डेटा प्रकार के फिक्स्ड साइज कलेक्शन को क्या कहते हैं?",
+      "options": [],
+      "answer": "Array (ऐरे)"
+    },
+    {
+      "id": 200,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "String substring(int beginIndex) का कार्य क्या है?",
+      "options": [],
+      "answer": "दिए गए प्रारंभिक इंडेक्स से अंत तक की सबस्ट्रिंग रिटर्न करना।"
+    },
+    {
+      "id": 201,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "जावा में स्ट्रिंग को Mutable (परिवर्तनशील) बनाने के लिए प्रयुक्त मुख्य क्लास?",
+      "options": [],
+      "answer": "StringBuffer (या StringBuilder)"
+    },
+    {
+      "id": 202,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "ऐरे के तत्वों को आरोही क्रम में व्यवस्थित करने के लिए Arrays क्लास का मेथड?",
+      "options": [],
+      "answer": "sort()"
+    },
+    {
+      "id": 203,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "ऐरे की दो प्रमुख हानियाँ (Disadvantages) लिखिए।",
+      "options": [],
+      "answer": "1. फिक्स्ड साइज (Static Nature) - रनटाइम पर आकार घटाया-बढ़ाया नहीं जा सकता। 2. समान डेटा प्रकार - केवल एक ही डेटा टाइप के मान स्टोर हो सकते हैं।"
+    },
+    {
+      "id": 204,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Method में ऐरे को Pass by Reference के रूप में कैसे उपयोग किया जाता है?",
+      "options": [],
+      "answer": "मेथड पैरामीटर में ऐरे का रेफरेंस पास किया जाता है (उदा. static void printArray(int[] arr)), जिससे मूल ऐरे का एड्रेस शेयर होता है।"
+    },
+    {
+      "id": 205,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "String, StringBuffer और StringBuilder के बीच मुख्य अंतरों की विस्तृत तुलना कीजिए।",
+      "options": [],
+      "answer": "String: Immutable, धीमा। StringBuffer: Mutable, Thread-safe (Synchronized), मध्यम गति। StringBuilder: Mutable, Non-synchronized, सबसे तेज़।"
+    },
+    {
+      "id": 206,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "जावा में Built-in Package के दो उदाहरण दीजिए।",
+      "options": [],
+      "answer": "java.util और java.io"
+    },
+    {
+      "id": 207,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Exception Class किस पैकेज के अंतर्गत आती है?",
+      "options": [],
+      "answer": "java.lang पैकेज"
+    },
+    {
+      "id": 208,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "किसी मेथड द्वारा फेंके जाने वाले संभावित एक्सेप्शन्स को सिग्नेचर में घोषित करने का कीवर्ड?",
+      "options": [],
+      "answer": "throws"
+    },
+    {
+      "id": 209,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "StackOverflowError किस प्रकार की समस्या है?",
+      "options": [],
+      "answer": "Unchecked Error"
+    },
+    {
+      "id": 210,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Default Exception Handling प्रक्रिया में JVM का क्या कार्य होता है?",
+      "options": [],
+      "answer": "यदि कोई कैच ब्लॉक नहीं मिलता तो JVM default handler को एक्टिवेट करके Exception का नाम, विवरण व Stack Trace प्रिंट करके प्रोग्राम बंद कर देती है।"
+    },
+    {
+      "id": 211,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Multithreading में Race Condition और Deadlock को संक्षेप में समझाइए।",
+      "options": [],
+      "answer": "Race Condition: दो थ्रेड्स द्वारा एक ही रिसोर्स को बिना तालमेल अपडेट करना। Deadlock: दो थ्रेड्स का एक-दूसरे के रिसोर्स रिलीज़ होने का अनिश्चितकाल तक इंतज़ार करना।"
+    },
+    {
+      "id": 212,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Exception Handling के पाँचों कीवर्ड्स (try, catch, finally, throw, throws) का विस्तृत उपयोग लिखिए।",
+      "options": [],
+      "answer": "try: कोड टेस्ट करना। catch: एक्सेप्शन हैंडल करना। finally: अनिवार्य कोड निष्पादित करना। throw: मैन्युअली एक्सेप्शन फेंकना। throws: सिग्नेचर में घोषित करना।"
+    },
+    {
+      "id": 213,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "AWT में TextField और TextArea में क्या अंतर है?",
+      "options": [],
+      "answer": "TextField केवल एक सिंगल लाइन इनपुट हेतु है, जबकि TextArea मल्टी-लाइन टेक्स्ट इनपुट और एडिटिंग हेतु है।"
+    },
+    {
+      "id": 214,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Component का बैकग्राउंड और फोरग्राउंड कलर सेट करने के मेथड्स?",
+      "options": [],
+      "answer": "setBackground(Color c) और setForeground(Color c)"
+    },
+    {
+      "id": 215,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "विंडो बंद करने का इवेंट हैंडल करने के लिए प्रयुक्त एडेप्टर क्लास?",
+      "options": [],
+      "answer": "WindowAdapter"
+    },
+    {
+      "id": 216,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "वह AWT कंटेनर जिसका उपयोग विंडोज़ को ग्रिड/टेबल में बांटने हेतु किया जाता है?",
+      "options": [],
+      "answer": "GridLayout"
+    },
+    {
+      "id": 217,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "AWT में Heavyweight Components का क्या अर्थ है?",
+      "options": [],
+      "answer": "AWT कॉम्पोनेंट्स ऑपरेटिंग सिस्टम के नेटिव जीयूआई रिसोर्सेस का प्रयोग करते हैं, इसलिए वे विभिन्न OS पर अलग-अलग दिखते हैं और हैवीवेट कहलाते हैं।"
+    },
+    {
+      "id": 218,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "GridLayout और FlowLayout में अंतर स्पष्ट कीजिए।",
+      "options": [],
+      "answer": "FlowLayout घटकों को पंक्तिबद्ध बाएँ से दाएँ सजाता है, जबकि GridLayout घटकों को समान आकार की रो (Rows) और कॉलम (Columns) की ग्रिड में बांटता है।"
+    },
+    {
+      "id": 219,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "AWT Choice और List कंपोनेंट्स बनाने, आइटम्स जोड़ने और उनके चयन इवेंट्स को हैंडल करने की प्रक्रिया समझाइए।",
+      "options": [],
+      "answer": "Choice c = new Choice(); c.add(\"Item\"); (Dropdown, Single selection)। List l = new List(visibleRows, true); l.add(\"Item\"); (Multiple Selection possible)। इनके लिए ItemListener/ActionListener का प्रयोग होता है।"
+    },
+    {
+      "id": 220,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Procedural programming और Object Oriented programming की मुख्य प्राथमिकता में क्या अंतर है?",
+      "options": [],
+      "answer": "Procedural में फंक्शन्स/अल्गोरिदम को प्राथमिकता मिलती है, जबकि OOP में डेटा और ऑब्जेक्ट्स को प्राथमिक सुरक्षा मिलती है।"
+    },
+    {
+      "id": 221,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 2: Classes and Object",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "किसी ऑब्जेक्ट का आकार किस पर निर्भर करता है?",
+      "options": [],
+      "answer": "उसके नॉन-स्टेटिक डेटा मेम्बर्स के आकार पर"
+    },
+    {
+      "id": 222,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Method body कहाँ लिखी जाती है?",
+      "options": [],
+      "answer": "curly braces { } के अंदर"
+    },
+    {
+      "id": 223,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Parent Class को और किस नाम से जाना जाता है?",
+      "options": [],
+      "answer": "Superclass या Base Class"
+    },
+    {
+      "id": 224,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "1D Array में 5 तत्वों के इंडेक्स मान क्या होंगे?",
+      "options": [],
+      "answer": "0, 1, 2, 3, 4"
+    },
+    {
+      "id": 225,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "RuntimeException की सबक्लासेज किस प्रकार के एक्सेप्शन होती हैं?",
+      "options": [],
+      "answer": "Unchecked Exception"
+    },
+    {
+      "id": 226,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Frame विंडो को स्क्रीन से बंद/गायब करने का मेथड?",
+      "options": [],
+      "answer": "frame.setVisible(false); या frame.dispose();"
+    },
+    {
+      "id": 227,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Data Hiding और Abstraction में क्या संबंध है?",
+      "options": [],
+      "answer": "Data Hiding सुरक्षा प्रदान करने हेतु डेटा को निजी बनाती है, जबकि Abstraction जटिलता छिपाकर केवल प्रासंगिक इंटरफ़ेस प्रस्तुत करती है।"
+    },
+    {
+      "id": 228,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 6: Method in Java",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Return statement का क्या कार्य है?",
+      "options": [],
+      "answer": "यह मेथड के निष्पादन को समाप्त करता है और कॉलिंग मेथड को मान (Value) वापस लौटाता है।"
+    },
+    {
+      "id": 229,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 7: Inheritance",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Multilevel Inheritance का एक व्यावहारिक उदाहरण दीजिए।",
+      "options": [],
+      "answer": "Vehicle -> Car -> SportsCar (जहाँ SportsCar Car से और Car Vehicle से गुण प्राप्त करती है)।"
+    },
+    {
+      "id": 230,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 9: Array and String Manipulation",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "String replace(char old, char new) की कार्यप्रणाली क्या है?",
+      "options": [],
+      "answer": "यह मूल स्ट्रिंग में मौजूद सभी पुराने अक्षरों को नए निर्दिष्ट अक्षर से बदलकर नई स्ट्रिंग लौटाती है।"
+    },
+    {
+      "id": 231,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Thread Sleep State में कैसे जाता है?",
+      "options": [],
+      "answer": "Thread.sleep(milliseconds) मेथड को कॉल करके निर्दिष्ट समय के लिए थ्रेड को ब्लॉक/सस्पेंड किया जाता है।"
+    },
+    {
+      "id": 232,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Short Answer",
+      "difficulty": "Moderate",
+      "question": "Label का Alignment कैसे सेट किया जाता है?",
+      "options": [],
+      "answer": "lbl.setAlignment(Label.CENTER); या Label.LEFT, Label.RIGHT स्थिरांकों द्वारा।"
+    },
+    {
+      "id": 233,
+      "unit": "Unit 1: Object Oriented Programming",
+      "chapter": "Chapter 1: Principles of OOP",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "Object-Oriented Architecture के मुख्य लाभों का विस्तारपूर्वक वर्णन कीजिए।",
+      "options": [],
+      "answer": "सॉफ्टवेयर रखरखाव (Maintainability), पुन: प्रयोज्यता (Reusability), मापनीयता (Scalability), बेहतर सुरक्षा (Data Security) और वास्तविक दुनिया की समस्याओं का सटीक निरूपण।"
+    },
+    {
+      "id": 234,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "Chapter 11: Packages, Threads & Exception Handling",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "जावा में Packages के प्रकार, निर्माण, CLASSPATH और Access Protection पर विस्तृत निबंध लिखिए।",
+      "options": [],
+      "answer": "Built-in व User-defined पैकेज। package mypack; द्वारा घोषणा। javac -d . से संकलन। CLASSPATH पर्यावरण चर JVM को स्थान बताता है। public, protected, default modifiers सुरक्षा प्रदान करते हैं।"
+    },
+    {
+      "id": 235,
+      "unit": "Unit 3: Data Structures & Advanced Java",
+      "chapter": "AWT (Abstract Window Toolkit)",
+      "type": "Long Answer",
+      "difficulty": "Difficult",
+      "question": "एक पूर्ण जावा AWT प्रोग्राम का विवरण दीजिए जिसमें Frame, Label, TextField, Button और Event Handling का उपयोग हुआ हो।",
+      "options": [],
+      "answer": "Frame f = new Frame(); Label, TextField व Button जोड़े जाते हैं। Button.addActionListener(...) द्वारा क्लिक पर TextField का मान प्राप्त करके आउटपुट प्रदर्शित किया जाता है।"
+    }
+  ]
+}
