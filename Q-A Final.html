@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Q&A EduQuizPro Practice — By-Rajiv Kumar Tiwari</title>
+ <style>
+   /* CSS Reset & Variable Design Tokens */
+   *, *::before, *::after {
+     box-sizing: border-box;
+     margin: 0;
+     padding: 0;
+   }
+
+   /* Light Theme Tokens (Default) */
+   :root {
+     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+     --bg-canvas: #f8fafc;
+     --surface-card: #ffffff;
+     --border-subtle: #e2e8f0;
+     --border-active: #cbd5e1;
+     --text-main: #0f172a;
+     --text-muted: #64748b;
+     --text-sub: #475569;
+     --primary: #4f46e5;
+     --primary-hover: #4338ca;
+     --primary-light: #eef2ff;
+     --success: #16a34a;
+     --success-bg: #f0fdf4;
+     --success-border: #86efac;
+     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+     --radius-sm: 8px;
+     --radius-md: 12px;
+     --radius-lg: 16px;
+     --radius-full: 9999px;
+     --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+     --filter-bg: #f1f5f9;
+   }
+
+   /* Dark Theme Tokens */
+   [data-theme="dark"] {
+     --bg-canvas: #0f172a;
+     --surface-card: #1e293b;
+     --border-subtle: #334155;
+     --border-active: #475569;
+     --text-main: #f8fafc;
+     --text-muted: #94a3b8;
+     --text-sub: #cbd5e1;
+     --primary: #6366f1;
+     --primary-hover: #818cf8;
+     --primary-light: rgba(99, 102, 241, 0.15);
+     --success: #22c55e;
+     --success-bg: rgba(34, 197, 94, 0.12);
+     --success-border: #15803d;
+     --filter-bg: #0f172a;
+   }
+
+   html, body {
+     height: 100vh;
+     overflow: hidden; /* Strict Vertical Viewport Fitting */
+     font-family: var(--font-family);
+     background-color: var(--bg-canvas);
+     color: var(--text-main);
+     transition: background-color 0.25s ease, color 0.25s ease;
+     line-height: 1.4;
+   }
+
+   body {
+     display: flex;
+     flex-direction: column;
+   }
+
+   /* Header Navbar */
+   .app-header {
+     background: var(--surface-card);
+     border-bottom: 1px solid var(--border-subtle);
+     padding: 8px 20px;
+     flex-shrink: 0;
+   }
+   .header-inner {
+     max-width: 1100px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+   .brand-logo {
+     font-weight: 700;
+     font-size: 1.05rem;
+     color: var(--primary);
+   }
+
+   .header-controls {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+   }
+   .toggle-btn {
+     background: var(--filter-bg);
+     border: 1px solid var(--border-subtle);
+     color: var(--text-main);
+     padding: 5px 12px;
+     border-radius: var(--radius-full);
+     font-size: 0.8rem;
+     font-weight: 600;
+     cursor: pointer;
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     transition: var(--transition);
+   }
+   .toggle-btn:hover {
+     border-color: var(--primary);
+     color: var(--primary);
+   }
+
+   /* Main Container */
+   .main-container {
+     max-width: 1000px;
+     width: 100%;
+     margin: 0 auto;
+     padding: 10px 16px;
+     flex: 1;
+     display: flex;
+     flex-direction: column;
+     height: calc(100vh - 48px);
+   }
+
+   .screen { 
+     display: none; 
+     height: 100%;
+   }
+   .screen.active { 
+     display: flex; 
+     flex-direction: column; 
+     animation: fadeIn 0.2s ease-out; 
+   }
+   @keyframes fadeIn {
+     from { opacity: 0; transform: translateY(4px); }
+     to { opacity: 1; transform: translateY(0); }
+   }
+
+   .card {
+     background: var(--surface-card);
+     border: 1px solid var(--border-subtle);
+     border-radius: var(--radius-lg);
+     padding: 16px 20px;
+     box-shadow: var(--shadow-sm);
+     display: flex;
+     flex-direction: column;
+     height: 100%;
+     justify-content: space-between;
+   }
+
+   /* Dropzone Area for Screen 1 */
+   .dropzone {
+     border: 2px dashed var(--border-active);
+     border-radius: var(--radius-md);
+     padding: 24px 20px;
+     text-align: center;
+     background: var(--filter-bg);
+     cursor: pointer;
+     transition: var(--transition);
+     margin: 12px 0;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 8px;
+   }
+   .dropzone:hover { border-color: var(--primary); background: var(--primary-light); }
+   .file-input-hidden { display: none; }
+
+   /* Buttons */
+   .btn {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     gap: 6px;
+     font-weight: 600;
+     font-size: 0.88rem;
+     padding: 7px 14px;
+     border-radius: var(--radius-sm);
+     cursor: pointer;
+     border: 1px solid transparent;
+     transition: var(--transition);
+   }
+   .btn-primary { background-color: var(--primary); color: #ffffff; }
+   .btn-primary:hover:not(:disabled) { background-color: var(--primary-hover); }
+   .btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }
+   .btn-secondary { background: var(--surface-card); border-color: var(--border-subtle); color: var(--text-sub); }
+   .btn-secondary:hover { background: var(--filter-bg); color: var(--text-main); }
+   
+   /* Badges */
+   .type-badge {
+     display: inline-block;
+     padding: 3px 10px;
+     border-radius: var(--radius-full);
+     background: var(--primary-light);
+     color: var(--primary);
+     font-size: 0.78rem;
+     font-weight: 700;
+   }
+   .difficulty-badge {
+     display: inline-block;
+     padding: 3px 10px;
+     border-radius: var(--radius-full);
+     background: rgba(217, 119, 6, 0.15);
+     color: #d97706;
+     font-size: 0.78rem;
+     font-weight: 700;
+   }
+   .unit-badge {
+     display: inline-block;
+     padding: 3px 10px;
+     border-radius: var(--radius-full);
+     background: rgba(3, 105, 161, 0.15);
+     color: #0284c7;
+     font-size: 0.78rem;
+     font-weight: 700;
+   }
+
+   /* Compact Combobox & Mode Filter Bar */
+   .filter-bar {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+     gap: 8px;
+     padding: 8px 12px;
+     background: var(--filter-bg);
+     border: 1px solid var(--border-subtle);
+     border-radius: var(--radius-md);
+     margin-bottom: 10px;
+     flex-shrink: 0;
+   }
+   .filter-group {
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+   }
+   .filter-label {
+     font-size: 0.72rem;
+     font-weight: 700;
+     color: var(--text-muted);
+     text-transform: uppercase;
+     letter-spacing: 0.03em;
+   }
+   .combobox {
+     width: 100%;
+     padding: 5px 8px;
+     border-radius: var(--radius-sm);
+     border: 1px solid var(--border-active);
+     background-color: var(--surface-card);
+     font-size: 0.82rem;
+     color: var(--text-main);
+     cursor: pointer;
+     outline: none;
+   }
+   .combobox:focus { border-color: var(--primary); }
+
+   /* Mode & Timer Control Section */
+   .mode-control-container {
+     background: var(--filter-bg);
+     border: 1px solid var(--border-subtle);
+     border-radius: var(--radius-md);
+     padding: 8px 12px;
+     margin-bottom: 10px;
+     display: flex;
+     flex-wrap: wrap;
+     align-items: center;
+     justify-content: space-between;
+     gap: 10px;
+     flex-shrink: 0;
+   }
+   .mode-selection-group {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+   }
+   .radio-option {
+     display: inline-flex;
+     align-items: center;
+     gap: 4px;
+     font-size: 0.82rem;
+     font-weight: 600;
+     cursor: pointer;
+   }
+   .timer-options-group {
+     display: none;
+     align-items: center;
+     gap: 8px;
+     flex-wrap: wrap;
+   }
+   .timer-options-group.active {
+     display: flex;
+   }
+   .timer-badge-countdown {
+     background: var(--primary);
+     color: #ffffff;
+     padding: 2px 8px;
+     border-radius: var(--radius-full);
+     font-size: 0.78rem;
+     font-weight: 700;
+   }
+
+   /* Scrollable Flashcard Content Area */
+   .card-content-viewport {
+     flex: 1;
+     overflow-y: auto;
+     margin-bottom: 10px;
+     padding-right: 4px;
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+   }
+
+   .question-text {
+     font-size: 1.1rem;
+     font-weight: 600;
+     color: var(--text-main);
+     line-height: 1.45;
+     white-space: pre-line;
+   }
+
+   .answer-box {
+     display: none;
+     background: var(--success-bg);
+     border: 1px solid var(--success-border);
+     color: var(--text-main);
+     padding: 12px;
+     border-radius: var(--radius-md);
+     font-size: 0.95rem;
+     line-height: 1.5;
+     white-space: pre-line;
+   }
+   .answer-box.show { display: block; animation: fadeIn 0.2s ease-out; }
+
+   .quiz-footer-nav {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-top: 10px;
+     border-top: 1px solid var(--border-subtle);
+     flex-shrink: 0;
+   }
+
+   /* Scrollbar Styling */
+   .card-content-viewport::-webkit-scrollbar { width: 5px; }
+   .card-content-viewport::-webkit-scrollbar-track { background: transparent; }
+   .card-content-viewport::-webkit-scrollbar-thumb { background: var(--border-active); border-radius: 4px; }
+ </style>
+</head>
+<body>
+ <header class="app-header">
+   <div class="header-inner">
+     <div class="brand-logo">
+       <span>Q&A EduQuizPro Practice By — Rajiv Kumar Tiwari</span>
+     </div>
+     <div class="header-controls">
+       <!-- Language Toggle -->
+       <button type="button" class="toggle-btn" id="langToggleBtn">
+         🌐 <span id="langLabel">English</span>
+       </button>
+       <!-- Dark / Light Theme Toggle -->
+       <button type="button" class="toggle-btn" id="themeToggleBtn">
+         🌙 <span id="themeLabel">Dark Mode</span>
+       </button>
+     </div>
+   </div>
+ </header>
+
+ <main class="main-container">
+   <!-- SCREEN 1: FILE UPLOAD -->
+   <section id="screenUpload" class="screen active">
+     <div class="card">
+       <div>
+         <h1 style="font-size: 1.25rem; font-weight: 700; margin-bottom: 4px;" id="txtUploadTitle">Upload Question Bank JSON</h1>
+         <p style="color: var(--text-sub); font-size: 0.85rem;" id="txtUploadSub">
+           Select or drag a JSON file containing your unit/chapter-wise questions.
+         </p>
+       </div>
+       
+       <div class="dropzone" id="dropzone">
+         <div>
+           <span style="font-weight: 600; color: var(--text-main);" id="txtDropLabel">Drop your JSON file here</span>
+           <span style="color: var(--text-muted); display: block; font-size: 0.8rem; margin-top: 2px;" id="txtDropSub">or click Browse to select</span>
+         </div>
+         <button type="button" class="btn btn-secondary" id="browseBtn">Browse File</button>
+         <input type="file" id="fileInput" class="file-input-hidden" accept=".json,application/json">
+       </div>
+
+       <div style="display: flex; justify-content: flex-end;">
+         <button type="button" class="btn btn-primary" id="startBtn" disabled>Start Practice</button>
+       </div>
+     </div>
+   </section>
+
+   <!-- SCREEN 2: ACTIVE QUESTION VIEW -->
+   <section id="screenQuestions" class="screen">
+     <div class="card">
+       <!-- Compact Filter Bar -->
+       <div class="filter-bar">
+         <div class="filter-group">
+           <label for="chapterFilter" class="filter-label" id="lblChapterFilter">Unit / Chapter:</label>
+           <select id="chapterFilter" class="combobox">
+             <option value="ALL">All Units & Chapters</option>
+           </select>
+         </div>
+         <div class="filter-group">
+           <label for="typeFilter" class="filter-label" id="lblTypeFilter">Question Type:</label>
+           <select id="typeFilter" class="combobox">
+             <option value="ALL">All Question Types</option>
+           </select>
+         </div>
+         <div class="filter-group">
+           <label for="difficultyFilter" class="filter-label" id="lblDifficultyFilter">Difficulty Level:</label>
+           <select id="difficultyFilter" class="combobox">
+             <option value="ALL">All Difficulty Levels</option>
+           </select>
+         </div>
+       </div>
+
+       <!-- Mode & Timer Control Section -->
+       <div class="mode-control-container">
+         <div class="mode-selection-group">
+           <span class="filter-label" id="lblModeTitle">Answer Mode:</span>
+           <label class="radio-option">
+             <input type="radio" name="answerMode" value="manual" checked> <span id="lblModeManual">Manual</span>
+           </label>
+           <label class="radio-option">
+             <input type="radio" name="answerMode" value="auto"> <span id="lblModeAuto">Automatic</span>
+           </label>
+         </div>
+
+         <!-- Radio Buttons for Time Duration (Appears when Automatic is selected) -->
+         <div class="timer-options-group" id="timerGroup">
+           <span class="filter-label" id="lblTimeTitle">Show Time:</span>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="10" checked> 10s</label>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="20"> 20s</label>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="30"> 30s</label>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="40"> 40s</label>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="50"> 50s</label>
+           <label class="radio-option"><input type="radio" name="autoTimer" value="60"> 60s</label>
+           <span id="countdownBadge" class="timer-badge-countdown" style="display: none;">10s</span>
+         </div>
+       </div>
+
+       <!-- Flashcard Viewport -->
+       <div class="card-content-viewport">
+         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
+           <span id="qIndexBadge" style="font-weight: 700; color: var(--text-muted); font-size: 0.85rem;">Question 1 of 10</span>
+           <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+             <span id="qUnitBadge" class="unit-badge">Unit / Chapter</span>
+             <span id="qTypeBadge" class="type-badge">Short Answer</span>
+             <span id="qDifficultyBadge" class="difficulty-badge">Easy</span>
+           </div>
+         </div>
+
+         <!-- Question Prompt -->
+         <div class="question-text" id="questionText">Question content will appear here...</div>
+
+         <div>
+           <button type="button" class="btn btn-secondary" id="toggleAnswerBtn">👁️ Show Answer</button>
+         </div>
+
+         <!-- Model Answer Box -->
+         <div id="answerBox" class="answer-box">
+           <strong id="lblAnswerTitle">Answer:</strong>
+           <div id="answerText" style="margin-top: 4px;"></div>
+         </div>
+       </div>
+
+       <!-- Bottom Navigation Bar -->
+       <div class="quiz-footer-nav">
+         <button type="button" class="btn btn-secondary" id="prevBtn">&larr; Previous</button>
+         <button type="button" class="btn btn-primary" id="nextBtn">Next &rarr;</button>
+       </div>
+     </div>
+   </section>
+ </main>
+
+ <script>
+   // Bilingual UI Translations
+   const Translations = {
+     en: {
+       uploadTitle: "Upload Question Bank JSON",
+       uploadSub: "Select or drag a JSON file containing your unit/chapter-wise questions.",
+       dropLabel: "Drop your JSON file here",
+       dropSub: "or click Browse to select",
+       browse: "Browse File",
+       start: "Start Practice",
+       unitFilter: "Unit / Chapter:",
+       typeFilter: "Question Type:",
+       difficultyFilter: "Difficulty Level:",
+       modeTitle: "Answer Mode:",
+       modeManual: "Manual",
+       modeAuto: "Automatic",
+       timeTitle: "Time Limit:",
+       allUnits: "All Units & Chapters",
+       allTypes: "All Question Types",
+       allDiffs: "All Difficulty Levels",
+       showAns: "👁️ Show Answer",
+       hideAns: "🙈 Hide Answer",
+       ansTitle: "Answer:",
+       prev: "← Previous",
+       next: "Next →",
+       questionOf: "Question",
+       of: "of",
+       noQuestions: "No questions found matching the selected Unit/Chapter or Filter criteria."
+     },
+     hi: {
+       uploadTitle: "Question Bank JSON अपलोड करें",
+       uploadSub: "अपने प्रश्नों वाली JSON फ़ाइल चुनें या ड्रैग करें।",
+       dropLabel: "अपनी JSON फ़ाइल यहाँ ड्रॉप करें",
+       dropSub: "या चुनने के लिए Browse पर क्लिक करें",
+       browse: "फ़ाइल चुनें (Browse)",
+       start: "अभ्यास शुरू करें",
+       unitFilter: "Unit / Chapter:",
+       typeFilter: "Question Type:",
+       difficultyFilter: "Difficulty Level:",
+       modeTitle: "Answer Mode:",
+       modeManual: "Manual",
+       modeAuto: "Automatic",
+       timeTitle: "समय सीमा:",
+       allUnits: "सभी Units और Chapters",
+       allTypes: "सभी Question Types",
+       allDiffs: "सभी Difficulty Levels",
+       showAns: "👁️ Answer देखें",
+       hideAns: "🙈 Answer छिपाएं",
+       ansTitle: "Answer:",
+       prev: "← पिछले",
+       next: "अगला →",
+       questionOf: "प्रश्न",
+       of: "कुल",
+       noQuestions: "चयनित फ़िल्टर मापदंडों से मेल खाने वाले कोई प्रश्न नहीं मिले।"
+     }
+   };
+
+   const AppState = {
+     allQuestions: [],
+     filteredQuestions: [],
+     currentIndex: 0,
+     title: "",
+     currentTheme: localStorage.getItem('app_theme') || 'light',
+     currentLang: localStorage.getItem('app_lang') || 'en',
+     answerMode: 'manual', // 'manual' or 'auto'
+     autoTimerDuration: 10, // Default 10 seconds
+     timerInterval: null,
+     remainingTime: 10
+   };
+
+   // DOM Elements
+   const htmlElem = document.documentElement;
+   const themeToggleBtn = document.getElementById('themeToggleBtn');
+   const themeLabel = document.getElementById('themeLabel');
+   const langToggleBtn = document.getElementById('langToggleBtn');
+   const langLabel = document.getElementById('langLabel');
+
+   const screenUpload = document.getElementById('screenUpload');
+   const screenQuestions = document.getElementById('screenQuestions');
+   const dropzone = document.getElementById('dropzone');
+   const fileInput = document.getElementById('fileInput');
+   const browseBtn = document.getElementById('browseBtn');
+   const startBtn = document.getElementById('startBtn');
+
+   const chapterFilter = document.getElementById('chapterFilter');
+   const typeFilter = document.getElementById('typeFilter');
+   const difficultyFilter = document.getElementById('difficultyFilter');
+
+   const timerGroup = document.getElementById('timerGroup');
+   const countdownBadge = document.getElementById('countdownBadge');
+
+   const qIndexBadge = document.getElementById('qIndexBadge');
+   const qUnitBadge = document.getElementById('qUnitBadge');
+   const qTypeBadge = document.getElementById('qTypeBadge');
+   const qDifficultyBadge = document.getElementById('qDifficultyBadge');
+   const questionText = document.getElementById('questionText');
+   const toggleAnswerBtn = document.getElementById('toggleAnswerBtn');
+   const answerBox = document.getElementById('answerBox');
+   const answerText = document.getElementById('answerText');
+   const prevBtn = document.getElementById('prevBtn');
+   const nextBtn = document.getElementById('nextBtn');
+
+   // Initialize Application State & UI Toggles
+   function initApp() {
+     applyTheme(AppState.currentTheme);
+     applyLanguage(AppState.currentLang);
+   }
+
+   // Theme Toggle Logic
+   function applyTheme(theme) {
+     AppState.currentTheme = theme;
+     localStorage.setItem('app_theme', theme);
+     if (theme === 'dark') {
+       htmlElem.setAttribute('data-theme', 'dark');
+       themeLabel.textContent = "Light Mode";
+       themeToggleBtn.firstChild.textContent = "☀️ ";
+     } else {
+       htmlElem.removeAttribute('data-theme');
+       themeLabel.textContent = "Dark Mode";
+       themeToggleBtn.firstChild.textContent = "🌙 ";
+     }
+   }
+
+   themeToggleBtn.addEventListener('click', () => {
+     applyTheme(AppState.currentTheme === 'light' ? 'dark' : 'light');
+   });
+
+   // Bilingual Language Logic
+   function applyLanguage(lang) {
+     AppState.currentLang = lang;
+     localStorage.setItem('app_lang', lang);
+     langLabel.textContent = lang === 'en' ? 'English' : 'हिंदी (Hindi)';
+     
+     const t = Translations[lang];
+     
+     // Update Static UI Text
+     document.getElementById('txtUploadTitle').textContent = t.uploadTitle;
+     document.getElementById('txtUploadSub').textContent = t.uploadSub;
+     document.getElementById('txtDropLabel').textContent = t.dropLabel;
+     document.getElementById('txtDropSub').textContent = t.dropSub;
+     browseBtn.textContent = t.browse;
+     
+     if (AppState.allQuestions.length > 0) {
+       startBtn.textContent = `${t.start} (${AppState.allQuestions.length})`;
+     } else {
+       startBtn.textContent = t.start;
+     }
+
+     document.getElementById('lblChapterFilter').textContent = t.unitFilter;
+     document.getElementById('lblTypeFilter').textContent = t.typeFilter;
+     document.getElementById('lblDifficultyFilter').textContent = t.difficultyFilter;
+     document.getElementById('lblModeTitle').textContent = t.modeTitle;
+     document.getElementById('lblModeManual').textContent = t.modeManual;
+     document.getElementById('lblModeAuto').textContent = t.modeAuto;
+     document.getElementById('lblTimeTitle').textContent = t.timeTitle;
+     document.getElementById('lblAnswerTitle').textContent = t.ansTitle;
+
+     prevBtn.textContent = t.prev;
+     nextBtn.textContent = t.next;
+
+     if (chapterFilter.options.length > 0) chapterFilter.options[0].textContent = t.allUnits;
+     if (typeFilter.options.length > 0) typeFilter.options[0].textContent = t.allTypes;
+     if (difficultyFilter.options.length > 0) difficultyFilter.options[0].textContent = t.allDiffs;
+
+     if (screenQuestions.classList.contains('active')) {
+       renderQuestion(AppState.currentIndex);
+     }
+   }
+
+   langToggleBtn.addEventListener('click', () => {
+     applyLanguage(AppState.currentLang === 'en' ? 'hi' : 'en');
+   });
+
+   // Answer Mode & Timer Selection Radio Change Listeners
+   document.querySelectorAll('input[name="answerMode"]').forEach(radio => {
+     radio.addEventListener('change', (e) => {
+       AppState.answerMode = e.target.value;
+       if (AppState.answerMode === 'auto') {
+         timerGroup.classList.add('active');
+         countdownBadge.style.display = 'inline-block';
+         startAutoTimer();
+       } else {
+         timerGroup.classList.remove('active');
+         countdownBadge.style.display = 'none';
+         stopAutoTimer();
+       }
+     });
+   });
+
+   document.querySelectorAll('input[name="autoTimer"]').forEach(radio => {
+     radio.addEventListener('change', (e) => {
+       AppState.autoTimerDuration = parseInt(e.target.value, 10);
+       if (AppState.answerMode === 'auto') {
+         startAutoTimer();
+       }
+     });
+   });
+
+   function stopAutoTimer() {
+     if (AppState.timerInterval) {
+       clearInterval(AppState.timerInterval);
+       AppState.timerInterval = null;
+     }
+   }
+
+   function startAutoTimer() {
+     stopAutoTimer();
+     if (AppState.answerMode !== 'auto' || AppState.filteredQuestions.length === 0) return;
+
+     AppState.remainingTime = AppState.autoTimerDuration;
+     countdownBadge.textContent = `${AppState.remainingTime}s`;
+
+     AppState.timerInterval = setInterval(() => {
+       AppState.remainingTime--;
+       countdownBadge.textContent = `${AppState.remainingTime}s`;
+
+       if (AppState.remainingTime <= 0) {
+         stopAutoTimer();
+         // Automatically show answer
+         if (!answerBox.classList.contains('show')) {
+           const t = Translations[AppState.currentLang];
+           answerBox.classList.add('show');
+           toggleAnswerBtn.textContent = t.hideAns;
+         }
+
+         // Wait 3 seconds to let user read the answer, then proceed to next question
+         setTimeout(() => {
+           if (AppState.answerMode === 'auto' && AppState.currentIndex < AppState.filteredQuestions.length - 1) {
+             renderQuestion(AppState.currentIndex + 1);
+           }
+         }, 3000);
+       }
+     }, 1000);
+   }
+
+   // File Drag & Drop Setup
+   browseBtn.addEventListener('click', (e) => { e.stopPropagation(); fileInput.click(); });
+   dropzone.addEventListener('click', () => fileInput.click());
+
+   fileInput.addEventListener('change', (e) => {
+     if (e.target.files.length > 0) handleFile(e.target.files[0]);
+   });
+
+   dropzone.addEventListener('dragover', (e) => { e.preventDefault(); dropzone.style.borderColor = 'var(--primary)'; });
+   dropzone.addEventListener('dragleave', () => { dropzone.style.borderColor = 'var(--border-active)'; });
+   dropzone.addEventListener('drop', (e) => {
+     e.preventDefault();
+     if (e.dataTransfer.files.length > 0) handleFile(e.dataTransfer.files[0]);
+   });
+
+   function handleFile(file) {
+     const reader = new FileReader();
+     reader.onload = (evt) => {
+       try {
+         const parsed = JSON.parse(evt.target.result);
+         AppState.allQuestions = parsed.questions || [];
+         AppState.title = parsed.title || "Question Bank";
+         if (AppState.allQuestions.length > 0) {
+           startBtn.disabled = false;
+           const t = Translations[AppState.currentLang];
+           startBtn.textContent = `${t.start} (${AppState.allQuestions.length})`;
+         }
+       } catch (err) {
+         alert("Invalid JSON file format!");
+       }
+     };
+     reader.readAsText(file);
+   }
+
+   startBtn.addEventListener('click', () => {
+     screenUpload.classList.remove('active');
+     screenQuestions.classList.add('active');
+     populateFilterDropdowns();
+     applyFilters();
+   });
+
+   function populateFilterDropdowns() {
+     const t = Translations[AppState.currentLang];
+     chapterFilter.innerHTML = `<option value="ALL">${t.allUnits}</option>`;
+     typeFilter.innerHTML = `<option value="ALL">${t.allTypes}</option>`;
+     difficultyFilter.innerHTML = `<option value="ALL">${t.allDiffs}</option>`;
+
+     const chapters = new Set();
+     const types = new Set();
+     const difficulties = new Set();
+
+     AppState.allQuestions.forEach(q => {
+       let label = "";
+       if (q.unit && q.chapter) {
+         label = `${q.unit} - ${q.chapter}`;
+       } else if (q.chapter) {
+         label = q.chapter;
+       } else if (q.unit) {
+         label = q.unit;
+       }
+       if (label) chapters.add(label);
+       if (q.type) types.add(q.type);
+       if (q.difficulty) difficulties.add(q.difficulty);
+     });
+
+     chapters.forEach(c => {
+       const opt = document.createElement('option');
+       opt.value = c;
+       opt.textContent = c;
+       chapterFilter.appendChild(opt);
+     });
+
+     types.forEach(tp => {
+       const opt = document.createElement('option');
+       opt.value = tp;
+       opt.textContent = tp;
+       typeFilter.appendChild(opt);
+     });
+
+     difficulties.forEach(d => {
+       const opt = document.createElement('option');
+       opt.value = d;
+       opt.textContent = d;
+       difficultyFilter.appendChild(opt);
+     });
+   }
+
+   function applyFilters() {
+     const selectedChapter = chapterFilter.value;
+     const selectedType = typeFilter.value;
+     const selectedDifficulty = difficultyFilter.value;
+
+     AppState.filteredQuestions = AppState.allQuestions.filter(q => {
+       let qChapterLabel = "";
+       if (q.unit && q.chapter) {
+         qChapterLabel = `${q.unit} - ${q.chapter}`;
+       } else if (q.chapter) {
+         qChapterLabel = q.chapter;
+       } else if (q.unit) {
+         qChapterLabel = q.unit;
+       }
+
+       const matchChapter = (selectedChapter === 'ALL') || (qChapterLabel === selectedChapter);
+       const matchType = (selectedType === 'ALL') || (q.type === selectedType);
+       const matchDifficulty = (selectedDifficulty === 'ALL') || (q.difficulty === selectedDifficulty);
+
+       return matchChapter && matchType && matchDifficulty;
+     });
+
+     renderQuestion(0);
+   }
+
+   chapterFilter.addEventListener('change', applyFilters);
+   typeFilter.addEventListener('change', applyFilters);
+   difficultyFilter.addEventListener('change', applyFilters);
+
+   function renderQuestion(index) {
+     stopAutoTimer();
+     AppState.currentIndex = index;
+     const total = AppState.filteredQuestions.length;
+     const t = Translations[AppState.currentLang];
+
+     if (total === 0) {
+       qIndexBadge.textContent = `${t.questionOf} 0 ${t.of} 0`;
+       qUnitBadge.style.display = "none";
+       qTypeBadge.style.display = "none";
+       qDifficultyBadge.style.display = "none";
+       questionText.textContent = t.noQuestions;
+       answerText.textContent = "";
+       answerBox.classList.remove('show');
+       toggleAnswerBtn.style.display = "none";
+       prevBtn.disabled = true;
+       nextBtn.disabled = true;
+       return;
+     }
+
+     toggleAnswerBtn.style.display = "inline-flex";
+     const q = AppState.filteredQuestions[index];
+
+     qIndexBadge.textContent = `${t.questionOf} ${index + 1} ${t.of} ${total}`;
+     
+     let unitText = "";
+     if (q.unit && q.chapter) {
+       unitText = `${q.unit} | ${q.chapter}`;
+     } else {
+       unitText = q.unit || q.chapter || "";
+     }
+
+     if (unitText) {
+       qUnitBadge.textContent = unitText;
+       qUnitBadge.style.display = "inline-block";
+     } else {
+       qUnitBadge.style.display = "none";
+     }
+
+     if (q.type) {
+       qTypeBadge.textContent = q.type;
+       qTypeBadge.style.display = "inline-block";
+     } else {
+       qTypeBadge.style.display = "none";
+     }
+
+     if (q.difficulty) {
+       qDifficultyBadge.textContent = q.difficulty;
+       qDifficultyBadge.style.display = "inline-block";
+     } else {
+       qDifficultyBadge.style.display = "none";
+     }
+
+     questionText.textContent = q.question;
+     answerText.textContent = q.answer;
+
+     answerBox.classList.remove('show');
+     toggleAnswerBtn.textContent = t.showAns;
+
+     prevBtn.disabled = (index === 0);
+     nextBtn.disabled = (index === total - 1);
+
+     // Restart Auto Timer if Automatic mode is active
+     if (AppState.answerMode === 'auto') {
+       startAutoTimer();
+     }
+   }
+
+   toggleAnswerBtn.addEventListener('click', () => {
+     const t = Translations[AppState.currentLang];
+     if (answerBox.classList.contains('show')) {
+       answerBox.classList.remove('show');
+       toggleAnswerBtn.textContent = t.showAns;
+     } else {
+       answerBox.classList.add('show');
+       toggleAnswerBtn.textContent = t.hideAns;
+     }
+   });
+
+   prevBtn.addEventListener('click', () => {
+     if (AppState.currentIndex > 0) renderQuestion(AppState.currentIndex - 1);
+   });
+
+   nextBtn.addEventListener('click', () => {
+     if (AppState.currentIndex < AppState.filteredQuestions.length - 1) renderQuestion(AppState.currentIndex + 1);
+   });
+
+   // Initialize App Settings
+   initApp();
+ </script>
+</body>
+</html>
