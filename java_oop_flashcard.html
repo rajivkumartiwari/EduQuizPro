@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java OOP & Advanced Concepts - 120 Master Flashcards (Bilingual)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .perspective-1000 {
+            perspective: 1000px;
+        }
+        .transform-style-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+        }
+        .backface-hidden {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .rotate-y-180 {
+            transform: rotateY(180deg);
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 h-screen flex flex-col justify-between selection:bg-indigo-500 selection:text-white transition-colors duration-200 overflow-hidden">
+
+    <script>
+        const originalFlashcards = [
+            // ==================== TOPIC 1: OOP Fundamentals (20 Cards) ====================
+            { 
+                id: 1, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What programming approach is used in Object-Oriented Programming (OOP)?", hi: "Object-Oriented Programming (OOP) में किस प्रकार की approach का प्रयोग होता है?" }, 
+                answer: { en: "Bottom-up approach", hi: "Bottom-up approach" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 2, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the term for combining data and functions into a single unit?", hi: "Data और functions को एक single unit में combine करने को क्या कहते हैं?" }, 
+                answer: { en: "Encapsulation", hi: "Encapsulation" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 3, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Dynamic Binding in OOP?", hi: "OOP में Dynamic Binding से क्या तात्पर्य है?" }, 
+                answer: { en: "Determining which function call to execute at run-time, typically used with virtual functions.", hi: "Program के run-time पर यह तय करना कि कौन सा function call होगा, जो आमतौर पर virtual functions के साथ उपयोग होता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 4, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Name two procedure-oriented programming languages.", hi: "दो procedure-oriented programming languages के नाम दीजिए।" }, 
+                answer: { en: "C, FORTRAN, Pascal and BASIC", hi: "C, FORTRAN, Pascal और BASIC" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 5, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Data Hiding and how is it achieved in OOP?", hi: "Data Hiding क्या है और यह OOP में कैसे प्राप्त की जाती है?" }, 
+                answer: { en: "Technique to protect class data from unauthorized access, achieved using private keywords.", hi: "Class के data को unauthorized access से सुरक्षित रखने की तकनीक, जो private keyword का उपयोग करके प्राप्त की जाती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 6, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the primary objective or main focus of OOP?", hi: "OOP का primary objective या main focus क्या है?" }, 
+                answer: { en: "Organizing and structuring data into objects rather than pure procedural execution.", hi: "Pure procedural execution के बजाय data को objects में organize और structure करना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 7, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What design approach is used in Structured Programming?", hi: "Structured Programming में किस design approach का प्रयोग किया जाता है?" }, 
+                answer: { en: "Top-down approach", hi: "Top-down approach" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 8, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "How are data managed in Structured Programming vs OOP?", hi: "Structured Programming और OOP में data का management कैसे किया जाता है?" }, 
+                answer: { en: "Structured programming uses global data, whereas OOP encapsulates data inside classes.", hi: "Structured programming global data का उपयोग करती है, जबकि OOP data को classes के भीतर encapsulate करती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 9, topic: "OOP Fundamentals", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is the key advantage of OOP in large software engineering projects?", hi: "Large software engineering projects में OOP का key advantage क्या है?" }, 
+                answer: { en: "Enhanced reusability, modularity, easier debugging, and strong data security.", hi: "Enhanced reusability, modularity, easier debugging, और strong data security।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 10, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What are the core pillars of Object-Oriented Programming?", hi: "Object-Oriented Programming के core pillars कौन से हैं?" }, 
+                answer: { en: "Encapsulation, Inheritance, Polymorphism, and Abstraction.", hi: "Encapsulation, Inheritance, Polymorphism, और Abstraction।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 11, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Give two examples of modern OOP languages.", hi: "Modern OOP languages के दो उदाहरण दीजिए।" }, 
+                answer: { en: "Java, C++, C#, and Python", hi: "Java, C++, C# और Python" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 12, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Code Reusability in OOP?", hi: "OOP में Code Reusability क्या है?" }, 
+                answer: { en: "The capability to use existing written code multiple times without rewriting, primarily achieved via Inheritance.", hi: "Already written code को बिना rewrite किए multiple times use करने की capability, जो मुख्य रूप से Inheritance द्वारा achieve होती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 1, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 13, topic: "OOP Fundamentals", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What does Data Abstraction mean in OOP?", hi: "OOP में Data Abstraction का क्या अर्थ है?" }, 
+                answer: { en: "Hiding background implementation complexity and showing only essential features to the user.", hi: "Background implementation complexity को hide करना और user को केवल essential features दिखाना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 14, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Polymorphism?", hi: "Polymorphism क्या है?" }, 
+                answer: { en: "The ability of a function, operator, or object to take multiple forms ('one name, many forms').", hi: "किसी function, operator या object की multiple forms लेने की ability ('एक name, many forms')।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 15, topic: "OOP Fundamentals", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "How do objects communicate with each other during runtime?", hi: "Runtime के दौरान objects एक-दूसरे के साथ कैसे communicate करते हैं?" }, 
+                answer: { en: "By passing messages to one another.", hi: "एक-दूसरे को messages pass करके।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 4, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 16, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Are variables in structured programming local or global by default?", hi: "Structured programming में variables default रूप से local होते हैं या global?" }, 
+                answer: { en: "Global by default, making them accessible across functions.", hi: "Default रूप से global, जिससे वे सभी functions में accessible होते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 17, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is an Object in the real world?", hi: "Real world में एक Object क्या है?" }, 
+                answer: { en: "A real-world entity with state, behavior, and identity (e.g., a specific car or employee).", hi: "State, behavior और identity वाली real-world entity (उदा. एक विशिष्ट car या employee)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 18, topic: "OOP Fundamentals", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "Why is OOP considered more maintainable than procedural programming?", hi: "Procedural programming की तुलना में OOP को अधिक maintainable क्यों माना जाता है?" }, 
+                answer: { en: "Because data and behavior are bundled locally within classes, minimizing unintended side-effects across the program.", hi: "क्योंकि data और behavior को classes के भीतर locally bundle किया जाता है, जिससे program में unintended side-effects कम से कम होते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 19, topic: "OOP Fundamentals", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is message passing in OOP?", hi: "OOP में message passing क्या है?" }, 
+                answer: { en: "The process by which an object invokes methods or sends requests to another object.", hi: "वह process जिसके द्वारा एक object दूसरे object को methods invoke करता है या requests भेजता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 4, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 20, topic: "OOP Fundamentals", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is a Class in OOP context?", hi: "OOP context में Class क्या है?" }, 
+                answer: { en: "A user-defined blueprint or prototype from which objects are created.", hi: "एक user-defined blueprint या prototype जिससे objects created किए जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 2, intervalTier: 0, bookmarked: false 
+            },
+
+            // ==================== TOPIC 2: Classes & Objects (20 Cards) ====================
+            { 
+                id: 21, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Which operator is known as the Scope Resolution Operator in C++ classes?", hi: "C++ classes में किस operator को Scope Resolution Operator कहा जाता है?" }, 
+                answer: { en: "::", hi: "::" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 8, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 22, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the default access specifier for members of a class in C++?", hi: "C++ में class के members के लिए default access specifier क्या होता है?" }, 
+                answer: { en: "Private", hi: "Private" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 9, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 23, topic: "Classes & Objects", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is the access scope of a Friend Function in C++?", hi: "C++ में Friend Function का access scope क्या होता है?" }, 
+                answer: { en: "Can access private and protected members of a class without being a member function itself.", hi: "यह class का member function न होने के बावजूद भी उसके private और protected members को access कर सकता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 24, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What happens to original data when passing an object as an argument by value?", hi: "जब किसी object को pass by value के रूप में argument pass किया जाता है, तो original data का क्या होता है?" }, 
+                answer: { en: "A copy of the object is passed; original data remains safe and unaffected.", hi: "Object की एक copy pass होती है; original data safe और unaffected रहता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 11, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 25, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "How many types of variables can a class contain according to C++ notes?", hi: "C++ notes के अनुसार एक class में कितने प्रकार के variables हो सकते हैं?" }, 
+                answer: { en: "Data members and Static data members.", hi: "Data members और Static data members।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 8, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 26, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What are the two ways to define a member function in C++?", hi: "C++ में member function को define करने के दो तरीके कौन से हैं?" }, 
+                answer: { en: "Inside Class Definition and Outside Class Definition (using scope resolution :: operator).", hi: "Inside Class Definition और Outside Class Definition (:: operator का उपयोग करके)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 9, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 27, topic: "Classes & Objects", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What are the three main Access Specifiers in C++ classes?", hi: "C++ classes में तीन main Access Specifiers कौन से हैं?" }, 
+                answer: { en: "Public, Private, and Protected.", hi: "Public, Private, और Protected।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 28, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the access level of a Protected member?", hi: "Protected member का access level क्या होता है?" }, 
+                answer: { en: "Accessible within the class and inside its derived/child classes.", hi: "Class के भीतर और उसकी derived/child classes के अंदर accessible होता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 29, topic: "Classes & Objects", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What are the three ways to pass an object as a function argument?", hi: "Function argument के रूप में object pass करने के तीन तरीके कौन से हैं?" }, 
+                answer: { en: "1. Pass by Value, 2. Pass by Reference, 3. Pass by Pointer.", hi: "1. Pass by Value, 2. Pass by Reference, 3. Pass by Pointer।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 11, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 30, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is a major characteristic of Pass by Reference for objects?", hi: "Objects के लिए Pass by Reference की major characteristic क्या है?" }, 
+                answer: { en: "No copy is made; direct reference is passed, so modifications affect the original object and execution is fast.", hi: "कोई copy नहीं बनती; direct reference pass होता है, जिससे modifications original object को affect करती हैं और execution fast होता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 11, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 31, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Does defining a class allocate RAM memory?", hi: "क्या class define करने से RAM memory allocate होती है?" }, 
+                answer: { en: "No, a class is a logical blueprint; memory is allocated only when an object is instantiated.", hi: "नहीं, class एक logical blueprint है; memory केवल तभी allocate होती है जब object instantiate किया जाता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 32, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What operator is used by an object to access class member functions?", hi: "किसी object द्वारा class member functions को access करने के लिए किस operator का उपयोग किया जाता है?" }, 
+                answer: { en: "Dot (.) operator.", hi: "Dot (.) operator।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 9, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 33, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the default nature of functions defined inside a class body?", hi: "Class body के अंदर define किए गए functions की default nature क्या होती है?" }, 
+                answer: { en: "They are treated as inline functions by default.", hi: "वे default रूप से inline functions माने जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 34, topic: "Classes & Objects", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "Can a Friend function be a friend to multiple classes?", hi: "क्या एक Friend function multiple classes का friend हो सकता है?" }, 
+                answer: { en: "Yes, a single friend function can be declared as a friend in multiple classes.", hi: "हाँ, एक single friend function को multiple classes में friend के रूप में declare किया जा सकता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 35, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Which pointer arrow operator is used when passing objects by pointer?", hi: "Objects को pointer द्वारा pass करते समय किस pointer arrow operator का उपयोग किया जाता है?" }, 
+                answer: { en: "The arrow operator (->).", hi: "Arrow operator (->)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 12, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 36, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Who defines a Class in programming?", hi: "Programming में Class को कौन define करता है?" }, 
+                answer: { en: "The Programmer.", hi: "Programmer।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 8, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 37, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is an Object in terms of existence?", hi: "Existence के संदर्भ में Object क्या है?" }, 
+                answer: { en: "A runtime physical entity that occupies RAM memory.", hi: "एक runtime physical entity जो RAM memory घेरती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 8, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 38, topic: "Classes & Objects", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is the memory impact of Pass by Value on objects?", hi: "Objects पर Pass by Value का memory पर क्या impact पड़ता है?" }, 
+                answer: { en: "It consumes more memory and is comparatively slower because a complete object copy is created.", hi: "यह अधिक memory लेता है और comparatively slow होता है क्योंकि एक complete object copy बनाई जाती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 11, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 39, topic: "Classes & Objects", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Does a class have physical existence?", hi: "क्या class का physical existence होता है?" }, 
+                answer: { en: "No, a class has only logical existence.", hi: "नहीं, class का केवल logical existence होता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 3, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 40, topic: "Classes & Objects", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Can member functions of a class be overloaded?", hi: "क्या class के member functions को overload किया जा सकता है?" }, 
+                answer: { en: "Yes, function overloading is fully supported among class member functions.", hi: "हाँ, class member functions के बीच function overloading fully supported है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 10, intervalTier: 0, bookmarked: false 
+            },
+
+            // ==================== TOPIC 3: Methods in Java (20 Cards) ====================
+            { 
+                id: 41, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What prefix is conventionally used for Accessor methods that retrieve values?", hi: "Values retrieve करने वाले Accessor methods के लिए conventionally किस prefix का उपयोग किया जाता है?" }, 
+                answer: { en: "get", hi: "get" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 42, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What prefix is conventionally used for Mutator methods that modify values?", hi: "Values modify करने वाले Mutator methods के लिए conventionally किस prefix का उपयोग किया जाता है?" }, 
+                answer: { en: "set", hi: "set" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 18, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 43, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the body status of an abstract method?", hi: "Abstract method की body की status क्या होती है?" }, 
+                answer: { en: "No body; only declaration is provided, ending with a semicolon.", hi: "कोई body नहीं होती; केवल declaration दी जाती है, जो semicolon पर समाप्त होती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 44, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the purpose of the this keyword in Java?", hi: "Java में this keyword का purpose क्या है?" }, 
+                answer: { en: "Refers to the current object to resolve naming conflicts between instance variables and parameters.", hi: "Instance variables और parameters के बीच naming conflicts को resolve करने के लिए current object को refer करता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 45, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Method Overloading is an example of which type of polymorphism?", hi: "Method Overloading किस प्रकार के polymorphism का example है?" }, 
+                answer: { en: "Compile-time Polymorphism", hi: "Compile-time Polymorphism" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 15, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 46, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the return type of a constructor?", hi: "Constructor का return type क्या होता है?" }, 
+                answer: { en: "None (not even void)", hi: "None (void भी नहीं)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 14, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 47, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the purpose of the public keyword in method declaration?", hi: "Method declaration में public keyword का purpose क्या है?" }, 
+                answer: { en: "It is an access specifier that permits the method to be accessed from other classes.", hi: "यह एक access specifier है जो method को other classes से access करने की permission देता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 48, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Give two examples of pre-defined methods in Java.", hi: "Java में pre-defined methods के दो उदाहरण दीजिए।" }, 
+                answer: { en: "Math.sqrt() and String.length()", hi: "Math.sqrt() और String.length()" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 49, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "How do you invoke a Static Method without creating an object?", hi: "बिना object बनाए static method को कैसे invoke किया जा सकता है?" }, 
+                answer: { en: "By using the Class name directly (ClassName.methodName();)", hi: "Directly class name का उपयोग करके (ClassName.methodName();)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 50, topic: "Methods in Java", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "When is memory allocated for an object in Java relative to constructors?", hi: "Constructors के relative Java में object के लिए memory कब allocate होती है?" }, 
+                answer: { en: "Memory is allocated by the new operator before the constructor executes.", hi: "Memory is allocated by the new operator before the constructor executes." }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 14, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 51, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is a Parameterized Constructor?", hi: "Parameterized Constructor क्या है?" }, 
+                answer: { en: "A constructor that accepts one or more parameters to initialize objects with custom initial values.", hi: "वह constructor जो custom initial values के साथ objects को initialize करने के लिए one or more parameters accept करता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 16, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 52, topic: "Methods in Java", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "How is a Copy Constructor implemented in Java?", hi: "Java में Copy Constructor कैसे implement किया जाता है?" }, 
+                answer: { en: "Manually defined by the programmer since Java has no built-in copy constructor syntax like C++.", hi: "Programmer द्वारा manually define किया जाता है क्योंकि Java में C++ की तरह कोई built-in copy constructor syntax नहीं है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 20, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 53, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What are the two main ways to overload methods in Java?", hi: "Java में methods को overload करने के two main ways कौन से हैं?" }, 
+                answer: { en: "1. Changing the number of arguments, 2. Changing the data types of arguments.", hi: "1. Arguments की number बदलना, 2. Arguments के data types बदलना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 15, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 54, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What keyword is used to declare an abstract method?", hi: "Abstract method declare करने के लिए किस keyword का उपयोग किया जाता है?" }, 
+                answer: { en: "abstract", hi: "abstract" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 15, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 55, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Constructor Overloading?", hi: "Constructor Overloading क्या है?" }, 
+                answer: { en: "Defining multiple constructors in the same class with different parameter lists.", hi: "Same class में different parameter lists के साथ multiple constructors define करना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 20, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 56, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the naming rule for a Java Constructor?", hi: "Java Constructor के लिए naming rule क्या है?" }, 
+                answer: { en: "Its name must match the class name exactly.", hi: "इसका name class name से exactly match होना चाहिए।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 14, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 57, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is code reusability achieved through methods?", hi: "Methods के माध्यम से code reusability कैसे achieve की जाती है?" }, 
+                answer: { en: "Writing logic once inside a method and invoking it multiple times, avoiding duplicate code.", hi: "Method के भीतर एक बार लिखकर उसे multiple times invoke करना, जिससे duplicate code से बचा जा सके।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 17, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 58, topic: "Methods in Java", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What keyword is used in a static method?", hi: "Static method में किस keyword का उपयोग किया जाता है?" }, 
+                answer: { en: "static", hi: "static" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 13, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 59, topic: "Methods in Java", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the primary difference between a Constructor and a Normal Method?", hi: "Constructor और normal method के बीच primary difference क्या है?" }, 
+                answer: { en: "Constructors have no return type and run automatically upon object creation; methods have return types and are called explicitly.", hi: "Constructors का कोई return type नहीं होता और object creation पर automatically run होते हैं; methods के return types होते हैं और explicitly call किए जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 16, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 60, topic: "Methods in Java", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is a User-defined Method?", hi: "User-defined Method क्या है?" }, 
+                answer: { en: "A method created by the programmer to perform specific custom tasks.", hi: "Specific custom tasks perform करने के लिए programmer द्वारा created method।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 18, intervalTier: 0, bookmarked: false 
+            },
+
+            // ==================== TOPIC 4: Inheritance (20 Cards) ====================
+            { 
+                id: 61, topic: "Inheritance", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Which class is the root superclass for all classes in Java?", hi: "Java में सभी classes के लिए root superclass कौन सी class है?" }, 
+                answer: { en: "java.lang.Object Class", hi: "java.lang.Object Class" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 22, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 62, topic: "Inheritance", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Which keyword is used to create a subclass (inheritance) in Java?", hi: "Java में subclass (inheritance) create करने के लिए किस keyword का उपयोग किया जाता है?" }, 
+                answer: { en: "extends", hi: "extends" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 22, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 63, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Why doesn't Java support multiple inheritance directly with classes?", hi: "Java classes के साथ directly multiple inheritance support क्यों नहीं करता है?" }, 
+                answer: { en: "Due to ambiguity and the Diamond Problem; achieved instead using Interfaces.", hi: "Ambiguity और Diamond Problem के कारण; इसके बजाय Interfaces का उपयोग करके achieve किया जाता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 22, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 64, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is Upcasting in Java inheritance?", hi: "Java inheritance में Upcasting क्या है?" }, 
+                answer: { en: "Assigning a child class object to a parent class reference variable.", hi: "Child class object को parent class reference variable को assign करना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 24, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 65, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What exception can Downcasting throw at runtime if types do not match?", hi: "यदि types match न करें तो runtime पर Downcasting कौन सा exception throw कर सकती है?" }, 
+                answer: { en: "ClassCastException", hi: "ClassCastException" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 29, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 66, topic: "Inheritance", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What kind of relationship does inheritance represent?", hi: "Inheritance किस प्रकार के relationship को represent करता है?" }, 
+                answer: { en: "An Is-a relationship (e.g., Dog is-a Animal).", hi: "एक Is-a relationship (उदा. Dog is-a Animal)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 22, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 67, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Multilevel Inheritance?", hi: "Multilevel Inheritance क्या है?" }, 
+                answer: { en: "An inheritance chain where a class extends a subclass, which in turn extends another class (A -> B -> C).", hi: "एक inheritance chain जहाँ एक class किसी subclass को extend करती है, जो बदले में किसी other class को extend करती है (A -> B -> C)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 25, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 68, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Hierarchical Inheritance?", hi: "Hierarchical Inheritance क्या है?" }, 
+                answer: { en: "When multiple subclasses inherit from a single superclass.", hi: "जब multiple subclasses एक single superclass से inherit करती हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 25, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 69, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is Constructor Chaining in inheritance?", hi: "Inheritance में Constructor Chaining क्या है?" }, 
+                answer: { en: "When constructors are invoked in order from superclass to subclass during object creation.", hi: "जब object creation के दौरान superclass से subclass के order में constructors invoke किए जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 27, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 70, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the primary role of the super keyword?", hi: "Super keyword का primary role क्या है?" }, 
+                answer: { en: "To refer to the immediate parent class members, overridden methods, or parent constructors.", hi: "Immediate parent class members, overridden methods, या parent constructors को refer करने के लिए।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 24, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 71, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "Can a final class be inherited in Java?", hi: "क्या Java में किसी final class को inherit किया जा सकता है?" }, 
+                answer: { en: "No, a final class cannot be extended.", hi: "नहीं, एक final class को extend नहीं किया जा सकता।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 36, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 72, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Are constructors inherited by subclasses in Java?", hi: "क्या Java में constructors subclasses द्वारा inherit होते हैं?" }, 
+                answer: { en: "No, constructors are not inherited, but they are invoked via super() during instantiation.", hi: "नहीं, constructors inherit नहीं होते हैं, लेकिन instantiation के दौरान super() के माध्यम से invoke किए जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 35, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 73, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the difference between extends and implements?", hi: "Extends और implements के बीच क्या difference है?" }, 
+                answer: { en: "extends inherits a class; implements implements an interface.", hi: "Extends एक class को inherit करता है; implements एक interface को implement करता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 37, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 74, topic: "Inheritance", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Can a class extend itself?", hi: "क्या कोई class खुद को extend कर सकती है?" }, 
+                answer: { en: "No, cyclic inheritance is illegal and causes a compile-time error.", hi: "नहीं, cyclic inheritance illegal है और compile-time error का कारण बनती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 24, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 75, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What happens if super() is not explicitly written in a subclass constructor?", hi: "यदि subclass constructor में explicitly super() नहीं लिखा गया है तो क्या होता है?" }, 
+                answer: { en: "The compiler automatically inserts a default no-argument super() call.", hi: "Compiler automatically default no-argument super() call insert कर देता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 27, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 76, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Single Inheritance?", hi: "Single Inheritance क्या है?" }, 
+                answer: { en: "When exactly one subclass inherits from exactly one superclass.", hi: "जब exactamente one subclass exactly one superclass से inherit करती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 22, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 77, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "How is multiple inheritance simulated in Java?", hi: "Java में multiple inheritance को कैसे simulate किया जाता है?" }, 
+                answer: { en: "By implementing multiple interfaces in a single class.", hi: "Single class में multiple interfaces implement करके।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 23, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 78, topic: "Inheritance", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Are private members of a superclass accessible directly in a subclass?", hi: "क्या superclass के private members subclass में directly accessible होते हैं?" }, 
+                answer: { en: "No, private members are hidden and not directly accessible in subclasses.", hi: "नहीं, private members hidden होते हैं और subclasses में directly accessible नहीं होते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 24, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 79, topic: "Inheritance", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is Hybrid Inheritance?", hi: "Hybrid Inheritance क्या है?" }, 
+                answer: { en: "A combination of two or more types of inheritance (achieved via interfaces in Java).", hi: "Two or more types of inheritance का combination (Java में interfaces के माध्यम से achieved)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 33, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 80, topic: "Inheritance", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What keyword is used to access parent class instance variables shadowed by child variables?", hi: "Child variables द्वारा shadowed parent class instance variables को access करने के लिए किस keyword का उपयोग किया जाता है?" }, 
+                answer: { en: "super keyword (super.variableName).", hi: "super keyword (super.variableName)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 26, intervalTier: 0, bookmarked: false 
+            },
+
+            // ==================== TOPIC 5: Arrays and Strings (20 Cards) ====================
+            { 
+                id: 81, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Where in memory are Java arrays allocated?", hi: "Java arrays memory में कहाँ allocate होते हैं?" }, 
+                answer: { en: "Heap Memory", hi: "Heap Memory" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 40, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 82, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "When does an ArrayIndexOutOfBoundsException occur?", hi: "ArrayIndexOutOfBoundsException कब occur होता है?" }, 
+                answer: { en: "Attempting to access an array index outside the valid range of 0 to size-1.", hi: "0 से size-1 की valid range के बाहर के array index को access करने का प्रयास करने पर।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 41, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 83, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Are Java String objects mutable or immutable?", hi: "क्या Java String objects mutable होते हैं या immutable?" }, 
+                answer: { en: "Immutable (unchangeable once created)", hi: "Immutable (एक बार बनने के बाद change नहीं किए जा सकते)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 41, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 84, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the purpose of the String Constant Pool (SCP)?", hi: "String Constant Pool (SCP) का purpose क्या है?" }, 
+                answer: { en: "Efficient memory management for string literals by reusing existing matching string objects.", hi: "Existing matching string objects को reuse करके string literals के लिए efficient memory management।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 47, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 85, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the main difference between StringBuffer and StringBuilder regarding thread safety?", hi: "Thread safety के संबंध में StringBuffer और StringBuilder के बीच main difference क्या है?" }, 
+                answer: { en: "StringBuffer is synchronized (thread-safe), whereas StringBuilder is non-synchronized (faster).", hi: "StringBuffer synchronized (thread-safe) है, जबकि StringBuilder non-synchronized (faster) है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 44, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 86, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the starting index of a Java array?", hi: "Java array का starting index क्या होता है?" }, 
+                answer: { en: "0 (Zero)", hi: "0 (Zero)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 41, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 87, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Can a Java array store mixed data types?", hi: "क्या Java array mixed data types को store कर सकता है?" }, 
+                answer: { en: "No, an array can store only elements of the same data type.", hi: "नहीं, array केवल same data type के elements को store कर सकता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 40, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 88, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What exception occurs if you try to initialize an array with a negative size?", hi: "यदि आप negative size के साथ array initialize करने का प्रयास करते हैं तो कौन सा exception occur होता है?" }, 
+                answer: { en: "NegativeArraySizeException", hi: "NegativeArraySizeException" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 41, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 89, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is a Jagged Array in Java?", hi: "Java में Jagged Array क्या है?" }, 
+                answer: { en: "A multi-dimensional array where each row can have a different number of columns (array of arrays).", hi: "एक multi-dimensional array जहाँ प्रत्येक row में columns की number अलग-अलग हो सकती है (array of arrays)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 47, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 90, topic: "Arrays and Strings", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is the difference between clone() on 1D vs Multi-dimensional arrays?", hi: "1D बनाम Multi-dimensional arrays पर clone() के बीच क्या difference है?" }, 
+                answer: { en: "1D array cloning creates a deep copy, whereas multi-dimensional cloning creates a shallow copy.", hi: "1D array cloning deep copy बनाती है, जबकि multi-dimensional cloning shallow copy बनाती है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 46, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 91, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Which method is used to get the character at a specific index in a String?", hi: "String में specific index पर character get करने के लिए किस method का उपयोग किया जाता है?" }, 
+                answer: { en: "charAt(int index)", hi: "charAt(int index)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 40, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 92, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "Which class provides utility methods like sort() and binarySearch() for arrays?", hi: "कौन सी class arrays के लिए sort() और binarySearch() जैसे utility methods provide करती है?" }, 
+                answer: { en: "java.util.Arrays", hi: "java.util.Arrays" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 45, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 93, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the default value assigned to numeric array elements in Java?", hi: "Java में numeric array elements को कौन सी default value assign की जाती है?" }, 
+                answer: { en: "0 (Zero)", hi: "0 (Zero)" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 44, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 94, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What does the trim() method do on a String?", hi: "String पर trim() method क्या करता है?" }, 
+                answer: { en: "Removes leading and trailing whitespace from the string.", hi: "String से leading और trailing whitespace हटा देता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 44, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 95, topic: "Arrays and Strings", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "Why are Strings immutable in Java?", hi: "Java में Strings immutable क्यों होती हैं?" }, 
+                answer: { en: "For security, synchronization, caching hashcodes, and memory efficiency in the String Constant Pool.", hi: "Security, synchronization, caching hashcodes, और String Constant Pool में memory efficiency के लिए।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 43, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 96, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What method finds the length of a String in Java?", hi: "Java में String की length find करने के लिए किस method का उपयोग किया जाता है?" }, 
+                answer: { en: "length() method", hi: "length() method" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 43, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 97, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What operator is used to allocate memory for an array in Java?", hi: "Java में array के लिए मेमोरी allocate करने हेतु किस operator का उपयोग किया जाता है?" }, 
+                answer: { en: "new operator", hi: "new operator" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 40, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 98, topic: "Arrays and Strings", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the fastest built-in method for copying arrays in Java?", hi: "Java में arrays copy करने के लिए fastest built-in method कौन सा है?" }, 
+                answer: { en: "System.arraycopy()", hi: "System.arraycopy()" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 44, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 99, topic: "Arrays and Strings", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What class do Strings belong to in Java?", hi: "Java में Strings किस class से belong करती हैं?" }, 
+                answer: { en: "java.lang.String", hi: "java.lang.String" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 43, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 100, topic: "Arrays and Strings", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "How do you compare the content of two strings in Java?", hi: "Java में two strings के content की comparison कैसे करते हैं?" }, 
+                answer: { en: "By using the equals() method.", hi: "equals() method का उपयोग करके।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 41, intervalTier: 0, bookmarked: false 
+            },
+
+            // ==================== TOPIC 6: Packages & Exceptions (20 Cards) ====================
+            { 
+                id: 101, topic: "Packages & Exceptions", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Which package is imported by default in every Java program?", hi: "प्रत्येक Java program में default रूप से कौन सा package import होता है?" }, 
+                answer: { en: "java.lang", hi: "java.lang" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 50, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 102, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the primary difference in check timing between Checked and Unchecked exceptions?", hi: "Checked और Unchecked exceptions के बीच check timing का primary difference क्या है?" }, 
+                answer: { en: "Checked exceptions are checked at compile-time; unchecked exceptions occur at runtime.", hi: "Checked exceptions compile-time पर check होते हैं; unchecked exceptions runtime पर occur होते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 55, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 103, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "How many states are there in a Thread's life cycle?", hi: "Thread के life cycle में कितनी states होती हैं?" }, 
+                answer: { en: "Five states: New, Runnable, Running, Blocked/Waiting, and Terminated/Dead.", hi: "Five states: New, Runnable, Running, Blocked/Waiting, और Terminated/Dead।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 56, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 104, topic: "Packages & Exceptions", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What exception is thrown if you attempt to restart a terminated thread by calling start() again?", hi: "यदि आप start() को दोबारा call करके terminated thread को restart करने का प्रयास करते हैं, तो कौन सा exception throw होता है?" }, 
+                answer: { en: "IllegalThreadStateException", hi: "IllegalThreadStateException" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 57, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 105, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the superclass of all errors and exceptions in Java?", hi: "Java में सभी errors और exceptions की superclass कौन सी है?" }, 
+                answer: { en: "java.lang.Throwable", hi: "java.lang.Throwable" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 50, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 106, topic: "Packages & Exceptions", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What keyword is used to create a user-defined package?", hi: "User-defined package create करने के लिए किस keyword का उपयोग किया जाता है?" }, 
+                answer: { en: "package keyword", hi: "package keyword" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 49, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 107, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the command-line flag used to compile source files into package directory structures?", hi: "Source files को package directory structures में compile करने के लिए किस command-line flag का उपयोग किया जाता है?" }, 
+                answer: { en: "javac -d . Filename.java", hi: "javac -d . Filename.java" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 49, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 108, topic: "Packages & Exceptions", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is the difference between throw and throws?", hi: "Throw और throws के बीच क्या difference है?" }, 
+                answer: { en: "throw is used to manually trigger an exception; throws declares exceptions in a method signature.", hi: "throw का उपयोग manually exception trigger करने के लिए होता है; throws method signature में exceptions declare करता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 52, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 109, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the purpose of the finally block?", hi: "Finally block का purpose क्या है?" }, 
+                answer: { en: "To execute essential cleanup code regardless of whether an exception occurred or was caught.", hi: "Exception occur होने या catch होने की परवाह किए बिना essential cleanup code execute करना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 52, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 110, topic: "Packages & Exceptions", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "Can a try block exist without a catch or finally block?", hi: "क्या catch या finally block के बिना try block exist कर सकता है?" }, 
+                answer: { en: "No, a try block must be followed by at least one catch or finally block.", hi: "नहीं, try block के बाद at least one catch या finally block होना mandatory है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 53, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 111, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is the difference between an Exception and an Error?", hi: "Exception और Error में क्या difference है?" }, 
+                answer: { en: "Exceptions are recoverable conditions that applications can handle; Errors are serious unrecoverable problems (like OutOfMemoryError).", hi: "Exceptions recoverable conditions हैं जिन्हें applications handle कर सकती हैं; Errors serious unrecoverable problems हैं (जैसे OutOfMemoryError)।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 51, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 112, topic: "Packages & Exceptions", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What method starts the execution of a Thread?", hi: "कौन सा method Thread के execution को start करता है?" }, 
+                answer: { en: "start() method", hi: "start() method" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 50, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 113, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What is Multithreading?", hi: "Multithreading क्या है?" }, 
+                answer: { en: "Executing multiple threads concurrently to maximize CPU utilization and application responsiveness.", hi: "CPU utilization और application responsiveness maximize करने के लिए concurrently multiple threads execute करना।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 51, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 114, topic: "Packages & Exceptions", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What environment variable tells the JVM where to search for user-defined classes and packages?", hi: "कौन सा environment variable JVM को बताता है कि user-defined classes और packages को कहाँ search करना है?" }, 
+                answer: { en: "CLASSPATH", hi: "CLASSPATH" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 60, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 115, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What happens when a division by zero occurs in integer arithmetic?", hi: "Integer arithmetic में division by zero होने पर क्या होता है?" }, 
+                answer: { en: "An ArithmeticException is thrown.", hi: "ArithmeticException throw होता है।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 51, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 116, topic: "Packages & Exceptions", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "What is the smallest unit of execution within a process?", hi: "Process के भीतर execution की smallest unit क्या है?" }, 
+                answer: { en: "A Thread", hi: "एक Thread" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 49, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 117, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What does the printStackTrace() method do on an exception?", hi: "Exception पर printStackTrace() method क्या करता है?" }, 
+                answer: { en: "Prints the stack trace, exception name, description, and line numbers where the error occurred.", hi: "Stack trace, exception name, description, और line numbers print करता है जहाँ error occurred हुई थी।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 52, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 118, topic: "Packages & Exceptions", difficulty: "Hard", highYield: "Yes", 
+                question: { en: "What is Deadlock in multithreading?", hi: "Multithreading में Deadlock क्या है?" }, 
+                answer: { en: "A situation where two or more threads are blocked forever waiting for each other's resources.", hi: "ऐसी situation जहाँ two or more threads एक-दूसरे के resources की wait करते हुए forever blocked हो जाते हैं।" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 63, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 119, topic: "Packages & Exceptions", difficulty: "Medium", highYield: "Yes", 
+                question: { en: "What method temporarily suspends the execution of the current thread for a specified milliseconds?", hi: "कौन सा method current thread के execution को specified milliseconds के लिए temporarily suspend करता है?" }, 
+                answer: { en: "Thread.sleep()", hi: "Thread.sleep()" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 63, intervalTier: 0, bookmarked: false 
+            },
+            { 
+                id: 120, topic: "Packages & Exceptions", difficulty: "Easy", highYield: "Yes", 
+                question: { en: "Give two examples of Unchecked Exceptions.", hi: "Unchecked Exceptions के दो examples दीजिए।" }, 
+                answer: { en: "ArithmeticException and NullPointerException", hi: "ArithmeticException और NullPointerException" }, 
+                sourcePdf: "Java Unit-1 2026-27.pdf", page: 50, intervalTier: 0, bookmarked: false }
+        ];
+
+        let currentLang = 'en';
+        let studyQueue = [...originalFlashcards];
+        let currentIndex = 0;
+        let isFlipped = false;
+        let reviewAgainCards = [];
+        
+        let stats = {
+            totalInitial: originalFlashcards.length,
+            known: 0,
+            reviewAgainCount: 0,
+            completed: 0
+        };
+    </script>
+
+    <!-- Header -->
+    <header class="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-1.5 px-3 shadow-xs transition-colors duration-200 shrink-0">
+        <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-center gap-2">
+            <div class="flex items-center gap-2">
+                <div class="bg-indigo-600 text-white p-1.5 rounded-lg shadow-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-xs sm:text-sm font-bold text-slate-900 dark:text-slate-100 leading-tight">Java OOP Master (120 Cards)</h1>
+                    <p class="text-[10px] text-slate-500 dark:text-slate-400">Bilingual Active Recall</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-1.5 text-xs font-medium">
+                <div class="bg-indigo-50 dark:bg-indigo-950/50 border border-indigo-200 dark:border-indigo-800 rounded-md p-0.5 flex items-center">
+                    <button onclick="setLanguage('en')" id="lang-en-btn" class="px-2 py-0.5 rounded bg-indigo-600 text-white transition font-bold text-[10px]">EN</button>
+                    <button onclick="setLanguage('hi')" id="lang-hi-btn" class="px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 transition font-bold text-[10px]">हिंदी</button>
+                </div>
+
+                <div class="bg-emerald-50 dark:bg-emerald-950/50 text-emerald-700 dark:text-emerald-400 px-2 py-0.5 rounded-md border border-emerald-200 dark:border-emerald-800 flex items-center gap-1 text-[11px]">
+                    <span id="label-known">Known:</span> <span id="stat-known" class="font-bold">0</span>
+                </div>
+                <div class="bg-amber-50 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-800 flex items-center gap-1 text-[11px]">
+                    <span id="label-review">Review:</span> <span id="stat-review" class="font-bold">0</span>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400 px-2 py-0.5 rounded-md border border-blue-200 dark:border-blue-800 flex items-center gap-1 text-[11px]">
+                    <span id="label-accuracy">Acc:</span> <span id="stat-accuracy" class="font-bold">0%</span>
+                </div>
+                <button onclick="toggleDarkMode()" class="p-1.5 rounded-md bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition" title="Toggle Theme">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                    </svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 block dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sub-header for Modes, Search & Filters -->
+    <div class="w-full bg-slate-100 dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 py-1.5 px-3 shadow-inner transition-colors duration-200 shrink-0">
+        <div class="max-w-4xl mx-auto flex flex-wrap items-center justify-between gap-2 text-xs font-medium">
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-0.5 no-scrollbar">
+                <span id="label-study-modes" class="text-slate-500 dark:text-slate-400 font-semibold whitespace-nowrap text-[11px]">Modes:</span>
+                <button onclick="setMode('normal')" id="mode-normal" class="px-2 py-0.5 rounded-md bg-indigo-600 text-white shadow-xs transition whitespace-nowrap text-[11px]">All (120)</button>
+                <button onclick="setMode('shuffle')" id="mode-shuffle" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition whitespace-nowrap text-[11px]">Shuffle</button>
+                <button onclick="setMode('quick')" id="mode-quick" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition whitespace-nowrap text-[11px]">Quick</button>
+                <button onclick="setMode('review')" id="mode-review" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition whitespace-nowrap text-[11px]">Review (<span id="review-badge-count">0</span>)</button>
+                <button onclick="setMode('bookmarked')" id="mode-bookmarked" class="px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition whitespace-nowrap text-[11px]">Saved (<span id="bookmark-badge-count">0</span>)</button>
+            </div>
+
+            <!-- Right-aligned Search and Filters -->
+            <div class="flex items-center gap-1.5 ml-auto">
+                <div class="relative">
+                    <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Search..." class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 text-xs rounded-md pl-6 pr-2 py-0.5 outline-none focus:border-indigo-500 w-24 sm:w-28">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-slate-400 absolute left-2 top-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </div>
+
+                <select id="topic-select" onchange="filterByTopic(this.value)" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-md px-1.5 py-0.5 outline-none focus:border-indigo-500 font-medium text-[11px]">
+                    <option value="all" id="opt-all-topics">📚 All Topics</option>
+                    <option value="OOP Fundamentals">1. OOP Fundamentals (20)</option>
+                    <option value="Classes & Objects">2. Classes & Objects (20)</option>
+                    <option value="Methods in Java">3. Methods in Java (20)</option>
+                    <option value="Inheritance">4. Inheritance (20)</option>
+                    <option value="Arrays and Strings">5. Arrays & Strings (20)</option>
+                    <option value="Packages & Exceptions">6. Packages & Exceptions (20)</option>
+                </select>
+
+                <select id="difficulty-select" onchange="filterByDifficulty(this.value)" class="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-200 rounded-md px-1.5 py-0.5 outline-none focus:border-indigo-500 font-medium text-[11px]">
+                    <option value="all">⚡ All Difficulties</option>
+                    <option value="Easy">Easy</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Hard">Hard</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Flashcard Workspace -->
+    <main class="flex-grow flex flex-col items-center justify-center p-2 max-w-2xl mx-auto w-full overflow-hidden">
+        <div id="progress-container" class="w-full mb-1.5 flex flex-col gap-1">
+            <div class="text-[11px] font-semibold text-slate-600 dark:text-slate-400 flex justify-between w-full">
+                <span id="card-counter">Card 1 of 120</span>
+                <span id="completion-pct">0% Progress</span>
+            </div>
+            <div class="w-full bg-slate-200 dark:bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                <div id="progress-bar" class="bg-indigo-600 h-full w-[0%] transition-all duration-300 rounded-full"></div>
+            </div>
+        </div>
+
+        <div id="flashcard-wrapper" class="w-full perspective-1000 mb-2">
+            <div id="flashcard" onclick="flipCard()" class="relative w-full h-48 sm:h-56 rounded-xl shadow-md cursor-pointer transform-style-3d transition-transform duration-500 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
+                
+                <!-- Front Side -->
+                <div id="card-front" class="absolute inset-0 w-full h-full backface-hidden bg-white dark:bg-slate-900 rounded-xl p-3.5 sm:p-4 flex flex-col justify-between">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-1.5">
+                            <span id="badge-topic" class="text-[10px] font-semibold px-2 py-0.5 bg-indigo-50 dark:bg-indigo-950/60 text-indigo-700 dark:text-indigo-400 rounded-full">Topic</span>
+                            <span id="badge-interval" class="text-[9px] font-medium px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md">Tier 0</span>
+                        </div>
+                        <div class="flex items-center gap-1.5">
+                            <button onclick="toggleBookmark(event)" id="bookmark-btn" class="p-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-400 hover:text-amber-500 transition" title="Save / Bookmark">
+                                <svg id="bookmark-svg" xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                                </svg>
+                            </button>
+                            <span id="badge-difficulty" class="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700">Easy</span>
+                            <span id="badge-highyield" class="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-amber-50 text-amber-700">High-Yield</span>
+                        </div>
+                    </div>
+                    
+                    <div class="my-auto text-center px-2">
+                        <span id="label-q-heading" class="text-[10px] uppercase tracking-wider text-slate-400 dark:text-slate-500 font-semibold block mb-1">Question</span>
+                        <h2 id="card-question" class="text-sm sm:text-base font-bold text-slate-900 dark:text-slate-100 leading-snug">Loading question...</h2>
+                    </div>
+
+                    <div class="flex items-center justify-between text-[11px] text-slate-400 dark:text-slate-500">
+                        <span id="label-flip-tip">Click card or Space to flip</span>
+                        <button onclick="openSourceModal(event)" class="px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 font-medium transition text-[10px]">
+                            Source
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Back Side -->
+                <div id="card-back" class="absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-slate-900 dark:bg-slate-950 text-white rounded-xl p-3.5 sm:p-4 flex flex-col justify-between border border-slate-800">
+                    <div class="flex justify-between items-center text-slate-400 text-[10px]">
+                        <span id="badge-source">Java Unit-1 2026-27.pdf</span>
+                        <span id="badge-page">Page 1</span>
+                    </div>
+
+                    <div class="my-auto text-center px-2">
+                        <span id="label-a-heading" class="text-[10px] uppercase tracking-wider text-indigo-400 font-semibold block mb-1">Answer</span>
+                        <p id="card-answer" class="text-sm sm:text-base font-medium text-slate-100 leading-relaxed">Loading answer...</p>
+                    </div>
+
+                    <div id="label-flipback-tip" class="text-center text-[10px] text-slate-400">
+                        Click card or Space to flip back
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Keyboard Shortcuts Help Panel -->
+        <div id="shortcuts-panel" class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-lg px-3 py-1 mb-2 flex flex-wrap items-center justify-center gap-2 text-[10px] text-slate-500 dark:text-slate-400 shadow-xs">
+            <span class="font-semibold text-slate-700 dark:text-slate-300">Shortcuts:</span>
+            <span class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700"><kbd class="font-semibold">Space</kbd> Flip</span>
+            <span class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700"><kbd class="font-semibold">&larr; / &rarr;</kbd> Nav</span>
+            <span class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700"><kbd class="font-semibold">K</kbd> Known</span>
+            <span class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700"><kbd class="font-semibold">R</kbd> Review</span>
+            <span class="bg-slate-100 dark:bg-slate-800 px-1 py-0.5 rounded border border-slate-200 dark:border-slate-700"><kbd class="font-semibold">B</kbd> Save</span>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="results-screen" class="hidden w-full bg-white dark:bg-slate-900 rounded-xl shadow-md border border-slate-200 dark:border-slate-800 p-4 text-center flex flex-col items-center gap-2.5">
+            <div class="bg-indigo-50 dark:bg-indigo-950/60 text-indigo-600 dark:text-indigo-400 p-2 rounded-full shadow-inner">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            
+            <div>
+                <h2 class="text-sm font-bold text-slate-900 dark:text-slate-100">Study Session Completed!</h2>
+                <p class="text-[11px] text-slate-500 dark:text-slate-400">Session performance summary.</p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 w-full my-0.5">
+                <div class="bg-slate-50 dark:bg-slate-800/50 border border-slate-200 dark:border-slate-700 rounded-lg p-1.5 text-center">
+                    <span class="text-[10px] text-slate-500 dark:text-slate-400 block font-medium">Completed</span>
+                    <span id="res-completed" class="text-xs font-bold text-slate-800 dark:text-slate-200">0</span>
+                </div>
+                <div class="bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 rounded-lg p-1.5 text-center">
+                    <span class="text-[10px] text-emerald-600 dark:text-emerald-400 block font-medium">Known</span>
+                    <span id="res-known" class="text-xs font-bold text-emerald-700 dark:text-emerald-400">0</span>
+                </div>
+                <div class="bg-amber-50 dark:bg-amber-950/50 border border-amber-200 dark:border-amber-800 rounded-lg p-1.5 text-center">
+                    <span class="text-[10px] text-amber-600 dark:text-amber-400 block font-medium">Review Again</span>
+                    <span id="res-review" class="text-xs font-bold text-amber-700 dark:text-amber-400">0</span>
+                </div>
+                <div class="bg-blue-50 dark:bg-blue-950/50 border border-blue-200 dark:border-blue-800 rounded-lg p-1.5 text-center">
+                    <span class="text-[10px] text-blue-600 dark:text-blue-400 block font-medium">Accuracy</span>
+                    <span id="res-accuracy" class="text-xs font-bold text-blue-700 dark:text-blue-400">0%</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full mt-1">
+                <button onclick="startReviewMistakes()" class="py-1.5 px-3 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-semibold text-xs shadow-xs transition flex items-center justify-center gap-1.5">
+                    Review Mistakes (<span id="res-mistakes-count">0</span>)
+                </button>
+                <button onclick="setMode('normal')" class="py-1.5 px-3 rounded-lg bg-slate-200 dark:bg-slate-800 hover:bg-slate-300 text-slate-700 dark:text-slate-200 font-semibold text-xs transition flex items-center justify-center gap-1.5">
+                    Restart Session
+                </button>
+            </div>
+        </div>
+
+        <!-- Controls Container -->
+        <div id="controls-container" class="w-full flex flex-col gap-2">
+            <div id="nav-controls" class="w-full flex items-center justify-between gap-2">
+                <button id="prev-btn" onclick="prevCard()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 transition flex items-center gap-1 text-xs shadow-xs disabled:opacity-40 disabled:cursor-not-allowed">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                    </svg>
+                    <span id="btn-text-prev">Previous</span>
+                </button>
+
+                <button id="flip-btn" onclick="flipCard()" class="flex-grow px-4 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold shadow-sm transition flex items-center justify-center gap-1.5 text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span id="btn-text-flip">Show Answer / Flip</span> <span class="text-[9px] bg-indigo-700 px-1 py-0.2 rounded opacity-85">Space</span>
+                </button>
+
+                <button id="next-btn" onclick="nextCard()" class="px-3 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 font-medium text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-900 hover:bg-slate-50 transition flex items-center gap-1 text-xs shadow-xs">
+                    <span id="btn-text-next">Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Review / Answer Evaluation Buttons -->
+            <div id="review-controls" class="hidden w-full grid grid-cols-2 gap-2">
+                <button onclick="handleReviewResponse('review')" class="w-full py-2 px-3 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-semibold shadow-sm transition flex items-center justify-center gap-2 text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                    <span id="btn-text-review">Review Again</span> 
+                    <span class="text-[10px] bg-amber-700 text-white px-1.5 py-0.5 rounded font-mono shadow-xs">R</span>
+                </button>
+                <button onclick="handleReviewResponse('known')" class="w-full py-2 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white font-semibold shadow-sm transition flex items-center justify-center gap-2 text-xs">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span id="btn-text-known">I Knew It</span> 
+                    <span class="text-[10px] bg-emerald-800 text-white px-1.5 py-0.5 rounded font-mono shadow-xs">K</span>
+                </button>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Source Modal -->
+    <div id="source-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4 z-50 hidden">
+        <div class="bg-white dark:bg-slate-900 rounded-xl shadow-xl max-w-sm w-full p-4 border border-slate-200 dark:border-slate-800">
+            <div class="flex justify-between items-center mb-2.5">
+                <div class="flex items-center gap-1.5 text-indigo-600 dark:text-indigo-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    <h3 class="font-bold text-slate-900 dark:text-slate-100 text-xs">Verified PDF Source</h3>
+                </div>
+                <button onclick="closeSourceModal()" class="text-slate-400 hover:text-slate-600 p-1 rounded-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="space-y-1.5 text-xs bg-slate-50 dark:bg-slate-800/50 p-2.5 rounded-lg border border-slate-200 dark:border-slate-700 mb-3">
+                <div class="flex justify-between">
+                    <span class="text-slate-500">File:</span>
+                    <span id="modal-pdf" class="font-semibold text-slate-800 dark:text-slate-200">Java Unit-1 2026-27.pdf</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Topic:</span>
+                    <span id="modal-topic" class="font-semibold text-indigo-700 dark:text-indigo-400">OOP</span>
+                </div>
+                <div class="flex justify-between">
+                    <span class="text-slate-500">Page:</span>
+                    <span id="modal-page" class="font-semibold text-emerald-700 dark:text-emerald-400">Page 1</span>
+                </div>
+            </div>
+
+            <button onclick="closeSourceModal()" class="w-full py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold transition text-xs shadow-xs">
+                Got It
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const cardElement = document.getElementById('flashcard');
+        const flashcardWrapper = document.getElementById('flashcard-wrapper');
+        const shortcutsPanel = document.getElementById('shortcuts-panel');
+        const questionElement = document.getElementById('card-question');
+        const answerElement = document.getElementById('card-answer');
+        const topicBadge = document.getElementById('badge-topic');
+        const intervalBadge = document.getElementById('badge-interval');
+        const difficultyBadge = document.getElementById('badge-difficulty');
+        const highYieldBadge = document.getElementById('badge-highyield');
+        const sourceBadge = document.getElementById('badge-source');
+        const pageBadge = document.getElementById('badge-page');
+        const bookmarkSvg = document.getElementById('bookmark-svg');
+        const counterElement = document.getElementById('card-counter');
+        const completionPctElement = document.getElementById('completion-pct');
+        const progressBar = document.getElementById('progress-bar');
+        const progressContainer = document.getElementById('progress-container');
+        const prevBtn = document.getElementById('prev-btn');
+        const nextBtn = document.getElementById('next-btn');
+        const navControls = document.getElementById('nav-controls');
+        const reviewControls = document.getElementById('review-controls');
+        const resultsScreen = document.getElementById('results-screen');
+
+        const statKnown = document.getElementById('stat-known');
+        const statReview = document.getElementById('stat-review');
+        const statAccuracy = document.getElementById('stat-accuracy');
+        const reviewBadgeCount = document.getElementById('review-badge-count');
+        const bookmarkBadgeCount = document.getElementById('bookmark-badge-count');
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            if (lang === 'hi') {
+                document.getElementById('lang-hi-btn').className = "px-2 py-0.5 rounded bg-indigo-600 text-white transition font-bold text-[10px]";
+                document.getElementById('lang-en-btn').className = "px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 transition font-bold text-[10px]";
+                document.getElementById('label-known').textContent = "ज्ञात:";
+                document.getElementById('label-review').textContent = "समीक्षा:";
+                document.getElementById('label-accuracy').textContent = "सटीकता:";
+                document.getElementById('label-study-modes').textContent = "मोड:";
+                document.getElementById('label-q-heading').textContent = "Question";
+                document.getElementById('label-a-heading').textContent = "Answer";
+                document.getElementById('label-flip-tip').textContent = "पलटने के लिए क्लिक करें या Space दबाएँ";
+                document.getElementById('label-flipback-tip').textContent = "वापस पलटने के लिए क्लिक करें या Space दबाएँ";
+                document.getElementById('btn-text-prev').textContent = "Previous";
+                document.getElementById('btn-text-next').textContent = "Next";
+                document.getElementById('btn-text-flip').textContent = "Show Answer / Flip";
+                document.getElementById('btn-text-review').textContent = "Review Again";
+                document.getElementById('btn-text-known').textContent = "I Knew It";
+                document.getElementById('opt-all-topics').textContent = "📚 All Topics";
+            } else {
+                document.getElementById('lang-en-btn').className = "px-2 py-0.5 rounded bg-indigo-600 text-white transition font-bold text-[10px]";
+                document.getElementById('lang-hi-btn').className = "px-2 py-0.5 rounded text-slate-700 dark:text-slate-300 transition font-bold text-[10px]";
+                document.getElementById('label-known').textContent = "Known:";
+                document.getElementById('label-review').textContent = "Review:";
+                document.getElementById('label-accuracy').textContent = "Acc:";
+                document.getElementById('label-study-modes').textContent = "Modes:";
+                document.getElementById('label-q-heading').textContent = "Question";
+                document.getElementById('label-a-heading').textContent = "Answer";
+                document.getElementById('label-flip-tip').textContent = "Click card or Space to flip";
+                document.getElementById('label-flipback-tip').textContent = "Click card or Space to flip back";
+                document.getElementById('btn-text-prev').textContent = "Previous";
+                document.getElementById('btn-text-next').textContent = "Next";
+                document.getElementById('btn-text-flip').textContent = "Show Answer / Flip";
+                document.getElementById('btn-text-review').textContent = "Review Again";
+                document.getElementById('btn-text-known').textContent = "I Knew It";
+                document.getElementById('opt-all-topics').textContent = "📚 All Topics";
+            }
+            updateCardDisplay();
+        }
+
+        function toggleDarkMode() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                html.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+        }
+
+        function updateBookmarkBadge() {
+            const bookmarkedCount = originalFlashcards.filter(c => c.bookmarked).length;
+            bookmarkBadgeCount.textContent = bookmarkedCount;
+        }
+
+        function toggleBookmark(e) {
+            e.stopPropagation();
+            if (studyQueue.length === 0 || currentIndex >= studyQueue.length) return;
+            const currentCard = studyQueue[currentIndex];
+            currentCard.bookmarked = !currentCard.bookmarked;
+            
+            if (currentCard.bookmarked) {
+                bookmarkSvg.setAttribute('fill', 'currentColor');
+                bookmarkSvg.classList.add('text-amber-500');
+            } else {
+                bookmarkSvg.setAttribute('fill', 'none');
+                bookmarkSvg.classList.remove('text-amber-500');
+            }
+            updateBookmarkBadge();
+        }
+
+        function updateDashboardStats() {
+            statKnown.textContent = stats.known;
+            statReview.textContent = reviewAgainCards.length;
+            
+            const totalAnswered = stats.known + stats.reviewAgainCount;
+            const accuracy = totalAnswered > 0 ? Math.round((stats.known / totalAnswered) * 100) : 0;
+            statAccuracy.textContent = `${accuracy}%`;
+            reviewBadgeCount.textContent = reviewAgainCards.length;
+            updateBookmarkBadge();
+
+            const totalBase = stats.totalInitial;
+            const currentProgress = Math.min(100, Math.round((stats.completed / Math.max(1, totalBase)) * 100));
+            completionPctElement.textContent = `${currentProgress}% Progress`;
+            progressBar.style.width = `${currentProgress}%`;
+        }
+
+        function updateCardDisplay() {
+            if (studyQueue.length === 0 || currentIndex >= studyQueue.length) {
+                showResultsScreen();
+                return;
+            }
+
+            resultsScreen.classList.add('hidden');
+            flashcardWrapper.style.display = 'block';
+            shortcutsPanel.style.display = 'flex';
+            progressContainer.style.display = 'flex';
+            navControls.style.display = 'flex';
+
+            const card = studyQueue[currentIndex];
+
+            if (isFlipped) {
+                flipCard();
+            }
+
+            questionElement.textContent = card.question[currentLang] || card.question.en;
+            answerElement.textContent = card.answer[currentLang] || card.answer.en;
+            topicBadge.textContent = card.topic;
+            intervalBadge.textContent = `Tier ${card.intervalTier}`;
+            difficultyBadge.textContent = card.difficulty;
+            highYieldBadge.textContent = "High-Yield";
+            sourceBadge.textContent = card.sourcePdf;
+            pageBadge.textContent = `Page ${card.page}`;
+
+            if (card.bookmarked) {
+                bookmarkSvg.setAttribute('fill', 'currentColor');
+                bookmarkSvg.classList.add('text-amber-500');
+            } else {
+                bookmarkSvg.setAttribute('fill', 'none');
+                bookmarkSvg.classList.remove('text-amber-500');
+            }
+
+            counterElement.textContent = `Card ${currentIndex + 1} of ${studyQueue.length}`;
+            prevBtn.disabled = currentIndex === 0;
+
+            if(card.difficulty === "Easy") {
+                difficultyBadge.className = "text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400";
+            } else if(card.difficulty === "Medium") {
+                difficultyBadge.className = "text-[10px] font-medium px-2 py-0.5 rounded-full bg-amber-50 dark:bg-amber-950/60 text-amber-700 dark:text-amber-400";
+            } else {
+                difficultyBadge.className = "text-[10px] font-medium px-2 py-0.5 rounded-full bg-rose-50 dark:bg-rose-950/60 text-rose-700 dark:text-rose-400";
+            }
+
+            updateDashboardStats();
+        }
+
+        function showResultsScreen() {
+            flashcardWrapper.style.display = 'none';
+            shortcutsPanel.style.display = 'none';
+            progressContainer.style.display = 'none';
+            navControls.style.display = 'none';
+            reviewControls.style.display = 'none';
+            resultsScreen.classList.remove('hidden');
+
+            document.getElementById('res-completed').textContent = stats.completed;
+            document.getElementById('res-known').textContent = stats.known;
+            document.getElementById('res-review').textContent = reviewAgainCards.length;
+            
+            const totalAnswered = stats.known + stats.reviewAgainCount;
+            const accuracy = totalAnswered > 0 ? Math.round((stats.known / totalAnswered) * 100) : 0;
+            document.getElementById('res-accuracy').textContent = `${accuracy}%`;
+            document.getElementById('res-mistakes-count').textContent = reviewAgainCards.length;
+            updateDashboardStats();
+        }
+
+        function flipCard() {
+            if (studyQueue.length === 0 || currentIndex >= studyQueue.length) return;
+            isFlipped = !isFlipped;
+            if (isFlipped) {
+                cardElement.classList.add('rotate-y-180');
+                navControls.classList.add('hidden');
+                reviewControls.classList.remove('hidden');
+            } else {
+                cardElement.classList.remove('rotate-y-180');
+                navControls.classList.remove('hidden');
+                reviewControls.classList.add('hidden');
+            }
+        }
+
+        function nextCard() {
+            if (currentIndex < studyQueue.length - 1) {
+                if (isFlipped) flipCard();
+                setTimeout(() => {
+                    currentIndex++;
+                    updateCardDisplay();
+                }, 150);
+            }
+        }
+
+        function prevCard() {
+            if (currentIndex > 0) {
+                if (isFlipped) flipCard();
+                setTimeout(() => {
+                    currentIndex--;
+                    updateCardDisplay();
+                }, 150);
+            }
+        }
+
+        function handleReviewResponse(type) {
+            const currentCard = studyQueue[currentIndex];
+            stats.completed++;
+
+            if (type === 'known') {
+                stats.known++;
+                currentCard.intervalTier = Math.min(5, currentCard.intervalTier + 1);
+            } else if (type === 'review') {
+                stats.reviewAgainCount++;
+                currentCard.intervalTier = 0;
+                if (!reviewAgainCards.some(c => c.id === currentCard.id)) {
+                    reviewAgainCards.push(currentCard);
+                }
+                studyQueue.push(currentCard);
+            }
+
+            if (isFlipped) flipCard();
+
+            setTimeout(() => {
+                currentIndex++;
+                updateCardDisplay();
+            }, 150);
+        }
+
+        function startReviewMistakes() {
+            if (reviewAgainCards.length === 0) return;
+            studyQueue = [...reviewAgainCards];
+            currentIndex = 0;
+            stats.totalInitial = studyQueue.length;
+            stats.completed = 0;
+            stats.known = 0;
+            stats.reviewAgainCount = 0;
+            reviewAgainCards = [];
+            updateCardDisplay();
+        }
+
+        function setActiveModeButton(activeId) {
+            ['normal', 'shuffle', 'quick', 'review', 'bookmarked'].forEach(mode => {
+                const btn = document.getElementById(`mode-${mode}`);
+                if (btn) {
+                    if (mode === activeId) {
+                        btn.className = "px-2 py-0.5 rounded-md bg-indigo-600 text-white shadow-xs transition whitespace-nowrap text-[11px]";
+                    } else {
+                        btn.className = "px-2 py-0.5 rounded-md bg-white dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-300 dark:border-slate-700 hover:bg-slate-50 transition whitespace-nowrap text-[11px]";
+                    }
+                }
+            });
+        }
+
+        function setMode(mode) {
+            setActiveModeButton(mode);
+            currentIndex = 0;
+            if (isFlipped) flipCard();
+
+            document.getElementById('topic-select').value = "all";
+            document.getElementById('difficulty-select').value = "all";
+            document.getElementById('search-input').value = "";
+
+            if (mode === 'normal') {
+                studyQueue = [...originalFlashcards];
+            } else if (mode === 'shuffle') {
+                studyQueue = [...originalFlashcards].sort(() => Math.random() - 0.5);
+            } else if (mode === 'quick') {
+                studyQueue = originalFlashcards.filter(c => c.highYield === "Yes");
+            } else if (mode === 'review') {
+                studyQueue = [...reviewAgainCards];
+            } else if (mode === 'bookmarked') {
+                studyQueue = originalFlashcards.filter(c => c.bookmarked);
+            }
+
+            stats.totalInitial = studyQueue.length > 0 ? studyQueue.length : 1;
+            stats.completed = 0;
+            stats.known = 0;
+            updateCardDisplay();
+        }
+
+        function filterByTopic(topic) {
+            currentIndex = 0;
+            if (isFlipped) flipCard();
+            document.getElementById('search-input').value = "";
+            document.getElementById('difficulty-select').value = "all";
+            setActiveModeButton('');
+
+            if (topic === 'all') {
+                studyQueue = [...originalFlashcards];
+            } else {
+                studyQueue = originalFlashcards.filter(c => c.topic === topic);
+            }
+
+            stats.totalInitial = studyQueue.length > 0 ? studyQueue.length : 1;
+            stats.completed = 0;
+            stats.known = 0;
+            updateCardDisplay();
+        }
+
+        function filterByDifficulty(diff) {
+            currentIndex = 0;
+            if (isFlipped) flipCard();
+            document.getElementById('search-input').value = "";
+            document.getElementById('topic-select').value = "all";
+            setActiveModeButton('');
+
+            if (diff === 'all') {
+                studyQueue = [...originalFlashcards];
+            } else {
+                studyQueue = originalFlashcards.filter(c => c.difficulty === diff);
+            }
+
+            stats.totalInitial = studyQueue.length > 0 ? studyQueue.length : 1;
+            stats.completed = 0;
+            stats.known = 0;
+            updateCardDisplay();
+        }
+
+        function handleSearch(query) {
+            const term = query.toLowerCase().trim();
+            currentIndex = 0;
+            if (isFlipped) flipCard();
+            setActiveModeButton('');
+            document.getElementById('topic-select').value = "all";
+            document.getElementById('difficulty-select').value = "all";
+
+            if (!term) {
+                studyQueue = [...originalFlashcards];
+            } else {
+                studyQueue = originalFlashcards.filter(c => 
+                    c.question.en.toLowerCase().includes(term) ||
+                    c.question.hi.toLowerCase().includes(term) ||
+                    c.answer.en.toLowerCase().includes(term) ||
+                    c.answer.hi.toLowerCase().includes(term) ||
+                    c.topic.toLowerCase().includes(term) ||
+                    c.sourcePdf.toLowerCase().includes(term)
+                );
+            }
+
+            stats.totalInitial = studyQueue.length > 0 ? studyQueue.length : 1;
+            stats.completed = 0;
+            stats.known = 0;
+            updateCardDisplay();
+        }
+
+        function openSourceModal(e) {
+            e.stopPropagation();
+            if (studyQueue.length === 0 || currentIndex >= studyQueue.length) return;
+            const currentCard = studyQueue[currentIndex];
+            
+            document.getElementById('modal-pdf').textContent = currentCard.sourcePdf;
+            document.getElementById('modal-topic').textContent = currentCard.topic;
+            document.getElementById('modal-page').textContent = `Page ${currentCard.page}`;
+            
+            document.getElementById('source-modal').classList.remove('hidden');
+        }
+
+        function closeSourceModal() {
+            document.getElementById('source-modal').classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (document.activeElement && document.activeElement.tagName === 'INPUT') {
+                return;
+            }
+
+            if (document.getElementById('source-modal').classList.contains('hidden') === false) {
+                if (e.key === 'Escape') closeSourceModal();
+                return;
+            }
+
+            if (studyQueue.length === 0 || currentIndex >= studyQueue.length) return;
+
+            if (e.key === 'ArrowRight' && !isFlipped) {
+                e.preventDefault();
+                nextCard();
+            } else if (e.key === 'ArrowLeft' && !isFlipped) {
+                e.preventDefault();
+                prevCard();
+            } else if (e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                flipCard();
+            } else if (isFlipped && (e.key === 'k' || e.key === 'K')) {
+                e.preventDefault();
+                handleReviewResponse('known');
+            } else if (isFlipped && (e.key === 'r' || e.key === 'R')) {
+                e.preventDefault();
+                handleReviewResponse('review');
+            } else if (e.key === 'b' || e.key === 'B') {
+                e.preventDefault();
+                toggleBookmark(new Event('click'));
+            }
+        });
+
+        window.onload = function() {
+            updateCardDisplay();
+        };
+    </script>
+
+</body>
+</html>
