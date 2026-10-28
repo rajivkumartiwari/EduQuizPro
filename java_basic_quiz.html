@@ -27,24 +27,66 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Compact Vertical Viewport Optimization */
-        body, html {
-            height: 100vh;
+        html, body {
+            height: 100%;
             margin: 0;
             overflow: hidden;
         }
+        .site-navbar {
+            flex: 0 0 auto;
+            position: relative;
+            z-index: 40;
+            width: 100%;
+        }
         .app-container {
-            height: 100vh;
+            height: calc(100vh - 66px);
             display: flex;
             flex-direction: column;
         }
         .scrollable-content {
             flex: 1;
+            min-height: 0;
             overflow-y: auto;
-            max-height: calc(100vh - 120px);
+            max-height: calc(100vh - 186px);
+        }
+        @media (max-width: 640px) {
+            .app-container {
+                height: calc(100vh - 66px);
+            }
+            .scrollable-content {
+                max-height: calc(100vh - 150px);
+            }
         }
     </style>
 </head>
 <body class="h-full bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200">
+
+<header class="site-navbar">
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+
+    <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
 
     <div id="app" class="app-container">
         <!-- Dynamic Header (Appears during exam/results) -->
@@ -957,9 +999,19 @@
         function toggleDarkMode() {
             isDarkMode = !isDarkMode;
             document.documentElement.classList.toggle('dark', isDarkMode);
+            document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+
             const iconClass = isDarkMode ? 'fa-sun' : 'fa-moon';
-            document.getElementById('theme-icon').className = `fa-solid ${iconClass}`;
-            document.getElementById('theme-icon-2').className = `fa-solid ${iconClass}`;
+            const themeIcon = document.getElementById('theme-icon');
+            const themeIcon2 = document.getElementById('theme-icon-2');
+            if (themeIcon) themeIcon.className = `fa-solid ${iconClass}`;
+            if (themeIcon2) themeIcon2.className = `fa-solid ${iconClass}`;
+
+            const navbarToggle = document.getElementById('themeToggle');
+            if (navbarToggle) {
+                navbarToggle.textContent = isDarkMode ? ' Light Mode' : ' Dark Mode';
+            }
         }
 
         function startTest() {
@@ -1254,45 +1306,39 @@
             renderPalette();
         }
     </script>
+
+    <script>
+      // Initialize shared EduQuiz Pro navbar, saved theme, and mobile menu.
+      (function () {
+        const savedTheme = localStorage.getItem('theme');
+        isDarkMode = savedTheme === 'dark';
+        document.documentElement.classList.toggle('dark', isDarkMode);
+        document.body.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+
+        const navbarToggle = document.getElementById('themeToggle');
+        if (navbarToggle) {
+          navbarToggle.textContent = isDarkMode ? ' Light Mode' : ' Dark Mode';
+          navbarToggle.addEventListener('click', toggleDarkMode);
+        }
+
+        const hamburgerBtn = document.getElementById('hamburger');
+        const navList = document.getElementById('nav-list');
+        if (hamburgerBtn && navList) {
+          hamburgerBtn.addEventListener('click', function () {
+            navList.classList.toggle('active');
+          });
+        }
+
+        const iconClass = isDarkMode ? 'fa-sun' : 'fa-moon';
+        const themeIcon = document.getElementById('theme-icon');
+        const themeIcon2 = document.getElementById('theme-icon-2');
+        if (themeIcon) themeIcon.className = `fa-solid ${iconClass}`;
+        if (themeIcon2) themeIcon2.className = `fa-solid ${iconClass}`;
+      })();
+    </script>
 </body>
-    <header>
-  <div class="brand"
-       onclick="location.href='index.html'"
-       style="cursor:pointer;">
-    <div class="brand-icon">EQ</div>
-    <h1>EduQuiz Pro</h1>
-  </div>
 
-  <nav class="main-nav">
-    <ul class="nav-list" id="nav-list">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-
-      <li class="dropdown-wrapper">
-        <a href="#" class="nav-link">About Us &#9662;</a>
-        <div class="dropdown-content">
-          <a href="index.html?section=about-view&sub=mission">Our Mission</a>
-          <a href="index.html?section=about-view&sub=vision">Our Vision</a>
-          <a href="index.html?section=about-view&sub=team">Teacher Team</a>
-          <a href="index.html?section=about-view&sub=policies">School Policies</a>
-        </div>
-      </li>
-
-      <li>
-        <a href="assets/viva_qa.pdf"
-           target="_blank"
-           class="nav-link">Resources</a>
-      </li>
-    </ul>
-
-    <div class="nav-actions">
-      <button id="themeToggle" class="btn btn-outline">
-        &#127769; Dark Mode
-      </button>
-      <button class="hamburger" id="hamburger"
-              aria-label="Open menu">&#9776;</button>
-    </div>
-  </nav>
-</header>
 </html>
+
 
 
