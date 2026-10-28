@@ -63,89 +63,171 @@
         }
     </style>
 
-    /* Mobile layout fixes: keep both headers in flow and stack the exam + palette */
-    @media (max-width: 640px) {
-        html, body { height: auto !important; min-height: 100%; }
-        body { min-height: 100vh !important; overflow-x: hidden; }
-        main { flex: 1 0 auto !important; min-height: 0; overflow: visible !important; }
-        body > header:not(.site-navbar) {
-            height: auto !important;
-            min-height: 58px;
-            padding: 8px 10px !important;
-            gap: 8px;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        body > header:not(.site-navbar) > div:first-child {
-            flex: 1 1 135px;
-            min-width: 0;
-            gap: 8px !important;
-        }
-        body > header:not(.site-navbar) #header-title {
-            font-size: 14px;
-            line-height: 1.2;
-            overflow-wrap: anywhere;
-        }
-        body > header:not(.site-navbar) #header-subtitle {
-            font-size: 10px;
-            line-height: 1.25;
-        }
-        body > header:not(.site-navbar) > div:last-child {
-            flex: 0 1 auto;
-            gap: 5px !important;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        body > header:not(.site-navbar) #lang-toggle-btn {
-            padding: 5px 7px;
-            max-width: 96px;
-            font-size: 10px;
-        }
-        body > header:not(.site-navbar) #timer-badge {
-            padding: 4px 6px;
-            font-size: 11px;
-        }
-        #exam-screen {
-            height: auto !important;
-            min-height: 0;
-            overflow: visible !important;
-            flex-direction: column !important;
-        }
-        #exam-screen > div:first-child {
-            height: auto !important;
-            min-height: 62vh;
-            overflow: visible !important;
-            border-right: 0 !important;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        #exam-screen > div:first-child > .flex-1.overflow-y-auto {
-            min-height: 34vh;
-            overflow: visible !important;
-        }
-        #exam-screen > div:nth-child(2) {
-            width: 100% !important;
-            height: auto !important;
-            max-height: none !important;
-            overflow: visible !important;
-            border-top: 0 !important;
-        }
-        #exam-screen > div:nth-child(2) > .flex-1.overflow-y-auto {
-            flex: initial !important;
-            overflow: visible !important;
-        }
-        #palette-grid {
-            grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-            gap: 6px !important;
-        }
-        #palette-grid button {
-            min-height: 38px;
-        }
-        #instructions-screen, #result-screen {
-            overflow: visible !important;
-            padding: 14px !important;
-        }
-        .site-navbar { position: relative; }
-    }
+
+
+<style id="mobile-question-visibility-fix">
+/* Mobile exam fix: prioritize readable questions and compress the question palette */
+@media (max-width: 640px) {
+  html, body {
+    height: auto !important;
+    min-height: 100% !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  body {
+    min-height: 100dvh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+
+  main {
+    flex: 1 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Fundamentals exam */
+  #exam-screen {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+  }
+
+  #exam-screen > div:first-child {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-right: 0 !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+  }
+
+  #exam-screen > div:first-child > .flex-1.overflow-y-auto {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 12px !important;
+  }
+
+  #exam-screen > div:nth-child(2) {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  #exam-screen > div:nth-child(2) > .flex-1.overflow-y-auto {
+    flex: 0 0 auto !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 6px 8px !important;
+  }
+
+  /* Basic quiz exam panels */
+  #screen-exam {
+    display: flex;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    gap: 10px !important;
+  }
+
+  #screen-exam > div:first-child {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 12px !important;
+  }
+
+  #screen-exam > div:first-child > div {
+    min-width: 0;
+  }
+
+  #screen-exam #question-text {
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    overflow-wrap: anywhere;
+    margin-bottom: 12px !important;
+  }
+
+  #screen-exam > div:nth-child(2) {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 10px !important;
+  }
+
+  /* Make 50 question numbers as compact as possible on phone:
+     10 columns = only 5 rows instead of 10 rows. */
+  #palette-grid {
+    display: grid !important;
+    grid-template-columns: repeat(10, minmax(0, 1fr)) !important;
+    gap: 3px !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    padding: 2px !important;
+  }
+
+  #palette-grid button {
+    min-width: 0 !important;
+    width: 100% !important;
+    min-height: 23px !important;
+    height: 23px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 5px !important;
+    font-size: 9px !important;
+    line-height: 1 !important;
+    box-shadow: none !important;
+  }
+
+  /* Compact palette labels and controls, without shrinking the question itself */
+  #exam-screen .text-xs,
+  #screen-exam .text-xs {
+    line-height: 1.25 !important;
+  }
+
+  #exam-screen .flex.flex-wrap,
+  #screen-exam .flex.flex-wrap {
+    gap: 5px !important;
+  }
+
+  #instructions-screen, #result-screen, #screen-result {
+    height: auto !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .site-navbar {
+    flex: 0 0 auto !important;
+    position: relative !important;
+  }
+}
+</style>
 
 </head>
 <body class="h-full bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200">
