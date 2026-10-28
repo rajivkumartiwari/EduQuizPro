@@ -29,7 +29,12 @@
         /* Compact Vertical Viewport Optimization */
         html, body {
             height: 100%;
+            min-height: 100%;
             margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
             overflow: hidden;
         }
         .site-navbar {
@@ -39,22 +44,21 @@
             width: 100%;
         }
         .app-container {
-            height: calc(100vh - 66px);
+            flex: 1 1 auto;
+            min-height: 0;
+            height: auto;
             display: flex;
             flex-direction: column;
         }
         .scrollable-content {
-            flex: 1;
+            flex: 1 1 auto;
             min-height: 0;
             overflow-y: auto;
-            max-height: calc(100vh - 186px);
+            max-height: none;
         }
         @media (max-width: 640px) {
-            .app-container {
-                height: calc(100vh - 66px);
-            }
             .scrollable-content {
-                max-height: calc(100vh - 150px);
+                max-height: none;
             }
         }
     </style>
@@ -1339,6 +1343,5 @@
 </body>
 
 </html>
-
 
 
