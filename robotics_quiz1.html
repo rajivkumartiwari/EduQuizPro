@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics Part 1: History, Sensors &amp; Actuators (MCQ) | EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      <section class="quiz-main-card">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">&#129302; Robotics Part 1: History, Sensors &amp; Actuators (MCQ)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Robotics history, CPU and control, sensors, actuators, programming and applications.</p>
+        <div class="quiz-header">
+          <div style="font-weight: 600; font-size: 1.1rem;" id="timer">Time: 00:00</div>
+          <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;">Question 1 of 50</div>
+        </div>
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="quiz-content" class="quiz-content"></div>
+        <div class="quiz-footer" style="margin-top: 2rem;">
+          <button id="prevBtn" class="btn btn-outline">Previous</button>
+          <button id="nextBtn" class="btn btn-primary">Next</button>
+          <button id="submitBtn" class="btn btn-outline" style="background: var(--success); color: white; display: none;">Submit Quiz</button>
+        </div>
+        <div id="result-box" style="display: none; margin-top: 2rem;"></div>
+      </section>
+
+      <aside class="sidebar-card">
+        <h3 class="sidebar-title">Robotics &amp; Drone Quizzes</h3>
+        <ul class="sidebar-list">
+          <li><a href="drone_quiz1.html" class="sidebar-item-link">Quiz 1: Drone Technology: Core Concepts</a></li>
+          <li><a href="drone_quiz2.html" class="sidebar-item-link">Quiz 2: Drone Technology: Bilingual with Explanations</a></li>
+          <li><a href="robotics_quiz1.html" class="sidebar-item-link active">Quiz 3: Robotics Part 1: History, Sensors &amp; Actuators</a></li>
+          <li><a href="robotics_quiz2.html" class="sidebar-item-link">Quiz 4: Robotics Part 2: Components, Types &amp; Tools</a></li>
+        </ul>
+        <div style="margin-top: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-outline" style="width: 100%;" onclick="location.href='robotics_drone_hub.html'">Back to Robotics &amp; Drone Hub</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    const quizData = [{"q": "20वीं शताब्दी में रोबोटिक्स का विकास किस दिशा में आगे बढ़ा?", "options": ["रोबोटिक्स का विकास पूरी तरह रुक गया था", "सभी रोबोट केवल खिलौने थे", "अधिकांश कार्य कल्पना और वास्तविक जीवन दोनों में किए गए", "उस समय सेंसर का आविष्कार नहीं हुआ था"], "answer": "अधिकांश कार्य कल्पना और वास्तविक जीवन दोनों में किए गए", "exp": "20वीं शताब्दी में रोबोटिक्स से जुड़े कई विचार कल्पना से निकलकर वास्तविक प्रयोगों और कार्यों का हिस्सा बने।"}, {"q": "R.U.R. नाटक ने रोबोट शब्द को लोकप्रिय बनाने में कौन-सी ऐतिहासिक भूमिका निभाई, और यह किस वर्ष प्रस्तुत हुआ?", "options": ["1921", "1940", "1948", "1989"], "answer": "1921", "exp": "R.U.R. नाटक के माध्यम से 'Robot' शब्द लोकप्रिय हुआ; यह नाटक वर्ष 1921 में प्रस्तुत हुआ।"}, {"q": "आइज़ैक असिमोव की कहानियों ने रोबोटिक्स के नियमों को किन दशकों में लोकप्रिय बनाया?", "options": ["1920 और 1930 के दशक", "1960 और 1970 के दशक", "1940 और 1950 के दशक", "1980 और 1990 के दशक"], "answer": "1940 और 1950 के दशक", "exp": "आइज़ैक असिमोव ने 1940 और 1950 के दशकों की कहानियों के माध्यम से रोबोटिक्स के नियमों को लोकप्रिय बनाया।"}, {"q": "1948–1949 के दौरान ब्रिटेन में स्वचालित मशीनों का उपयोग किस जोखिमपूर्ण क्षेत्र में किया गया?", "options": ["घरेलू खाना पकाने में", "कपड़ा बुनाई में", "परमाणु/न्यूक्लियर अनुसंधान में खतरनाक कार्य", "स्कूल में पढ़ाने में"], "answer": "परमाणु/न्यूक्लियर अनुसंधान में खतरनाक कार्य", "exp": "1948 और 1949 के दौरान ब्रिटेन में परमाणु अनुसंधान से जुड़े जोखिमपूर्ण कार्यों के लिए स्वचालित मशीनों का उपयोग किया गया।"}, {"q": "1970 के दशक में रोबोटों की क्षमताओं में कौन-सा महत्वपूर्ण तकनीकी बदलाव देखने को मिला?", "options": ["वे केवल लकड़ी से बनाए जाते थे", "वे बिना किसी नियंत्रण के चलते थे", "उनमें केवल यांत्रिक घड़ी होती थी", "वे वीडियो कैमरा और अन्य उपकरणों से सुसज्जित होने लगे"], "answer": "वे वीडियो कैमरा और अन्य उपकरणों से सुसज्जित होने लगे", "exp": "1970 के दशक में रोबोटों में वीडियो कैमरा और अन्य उपकरणों का उपयोग बढ़ने लगा।"}, {"q": "शेकी (Shakey) को शुरुआती मोबाइल रोबोटों में विशेष स्थान क्यों प्राप्त है?", "options": ["अपने वातावरण को समझकर कार्य करने वाले शुरुआती मोबाइल रोबोट के रूप में", "पहला घरेलू वैक्यूम क्लीनर", "पहला सर्जिकल रोबोट", "पहला औद्योगिक वेल्डिंग रोबोट"], "answer": "अपने वातावरण को समझकर कार्य करने वाले शुरुआती मोबाइल रोबोट के रूप में", "exp": "Shakey शुरुआती मोबाइल रोबोटों में से एक था, जो अपने वातावरण को समझकर उसके अनुसार व्यवहार कर सकता था।"}, {"q": "रोबोट के व्यवहार को नियंत्रित करने वाले Behaviour Algorithm का मुख्य कार्य क्या है?", "options": ["बैटरी की क्षमता मापने से", "रोबोट के व्यवहार/प्रतिक्रिया को निर्धारित करने वाले नियमों से", "धातु की कठोरता जाँचने से", "ड्रोन के कैमरे का रिजॉल्यूशन बढ़ाने से"], "answer": "रोबोट के व्यवहार/प्रतिक्रिया को निर्धारित करने वाले नियमों से", "exp": "Behaviour Algorithm रोबोट के व्यवहार और उसके द्वारा की जाने वाली क्रियाओं को नियंत्रित करता है।"}, {"q": "रोबोट में CPU किन प्रमुख प्रक्रियाओं का संचालन करता है?", "options": ["केवल बाहरी सतह की सफाई", "प्राप्त डेटा और निर्देशों के आधार पर निर्णय/प्रसंस्करण", "केवल बैटरी का भौतिक आकार", "केवल रोबोट के रंग का चयन"], "answer": "प्राप्त डेटा और निर्देशों के आधार पर निर्णय/प्रसंस्करण", "exp": "CPU सेंसर से प्राप्त डेटा और प्रोग्राम के निर्देशों को संसाधित करके रोबोट के कार्यों को नियंत्रित करता है।"}, {"q": "रोबोट की नियंत्रण व्यवस्था में CPU की भूमिका किस प्रकार की होती है?", "options": ["कंप्यूटर प्रणाली का मुख्य प्रसंस्करण भाग", "ऊर्जा संग्रह करने वाला यांत्रिक भाग", "केवल दृश्य संकेत दिखाने वाला भाग", "वस्तु पकड़ने वाला भाग"], "answer": "कंप्यूटर प्रणाली का मुख्य प्रसंस्करण भाग", "exp": "CPU रोबोट की कंप्यूटर-आधारित नियंत्रण प्रणाली का मुख्य भाग होता है।"}, {"q": "सेंसर से प्राप्त संकेतों के आधार पर CPU रोबोट के लिए क्या निर्धारित करता है?", "options": ["वातावरण के अनुसार प्रतिक्रिया/क्रिया निर्धारित करने के लिए", "केवल चित्रों को प्रिंट करने के लिए", "रोबोट का वजन बदलने के लिए", "बिना निर्देश के बैटरी बनाने के लिए"], "answer": "वातावरण के अनुसार प्रतिक्रिया/क्रिया निर्धारित करने के लिए", "exp": "CPU सेंसर डेटा के आधार पर रोबोट की क्रियाएँ और प्रतिक्रियाएँ निर्धारित करता है।"}, {"q": "बदलते परिवेश में रोबोट को सही प्रतिक्रिया देने के लिए सेंसर-आधारित नियंत्रण क्यों आवश्यक है?", "options": ["जब रोबोट को बदलते वातावरण के अनुसार अपना कार्य समायोजित करना हो", "जब रोबोट को हमेशा बंद रखना हो", "जब केवल उसका रंग बदलना हो", "जब किसी प्रकार का इनपुट न चाहिए"], "answer": "जब रोबोट को बदलते वातावरण के अनुसार अपना कार्य समायोजित करना हो", "exp": "सेंसर रोबोट को वातावरण में होने वाले बदलाव पहचानने और उसके अनुसार अपना कार्य समायोजित करने में सहायता करते हैं।"}, {"q": "फोटोवोल्टाइक सेल ऊर्जा रूपांतरण की कौन-सी प्रक्रिया पूरी करता है?", "options": ["ध्वनि से यांत्रिक ऊर्जा बनाने में", "दबाव से तापमान मापने में", "प्रकाश से विद्युत ऊर्जा उत्पन्न करने में", "दूरी से दिशा ज्ञात करने में"], "answer": "प्रकाश से विद्युत ऊर्जा उत्पन्न करने में", "exp": "Photovoltaic Cell प्रकाश ऊर्जा को विद्युत ऊर्जा में परिवर्तित करता है।"}, {"q": "प्रकाश की तीव्रता बदलने पर फोटोरेसिस्टर में कौन-सा विद्युत गुण बदलता है?", "options": ["इसका प्रतिरोध केवल ध्वनि से बदलता है", "कम प्रकाश में इसका प्रतिरोध अधिक हो सकता है", "यह दबाव मापने के लिए बना है", "यह GPS संकेत उत्पन्न करता है"], "answer": "कम प्रकाश में इसका प्रतिरोध अधिक हो सकता है", "exp": "प्रकाश की मात्रा बदलने पर Photoresistor का विद्युत प्रतिरोध बदल जाता है।"}, {"q": "रोबोट को प्रकाश की दिशा या तीव्रता पहचाननी हो, तो कौन-सा सेंसर उपयोगी होगा?", "options": ["प्रकाश की उपलब्धता के अनुसार प्रतिक्रिया देने में", "द्रव का दबाव मापने में", "विद्युत धारा की दिशा बदलने में", "वस्तु को पकड़ने में"], "answer": "प्रकाश की उपलब्धता के अनुसार प्रतिक्रिया देने में", "exp": "Light Sensor प्रकाश की उपस्थिति और उसकी तीव्रता के अनुसार संकेत प्रदान करता है।"}, {"q": "किस प्रकार की घटना का पता लगाने के लिए Contact Sensor लगाया जाता है?", "options": ["दूर स्थित वस्तु की GPS स्थिति पाने के लिए", "किसी वस्तु के छूने पर संकेत देने के लिए", "केवल तापमान घटाने के लिए", "प्रोग्राम को संकलित करने के लिए"], "answer": "किसी वस्तु के छूने पर संकेत देने के लिए", "exp": "Contact Sensor किसी वस्तु के साथ भौतिक संपर्क होने पर संकेत देता है।"}, {"q": "रोबोट और आसपास की वस्तु के बीच दूरी मापने के लिए कौन-सी तकनीकें अपनाई जा सकती हैं?", "options": ["इन्फ्रारेड और अल्ट्रासोनिक तकनीक", "केवल प्रिंटर और स्कैनर", "केवल ब्लूटूथ और ईमेल", "केवल हाइड्रोलिक और न्यूमैटिक"], "answer": "इन्फ्रारेड और अल्ट्रासोनिक तकनीक", "exp": "दूरी मापने के लिए Infrared और Ultrasonic जैसी तकनीकों का उपयोग किया जा सकता है।"}, {"q": "चलते हुए रोबोट को अपनी भौगोलिक स्थिति जानने में GPS किस प्रकार सहायता करता है?", "options": ["रोबोट के हाथ का बल बढ़ाना", "बाहरी स्थान में रोबोट की स्थिति का पता लगाने में सहायता", "ध्वनि को रिकॉर्ड करना", "बैटरी का तापमान कम करना"], "answer": "बाहरी स्थान में रोबोट की स्थिति का पता लगाने में सहायता", "exp": "GPS रोबोट की भौगोलिक स्थिति और स्थान पहचानने में सहायता करता है।"}, {"q": "Indoor Navigation के दौरान GPS के स्थान पर कौन-सी तकनीक अधिक उपयोगी साबित हो सकती है?", "options": ["कैमरा/विजन आधारित स्थानीय पहचान", "केवल समुद्री सोनार", "केवल उच्च वोल्टेज सेंसर", "केवल स्प्रे गन"], "answer": "कैमरा/विजन आधारित स्थानीय पहचान", "exp": "Indoor Navigation में Vision System और स्थानीय दृश्य संकेतों से स्थिति पहचानना उपयोगी हो सकता है।"}, {"q": "किस सेंसर की मदद से रोबोट किसी वस्तु पर लगने वाले दबाव या बल का पता लगा सकता है?", "options": ["कंपास सेंसर", "लाइट सेंसर", "प्रेशर सेंसर", "GPS"], "answer": "प्रेशर सेंसर", "exp": "Pressure Sensor किसी सतह पर लगने वाले दबाव को मापता है और पकड़ने या स्पर्श से जुड़े कार्यों में उपयोगी होता है।"}, {"q": "विद्युत सप्लाई में वोल्टेज के उतार-चढ़ाव पर नजर रखने के लिए कौन-सा सेंसर लगाया जाता है?", "options": ["रोबोट की दिशा", "सप्लाई या बैटरी का वोल्टेज", "कमरे का प्रकाश", "वस्तु की दूरी"], "answer": "सप्लाई या बैटरी का वोल्टेज", "exp": "Voltage Sensor विद्युत सप्लाई के वोल्टेज की निगरानी करता है।"}, {"q": "किस सेंसर से परिपथ में बहने वाली विद्युत धारा की निगरानी की जाती है?", "options": ["रोबोट के सामने दीवार का रंग", "कमरे की दिशा", "ध्वनि की भाषा", "मोटर/परिपथ में असामान्य धारा प्रवाह"], "answer": "मोटर/परिपथ में असामान्य धारा प्रवाह", "exp": "Current Sensor परिपथ में विद्युत धारा के प्रवाह की निगरानी करता है।"}, {"q": "Pneumatic System में संपीड़ित हवा किस प्रकार गति उत्पन्न करने में मदद करती है?", "options": ["GPS स्थिति प्राप्त करने के लिए", "एक्चुएटर को गति/बल प्रदान करने के लिए", "प्रकाश की तीव्रता मापने के लिए", "कंप्यूटर प्रोग्राम लिखने के लिए"], "answer": "एक्चुएटर को गति/बल प्रदान करने के लिए", "exp": "Pneumatic Actuator संपीड़ित हवा के दबाव का उपयोग करके गति उत्पन्न करता है।"}, {"q": "भारी वस्तुओं को उठाने या अधिक बल लगाने वाले कार्यों में Hydraulic Actuator क्यों उपयोगी होता है?", "options": ["यह बिना किसी द्रव के चलता है", "यह अपेक्षाकृत अधिक बल उत्पन्न कर सकता है", "यह केवल प्रकाश पहचानता है", "यह केवल ध्वनि रिकॉर्ड करता है"], "answer": "यह अपेक्षाकृत अधिक बल उत्पन्न कर सकता है", "exp": "Hydraulic System अधिक बल उत्पन्न कर सकता है, इसलिए भारी कार्यों में उपयोगी होता है।"}, {"q": "जहाँ गति और स्थिति पर सटीक नियंत्रण चाहिए, वहाँ Electric Actuator चुनना क्यों लाभदायक है?", "options": ["जहाँ केवल हवा का दबाव मापना हो", "जहाँ गति/स्थिति पर नियंत्रित और सटीक नियंत्रण चाहिए", "जहाँ कोई विद्युत स्रोत उपलब्ध न हो", "जहाँ केवल वस्तु का रंग देखना हो"], "answer": "जहाँ गति/स्थिति पर नियंत्रित और सटीक नियंत्रण चाहिए", "exp": "Electric Actuator गति और स्थिति पर बेहतर नियंत्रण प्रदान कर सकता है।"}, {"q": "किसी रोबोट के End-Effector का चयन करते समय सबसे पहले किस बात पर विचार करना चाहिए?", "options": ["केवल रोबोट के रंग के आधार पर", "केवल कमरे के आकार के आधार पर", "केवल प्रोग्रामिंग भाषा के नाम पर", "किए जाने वाले कार्य और संभाली जाने वाली वस्तु के आधार पर"], "answer": "किए जाने वाले कार्य और संभाली जाने वाली वस्तु के आधार पर", "exp": "कार्य की प्रकृति के अनुसार Gripper, Welding Torch या अन्य उपयुक्त Tool का चयन किया जाता है।"}, {"q": "मोबाइल रोबोट को किसी वस्तु को पकड़कर हटाना हो, तो कौन-सा उपकरण लगाया जा सकता है?", "options": ["कंपास सेंसर", "वोल्टेज सेंसर", "साउंड सेंसर", "ग्रिपर या विशेष मैनिपुलेटर"], "answer": "ग्रिपर या विशेष मैनिपुलेटर", "exp": "वस्तुओं को पकड़ने और हटाने के लिए Manipulator या Gripper लगाया जा सकता है।"}, {"q": "औद्योगिक उत्पादन में Robotic Arm से कौन-सा कार्य कराया जा सकता है?", "options": ["वेल्डिंग", "कविता पाठ", "संगीत संपादन", "ई-मेल भेजना"], "answer": "वेल्डिंग", "exp": "Industrial Robotic Arm का उपयोग Welding जैसे कार्यों में किया जा सकता है।"}, {"q": "रोबोट के लिए Power Supply चुनते समय किन आवश्यकताओं को प्राथमिकता देनी चाहिए?", "options": ["केवल रोबोट के नाम पर", "केवल पहियों की संख्या पर", "केवल स्क्रीन के आकार पर", "कार्य की ऊर्जा आवश्यकता और संचालन अवधि"], "answer": "कार्य की ऊर्जा आवश्यकता और संचालन अवधि", "exp": "Power Supply का चयन रोबोट की आवश्यक शक्ति, कार्य-अवधि और उपयोग की परिस्थितियों के अनुसार किया जाता है।"}, {"q": "पर्यावरण-अनुकूल ऊर्जा स्रोत के रूप में Solar Energy रोबोटिक्स में किस प्रकार उपयोगी हो सकती है?", "options": ["ध्वनि सेंसर की तकनीक", "रोबोट के लिए वैकल्पिक/हरित ऊर्जा स्रोत", "एंड-इफेक्टर का प्रकार", "रोबोट के इतिहास का वर्ष"], "answer": "रोबोट के लिए वैकल्पिक/हरित ऊर्जा स्रोत", "exp": "Solar Energy एक नवीकरणीय और पर्यावरण-अनुकूल ऊर्जा स्रोत है, जिसका उपयोग रोबोट को ऊर्जा देने में किया जा सकता है।"}, {"q": "Online Robot Programming में निर्देश किस माध्यम से रोबोट तक पहुँचते हैं?", "options": ["केवल प्रिंटर के साथ", "केवल कैमरा लेंस के साथ", "रोबोट के कंट्रोलर के साथ", "केवल बैटरी के आवरण के साथ"], "answer": "रोबोट के कंट्रोलर के साथ", "exp": "Online Programming में Controller के माध्यम से निर्देश रोबोट तक पहुँचाए जाते हैं।"}, {"q": "वास्तविक रोबोट को चलाए बिना प्रोग्राम तैयार और जाँचने के लिए कौन-सी Programming विधि अपनाई जाती है?", "options": ["सेंसर को स्थायी रूप से हटाने के लिए", "रोबोट को बिना कंट्रोलर चलाने के लिए", "केवल रोबोट की बॉडी रंगने के लिए", "वास्तविक रोबोट पर चलाने से पहले प्रोग्राम तैयार और जाँचने के लिए"], "answer": "वास्तविक रोबोट पर चलाने से पहले प्रोग्राम तैयार और जाँचने के लिए", "exp": "Offline Programming में वास्तविक रोबोट के संचालन से अलग प्रोग्राम तैयार और जाँचे जा सकते हैं।"}, {"q": "Teach Pendant की सहायता से ऑपरेटर रोबोट को कौन-सा कार्य सिखा या नियंत्रित कर सकता है?", "options": ["यह स्वयं विद्युत ऊर्जा बनाता है", "यह केवल तापमान प्रदर्शित करता है", "ऑपरेटर रोबोट की स्थिति और गति को सिखा सकता है", "यह रोबोट के सभी सेंसर बदल देता है"], "answer": "ऑपरेटर रोबोट की स्थिति और गति को सिखा सकता है", "exp": "Teach Pendant से ऑपरेटर रोबोट की स्थिति और गति सिखा सकता है तथा उसके संचालन को नियंत्रित कर सकता है।"}, {"q": "Teach Pendant से दिए गए निर्देश रोबोट की गति और क्रियाओं तक किस माध्यम से पहुँचते हैं?", "options": ["टीच पेंडेंट के इनपुट कंट्रोलर तक पहुँचकर रोबोट को निर्देश देते हैं", "टीच पेंडेंट पावर सप्लाई का स्थान लेता है", "कंट्रोलर केवल टीच पेंडेंट को चार्ज करता है", "दोनों का रोबोट संचालन से संबंध नहीं"], "answer": "टीच पेंडेंट के इनपुट कंट्रोलर तक पहुँचकर रोबोट को निर्देश देते हैं", "exp": "Teach Pendant से दिए गए निर्देश Controller के माध्यम से रोबोट तक पहुँचते हैं और लागू होते हैं।"}, {"q": "रोबोट की Appearance विशेषता का संबंध मुख्यतः किन पहलुओं से होता है?", "options": ["उसके इंटरनेट पासवर्ड से", "रोबोट के भौतिक शरीर और यांत्रिक बनावट से", "केवल प्रोग्राम के नाम से", "केवल बैटरी के वोल्टेज से"], "answer": "रोबोट के भौतिक शरीर और यांत्रिक बनावट से", "exp": "Appearance रोबोट की बाहरी बनावट, संरचना और भौतिक/यांत्रिक भागों से संबंधित होती है।"}, {"q": "रोबोट की कार्य-दक्षता बढ़ने से उत्पादन प्रक्रिया में क्या सकारात्मक बदलाव आ सकता है?", "options": ["उत्पादन का हमेशा बंद हो जाना", "कार्य में अनिवार्य रूप से अधिक त्रुटियाँ", "सभी कार्यों का हाथ से होना", "उत्पादन और कार्यक्षमता में सुधार"], "answer": "उत्पादन और कार्यक्षमता में सुधार", "exp": "दक्षता बढ़ने से उत्पादकता, कार्य की गति और समग्र कार्यक्षमता में सुधार हो सकता है।"}, {"q": "एक ही कार्य को बार-बार समान गुणवत्ता से करने में रोबोट का कौन-सा गुण सहायक होता है?", "options": ["हर बार अनिश्चित परिणाम", "कार्य का पूरी तरह रुक जाना", "एकसमान परिणाम और कम मानवीय त्रुटियाँ", "सेंसर की जरूरत समाप्त होना"], "answer": "एकसमान परिणाम और कम मानवीय त्रुटियाँ", "exp": "रोबोट दोहराव वाले कार्यों को लगातार और एकसमान तरीके से कर सकते हैं।"}, {"q": "रोबोटिक प्रणाली के रखरखाव की लागत किन परिस्थितियों में बढ़ सकती है?", "options": ["रोबोट को कभी चलाना न पड़े", "प्रोग्राम का नाम बदलना", "यांत्रिक और इलेक्ट्रॉनिक भागों की नियमित जाँच/मरम्मत", "कमरे की रोशनी बदलना"], "answer": "यांत्रिक और इलेक्ट्रॉनिक भागों की नियमित जाँच/मरम्मत", "exp": "जटिल घटकों की मरम्मत, नियमित सर्विसिंग और विशेष तकनीकी सहायता की आवश्यकता होने पर रखरखाव खर्च बढ़ सकता है।"}, {"q": "स्वचालन के बढ़ते उपयोग से रोजगार के क्षेत्र में कौन-सा संभावित नकारात्मक प्रभाव पड़ सकता है?", "options": ["सभी क्षेत्रों में रोजगार शून्य हो जाता है", "किसी भी कार्य पर कोई प्रभाव संभव नहीं", "कुछ पारंपरिक दोहराव वाले कार्यों में रोजगार घट सकता है", "हर व्यक्ति स्वतः रोबोट इंजीनियर बन जाता है"], "answer": "कुछ पारंपरिक दोहराव वाले कार्यों में रोजगार घट सकता है", "exp": "स्वचालन के कारण कुछ कार्यों में मानव श्रम की आवश्यकता कम हो सकती है, जिससे रोजगार के अवसर प्रभावित हो सकते हैं।"}, {"q": "रोबोट की सीमित क्षमता को दर्शाने वाली स्थिति कौन-सी हो सकती है?", "options": ["अप्रत्याशित परिस्थिति में मानव जैसी समझ का अभाव", "हर स्थिति में पूर्ण मानवीय निर्णय", "बिना ऊर्जा अनंत समय तक चलना", "सभी भाषाएँ स्वतः समझना"], "answer": "अप्रत्याशित परिस्थिति में मानव जैसी समझ का अभाव", "exp": "रोबोट हर परिस्थिति में मनुष्य की तरह निर्णय नहीं ले सकता; अप्रत्याशित स्थितियों में उसकी क्षमता सीमित हो सकती है।"}, {"q": "खनन और भारी निर्माण जैसे उद्योगों में जोखिमपूर्ण कार्यों के लिए रोबोट का उपयोग क्यों फायदेमंद है?", "options": ["केवल मनोरंजन के लिए", "संगीत बनाने के लिए", "स्क्रीन की चमक बढ़ाने के लिए", "खतरनाक और भारी कार्यों में मानव श्रम का जोखिम घटाने के लिए"], "answer": "खतरनाक और भारी कार्यों में मानव श्रम का जोखिम घटाने के लिए", "exp": "रोबोट खतरनाक और कठिन वातावरण में कार्य कर सकते हैं, जिससे मानव श्रमिकों का जोखिम कम होता है।"}, {"q": "कृषि क्षेत्र में Drone का उपयोग किस व्यावहारिक कार्य के लिए किया जा सकता है?", "options": ["शल्य चिकित्सा करना", "कार की बॉडी वेल्ड करना", "घरेलू फर्श साफ करना", "फसल/खेत की निगरानी और छिड़काव"], "answer": "फसल/खेत की निगरानी और छिड़काव", "exp": "कृषि Drone का उपयोग खेतों की निगरानी, फसल की स्थिति जाँचने और कीटनाशक छिड़काव में किया जा सकता है।"}, {"q": "औद्योगिक रोबोट में Manipulator Arm किस उद्देश्य से लगाया जाता है?", "options": ["वस्तुओं को पकड़ना, स्थानांतरित करना और कार्य करना", "स्थान की GPS गणना करना", "तापमान की रिपोर्ट छापना", "ध्वनि संकेत रिकॉर्ड करना"], "answer": "वस्तुओं को पकड़ना, स्थानांतरित करना और कार्य करना", "exp": "Manipulator Arm वस्तुओं को पकड़ने, स्थानांतरित करने और औद्योगिक कार्य करने के लिए उपयोग किया जाता है।"}, {"q": "Surgical Robot के संचालन में डॉक्टर की मुख्य भूमिका क्या होती है?", "options": ["रोबोट बिना किसी चिकित्सकीय निगरानी के हर ऑपरेशन करता है", "डॉक्टर की भूमिका केवल बैटरी बदलना है", "सर्जिकल रोबोट केवल एक्स-रे प्रिंट करता है", "डॉक्टर रोबोटिक प्रणाली को नियंत्रित/निर्देशित करता है"], "answer": "डॉक्टर रोबोटिक प्रणाली को नियंत्रित/निर्देशित करता है", "exp": "Surgical Robot का संचालन डॉक्टर की निगरानी और नियंत्रण में होता है; डॉक्टर प्रक्रिया के महत्वपूर्ण निर्णय लेते हैं।"}, {"q": "अंतरिक्ष अभियानों में Robonauts को बहुउद्देशीय सहायक क्यों माना जाता है?", "options": ["वे केवल एक ही घरेलू कार्य करते हैं", "वे केवल सड़क पर चलते हैं", "वे अंतरिक्ष में अलग-अलग सहायक कार्य कर सकते हैं", "वे केवल पेंटिंग करते हैं"], "answer": "वे अंतरिक्ष में अलग-अलग सहायक कार्य कर सकते हैं", "exp": "Robonauts अंतरिक्ष अभियानों में निरीक्षण, रखरखाव और अन्य सहायक कार्य कर सकते हैं।"}, {"q": "मनोरंजन के लिए बनाए गए रोबोट दर्शकों के सामने किस प्रकार की गतिविधियाँ कर सकते हैं?", "options": ["केवल औद्योगिक वेल्डिंग", "केवल तापमान नियंत्रण", "नृत्य, प्रदर्शन और मनोरंजन", "केवल GPS सर्वेक्षण"], "answer": "नृत्य, प्रदर्शन और मनोरंजन", "exp": "Entertainment Robot नृत्य, अभिनय और दर्शकों के सामने प्रदर्शन जैसी गतिविधियाँ कर सकते हैं।"}, {"q": "कार्यालयों और सार्वजनिक स्थलों पर Service Robot कौन-सी सहायता प्रदान कर सकते हैं?", "options": ["केवल गहरे समुद्र में", "कार्यालय और सार्वजनिक स्थान", "केवल अंतरिक्ष के बाहर", "केवल निजी प्रयोगशाला में"], "answer": "कार्यालय और सार्वजनिक स्थान", "exp": "Service Robot कार्यालयों, कंपनियों और सार्वजनिक स्थलों पर मार्गदर्शन, जानकारी देने तथा अन्य सहायक सेवाएँ प्रदान कर सकते हैं।"}, {"q": "रोबोटिक्स में C/C++ भाषाएँ उपयोगी क्यों मानी जाती हैं?", "options": ["हार्डवेयर के निकट नियंत्रण और तेज निष्पादन के लिए", "केवल चित्र बनाने के लिए", "केवल डेटाबेस तालिका सजाने के लिए", "केवल वीडियो स्ट्रीमिंग के लिए"], "answer": "हार्डवेयर के निकट नियंत्रण और तेज निष्पादन के लिए", "exp": "C/C++ तेज निष्पादन और Hardware के निकट नियंत्रण की सुविधा देती हैं, इसलिए रोबोटिक्स में उपयोगी हैं।"}, {"q": "Robotics Application और Systems के विकास में Java किस प्रकार काम आ सकती है?", "options": ["केवल हाइड्रोलिक द्रव तैयार करना", "केवल मोटर का धातु आवरण बनाना", "केवल प्रकाश मापना", "एप्लिकेशन और सिस्टम विकास"], "answer": "एप्लिकेशन और सिस्टम विकास", "exp": "Java का उपयोग रोबोटिक्स से जुड़े Applications और कुछ नियंत्रण प्रणालियों के विकास में किया जा सकता है।"}, {"q": "C#/.NET आधारित एप्लिकेशन विकसित करने के लिए सामान्यतः किस Development Environment का उपयोग किया जाता है?", "options": ["Turbo C", "Visual Studio", "MATLAB केवल हार्डवेयर", "BIOS Setup"], "answer": "Visual Studio", "exp": "C#/.NET आधारित एप्लिकेशन विकसित करने के लिए Microsoft Visual Studio का उपयोग किया जा सकता है।"}, {"q": "किसी रोबोट के लिए Programming Language चुनते समय किन बातों को ध्यान में रखना चाहिए?", "options": ["भाषा के नाम में अक्षरों की संख्या", "कीबोर्ड का रंग", "कंप्यूटर का वॉलपेपर", "रोबोट का कार्य और आवश्यक नियंत्रण"], "answer": "रोबोट का कार्य और आवश्यक नियंत्रण", "exp": "Programming Language का चयन रोबोट के कार्य, Hardware, आवश्यक प्रदर्शन और उपलब्ध Development Tools के आधार पर करना चाहिए।"}];
+    const quizTitle = "Robotics Part 1: History, Sensors & Actuators (MCQ)";
+    let currentIdx = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+    let quizFinished = false;
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    let timerSeconds = 0;
+    const timerInterval = setInterval(() => {
+      if (quizFinished) return;
+      timerSeconds++;
+      const m = String(Math.floor(timerSeconds/60)).padStart(2,'0');
+      const s = String(timerSeconds%60).padStart(2,'0');
+      document.getElementById('timer').textContent = `Time: ${m}:${s}`;
+    }, 1000);
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const quizContent = document.getElementById('quiz-content');
+    const progressBar = document.getElementById('progress-bar');
+    const quizStatus = document.getElementById('quiz-status');
+
+    function updateUI() {
+      const pct = ((currentIdx + 1) / quizData.length) * 100;
+      progressBar.style.width = pct + '%';
+      quizStatus.textContent = `Question ${currentIdx + 1} of ${quizData.length}`;
+      prevBtn.disabled = currentIdx === 0;
+      if (currentIdx === quizData.length - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'none';
+      }
+      const q = quizData[currentIdx];
+      quizContent.innerHTML = `
+        <div class="question-text">${currentIdx + 1}. ${esc(q.q)}</div>
+        <div class="options-grid">
+          ${q.options.map((opt, k) => `
+            <button class="option-btn ${userAnswers[currentIdx] === opt ? 'selected' : ''}" onclick="selectOption(${k})">
+              ${esc(opt)}
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    window.selectOption = function(k) {
+      if (quizFinished) return;
+      userAnswers[currentIdx] = quizData[currentIdx].options[k];
+      updateUI();
+    };
+
+    prevBtn.onclick = () => { if (currentIdx > 0) { currentIdx--; updateUI(); } };
+    nextBtn.onclick = () => { if (currentIdx < quizData.length - 1) { currentIdx++; updateUI(); } };
+
+    submitBtn.onclick = () => {
+      quizFinished = true;
+      clearInterval(timerInterval);
+      let score = 0;
+      quizData.forEach((q, i) => { if (userAnswers[i] === q.answer) score++; });
+      saveQuizResult(quizTitle, score, quizData.length);
+      let scorePercent = Math.round((score / quizData.length) * 100);
+      let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+      if (scorePercent >= 70) { startConfetti(); playVictorySound(); }
+      quizContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">${heading}</h3>
+          <div style="font-size: 3rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${score} / ${quizData.length}</div>
+          <p style="font-size: 1.1rem; color: var(--text-muted);">You scored ${scorePercent}% in ${timerSeconds} seconds.</p>
+        </div>
+        <div class="feedback-list">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Question Review</h4>
+          ${quizData.map((q, i) => {
+            const isCorrect = userAnswers[i] === q.answer;
+            return `<div class="feedback-item">
+              <p><strong>Q${i+1}: ${esc(q.q)}</strong></p>
+              <p style="margin-top: 0.25rem;">
+                ${isCorrect ? `<span class="correct-ans"> Correct: ${esc(q.answer)}</span>` : `<span class="user-wrong"> Your answer: ${esc(userAnswers[i] || 'Unanswered')}</span> <span class="correct-ans"> Correct: ${esc(q.answer)}</span>`}
+              </p>
+              ${q.exp ? `<p style="margin-top: 0.25rem; color: var(--text-muted); font-size: 0.95rem;">${esc(q.exp)}</p>` : ''}
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+      prevBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      const restartBtn = document.createElement('button');
+      restartBtn.className = 'btn btn-primary';
+      restartBtn.textContent = 'Retry Quiz';
+      restartBtn.onclick = () => location.reload();
+      document.querySelector('.quiz-footer').appendChild(restartBtn);
+    };
+
+    updateUI();
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

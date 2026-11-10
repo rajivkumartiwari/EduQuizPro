@@ -1,0 +1,805 @@
+{
+  "title": "Robotics - Part-1 - 50 MCQ Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "20वीं शताब्दी में रोबोटिक्स का विकास किस दिशा में आगे बढ़ा?",
+      "options": [
+        "रोबोटिक्स का विकास पूरी तरह रुक गया था",
+        "सभी रोबोट केवल खिलौने थे",
+        "अधिकांश कार्य कल्पना और वास्तविक जीवन दोनों में किए गए",
+        "उस समय सेंसर का आविष्कार नहीं हुआ था"
+      ],
+      "answer": "C. अधिकांश कार्य कल्पना और वास्तविक जीवन दोनों में किए गए — 20वीं शताब्दी में रोबोटिक्स से जुड़े कई विचार कल्पना से निकलकर वास्तविक प्रयोगों और कार्यों का हिस्सा बने।"
+    },
+    {
+      "id": 2,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "R.U.R. नाटक ने रोबोट शब्द को लोकप्रिय बनाने में कौन-सी ऐतिहासिक भूमिका निभाई, और यह किस वर्ष प्रस्तुत हुआ?",
+      "options": [
+        "1921",
+        "1940",
+        "1948",
+        "1989"
+      ],
+      "answer": "A. 1921 — R.U.R. नाटक के माध्यम से 'Robot' शब्द लोकप्रिय हुआ; यह नाटक वर्ष 1921 में प्रस्तुत हुआ।"
+    },
+    {
+      "id": 3,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "आइज़ैक असिमोव की कहानियों ने रोबोटिक्स के नियमों को किन दशकों में लोकप्रिय बनाया?",
+      "options": [
+        "1920 और 1930 के दशक",
+        "1960 और 1970 के दशक",
+        "1940 और 1950 के दशक",
+        "1980 और 1990 के दशक"
+      ],
+      "answer": "C. 1940 और 1950 के दशक — आइज़ैक असिमोव ने 1940 और 1950 के दशकों की कहानियों के माध्यम से रोबोटिक्स के नियमों को लोकप्रिय बनाया।"
+    },
+    {
+      "id": 4,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "1948–1949 के दौरान ब्रिटेन में स्वचालित मशीनों का उपयोग किस जोखिमपूर्ण क्षेत्र में किया गया?",
+      "options": [
+        "घरेलू खाना पकाने में",
+        "कपड़ा बुनाई में",
+        "परमाणु/न्यूक्लियर अनुसंधान में खतरनाक कार्य",
+        "स्कूल में पढ़ाने में"
+      ],
+      "answer": "C. परमाणु/न्यूक्लियर अनुसंधान में खतरनाक कार्य — 1948 और 1949 के दौरान ब्रिटेन में परमाणु अनुसंधान से जुड़े जोखिमपूर्ण कार्यों के लिए स्वचालित मशीनों का उपयोग किया गया।"
+    },
+    {
+      "id": 5,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "1970 के दशक में रोबोटों की क्षमताओं में कौन-सा महत्वपूर्ण तकनीकी बदलाव देखने को मिला?",
+      "options": [
+        "वे केवल लकड़ी से बनाए जाते थे",
+        "वे बिना किसी नियंत्रण के चलते थे",
+        "उनमें केवल यांत्रिक घड़ी होती थी",
+        "वे वीडियो कैमरा और अन्य उपकरणों से सुसज्जित होने लगे"
+      ],
+      "answer": "D. वे वीडियो कैमरा और अन्य उपकरणों से सुसज्जित होने लगे — 1970 के दशक में रोबोटों में वीडियो कैमरा और अन्य उपकरणों का उपयोग बढ़ने लगा।"
+    },
+    {
+      "id": 6,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "History & Development of Robotics",
+      "question": "शेकी (Shakey) को शुरुआती मोबाइल रोबोटों में विशेष स्थान क्यों प्राप्त है?",
+      "options": [
+        "अपने वातावरण को समझकर कार्य करने वाले शुरुआती मोबाइल रोबोट के रूप में",
+        "पहला घरेलू वैक्यूम क्लीनर",
+        "पहला सर्जिकल रोबोट",
+        "पहला औद्योगिक वेल्डिंग रोबोट"
+      ],
+      "answer": "A. अपने वातावरण को समझकर कार्य करने वाले शुरुआती मोबाइल रोबोट के रूप में — Shakey शुरुआती मोबाइल रोबोटों में से एक था, जो अपने वातावरण को समझकर उसके अनुसार व्यवहार कर सकता था।"
+    },
+    {
+      "id": 7,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Control, CPU & Behaviour Algorithm",
+      "question": "रोबोट के व्यवहार को नियंत्रित करने वाले Behaviour Algorithm का मुख्य कार्य क्या है?",
+      "options": [
+        "बैटरी की क्षमता मापने से",
+        "रोबोट के व्यवहार/प्रतिक्रिया को निर्धारित करने वाले नियमों से",
+        "धातु की कठोरता जाँचने से",
+        "ड्रोन के कैमरे का रिजॉल्यूशन बढ़ाने से"
+      ],
+      "answer": "B. रोबोट के व्यवहार/प्रतिक्रिया को निर्धारित करने वाले नियमों से — Behaviour Algorithm रोबोट के व्यवहार और उसके द्वारा की जाने वाली क्रियाओं को नियंत्रित करता है।"
+    },
+    {
+      "id": 8,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Control, CPU & Behaviour Algorithm",
+      "question": "रोबोट में CPU किन प्रमुख प्रक्रियाओं का संचालन करता है?",
+      "options": [
+        "केवल बाहरी सतह की सफाई",
+        "प्राप्त डेटा और निर्देशों के आधार पर निर्णय/प्रसंस्करण",
+        "केवल बैटरी का भौतिक आकार",
+        "केवल रोबोट के रंग का चयन"
+      ],
+      "answer": "B. प्राप्त डेटा और निर्देशों के आधार पर निर्णय/प्रसंस्करण — CPU सेंसर से प्राप्त डेटा और प्रोग्राम के निर्देशों को संसाधित करके रोबोट के कार्यों को नियंत्रित करता है।"
+    },
+    {
+      "id": 9,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Control, CPU & Behaviour Algorithm",
+      "question": "रोबोट की नियंत्रण व्यवस्था में CPU की भूमिका किस प्रकार की होती है?",
+      "options": [
+        "कंप्यूटर प्रणाली का मुख्य प्रसंस्करण भाग",
+        "ऊर्जा संग्रह करने वाला यांत्रिक भाग",
+        "केवल दृश्य संकेत दिखाने वाला भाग",
+        "वस्तु पकड़ने वाला भाग"
+      ],
+      "answer": "A. कंप्यूटर प्रणाली का मुख्य प्रसंस्करण भाग — CPU रोबोट की कंप्यूटर-आधारित नियंत्रण प्रणाली का मुख्य भाग होता है।"
+    },
+    {
+      "id": 10,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Control, CPU & Behaviour Algorithm",
+      "question": "सेंसर से प्राप्त संकेतों के आधार पर CPU रोबोट के लिए क्या निर्धारित करता है?",
+      "options": [
+        "वातावरण के अनुसार प्रतिक्रिया/क्रिया निर्धारित करने के लिए",
+        "केवल चित्रों को प्रिंट करने के लिए",
+        "रोबोट का वजन बदलने के लिए",
+        "बिना निर्देश के बैटरी बनाने के लिए"
+      ],
+      "answer": "A. वातावरण के अनुसार प्रतिक्रिया/क्रिया निर्धारित करने के लिए — CPU सेंसर डेटा के आधार पर रोबोट की क्रियाएँ और प्रतिक्रियाएँ निर्धारित करता है।"
+    },
+    {
+      "id": 11,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Control, CPU & Behaviour Algorithm",
+      "question": "बदलते परिवेश में रोबोट को सही प्रतिक्रिया देने के लिए सेंसर-आधारित नियंत्रण क्यों आवश्यक है?",
+      "options": [
+        "जब रोबोट को बदलते वातावरण के अनुसार अपना कार्य समायोजित करना हो",
+        "जब रोबोट को हमेशा बंद रखना हो",
+        "जब केवल उसका रंग बदलना हो",
+        "जब किसी प्रकार का इनपुट न चाहिए"
+      ],
+      "answer": "A. जब रोबोट को बदलते वातावरण के अनुसार अपना कार्य समायोजित करना हो — सेंसर रोबोट को वातावरण में होने वाले बदलाव पहचानने और उसके अनुसार अपना कार्य समायोजित करने में सहायता करते हैं।"
+    },
+    {
+      "id": 12,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "फोटोवोल्टाइक सेल ऊर्जा रूपांतरण की कौन-सी प्रक्रिया पूरी करता है?",
+      "options": [
+        "ध्वनि से यांत्रिक ऊर्जा बनाने में",
+        "दबाव से तापमान मापने में",
+        "प्रकाश से विद्युत ऊर्जा उत्पन्न करने में",
+        "दूरी से दिशा ज्ञात करने में"
+      ],
+      "answer": "C. प्रकाश से विद्युत ऊर्जा उत्पन्न करने में — Photovoltaic Cell प्रकाश ऊर्जा को विद्युत ऊर्जा में परिवर्तित करता है।"
+    },
+    {
+      "id": 13,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "प्रकाश की तीव्रता बदलने पर फोटोरेसिस्टर में कौन-सा विद्युत गुण बदलता है?",
+      "options": [
+        "इसका प्रतिरोध केवल ध्वनि से बदलता है",
+        "कम प्रकाश में इसका प्रतिरोध अधिक हो सकता है",
+        "यह दबाव मापने के लिए बना है",
+        "यह GPS संकेत उत्पन्न करता है"
+      ],
+      "answer": "B. कम प्रकाश में इसका प्रतिरोध अधिक हो सकता है — प्रकाश की मात्रा बदलने पर Photoresistor का विद्युत प्रतिरोध बदल जाता है।"
+    },
+    {
+      "id": 14,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट को प्रकाश की दिशा या तीव्रता पहचाननी हो, तो कौन-सा सेंसर उपयोगी होगा?",
+      "options": [
+        "प्रकाश की उपलब्धता के अनुसार प्रतिक्रिया देने में",
+        "द्रव का दबाव मापने में",
+        "विद्युत धारा की दिशा बदलने में",
+        "वस्तु को पकड़ने में"
+      ],
+      "answer": "A. प्रकाश की उपलब्धता के अनुसार प्रतिक्रिया देने में — Light Sensor प्रकाश की उपस्थिति और उसकी तीव्रता के अनुसार संकेत प्रदान करता है।"
+    },
+    {
+      "id": 15,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस प्रकार की घटना का पता लगाने के लिए Contact Sensor लगाया जाता है?",
+      "options": [
+        "दूर स्थित वस्तु की GPS स्थिति पाने के लिए",
+        "किसी वस्तु के छूने पर संकेत देने के लिए",
+        "केवल तापमान घटाने के लिए",
+        "प्रोग्राम को संकलित करने के लिए"
+      ],
+      "answer": "B. किसी वस्तु के छूने पर संकेत देने के लिए — Contact Sensor किसी वस्तु के साथ भौतिक संपर्क होने पर संकेत देता है।"
+    },
+    {
+      "id": 16,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट और आसपास की वस्तु के बीच दूरी मापने के लिए कौन-सी तकनीकें अपनाई जा सकती हैं?",
+      "options": [
+        "इन्फ्रारेड और अल्ट्रासोनिक तकनीक",
+        "केवल प्रिंटर और स्कैनर",
+        "केवल ब्लूटूथ और ईमेल",
+        "केवल हाइड्रोलिक और न्यूमैटिक"
+      ],
+      "answer": "A. इन्फ्रारेड और अल्ट्रासोनिक तकनीक — दूरी मापने के लिए Infrared और Ultrasonic जैसी तकनीकों का उपयोग किया जा सकता है।"
+    },
+    {
+      "id": 17,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "चलते हुए रोबोट को अपनी भौगोलिक स्थिति जानने में GPS किस प्रकार सहायता करता है?",
+      "options": [
+        "रोबोट के हाथ का बल बढ़ाना",
+        "बाहरी स्थान में रोबोट की स्थिति का पता लगाने में सहायता",
+        "ध्वनि को रिकॉर्ड करना",
+        "बैटरी का तापमान कम करना"
+      ],
+      "answer": "B. बाहरी स्थान में रोबोट की स्थिति का पता लगाने में सहायता — GPS रोबोट की भौगोलिक स्थिति और स्थान पहचानने में सहायता करता है।"
+    },
+    {
+      "id": 18,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "Indoor Navigation के दौरान GPS के स्थान पर कौन-सी तकनीक अधिक उपयोगी साबित हो सकती है?",
+      "options": [
+        "कैमरा/विजन आधारित स्थानीय पहचान",
+        "केवल समुद्री सोनार",
+        "केवल उच्च वोल्टेज सेंसर",
+        "केवल स्प्रे गन"
+      ],
+      "answer": "A. कैमरा/विजन आधारित स्थानीय पहचान — Indoor Navigation में Vision System और स्थानीय दृश्य संकेतों से स्थिति पहचानना उपयोगी हो सकता है।"
+    },
+    {
+      "id": 19,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर की मदद से रोबोट किसी वस्तु पर लगने वाले दबाव या बल का पता लगा सकता है?",
+      "options": [
+        "कंपास सेंसर",
+        "लाइट सेंसर",
+        "प्रेशर सेंसर",
+        "GPS"
+      ],
+      "answer": "C. प्रेशर सेंसर — Pressure Sensor किसी सतह पर लगने वाले दबाव को मापता है और पकड़ने या स्पर्श से जुड़े कार्यों में उपयोगी होता है।"
+    },
+    {
+      "id": 20,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "विद्युत सप्लाई में वोल्टेज के उतार-चढ़ाव पर नजर रखने के लिए कौन-सा सेंसर लगाया जाता है?",
+      "options": [
+        "रोबोट की दिशा",
+        "सप्लाई या बैटरी का वोल्टेज",
+        "कमरे का प्रकाश",
+        "वस्तु की दूरी"
+      ],
+      "answer": "B. सप्लाई या बैटरी का वोल्टेज — Voltage Sensor विद्युत सप्लाई के वोल्टेज की निगरानी करता है।"
+    },
+    {
+      "id": 21,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर से परिपथ में बहने वाली विद्युत धारा की निगरानी की जाती है?",
+      "options": [
+        "रोबोट के सामने दीवार का रंग",
+        "कमरे की दिशा",
+        "ध्वनि की भाषा",
+        "मोटर/परिपथ में असामान्य धारा प्रवाह"
+      ],
+      "answer": "D. मोटर/परिपथ में असामान्य धारा प्रवाह — Current Sensor परिपथ में विद्युत धारा के प्रवाह की निगरानी करता है।"
+    },
+    {
+      "id": 22,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "Pneumatic System में संपीड़ित हवा किस प्रकार गति उत्पन्न करने में मदद करती है?",
+      "options": [
+        "GPS स्थिति प्राप्त करने के लिए",
+        "एक्चुएटर को गति/बल प्रदान करने के लिए",
+        "प्रकाश की तीव्रता मापने के लिए",
+        "कंप्यूटर प्रोग्राम लिखने के लिए"
+      ],
+      "answer": "B. एक्चुएटर को गति/बल प्रदान करने के लिए — Pneumatic Actuator संपीड़ित हवा के दबाव का उपयोग करके गति उत्पन्न करता है।"
+    },
+    {
+      "id": 23,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "भारी वस्तुओं को उठाने या अधिक बल लगाने वाले कार्यों में Hydraulic Actuator क्यों उपयोगी होता है?",
+      "options": [
+        "यह बिना किसी द्रव के चलता है",
+        "यह अपेक्षाकृत अधिक बल उत्पन्न कर सकता है",
+        "यह केवल प्रकाश पहचानता है",
+        "यह केवल ध्वनि रिकॉर्ड करता है"
+      ],
+      "answer": "B. यह अपेक्षाकृत अधिक बल उत्पन्न कर सकता है — Hydraulic System अधिक बल उत्पन्न कर सकता है, इसलिए भारी कार्यों में उपयोगी होता है।"
+    },
+    {
+      "id": 24,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "जहाँ गति और स्थिति पर सटीक नियंत्रण चाहिए, वहाँ Electric Actuator चुनना क्यों लाभदायक है?",
+      "options": [
+        "जहाँ केवल हवा का दबाव मापना हो",
+        "जहाँ गति/स्थिति पर नियंत्रित और सटीक नियंत्रण चाहिए",
+        "जहाँ कोई विद्युत स्रोत उपलब्ध न हो",
+        "जहाँ केवल वस्तु का रंग देखना हो"
+      ],
+      "answer": "B. जहाँ गति/स्थिति पर नियंत्रित और सटीक नियंत्रण चाहिए — Electric Actuator गति और स्थिति पर बेहतर नियंत्रण प्रदान कर सकता है।"
+    },
+    {
+      "id": 25,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "किसी रोबोट के End-Effector का चयन करते समय सबसे पहले किस बात पर विचार करना चाहिए?",
+      "options": [
+        "केवल रोबोट के रंग के आधार पर",
+        "केवल कमरे के आकार के आधार पर",
+        "केवल प्रोग्रामिंग भाषा के नाम पर",
+        "किए जाने वाले कार्य और संभाली जाने वाली वस्तु के आधार पर"
+      ],
+      "answer": "D. किए जाने वाले कार्य और संभाली जाने वाली वस्तु के आधार पर — कार्य की प्रकृति के अनुसार Gripper, Welding Torch या अन्य उपयुक्त Tool का चयन किया जाता है।"
+    },
+    {
+      "id": 26,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "मोबाइल रोबोट को किसी वस्तु को पकड़कर हटाना हो, तो कौन-सा उपकरण लगाया जा सकता है?",
+      "options": [
+        "कंपास सेंसर",
+        "वोल्टेज सेंसर",
+        "साउंड सेंसर",
+        "ग्रिपर या विशेष मैनिपुलेटर"
+      ],
+      "answer": "D. ग्रिपर या विशेष मैनिपुलेटर — वस्तुओं को पकड़ने और हटाने के लिए Manipulator या Gripper लगाया जा सकता है।"
+    },
+    {
+      "id": 27,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators, End-Effectors & Robotic Arm",
+      "question": "औद्योगिक उत्पादन में Robotic Arm से कौन-सा कार्य कराया जा सकता है?",
+      "options": [
+        "वेल्डिंग",
+        "कविता पाठ",
+        "संगीत संपादन",
+        "ई-मेल भेजना"
+      ],
+      "answer": "A. वेल्डिंग — Industrial Robotic Arm का उपयोग Welding जैसे कार्यों में किया जा सकता है।"
+    },
+    {
+      "id": 28,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Power Supply & Solar Energy",
+      "question": "रोबोट के लिए Power Supply चुनते समय किन आवश्यकताओं को प्राथमिकता देनी चाहिए?",
+      "options": [
+        "केवल रोबोट के नाम पर",
+        "केवल पहियों की संख्या पर",
+        "केवल स्क्रीन के आकार पर",
+        "कार्य की ऊर्जा आवश्यकता और संचालन अवधि"
+      ],
+      "answer": "D. कार्य की ऊर्जा आवश्यकता और संचालन अवधि — Power Supply का चयन रोबोट की आवश्यक शक्ति, कार्य-अवधि और उपयोग की परिस्थितियों के अनुसार किया जाता है।"
+    },
+    {
+      "id": 29,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Power Supply & Solar Energy",
+      "question": "पर्यावरण-अनुकूल ऊर्जा स्रोत के रूप में Solar Energy रोबोटिक्स में किस प्रकार उपयोगी हो सकती है?",
+      "options": [
+        "ध्वनि सेंसर की तकनीक",
+        "रोबोट के लिए वैकल्पिक/हरित ऊर्जा स्रोत",
+        "एंड-इफेक्टर का प्रकार",
+        "रोबोट के इतिहास का वर्ष"
+      ],
+      "answer": "B. रोबोट के लिए वैकल्पिक/हरित ऊर्जा स्रोत — Solar Energy एक नवीकरणीय और पर्यावरण-अनुकूल ऊर्जा स्रोत है, जिसका उपयोग रोबोट को ऊर्जा देने में किया जा सकता है।"
+    },
+    {
+      "id": 30,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Programming & Teach Pendant",
+      "question": "Online Robot Programming में निर्देश किस माध्यम से रोबोट तक पहुँचते हैं?",
+      "options": [
+        "केवल प्रिंटर के साथ",
+        "केवल कैमरा लेंस के साथ",
+        "रोबोट के कंट्रोलर के साथ",
+        "केवल बैटरी के आवरण के साथ"
+      ],
+      "answer": "C. रोबोट के कंट्रोलर के साथ — Online Programming में Controller के माध्यम से निर्देश रोबोट तक पहुँचाए जाते हैं।"
+    },
+    {
+      "id": 31,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Programming & Teach Pendant",
+      "question": "वास्तविक रोबोट को चलाए बिना प्रोग्राम तैयार और जाँचने के लिए कौन-सी Programming विधि अपनाई जाती है?",
+      "options": [
+        "सेंसर को स्थायी रूप से हटाने के लिए",
+        "रोबोट को बिना कंट्रोलर चलाने के लिए",
+        "केवल रोबोट की बॉडी रंगने के लिए",
+        "वास्तविक रोबोट पर चलाने से पहले प्रोग्राम तैयार और जाँचने के लिए"
+      ],
+      "answer": "D. वास्तविक रोबोट पर चलाने से पहले प्रोग्राम तैयार और जाँचने के लिए — Offline Programming में वास्तविक रोबोट के संचालन से अलग प्रोग्राम तैयार और जाँचे जा सकते हैं।"
+    },
+    {
+      "id": 32,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Programming & Teach Pendant",
+      "question": "Teach Pendant की सहायता से ऑपरेटर रोबोट को कौन-सा कार्य सिखा या नियंत्रित कर सकता है?",
+      "options": [
+        "यह स्वयं विद्युत ऊर्जा बनाता है",
+        "यह केवल तापमान प्रदर्शित करता है",
+        "ऑपरेटर रोबोट की स्थिति और गति को सिखा सकता है",
+        "यह रोबोट के सभी सेंसर बदल देता है"
+      ],
+      "answer": "C. ऑपरेटर रोबोट की स्थिति और गति को सिखा सकता है — Teach Pendant से ऑपरेटर रोबोट की स्थिति और गति सिखा सकता है तथा उसके संचालन को नियंत्रित कर सकता है।"
+    },
+    {
+      "id": 33,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Programming & Teach Pendant",
+      "question": "Teach Pendant से दिए गए निर्देश रोबोट की गति और क्रियाओं तक किस माध्यम से पहुँचते हैं?",
+      "options": [
+        "टीच पेंडेंट के इनपुट कंट्रोलर तक पहुँचकर रोबोट को निर्देश देते हैं",
+        "टीच पेंडेंट पावर सप्लाई का स्थान लेता है",
+        "कंट्रोलर केवल टीच पेंडेंट को चार्ज करता है",
+        "दोनों का रोबोट संचालन से संबंध नहीं"
+      ],
+      "answer": "A. टीच पेंडेंट के इनपुट कंट्रोलर तक पहुँचकर रोबोट को निर्देश देते हैं — Teach Pendant से दिए गए निर्देश Controller के माध्यम से रोबोट तक पहुँचते हैं और लागू होते हैं।"
+    },
+    {
+      "id": 34,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "रोबोट की Appearance विशेषता का संबंध मुख्यतः किन पहलुओं से होता है?",
+      "options": [
+        "उसके इंटरनेट पासवर्ड से",
+        "रोबोट के भौतिक शरीर और यांत्रिक बनावट से",
+        "केवल प्रोग्राम के नाम से",
+        "केवल बैटरी के वोल्टेज से"
+      ],
+      "answer": "B. रोबोट के भौतिक शरीर और यांत्रिक बनावट से — Appearance रोबोट की बाहरी बनावट, संरचना और भौतिक/यांत्रिक भागों से संबंधित होती है।"
+    },
+    {
+      "id": 35,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "रोबोट की कार्य-दक्षता बढ़ने से उत्पादन प्रक्रिया में क्या सकारात्मक बदलाव आ सकता है?",
+      "options": [
+        "उत्पादन का हमेशा बंद हो जाना",
+        "कार्य में अनिवार्य रूप से अधिक त्रुटियाँ",
+        "सभी कार्यों का हाथ से होना",
+        "उत्पादन और कार्यक्षमता में सुधार"
+      ],
+      "answer": "D. उत्पादन और कार्यक्षमता में सुधार — दक्षता बढ़ने से उत्पादकता, कार्य की गति और समग्र कार्यक्षमता में सुधार हो सकता है।"
+    },
+    {
+      "id": 36,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "एक ही कार्य को बार-बार समान गुणवत्ता से करने में रोबोट का कौन-सा गुण सहायक होता है?",
+      "options": [
+        "हर बार अनिश्चित परिणाम",
+        "कार्य का पूरी तरह रुक जाना",
+        "एकसमान परिणाम और कम मानवीय त्रुटियाँ",
+        "सेंसर की जरूरत समाप्त होना"
+      ],
+      "answer": "C. एकसमान परिणाम और कम मानवीय त्रुटियाँ — रोबोट दोहराव वाले कार्यों को लगातार और एकसमान तरीके से कर सकते हैं।"
+    },
+    {
+      "id": 37,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "रोबोटिक प्रणाली के रखरखाव की लागत किन परिस्थितियों में बढ़ सकती है?",
+      "options": [
+        "रोबोट को कभी चलाना न पड़े",
+        "प्रोग्राम का नाम बदलना",
+        "यांत्रिक और इलेक्ट्रॉनिक भागों की नियमित जाँच/मरम्मत",
+        "कमरे की रोशनी बदलना"
+      ],
+      "answer": "C. यांत्रिक और इलेक्ट्रॉनिक भागों की नियमित जाँच/मरम्मत — जटिल घटकों की मरम्मत, नियमित सर्विसिंग और विशेष तकनीकी सहायता की आवश्यकता होने पर रखरखाव खर्च बढ़ सकता है।"
+    },
+    {
+      "id": 38,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "स्वचालन के बढ़ते उपयोग से रोजगार के क्षेत्र में कौन-सा संभावित नकारात्मक प्रभाव पड़ सकता है?",
+      "options": [
+        "सभी क्षेत्रों में रोजगार शून्य हो जाता है",
+        "किसी भी कार्य पर कोई प्रभाव संभव नहीं",
+        "कुछ पारंपरिक दोहराव वाले कार्यों में रोजगार घट सकता है",
+        "हर व्यक्ति स्वतः रोबोट इंजीनियर बन जाता है"
+      ],
+      "answer": "C. कुछ पारंपरिक दोहराव वाले कार्यों में रोजगार घट सकता है — स्वचालन के कारण कुछ कार्यों में मानव श्रम की आवश्यकता कम हो सकती है, जिससे रोजगार के अवसर प्रभावित हो सकते हैं।"
+    },
+    {
+      "id": 39,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Features, Advantages & Limitations",
+      "question": "रोबोट की सीमित क्षमता को दर्शाने वाली स्थिति कौन-सी हो सकती है?",
+      "options": [
+        "अप्रत्याशित परिस्थिति में मानव जैसी समझ का अभाव",
+        "हर स्थिति में पूर्ण मानवीय निर्णय",
+        "बिना ऊर्जा अनंत समय तक चलना",
+        "सभी भाषाएँ स्वतः समझना"
+      ],
+      "answer": "A. अप्रत्याशित परिस्थिति में मानव जैसी समझ का अभाव — रोबोट हर परिस्थिति में मनुष्य की तरह निर्णय नहीं ले सकता; अप्रत्याशित स्थितियों में उसकी क्षमता सीमित हो सकती है।"
+    },
+    {
+      "id": 40,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "खनन और भारी निर्माण जैसे उद्योगों में जोखिमपूर्ण कार्यों के लिए रोबोट का उपयोग क्यों फायदेमंद है?",
+      "options": [
+        "केवल मनोरंजन के लिए",
+        "संगीत बनाने के लिए",
+        "स्क्रीन की चमक बढ़ाने के लिए",
+        "खतरनाक और भारी कार्यों में मानव श्रम का जोखिम घटाने के लिए"
+      ],
+      "answer": "D. खतरनाक और भारी कार्यों में मानव श्रम का जोखिम घटाने के लिए — रोबोट खतरनाक और कठिन वातावरण में कार्य कर सकते हैं, जिससे मानव श्रमिकों का जोखिम कम होता है।"
+    },
+    {
+      "id": 41,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "कृषि क्षेत्र में Drone का उपयोग किस व्यावहारिक कार्य के लिए किया जा सकता है?",
+      "options": [
+        "शल्य चिकित्सा करना",
+        "कार की बॉडी वेल्ड करना",
+        "घरेलू फर्श साफ करना",
+        "फसल/खेत की निगरानी और छिड़काव"
+      ],
+      "answer": "D. फसल/खेत की निगरानी और छिड़काव — कृषि Drone का उपयोग खेतों की निगरानी, फसल की स्थिति जाँचने और कीटनाशक छिड़काव में किया जा सकता है।"
+    },
+    {
+      "id": 42,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "औद्योगिक रोबोट में Manipulator Arm किस उद्देश्य से लगाया जाता है?",
+      "options": [
+        "वस्तुओं को पकड़ना, स्थानांतरित करना और कार्य करना",
+        "स्थान की GPS गणना करना",
+        "तापमान की रिपोर्ट छापना",
+        "ध्वनि संकेत रिकॉर्ड करना"
+      ],
+      "answer": "A. वस्तुओं को पकड़ना, स्थानांतरित करना और कार्य करना — Manipulator Arm वस्तुओं को पकड़ने, स्थानांतरित करने और औद्योगिक कार्य करने के लिए उपयोग किया जाता है।"
+    },
+    {
+      "id": 43,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "Surgical Robot के संचालन में डॉक्टर की मुख्य भूमिका क्या होती है?",
+      "options": [
+        "रोबोट बिना किसी चिकित्सकीय निगरानी के हर ऑपरेशन करता है",
+        "डॉक्टर की भूमिका केवल बैटरी बदलना है",
+        "सर्जिकल रोबोट केवल एक्स-रे प्रिंट करता है",
+        "डॉक्टर रोबोटिक प्रणाली को नियंत्रित/निर्देशित करता है"
+      ],
+      "answer": "D. डॉक्टर रोबोटिक प्रणाली को नियंत्रित/निर्देशित करता है — Surgical Robot का संचालन डॉक्टर की निगरानी और नियंत्रण में होता है; डॉक्टर प्रक्रिया के महत्वपूर्ण निर्णय लेते हैं।"
+    },
+    {
+      "id": 44,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "अंतरिक्ष अभियानों में Robonauts को बहुउद्देशीय सहायक क्यों माना जाता है?",
+      "options": [
+        "वे केवल एक ही घरेलू कार्य करते हैं",
+        "वे केवल सड़क पर चलते हैं",
+        "वे अंतरिक्ष में अलग-अलग सहायक कार्य कर सकते हैं",
+        "वे केवल पेंटिंग करते हैं"
+      ],
+      "answer": "C. वे अंतरिक्ष में अलग-अलग सहायक कार्य कर सकते हैं — Robonauts अंतरिक्ष अभियानों में निरीक्षण, रखरखाव और अन्य सहायक कार्य कर सकते हैं।"
+    },
+    {
+      "id": 45,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "मनोरंजन के लिए बनाए गए रोबोट दर्शकों के सामने किस प्रकार की गतिविधियाँ कर सकते हैं?",
+      "options": [
+        "केवल औद्योगिक वेल्डिंग",
+        "केवल तापमान नियंत्रण",
+        "नृत्य, प्रदर्शन और मनोरंजन",
+        "केवल GPS सर्वेक्षण"
+      ],
+      "answer": "C. नृत्य, प्रदर्शन और मनोरंजन — Entertainment Robot नृत्य, अभिनय और दर्शकों के सामने प्रदर्शन जैसी गतिविधियाँ कर सकते हैं।"
+    },
+    {
+      "id": 46,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "कार्यालयों और सार्वजनिक स्थलों पर Service Robot कौन-सी सहायता प्रदान कर सकते हैं?",
+      "options": [
+        "केवल गहरे समुद्र में",
+        "कार्यालय और सार्वजनिक स्थान",
+        "केवल अंतरिक्ष के बाहर",
+        "केवल निजी प्रयोगशाला में"
+      ],
+      "answer": "B. कार्यालय और सार्वजनिक स्थान — Service Robot कार्यालयों, कंपनियों और सार्वजनिक स्थलों पर मार्गदर्शन, जानकारी देने तथा अन्य सहायक सेवाएँ प्रदान कर सकते हैं।"
+    },
+    {
+      "id": 47,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Development Tools",
+      "question": "रोबोटिक्स में C/C++ भाषाएँ उपयोगी क्यों मानी जाती हैं?",
+      "options": [
+        "हार्डवेयर के निकट नियंत्रण और तेज निष्पादन के लिए",
+        "केवल चित्र बनाने के लिए",
+        "केवल डेटाबेस तालिका सजाने के लिए",
+        "केवल वीडियो स्ट्रीमिंग के लिए"
+      ],
+      "answer": "A. हार्डवेयर के निकट नियंत्रण और तेज निष्पादन के लिए — C/C++ तेज निष्पादन और Hardware के निकट नियंत्रण की सुविधा देती हैं, इसलिए रोबोटिक्स में उपयोगी हैं।"
+    },
+    {
+      "id": 48,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Development Tools",
+      "question": "Robotics Application और Systems के विकास में Java किस प्रकार काम आ सकती है?",
+      "options": [
+        "केवल हाइड्रोलिक द्रव तैयार करना",
+        "केवल मोटर का धातु आवरण बनाना",
+        "केवल प्रकाश मापना",
+        "एप्लिकेशन और सिस्टम विकास"
+      ],
+      "answer": "D. एप्लिकेशन और सिस्टम विकास — Java का उपयोग रोबोटिक्स से जुड़े Applications और कुछ नियंत्रण प्रणालियों के विकास में किया जा सकता है।"
+    },
+    {
+      "id": 49,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Development Tools",
+      "question": "C#/.NET आधारित एप्लिकेशन विकसित करने के लिए सामान्यतः किस Development Environment का उपयोग किया जाता है?",
+      "options": [
+        "Turbo C",
+        "Visual Studio",
+        "MATLAB केवल हार्डवेयर",
+        "BIOS Setup"
+      ],
+      "answer": "B. Visual Studio — C#/.NET आधारित एप्लिकेशन विकसित करने के लिए Microsoft Visual Studio का उपयोग किया जा सकता है।"
+    },
+    {
+      "id": 50,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Development Tools",
+      "question": "किसी रोबोट के लिए Programming Language चुनते समय किन बातों को ध्यान में रखना चाहिए?",
+      "options": [
+        "भाषा के नाम में अक्षरों की संख्या",
+        "कीबोर्ड का रंग",
+        "कंप्यूटर का वॉलपेपर",
+        "रोबोट का कार्य और आवश्यक नियंत्रण"
+      ],
+      "answer": "D. रोबोट का कार्य और आवश्यक नियंत्रण — Programming Language का चयन रोबोट के कार्य, Hardware, आवश्यक प्रदर्शन और उपलब्ध Development Tools के आधार पर करना चाहिए।"
+    }
+  ]
+}

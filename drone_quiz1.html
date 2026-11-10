@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drone Technology: Core Concepts (MCQ) | EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      <section class="quiz-main-card">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">&#128641; Drone Technology: Core Concepts (MCQ)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">UAV types, ESC, flight controller, sensors, gimbal, LiDAR, FPV, and flight safety.</p>
+        <div class="quiz-header">
+          <div style="font-weight: 600; font-size: 1.1rem;" id="timer">Time: 00:00</div>
+          <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;">Question 1 of 50</div>
+        </div>
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="quiz-content" class="quiz-content"></div>
+        <div class="quiz-footer" style="margin-top: 2rem;">
+          <button id="prevBtn" class="btn btn-outline">Previous</button>
+          <button id="nextBtn" class="btn btn-primary">Next</button>
+          <button id="submitBtn" class="btn btn-outline" style="background: var(--success); color: white; display: none;">Submit Quiz</button>
+        </div>
+        <div id="result-box" style="display: none; margin-top: 2rem;"></div>
+      </section>
+
+      <aside class="sidebar-card">
+        <h3 class="sidebar-title">Robotics &amp; Drone Quizzes</h3>
+        <ul class="sidebar-list">
+          <li><a href="drone_quiz1.html" class="sidebar-item-link active">Quiz 1: Drone Technology: Core Concepts</a></li>
+          <li><a href="drone_quiz2.html" class="sidebar-item-link">Quiz 2: Drone Technology: Bilingual with Explanations</a></li>
+          <li><a href="robotics_quiz1.html" class="sidebar-item-link">Quiz 3: Robotics Part 1: History, Sensors &amp; Actuators</a></li>
+          <li><a href="robotics_quiz2.html" class="sidebar-item-link">Quiz 4: Robotics Part 2: Components, Types &amp; Tools</a></li>
+        </ul>
+        <div style="margin-top: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-outline" style="width: 100%;" onclick="location.href='robotics_drone_hub.html'">Back to Robotics &amp; Drone Hub</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    const quizData = [{"q": "ड्रोन को तकनीकी शब्दावली में किस नाम से जाना जाता है?", "options": ["UGV (Unmanned Ground Vehicle)", "UAV (Unmanned Aerial Vehicle)", "USV (Unmanned Surface Vehicle)", "UUV (Unmanned Underwater Vehicle)"], "answer": "UAV (Unmanned Aerial Vehicle)", "exp": ""}, {"q": "4 रोटर वाले Multi-Rotor Drone को क्या कहते हैं?", "options": ["Tricopter", "Hexacopter", "Quadcopter", "Octocopter"], "answer": "Quadcopter", "exp": ""}, {"q": "Black Hornet जैसे अत्यंत छोटे सैन्य Drone को किस श्रेणी में रखा जाता है?", "options": ["Heavy-Payload Drone", "Micro/Nano Drone", "Fixed-Wing Drone", "Target Drone"], "answer": "Micro/Nano Drone", "exp": ""}, {"q": "Fixed-Wing Drone की उड़ान अवधि (Flight Endurance) कैसी हो सकती है?", "options": ["केवल 10 मिनट", "हमेशा 30 मिनट", "मॉडल के अनुसार कई घंटे", "केवल 5 मिनट"], "answer": "मॉडल के अनुसार कई घंटे", "exp": ""}, {"q": "Drone की Motor की गति और RPM नियंत्रित करने वाला घटक कौन-सा है?", "options": ["ESC (Electronic Speed Controller)", "GPS Module", "Gimbal", "Propeller Guard"], "answer": "ESC (Electronic Speed Controller)", "exp": ""}, {"q": "Drone का 'Brain' किसे कहा जाता है?", "options": ["Frame", "Battery", "Flight Controller", "Radio Antenna"], "answer": "Flight Controller", "exp": ""}, {"q": "कम रोशनी में मनुष्य और वस्तुओं के तापीय संकेत पहचानने के लिए कौन-सा Camera उपयोगी है?", "options": ["RGB Camera", "Thermal Camera", "Webcam", "Action Camera"], "answer": "Thermal Camera", "exp": ""}, {"q": "Compass Calibration में Drone को कैसे घुमाना चाहिए?", "options": ["हर model में केवल 90°", "केवल 45°", "Manufacturer के निर्देशानुसार अलग-अलग orientations में", "कभी नहीं घुमाना चाहिए"], "answer": "Manufacturer के निर्देशानुसार अलग-अलग orientations में", "exp": ""}, {"q": "IMU में मुख्य रूप से कौन-से sensors शामिल होते हैं?", "options": ["Accelerometer और Gyroscope", "Microphone और Speaker", "Camera और Flash", "GPS और Radio"], "answer": "Accelerometer और Gyroscope", "exp": ""}, {"q": "कौन-सा Drone Vertical Take-Off के बाद Fixed-Wing की तरह लंबी दूरी तय कर सकता है?", "options": ["Tricopter", "Hybrid VTOL", "Pure Fixed-Wing बिना launch सहायता", "Toy Drone"], "answer": "Hybrid VTOL", "exp": ""}, {"q": "उड़ान के दौरान Camera को स्थिर रखने वाला उपकरण क्या कहलाता है?", "options": ["Landing Gear", "Gimbal", "Propeller Guard", "Beacon Light"], "answer": "Gimbal", "exp": ""}, {"q": "सामान्य Quadcopter में rotors की दिशा का सही संयोजन क्या है?", "options": ["चारों CW", "चारों CCW", "दो CW और दो CCW", "तीन CW और एक CCW"], "answer": "दो CW और दो CCW", "exp": ""}, {"q": "भारी LiDAR payload के लिए कौन-सा Drone design उपयोगी हो सकता है?", "options": ["Single-Rotor Drone", "Nano Quadcopter", "Toy Helicopter", "Micro Drone"], "answer": "Single-Rotor Drone", "exp": ""}, {"q": "VLOS का पूरा नाम क्या है?", "options": ["Very Long Operating System", "Visual Line of Sight", "Variable Level of Stability", "Vertical Landing on Surface"], "answer": "Visual Line of Sight", "exp": ""}, {"q": "Compass Calibration के समय किस स्थान से बचना चाहिए?", "options": ["खुला मैदान", "लोहे की पाइपें और भारी चुंबकीय वस्तुएँ", "लकड़ी की मेज", "खुला गैर-धातु क्षेत्र"], "answer": "लोहे की पाइपें और भारी चुंबकीय वस्तुएँ", "exp": ""}, {"q": "कृषि में Drone का एक प्रमुख उपयोग क्या है?", "options": ["फसल पर pesticide या fertilizer का छिड़काव", "मिट्टी की खुदाई", "अनाज की milling", "ट्रैक्टर का इंजन चलाना"], "answer": "फसल पर pesticide या fertilizer का छिड़काव", "exp": ""}, {"q": "Obstacle Avoidance System का मुख्य कार्य क्या है?", "options": ["बैटरी चार्ज करना", "आसपास की बाधाओं का पता लगाना", "फोटो प्रिंट करना", "मोटर का रंग बदलना"], "answer": "आसपास की बाधाओं का पता लगाना", "exp": ""}, {"q": "Drone में Battery का मुख्य कार्य क्या है?", "options": ["विद्युत ऊर्जा उपलब्ध कराना", "दिशा मापना", "वीडियो रिकॉर्ड करना", "Radio signal बढ़ाना"], "answer": "विद्युत ऊर्जा उपलब्ध कराना", "exp": ""}, {"q": "Manual Control में Drone की गति और दिशा कौन नियंत्रित करता है?", "options": ["केवल GPS", "Remote Pilot", "केवल Battery", "Thermal Camera"], "answer": "Remote Pilot", "exp": ""}, {"q": "Drone की ऊँचाई (Altitude) मापने में कौन-सा sensor सामान्यतः सहायता करता है?", "options": ["Barometer", "Speaker", "Gimbal", "LED"], "answer": "Barometer", "exp": ""}, {"q": "Drone Frame बनाने में Carbon Fibre का उपयोग क्यों किया जाता है?", "options": ["यह बहुत भारी होता है", "यह हल्का और मजबूत होता है", "यह पानी बनाता है", "यह GPS signal उत्पन्न करता है"], "answer": "यह हल्का और मजबूत होता है", "exp": ""}, {"q": "Remote Controller और Drone के बीच command भेजने के लिए सामान्यतः क्या उपयोग होता है?", "options": ["Radio Communication", "Hydraulic Pipe", "Optical Disc", "Ink Cartridge"], "answer": "Radio Communication", "exp": ""}, {"q": "Pre-planned route पर Drone को किसी निश्चित स्थान तक ले जाने वाले निर्देश को क्या कहते हैं?", "options": ["Waypoint", "Pixel", "Frame Rate", "Rotor Guard"], "answer": "Waypoint", "exp": ""}, {"q": "सुरक्षा और निगरानी (Surveillance) में Drone का उपयोग किसलिए किया जाता है?", "options": ["क्षेत्र का निरीक्षण और दृश्य जानकारी जुटाना", "सड़क की मरम्मत", "खाना पकाना", "कपड़े धोना"], "answer": "क्षेत्र का निरीक्षण और दृश्य जानकारी जुटाना", "exp": ""}, {"q": "E-commerce में Drone Delivery का उद्देश्य क्या है?", "options": ["छोटे पैकेज को हवाई मार्ग से पहुँचाना", "वेबसाइट डिजाइन करना", "उत्पाद का barcode मिटाना", "भुगतान प्रणाली बंद करना"], "answer": "छोटे पैकेज को हवाई मार्ग से पहुँचाना", "exp": ""}, {"q": "Drone उड़ाने से पहले स्थानीय नियमों के अनुसार किसकी आवश्यकता हो सकती है?", "options": ["उपयुक्त अनुमति या Remote Pilot Certificate", "Driving licence ही हमेशा", "Passport ही हमेशा", "कोई नियम नहीं"], "answer": "उपयुक्त अनुमति या Remote Pilot Certificate", "exp": ""}, {"q": "Drone communication में Frequency का संबंध किससे है?", "options": ["Radio signal की प्रति सेकंड दोलनों की संख्या", "Battery का वजन", "Propeller की लंबाई", "Camera का resolution"], "answer": "Radio signal की प्रति सेकंड दोलनों की संख्या", "exp": ""}, {"q": "Autonomous Flight का क्या अर्थ है?", "options": ["हर movement हाथ से नियंत्रित होना", "पूर्व-निर्धारित निर्देशों के अनुसार स्वचालित उड़ान", "केवल बंद अवस्था में रहना", "केवल Camera चालू होना"], "answer": "पूर्व-निर्धारित निर्देशों के अनुसार स्वचालित उड़ान", "exp": ""}, {"q": "GPS का Drone में मुख्य उपयोग क्या है?", "options": ["स्थान और navigation संबंधी जानकारी देना", "Motor को सीधे ठंडा करना", "Propeller बनाना", "Camera lens साफ करना"], "answer": "स्थान और navigation संबंधी जानकारी देना", "exp": ""}, {"q": "Drone में Propeller का मुख्य कार्य क्या है?", "options": ["Thrust उत्पन्न करना", "तस्वीर संग्रहित करना", "स्थान का नक्शा छापना", "Battery recharge करना"], "answer": "Thrust उत्पन्न करना", "exp": ""}, {"q": "Payload शब्द का Drone Technology में क्या अर्थ है?", "options": ["Drone द्वारा ले जाया जाने वाला उपयोगी उपकरण या भार", "केवल Drone का रंग", "Motor की आवाज", "Remote की बैटरी"], "answer": "Drone द्वारा ले जाया जाने वाला उपयोगी उपकरण या भार", "exp": ""}, {"q": "Drone में Landing Gear का कार्य क्या है?", "options": ["उतरते समय frame को जमीन से सहारा देना", "GPS signal भेजना", "तापमान मापना", "Video edit करना"], "answer": "उतरते समय frame को जमीन से सहारा देना", "exp": ""}, {"q": "LiDAR का पूरा नाम क्या है?", "options": ["Light Detection and Ranging", "Long Distance Radio", "Linear Data Recording", "Light Digital Radar"], "answer": "Light Detection and Ranging", "exp": ""}, {"q": "Drone में GCS (Ground Control Station) का उपयोग किसलिए होता है?", "options": ["Mission की planning और monitoring", "Propeller को हाथ से काटने", "Battery बनाने", "Frame को रंगने"], "answer": "Mission की planning और monitoring", "exp": ""}, {"q": "Telemetry का अर्थ क्या है?", "options": ["दूरस्थ रूप से data का मापन और transmission", "केवल तस्वीर लेना", "Motor की सफाई", "Battery का आकार"], "answer": "दूरस्थ रूप से data का मापन और transmission", "exp": ""}, {"q": "Return-to-Home (RTH) feature का उद्देश्य क्या है?", "options": ["Drone को निर्धारित Home Point की ओर वापस लाना", "Drone को पानी में उतारना", "Camera zoom बंद करना", "Motor का RPM स्थायी करना"], "answer": "Drone को निर्धारित Home Point की ओर वापस लाना", "exp": ""}, {"q": "Geofencing का उपयोग किसलिए किया जाता है?", "options": ["निर्धारित भौगोलिक क्षेत्र में उड़ान सीमित करने", "Camera की brightness बढ़ाने", "Battery capacity दोगुनी करने", "Propeller की दिशा बदलने"], "answer": "निर्धारित भौगोलिक क्षेत्र में उड़ान सीमित करने", "exp": ""}, {"q": "Drone में Accelerometer क्या मापता है?", "options": ["Linear acceleration", "Radio frequency", "Image resolution", "Battery chemistry"], "answer": "Linear acceleration", "exp": ""}, {"q": "Gyroscope का मुख्य कार्य क्या है?", "options": ["Angular velocity मापना", "वायु का रंग मापना", "पैकेज का वजन छापना", "GPS satellite बनाना"], "answer": "Angular velocity मापना", "exp": ""}, {"q": "Drone में Brushless DC Motor का एक लाभ क्या है?", "options": ["कम mechanical wear और अच्छी efficiency", "ईंधन के बिना अनंत उड़ान", "किसी controller की जरूरत नहीं", "हमेशा शून्य गर्मी"], "answer": "कम mechanical wear और अच्छी efficiency", "exp": ""}, {"q": "ESC को सामान्यतः किसके बीच control link के रूप में समझा जा सकता है?", "options": ["Flight Controller और Motor", "Camera और Lens Cap", "GPS और Satellite", "Landing Gear और Frame"], "answer": "Flight Controller और Motor", "exp": ""}, {"q": "Drone के Take-Off से पहले Pre-flight Check में क्या जाँचना चाहिए?", "options": ["Battery, propellers और control link", "केवल Drone का रंग", "केवल box का आकार", "केवल operator का mobile wallpaper"], "answer": "Battery, propellers और control link", "exp": ""}, {"q": "Drone में Yaw किस movement को दर्शाता है?", "options": ["Vertical axis के चारों ओर rotation", "आगे-पीछे translation", "ऊपर-नीचे translation", "केवल camera zoom"], "answer": "Vertical axis के चारों ओर rotation", "exp": ""}, {"q": "Drone में Pitch किस movement को दर्शाता है?", "options": ["Side-to-side roll", "आगे या पीछे झुकना", "Vertical axis पर घूमना", "Landing gear खुलना"], "answer": "आगे या पीछे झुकना", "exp": ""}, {"q": "Drone में Roll किस movement को दर्शाता है?", "options": ["बाएँ या दाएँ झुकना", "Vertical axis पर घूमना", "ऊपर उठना मात्र", "Camera का focus बदलना"], "answer": "बाएँ या दाएँ झुकना", "exp": ""}, {"q": "Multirotor Drone को हवा में बनाए रखने के लिए मुख्य रूप से क्या चाहिए?", "options": ["Rotors द्वारा उत्पन्न पर्याप्त thrust", "केवल GPS signal", "केवल Camera", "केवल landing gear"], "answer": "Rotors द्वारा उत्पन्न पर्याप्त thrust", "exp": ""}, {"q": "Drone में Optical Flow Sensor किसमें सहायता करता है?", "options": ["नीचे की सतह की relative movement पहचानकर position hold में", "Radio frequency प्रसारित करने में", "Battery charge करने में", "Propeller बनाने में"], "answer": "नीचे की सतह की relative movement पहचानकर position hold में", "exp": ""}, {"q": "Drone का Black Box या Flight Data Logger किस काम आता है?", "options": ["Flight information record करने", "Drone को रंगने", "Propeller की pitch हाथ से बदलने", "Radio tower बनाने"], "answer": "Flight information record करने", "exp": ""}, {"q": "Drone में FPV का पूरा नाम क्या है?", "options": ["First Person View", "Fast Propeller Velocity", "Flight Power Voltage", "Fixed Position Vehicle"], "answer": "First Person View", "exp": ""}, {"q": "Drone के लिए No-Fly Zone का क्या अर्थ है?", "options": ["ऐसा क्षेत्र जहाँ उड़ान प्रतिबंधित या सीमित हो", "केवल landing area", "Battery charging room", "Camera testing mode"], "answer": "ऐसा क्षेत्र जहाँ उड़ान प्रतिबंधित या सीमित हो", "exp": ""}];
+    const quizTitle = "Drone Technology: Core Concepts (MCQ)";
+    let currentIdx = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+    let quizFinished = false;
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    let timerSeconds = 0;
+    const timerInterval = setInterval(() => {
+      if (quizFinished) return;
+      timerSeconds++;
+      const m = String(Math.floor(timerSeconds/60)).padStart(2,'0');
+      const s = String(timerSeconds%60).padStart(2,'0');
+      document.getElementById('timer').textContent = `Time: ${m}:${s}`;
+    }, 1000);
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const quizContent = document.getElementById('quiz-content');
+    const progressBar = document.getElementById('progress-bar');
+    const quizStatus = document.getElementById('quiz-status');
+
+    function updateUI() {
+      const pct = ((currentIdx + 1) / quizData.length) * 100;
+      progressBar.style.width = pct + '%';
+      quizStatus.textContent = `Question ${currentIdx + 1} of ${quizData.length}`;
+      prevBtn.disabled = currentIdx === 0;
+      if (currentIdx === quizData.length - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'none';
+      }
+      const q = quizData[currentIdx];
+      quizContent.innerHTML = `
+        <div class="question-text">${currentIdx + 1}. ${esc(q.q)}</div>
+        <div class="options-grid">
+          ${q.options.map((opt, k) => `
+            <button class="option-btn ${userAnswers[currentIdx] === opt ? 'selected' : ''}" onclick="selectOption(${k})">
+              ${esc(opt)}
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    window.selectOption = function(k) {
+      if (quizFinished) return;
+      userAnswers[currentIdx] = quizData[currentIdx].options[k];
+      updateUI();
+    };
+
+    prevBtn.onclick = () => { if (currentIdx > 0) { currentIdx--; updateUI(); } };
+    nextBtn.onclick = () => { if (currentIdx < quizData.length - 1) { currentIdx++; updateUI(); } };
+
+    submitBtn.onclick = () => {
+      quizFinished = true;
+      clearInterval(timerInterval);
+      let score = 0;
+      quizData.forEach((q, i) => { if (userAnswers[i] === q.answer) score++; });
+      saveQuizResult(quizTitle, score, quizData.length);
+      let scorePercent = Math.round((score / quizData.length) * 100);
+      let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+      if (scorePercent >= 70) { startConfetti(); playVictorySound(); }
+      quizContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">${heading}</h3>
+          <div style="font-size: 3rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${score} / ${quizData.length}</div>
+          <p style="font-size: 1.1rem; color: var(--text-muted);">You scored ${scorePercent}% in ${timerSeconds} seconds.</p>
+        </div>
+        <div class="feedback-list">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Question Review</h4>
+          ${quizData.map((q, i) => {
+            const isCorrect = userAnswers[i] === q.answer;
+            return `<div class="feedback-item">
+              <p><strong>Q${i+1}: ${esc(q.q)}</strong></p>
+              <p style="margin-top: 0.25rem;">
+                ${isCorrect ? `<span class="correct-ans"> Correct: ${esc(q.answer)}</span>` : `<span class="user-wrong"> Your answer: ${esc(userAnswers[i] || 'Unanswered')}</span> <span class="correct-ans"> Correct: ${esc(q.answer)}</span>`}
+              </p>
+              ${q.exp ? `<p style="margin-top: 0.25rem; color: var(--text-muted); font-size: 0.95rem;">${esc(q.exp)}</p>` : ''}
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+      prevBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      const restartBtn = document.createElement('button');
+      restartBtn.className = 'btn btn-primary';
+      restartBtn.textContent = 'Retry Quiz';
+      restartBtn.onclick = () => location.reload();
+      document.querySelector('.quiz-footer').appendChild(restartBtn);
+    };
+
+    updateUI();
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

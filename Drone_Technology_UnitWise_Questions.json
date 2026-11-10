@@ -1,0 +1,755 @@
+{
+  "title": "Drone Technology - 50 Bilingual MCQ Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "ड्रोन को तकनीकी शब्दावली में किस नाम से जाना जाता है?",
+      "options": [
+        "UGV (Unmanned Ground Vehicle)",
+        "UAV (Unmanned Aerial Vehicle)",
+        "USV (Unmanned Surface Vehicle)",
+        "UUV (Unmanned Underwater Vehicle)"
+      ],
+      "answer": "UAV (Unmanned Aerial Vehicle) — UAV का पूरा नाम Unmanned Aerial Vehicle है। यह ऐसा हवाई वाहन है जिसे onboard pilot के बिना दूर से या स्वचालित रूप से संचालित किया जाता है।"
+    },
+    {
+      "id": 2,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "4 रोटर वाले Multi-Rotor Drone को क्या कहते हैं?",
+      "options": [
+        "Tricopter",
+        "Hexacopter",
+        "Quadcopter",
+        "Octocopter"
+      ],
+      "answer": "Quadcopter — 'Quad' का अर्थ चार होता है। Quadcopter में चार motor-propeller units होते हैं, जो lift और movement प्रदान करते हैं।"
+    },
+    {
+      "id": 3,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Black Hornet जैसे अत्यंत छोटे सैन्य Drone को किस श्रेणी में रखा जाता है?",
+      "options": [
+        "Heavy-Payload Drone",
+        "Micro/Nano Drone",
+        "Fixed-Wing Drone",
+        "Target Drone"
+      ],
+      "answer": "Micro/Nano Drone — Black Hornet एक छोटा Nano-class reconnaissance drone है। इसका उपयोग सैनिकों को निकट क्षेत्र की निगरानी संबंधी जानकारी देने में किया जाता है।"
+    },
+    {
+      "id": 4,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Fixed-Wing Drone की उड़ान अवधि (Flight Endurance) कैसी हो सकती है?",
+      "options": [
+        "केवल 10 मिनट",
+        "हमेशा 30 मिनट",
+        "मॉडल के अनुसार कई घंटे",
+        "केवल 5 मिनट"
+      ],
+      "answer": "मॉडल के अनुसार कई घंटे — Fixed-Wing Drone अपने पंखों से aerodynamic lift प्राप्त करता है। इसलिए कई मॉडल Multi-Rotor Drone की तुलना में अधिक समय तक उड़ सकते हैं; वास्तविक अवधि model और fuel/battery पर निर्भर करती है।"
+    },
+    {
+      "id": 5,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone की Motor की गति और RPM नियंत्रित करने वाला घटक कौन-सा है?",
+      "options": [
+        "ESC (Electronic Speed Controller)",
+        "GPS Module",
+        "Gimbal",
+        "Propeller Guard"
+      ],
+      "answer": "ESC (Electronic Speed Controller) — ESC, Flight Controller से मिले signals के अनुसार motor को मिलने वाली electrical power नियंत्रित करता है और उसकी speed बदलता है।"
+    },
+    {
+      "id": 6,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone का 'Brain' किसे कहा जाता है?",
+      "options": [
+        "Frame",
+        "Battery",
+        "Flight Controller",
+        "Radio Antenna"
+      ],
+      "answer": "Flight Controller — Flight Controller sensors से data लेकर Drone की stability, direction और flight movements को नियंत्रित करता है।"
+    },
+    {
+      "id": 7,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "कम रोशनी में मनुष्य और वस्तुओं के तापीय संकेत पहचानने के लिए कौन-सा Camera उपयोगी है?",
+      "options": [
+        "RGB Camera",
+        "Thermal Camera",
+        "Webcam",
+        "Action Camera"
+      ],
+      "answer": "Thermal Camera — Thermal Camera वस्तुओं से निकलने वाले infrared radiation और तापमान के अंतर को पहचानता है। धुआँ, कोहरा और वातावरण इसकी क्षमता को प्रभावित कर सकते हैं।"
+    },
+    {
+      "id": 8,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Compass Calibration में Drone को कैसे घुमाना चाहिए?",
+      "options": [
+        "हर model में केवल 90°",
+        "केवल 45°",
+        "Manufacturer के निर्देशानुसार अलग-अलग orientations में",
+        "कभी नहीं घुमाना चाहिए"
+      ],
+      "answer": "Manufacturer के निर्देशानुसार अलग-अलग orientations में — Compass calibration की प्रक्रिया model के अनुसार बदलती है। निर्माता के निर्देशों का पालन करना चाहिए; हर Drone के लिए एक ही rotation direction या तरीका सार्वभौमिक नहीं है।"
+    },
+    {
+      "id": 9,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "IMU में मुख्य रूप से कौन-से sensors शामिल होते हैं?",
+      "options": [
+        "Accelerometer और Gyroscope",
+        "Microphone और Speaker",
+        "Camera और Flash",
+        "GPS और Radio"
+      ],
+      "answer": "Accelerometer और Gyroscope — Accelerometer linear acceleration मापता है और Gyroscope angular velocity मापता है। ये Drone की orientation और movement समझने में मदद करते हैं।"
+    },
+    {
+      "id": 10,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "कौन-सा Drone Vertical Take-Off के बाद Fixed-Wing की तरह लंबी दूरी तय कर सकता है?",
+      "options": [
+        "Tricopter",
+        "Hybrid VTOL",
+        "Pure Fixed-Wing बिना launch सहायता",
+        "Toy Drone"
+      ],
+      "answer": "Hybrid VTOL — Hybrid VTOL में vertical take-off/landing की सुविधा और Fixed-Wing flight की दक्षता दोनों होती हैं।"
+    },
+    {
+      "id": 11,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "उड़ान के दौरान Camera को स्थिर रखने वाला उपकरण क्या कहलाता है?",
+      "options": [
+        "Landing Gear",
+        "Gimbal",
+        "Propeller Guard",
+        "Beacon Light"
+      ],
+      "answer": "Gimbal — Gimbal motor और sensors की सहायता से Camera को स्थिर रखता है और vibration तथा unwanted movement कम करता है।"
+    },
+    {
+      "id": 12,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "सामान्य Quadcopter में rotors की दिशा का सही संयोजन क्या है?",
+      "options": [
+        "चारों CW",
+        "चारों CCW",
+        "दो CW और दो CCW",
+        "तीन CW और एक CCW"
+      ],
+      "answer": "दो CW और दो CCW — दो rotors Clockwise और दो Counter-Clockwise घूमते हैं। इससे reaction torque संतुलित रहता है और अनचाहा yaw कम होता है।"
+    },
+    {
+      "id": 13,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "भारी LiDAR payload के लिए कौन-सा Drone design उपयोगी हो सकता है?",
+      "options": [
+        "Single-Rotor Drone",
+        "Nano Quadcopter",
+        "Toy Helicopter",
+        "Micro Drone"
+      ],
+      "answer": "Single-Rotor Drone — Single-Rotor Drone का बड़ा rotor-disk area heavy-payload applications के लिए उपयोगी हो सकता है। क्षमता design, motor और power system पर निर्भर करती है।"
+    },
+    {
+      "id": 14,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "VLOS का पूरा नाम क्या है?",
+      "options": [
+        "Very Long Operating System",
+        "Visual Line of Sight",
+        "Variable Level of Stability",
+        "Vertical Landing on Surface"
+      ],
+      "answer": "Visual Line of Sight — VLOS का अर्थ Visual Line of Sight है। Remote Pilot को लागू नियमों के अनुसार Drone को सीधे दृष्टि में रखना होता है।"
+    },
+    {
+      "id": 15,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Compass Calibration के समय किस स्थान से बचना चाहिए?",
+      "options": [
+        "खुला मैदान",
+        "लोहे की पाइपें और भारी चुंबकीय वस्तुएँ",
+        "लकड़ी की मेज",
+        "खुला गैर-धातु क्षेत्र"
+      ],
+      "answer": "लोहे की पाइपें और भारी चुंबकीय वस्तुएँ — धातु और चुंबकीय वस्तुएँ Magnetometer में magnetic interference उत्पन्न कर सकती हैं, जिससे Compass की reading गलत हो सकती है।"
+    },
+    {
+      "id": 16,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "कृषि में Drone का एक प्रमुख उपयोग क्या है?",
+      "options": [
+        "फसल पर pesticide या fertilizer का छिड़काव",
+        "मिट्टी की खुदाई",
+        "अनाज की milling",
+        "ट्रैक्टर का इंजन चलाना"
+      ],
+      "answer": "फसल पर pesticide या fertilizer का छिड़काव — Agricultural Drone निर्धारित क्षेत्र में pesticide, fertilizer या अन्य liquid का छिड़काव कर सकता है। इससे बड़े खेतों में काम तेज हो सकता है।"
+    },
+    {
+      "id": 17,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Obstacle Avoidance System का मुख्य कार्य क्या है?",
+      "options": [
+        "बैटरी चार्ज करना",
+        "आसपास की बाधाओं का पता लगाना",
+        "फोटो प्रिंट करना",
+        "मोटर का रंग बदलना"
+      ],
+      "answer": "आसपास की बाधाओं का पता लगाना — Obstacle Avoidance System sensors की मदद से पेड़, दीवार या अन्य बाधाओं का पता लगाता है और टक्कर का जोखिम कम करने में सहायता करता है।"
+    },
+    {
+      "id": 18,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Battery का मुख्य कार्य क्या है?",
+      "options": [
+        "विद्युत ऊर्जा उपलब्ध कराना",
+        "दिशा मापना",
+        "वीडियो रिकॉर्ड करना",
+        "Radio signal बढ़ाना"
+      ],
+      "answer": "विद्युत ऊर्जा उपलब्ध कराना — Battery Drone के motors, Flight Controller, sensors और अन्य electronic components को electrical power देती है।"
+    },
+    {
+      "id": 19,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Manual Control में Drone की गति और दिशा कौन नियंत्रित करता है?",
+      "options": [
+        "केवल GPS",
+        "Remote Pilot",
+        "केवल Battery",
+        "Thermal Camera"
+      ],
+      "answer": "Remote Pilot — Manual Control में Remote Pilot transmitter/controller के inputs देकर Drone की movement और direction नियंत्रित करता है।"
+    },
+    {
+      "id": 20,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone की ऊँचाई (Altitude) मापने में कौन-सा sensor सामान्यतः सहायता करता है?",
+      "options": [
+        "Barometer",
+        "Speaker",
+        "Gimbal",
+        "LED"
+      ],
+      "answer": "Barometer — Barometer वायुदाब में परिवर्तन मापता है। Flight Controller इस data से relative altitude का अनुमान लगा सकता है।"
+    },
+    {
+      "id": 21,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Drone Frame बनाने में Carbon Fibre का उपयोग क्यों किया जाता है?",
+      "options": [
+        "यह बहुत भारी होता है",
+        "यह हल्का और मजबूत होता है",
+        "यह पानी बनाता है",
+        "यह GPS signal उत्पन्न करता है"
+      ],
+      "answer": "यह हल्का और मजबूत होता है — Carbon Fibre का strength-to-weight ratio अच्छा होता है। इसलिए यह मजबूत और हल्का frame बनाने में उपयोगी है।"
+    },
+    {
+      "id": 22,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Remote Controller और Drone के बीच command भेजने के लिए सामान्यतः क्या उपयोग होता है?",
+      "options": [
+        "Radio Communication",
+        "Hydraulic Pipe",
+        "Optical Disc",
+        "Ink Cartridge"
+      ],
+      "answer": "Radio Communication — Radio Communication के माध्यम से Remote Controller से control signals Drone तक पहुँचते हैं।"
+    },
+    {
+      "id": 23,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Moderate",
+      "question": "Pre-planned route पर Drone को किसी निश्चित स्थान तक ले जाने वाले निर्देश को क्या कहते हैं?",
+      "options": [
+        "Waypoint",
+        "Pixel",
+        "Frame Rate",
+        "Rotor Guard"
+      ],
+      "answer": "Waypoint — Waypoint एक निर्धारित geographic point होता है। कई missions में कई waypoints जोड़कर autonomous route बनाया जाता है।"
+    },
+    {
+      "id": 24,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "सुरक्षा और निगरानी (Surveillance) में Drone का उपयोग किसलिए किया जाता है?",
+      "options": [
+        "क्षेत्र का निरीक्षण और दृश्य जानकारी जुटाना",
+        "सड़क की मरम्मत",
+        "खाना पकाना",
+        "कपड़े धोना"
+      ],
+      "answer": "क्षेत्र का निरीक्षण और दृश्य जानकारी जुटाना — Camera और अन्य payload की मदद से Drone किसी क्षेत्र का निरीक्षण, monitoring और situational awareness उपलब्ध करा सकता है।"
+    },
+    {
+      "id": 25,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "E-commerce में Drone Delivery का उद्देश्य क्या है?",
+      "options": [
+        "छोटे पैकेज को हवाई मार्ग से पहुँचाना",
+        "वेबसाइट डिजाइन करना",
+        "उत्पाद का barcode मिटाना",
+        "भुगतान प्रणाली बंद करना"
+      ],
+      "answer": "छोटे पैकेज को हवाई मार्ग से पहुँचाना — Drone Delivery में उपयुक्त पैकेज को हवाई मार्ग से ग्राहक या delivery point तक पहुँचाने का प्रयास किया जाता है; यह स्थानीय नियमों और परिचालन सीमाओं के अधीन है।"
+    },
+    {
+      "id": 26,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Drone उड़ाने से पहले स्थानीय नियमों के अनुसार किसकी आवश्यकता हो सकती है?",
+      "options": [
+        "उपयुक्त अनुमति या Remote Pilot Certificate",
+        "Driving licence ही हमेशा",
+        "Passport ही हमेशा",
+        "कोई नियम नहीं"
+      ],
+      "answer": "उपयुक्त अनुमति या Remote Pilot Certificate — Drone operation के लिए देश, Drone category और operation के प्रकार के अनुसार registration, permission या Remote Pilot Certificate जैसी शर्तें लागू हो सकती हैं।"
+    },
+    {
+      "id": 27,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone communication में Frequency का संबंध किससे है?",
+      "options": [
+        "Radio signal की प्रति सेकंड दोलनों की संख्या",
+        "Battery का वजन",
+        "Propeller की लंबाई",
+        "Camera का resolution"
+      ],
+      "answer": "Radio signal की प्रति सेकंड दोलनों की संख्या — Frequency को Hertz (Hz) में मापा जाता है और यह बताती है कि signal प्रति सेकंड कितने cycles पूरा करता है।"
+    },
+    {
+      "id": 28,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Autonomous Flight का क्या अर्थ है?",
+      "options": [
+        "हर movement हाथ से नियंत्रित होना",
+        "पूर्व-निर्धारित निर्देशों के अनुसार स्वचालित उड़ान",
+        "केवल बंद अवस्था में रहना",
+        "केवल Camera चालू होना"
+      ],
+      "answer": "पूर्व-निर्धारित निर्देशों के अनुसार स्वचालित उड़ान — Autonomous Flight में Drone programmed mission, sensors और onboard control system की सहायता से निर्धारित कार्य स्वयं करता है।"
+    },
+    {
+      "id": 29,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "GPS का Drone में मुख्य उपयोग क्या है?",
+      "options": [
+        "स्थान और navigation संबंधी जानकारी देना",
+        "Motor को सीधे ठंडा करना",
+        "Propeller बनाना",
+        "Camera lens साफ करना"
+      ],
+      "answer": "स्थान और navigation संबंधी जानकारी देना — GPS satellite signals से location और navigation data देता है। Drone इसका उपयोग position hold, navigation और waypoint missions में कर सकता है।"
+    },
+    {
+      "id": 30,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Propeller का मुख्य कार्य क्या है?",
+      "options": [
+        "Thrust उत्पन्न करना",
+        "तस्वीर संग्रहित करना",
+        "स्थान का नक्शा छापना",
+        "Battery recharge करना"
+      ],
+      "answer": "Thrust उत्पन्न करना — घूमता हुआ Propeller हवा को नीचे की ओर धकेलता है और reaction के कारण Drone को thrust/lift मिलता है।"
+    },
+    {
+      "id": 31,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Payload शब्द का Drone Technology में क्या अर्थ है?",
+      "options": [
+        "Drone द्वारा ले जाया जाने वाला उपयोगी उपकरण या भार",
+        "केवल Drone का रंग",
+        "Motor की आवाज",
+        "Remote की बैटरी"
+      ],
+      "answer": "Drone द्वारा ले जाया जाने वाला उपयोगी उपकरण या भार — Payload वह उपकरण या सामग्री है जिसे Drone अपने mission के लिए ले जाता है, जैसे Camera, LiDAR या agricultural spray system।"
+    },
+    {
+      "id": 32,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Landing Gear का कार्य क्या है?",
+      "options": [
+        "उतरते समय frame को जमीन से सहारा देना",
+        "GPS signal भेजना",
+        "तापमान मापना",
+        "Video edit करना"
+      ],
+      "answer": "उतरते समय frame को जमीन से सहारा देना — Landing Gear landing के समय Drone को सहारा देता है और body तथा payload को जमीन से टकराने से बचाने में मदद करता है।"
+    },
+    {
+      "id": 33,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "LiDAR का पूरा नाम क्या है?",
+      "options": [
+        "Light Detection and Ranging",
+        "Long Distance Radio",
+        "Linear Data Recording",
+        "Light Digital Radar"
+      ],
+      "answer": "Light Detection and Ranging — LiDAR laser light pulses भेजकर दूरी मापता है। इससे 3D mapping, surveying और terrain modelling में सहायता मिलती है।"
+    },
+    {
+      "id": 34,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Drone में GCS (Ground Control Station) का उपयोग किसलिए होता है?",
+      "options": [
+        "Mission की planning और monitoring",
+        "Propeller को हाथ से काटने",
+        "Battery बनाने",
+        "Frame को रंगने"
+      ],
+      "answer": "Mission की planning और monitoring — Ground Control Station software या hardware interface है जिससे operator mission plan, telemetry monitor और कुछ Drone functions नियंत्रित कर सकता है।"
+    },
+    {
+      "id": 35,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Telemetry का अर्थ क्या है?",
+      "options": [
+        "दूरस्थ रूप से data का मापन और transmission",
+        "केवल तस्वीर लेना",
+        "Motor की सफाई",
+        "Battery का आकार"
+      ],
+      "answer": "दूरस्थ रूप से data का मापन और transmission — Telemetry में Drone से flight data जैसे altitude, battery status, speed और location ground station तक भेजे जा सकते हैं।"
+    },
+    {
+      "id": 36,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Return-to-Home (RTH) feature का उद्देश्य क्या है?",
+      "options": [
+        "Drone को निर्धारित Home Point की ओर वापस लाना",
+        "Drone को पानी में उतारना",
+        "Camera zoom बंद करना",
+        "Motor का RPM स्थायी करना"
+      ],
+      "answer": "Drone को निर्धारित Home Point की ओर वापस लाना — RTH feature उपयुक्त स्थिति में Drone को निर्धारित Home Point की ओर लौटने में मदद करता है। इसकी ऊँचाई और व्यवहार settings तथा परिस्थितियों पर निर्भर करते हैं।"
+    },
+    {
+      "id": 37,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Geofencing का उपयोग किसलिए किया जाता है?",
+      "options": [
+        "निर्धारित भौगोलिक क्षेत्र में उड़ान सीमित करने",
+        "Camera की brightness बढ़ाने",
+        "Battery capacity दोगुनी करने",
+        "Propeller की दिशा बदलने"
+      ],
+      "answer": "निर्धारित भौगोलिक क्षेत्र में उड़ान सीमित करने — Geofencing software-based geographic boundary बनाता है। यह Drone को कुछ restricted या predefined areas में प्रवेश करने से रोकने में सहायता कर सकता है।"
+    },
+    {
+      "id": 38,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Accelerometer क्या मापता है?",
+      "options": [
+        "Linear acceleration",
+        "Radio frequency",
+        "Image resolution",
+        "Battery chemistry"
+      ],
+      "answer": "Linear acceleration — Accelerometer किसी axis के along acceleration मापता है। Flight Controller इससे tilt और movement का अनुमान लगाने में मदद लेता है।"
+    },
+    {
+      "id": 39,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Gyroscope का मुख्य कार्य क्या है?",
+      "options": [
+        "Angular velocity मापना",
+        "वायु का रंग मापना",
+        "पैकेज का वजन छापना",
+        "GPS satellite बनाना"
+      ],
+      "answer": "Angular velocity मापना — Gyroscope rotational movement या angular velocity मापता है। इससे Drone के roll, pitch और yaw motion को समझने में मदद मिलती है।"
+    },
+    {
+      "id": 40,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Brushless DC Motor का एक लाभ क्या है?",
+      "options": [
+        "कम mechanical wear और अच्छी efficiency",
+        "ईंधन के बिना अनंत उड़ान",
+        "किसी controller की जरूरत नहीं",
+        "हमेशा शून्य गर्मी"
+      ],
+      "answer": "कम mechanical wear और अच्छी efficiency — Brushless DC Motor में brushes नहीं होते, इसलिए brush-related wear कम होता है और यह कई Drone designs में efficient drive प्रदान करती है।"
+    },
+    {
+      "id": 41,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "ESC को सामान्यतः किसके बीच control link के रूप में समझा जा सकता है?",
+      "options": [
+        "Flight Controller और Motor",
+        "Camera और Lens Cap",
+        "GPS और Satellite",
+        "Landing Gear और Frame"
+      ],
+      "answer": "Flight Controller और Motor — ESC, Flight Controller के command के अनुसार motor को electrical power नियंत्रित करके देता है।"
+    },
+    {
+      "id": 42,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Drone के Take-Off से पहले Pre-flight Check में क्या जाँचना चाहिए?",
+      "options": [
+        "Battery, propellers और control link",
+        "केवल Drone का रंग",
+        "केवल box का आकार",
+        "केवल operator का mobile wallpaper"
+      ],
+      "answer": "Battery, propellers और control link — Pre-flight check में battery level, propeller condition, control link, sensors और आसपास का सुरक्षित क्षेत्र जाँचना चाहिए।"
+    },
+    {
+      "id": 43,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Yaw किस movement को दर्शाता है?",
+      "options": [
+        "Vertical axis के चारों ओर rotation",
+        "आगे-पीछे translation",
+        "ऊपर-नीचे translation",
+        "केवल camera zoom"
+      ],
+      "answer": "Vertical axis के चारों ओर rotation — Yaw Drone का vertical axis के चारों ओर घूमना है। इससे Drone की nose बाएँ या दाएँ दिशा में मुड़ती है।"
+    },
+    {
+      "id": 44,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Pitch किस movement को दर्शाता है?",
+      "options": [
+        "Side-to-side roll",
+        "आगे या पीछे झुकना",
+        "Vertical axis पर घूमना",
+        "Landing gear खुलना"
+      ],
+      "answer": "आगे या पीछे झुकना — Pitch movement में Drone की nose ऊपर या नीचे झुकती है, जिससे सामान्यतः आगे या पीछे की दिशा में गति प्रभावित होती है।"
+    },
+    {
+      "id": 45,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone में Roll किस movement को दर्शाता है?",
+      "options": [
+        "बाएँ या दाएँ झुकना",
+        "Vertical axis पर घूमना",
+        "ऊपर उठना मात्र",
+        "Camera का focus बदलना"
+      ],
+      "answer": "बाएँ या दाएँ झुकना — Roll movement में Drone अपने longitudinal axis के चारों ओर बाएँ या दाएँ झुकता है।"
+    },
+    {
+      "id": 46,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Multirotor Drone को हवा में बनाए रखने के लिए मुख्य रूप से क्या चाहिए?",
+      "options": [
+        "Rotors द्वारा उत्पन्न पर्याप्त thrust",
+        "केवल GPS signal",
+        "केवल Camera",
+        "केवल landing gear"
+      ],
+      "answer": "Rotors द्वारा उत्पन्न पर्याप्त thrust — Hover करने के लिए rotors का कुल upward thrust Drone के weight के बराबर होना चाहिए; नियंत्रण के लिए thrust में छोटे बदलाव किए जाते हैं।"
+    },
+    {
+      "id": 47,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Moderate",
+      "question": "Drone में Optical Flow Sensor किसमें सहायता करता है?",
+      "options": [
+        "नीचे की सतह की relative movement पहचानकर position hold में",
+        "Radio frequency प्रसारित करने में",
+        "Battery charge करने में",
+        "Propeller बनाने में"
+      ],
+      "answer": "नीचे की सतह की relative movement पहचानकर position hold में — Optical Flow Sensor camera images में surface movement का विश्लेषण करता है। GPS कमजोर या अनुपलब्ध होने पर यह relative position estimation में सहायता कर सकता है।"
+    },
+    {
+      "id": 48,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Very Short Answer",
+      "difficulty": "Easy",
+      "question": "Drone का Black Box या Flight Data Logger किस काम आता है?",
+      "options": [
+        "Flight information record करने",
+        "Drone को रंगने",
+        "Propeller की pitch हाथ से बदलने",
+        "Radio tower बनाने"
+      ],
+      "answer": "Flight information record करने — Flight Data Logger उड़ान से जुड़े parameters record कर सकता है। बाद में इन records से performance और incidents का विश्लेषण किया जा सकता है।"
+    },
+    {
+      "id": 49,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Easy",
+      "question": "Drone में FPV का पूरा नाम क्या है?",
+      "options": [
+        "First Person View",
+        "Fast Propeller Velocity",
+        "Flight Power Voltage",
+        "Fixed Position Vehicle"
+      ],
+      "answer": "First Person View — FPV का अर्थ First Person View है। इसमें Drone पर लगे camera का live video pilot को display या goggles पर दिखाई देता है।"
+    },
+    {
+      "id": 50,
+      "unit": "Unit: Drone Technology",
+      "chapter": "Chapter: Drone Technology",
+      "type": "Definite Word Answer",
+      "difficulty": "Moderate",
+      "question": "Drone के लिए No-Fly Zone का क्या अर्थ है?",
+      "options": [
+        "ऐसा क्षेत्र जहाँ उड़ान प्रतिबंधित या सीमित हो",
+        "केवल landing area",
+        "Battery charging room",
+        "Camera testing mode"
+      ],
+      "answer": "ऐसा क्षेत्र जहाँ उड़ान प्रतिबंधित या सीमित हो — No-Fly Zone वह क्षेत्र है जहाँ सुरक्षा या नियामकीय कारणों से Drone उड़ाना प्रतिबंधित या सीमित हो सकता है। उड़ान से पहले लागू airspace rules जाँचना आवश्यक है।"
+    }
+  ]
+}

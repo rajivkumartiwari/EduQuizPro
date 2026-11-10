@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robotics Part 2: Components, Types &amp; Tools (MCQ) | EduQuiz Pro</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script>
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.setAttribute('data-theme', savedTheme);
+      const toggle = document.getElementById('themeToggle');
+      if (toggle) {
+        toggle.textContent = savedTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        toggle.addEventListener('click', () => {
+          const currentTheme = document.body.getAttribute('data-theme');
+          const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+          document.body.setAttribute('data-theme', newTheme);
+          document.documentElement.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          toggle.textContent = newTheme === 'dark' ? ' Light Mode' : ' Dark Mode';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <div class="brand" onclick="location.href='index.html'" style="cursor:pointer;">
+      <div class="brand-icon">EQ</div>
+      <h1>EduQuiz Pro</h1>
+    </div>
+        <nav class="main-nav">
+      <ul class="nav-list" id="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li class="dropdown-wrapper">
+          <a href="#" class="nav-link">About Us &#9662;</a>
+          <div class="dropdown-content">
+            <a href="index.html?section=about-view&sub=mission">Our Mission</a>
+            <a href="index.html?section=about-view&sub=vision">Our Vision</a>
+            <a href="index.html?section=about-view&sub=team">Teacher Team</a>
+            <a href="index.html?section=about-view&sub=policies">School Policies</a>
+          </div>
+        </li>
+        <li><a href="assets/viva_qa.pdf" target="_blank" class="nav-link">Resources</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="themeToggle" class="btn btn-outline">&#127769; Dark Mode</button>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">&#9776;</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="quiz-page-container">
+      <section class="quiz-main-card">
+        <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--primary);">&#129302; Robotics Part 2: Components, Types &amp; Tools (MCQ)</h2>
+        <p style="color: var(--text-muted); margin-bottom: 2rem;">Origin of robots, Asimov's laws, components, sensors, actuators, robot types and languages.</p>
+        <div class="quiz-header">
+          <div style="font-weight: 600; font-size: 1.1rem;" id="timer">Time: 00:00</div>
+          <div id="quiz-status" style="font-weight: bold; font-size: 1.1rem;">Question 1 of 50</div>
+        </div>
+        <div class="progress-container">
+          <div id="progress-bar" class="progress-bar"></div>
+        </div>
+        <div id="quiz-content" class="quiz-content"></div>
+        <div class="quiz-footer" style="margin-top: 2rem;">
+          <button id="prevBtn" class="btn btn-outline">Previous</button>
+          <button id="nextBtn" class="btn btn-primary">Next</button>
+          <button id="submitBtn" class="btn btn-outline" style="background: var(--success); color: white; display: none;">Submit Quiz</button>
+        </div>
+        <div id="result-box" style="display: none; margin-top: 2rem;"></div>
+      </section>
+
+      <aside class="sidebar-card">
+        <h3 class="sidebar-title">Robotics &amp; Drone Quizzes</h3>
+        <ul class="sidebar-list">
+          <li><a href="drone_quiz1.html" class="sidebar-item-link">Quiz 1: Drone Technology: Core Concepts</a></li>
+          <li><a href="drone_quiz2.html" class="sidebar-item-link">Quiz 2: Drone Technology: Bilingual with Explanations</a></li>
+          <li><a href="robotics_quiz1.html" class="sidebar-item-link">Quiz 3: Robotics Part 1: History, Sensors &amp; Actuators</a></li>
+          <li><a href="robotics_quiz2.html" class="sidebar-item-link active">Quiz 4: Robotics Part 2: Components, Types &amp; Tools</a></li>
+        </ul>
+        <div style="margin-top: 1.5rem; text-align: center; display: flex; flex-direction: column; gap: 0.5rem;">
+          <button class="btn btn-outline" style="width: 100%;" onclick="location.href='robotics_drone_hub.html'">Back to Robotics &amp; Drone Hub</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <canvas id="confetti-canvas"></canvas>
+  <script src="js/quiz-utils.js"></script>
+  <script>
+    const quizData = [{"q": "रोबोटिक्स किस तकनीकी क्षेत्र का अध्ययन है?", "options": ["रोबोटों का डिजाइन, निर्माण और नियंत्रण", "केवल नेटवर्किंग", "केवल लेखांकन", "केवल वेब डिजाइन"], "answer": "रोबोटों का डिजाइन, निर्माण और नियंत्रण", "exp": "रोबोटिक्स में रोबोट का डिजाइन, निर्माण, संचालन और नियंत्रण शामिल है।"}, {"q": "रोबोटिक्स किन प्रमुख इंजीनियरिंग क्षेत्रों के मेल से विकसित हुआ है?", "options": ["इलेक्ट्रॉनिक्स, मैकेनिकल इंजीनियरिंग और कंप्यूटर साइंस", "केवल रसायन विज्ञान", "केवल साहित्य", "इतिहास, भूगोल और संगीत"], "answer": "इलेक्ट्रॉनिक्स, मैकेनिकल इंजीनियरिंग और कंप्यूटर साइंस", "exp": "पाठ्यांश इन तीन तकनीकी क्षेत्रों का उल्लेख करता है।"}, {"q": "R.U.R. नाटक में 'Robot' शब्द सबसे पहले किसने प्रस्तुत किया था?", "options": ["कारेल कैपेक", "एलन ट्यूरिंग", "चार्ल्स बैबेज", "आइज़ैक असिमोव"], "answer": "कारेल कैपेक", "exp": "पुस्तक के अनुसार 1921 में कारेल कैपेक के नाटक R.U.R. में यह शब्द आया।"}, {"q": "'Robot' शब्द की उत्पत्ति किस भाषा से मानी जाती है?", "options": ["चेक (Czech)", "लैटिन", "फ्रेंच", "ग्रीक"], "answer": "चेक (Czech)", "exp": "पाठ्यांश में रोबोट शब्द का मूल चेक भाषा बताया गया है।"}, {"q": "चेक भाषा के 'Robota' शब्द का सही अर्थ क्या है?", "options": ["जबरन काम या श्रम", "स्वतंत्र उड़ान", "विद्युत ऊर्जा", "कृत्रिम बुद्धिमत्ता"], "answer": "जबरन काम या श्रम", "exp": "चेक शब्द Robota का अर्थ जबरन काम/श्रम बताया गया है।"}, {"q": "रोबोटिक्स के प्रसिद्ध तीन नियम किस वैज्ञानिक-लेखक ने दिए थे?", "options": ["आइज़ैक असिमोव", "टिम बर्नर्स-ली", "कारेल कैपेक", "जॉन मैकार्थी"], "answer": "आइज़ैक असिमोव", "exp": "तीन नियम आइज़ैक असिमोव ने दिए।"}, {"q": "असिमोव के प्रथम नियम के अनुसार रोबोट के लिए सबसे महत्वपूर्ण प्रतिबंध क्या है?", "options": ["मानव को हानि न पहुँचाना", "तेज गति से चलना", "रोबोट का रंग बदलना", "बैटरी चार्ज करना"], "answer": "मानव को हानि न पहुँचाना", "exp": "प्रथम नियम मानव को हानि पहुँचाने से रोकता है।"}, {"q": "द्वितीय नियम के अंतर्गत रोबोट को किसका पालन करना चाहिए?", "options": ["मानव के आदेशों का पालन", "रोबोट का रंग बदलना", "सभी सेंसर बंद करना", "केवल बैटरी बचाना"], "answer": "मानव के आदेशों का पालन", "exp": "द्वितीय नियम प्रथम नियम के अधीन मानव के आदेश मानने से संबंधित है।"}, {"q": "असिमोव के तृतीय नियम में रोबोट को किसकी रक्षा करने की अनुमति दी गई है?", "options": ["अपने अस्तित्व की रक्षा", "मानव को आदेश देना", "दूसरे रोबोट को बंद करना", "ऊर्जा उत्पन्न करना"], "answer": "अपने अस्तित्व की रक्षा", "exp": "तृतीय नियम रोबोट के अपने अस्तित्व की रक्षा से संबंधित है।"}, {"q": "रोबोट के सभी कार्यों को नियंत्रित करने वाला मुख्य भाग कौन-सा है?", "options": ["कंट्रोलर", "ग्रिपर", "पहिया", "बैटरी"], "answer": "कंट्रोलर", "exp": "कंट्रोलर निर्देशों को संसाधित करके रोबोट की गतिविधियाँ नियंत्रित करता है।"}, {"q": "रोबोट में निर्देशों को संसाधित करने का काम कौन करता है?", "options": ["CPU", "स्पीकर", "प्रिंटर", "मॉनिटर"], "answer": "CPU", "exp": "CPU निर्देशों और डेटा का प्रसंस्करण करता है।"}, {"q": "रोबोट अपने आसपास के वातावरण की जानकारी किस घटक से प्राप्त करता है?", "options": ["सेंसर", "एंड-इफेक्टर", "पावर सप्लाई", "एक्चुएटर"], "answer": "सेंसर", "exp": "सेंसर वातावरण से डेटा प्राप्त करते हैं।"}, {"q": "रोबोट में वास्तविक गति या क्रिया उत्पन्न करने की जिम्मेदारी किसकी होती है?", "options": ["एक्चुएटर", "प्रोग्राम", "सेंसर", "कंट्रोलर स्क्रीन"], "answer": "एक्चुएटर", "exp": "एक्चुएटर नियंत्रण संकेत को भौतिक गति में बदलता है।"}, {"q": "Robotic Arm के अंतिम सिरे पर लगा कार्य करने वाला भाग क्या कहलाता है?", "options": ["एंड-इफेक्टर", "GPS", "CPU", "RAM"], "answer": "एंड-इफेक्टर", "exp": "एंड-इफेक्टर पकड़ने, काटने या वेल्डिंग जैसे कार्य करता है।"}, {"q": "रोबोट को आवश्यक ऊर्जा की आपूर्ति कौन-सा घटक करता है?", "options": ["पावर सप्लाई", "एंड-इफेक्टर", "कंपास", "ग्रिपर"], "answer": "पावर सप्लाई", "exp": "पावर सप्लाई रोबोट के घटकों को ऊर्जा देती है।"}, {"q": "रोबोट को दिए गए कार्यों और निर्देशों के क्रमबद्ध समूह को क्या कहते हैं?", "options": ["प्रोग्राम", "सेंसर", "मोटर", "फ्रेम"], "answer": "प्रोग्राम", "exp": "प्रोग्राम बताता है कि रोबोट कौन-सा कार्य कब करेगा।"}, {"q": "यदि रोबोट को प्रकाश की उपस्थिति पहचाननी हो, तो कौन-सा सेंसर उपयोगी होगा?", "options": ["लाइट सेंसर", "प्रेशर सेंसर", "साउंड सेंसर", "करंट सेंसर"], "answer": "लाइट सेंसर", "exp": "लाइट सेंसर प्रकाश की उपस्थिति/तीव्रता पहचानता है।"}, {"q": "आसपास की ध्वनि का पता लगाने के लिए रोबोट में कौन-सा सेंसर लगाया जाता है?", "options": ["साउंड सेंसर", "टेम्परेचर सेंसर", "कॉन्टैक्ट सेंसर", "वोल्टेज सेंसर"], "answer": "साउंड सेंसर", "exp": "साउंड सेंसर ध्वनि संकेतों को पहचानता है।"}, {"q": "किस सेंसर की सहायता से रोबोट तापमान का पता लगा सकता है?", "options": ["टेम्परेचर सेंसर", "GPS", "कॉन्टैक्ट सेंसर", "लाइट सेंसर"], "answer": "टेम्परेचर सेंसर", "exp": "टेम्परेचर सेंसर तापमान में परिवर्तन मापता है।"}, {"q": "किस सेंसर से किसी वस्तु के सीधे संपर्क या स्पर्श का पता चलता है?", "options": ["कॉन्टैक्ट सेंसर", "प्रॉक्सिमिटी सेंसर", "GPS", "करंट सेंसर"], "answer": "कॉन्टैक्ट सेंसर", "exp": "कॉन्टैक्ट सेंसर संपर्क होने पर प्रतिक्रिया देता है।"}, {"q": "बिना संपर्क में आए पास की वस्तु का पता लगाने के लिए कौन-सा सेंसर उपयुक्त है?", "options": ["प्रॉक्सिमिटी सेंसर", "प्रेशर सेंसर", "वोल्टेज सेंसर", "कॉन्टैक्ट सेंसर"], "answer": "प्रॉक्सिमिटी सेंसर", "exp": "प्रॉक्सिमिटी सेंसर बिना भौतिक संपर्क के निकटता पहचानता है।"}, {"q": "रोबोट और किसी वस्तु के बीच की दूरी ज्ञात करने के लिए कौन-सा सेंसर काम आता है?", "options": ["डिस्टेंस सेंसर", "साउंड सेंसर", "करंट सेंसर", "टेम्परेचर सेंसर"], "answer": "डिस्टेंस सेंसर", "exp": "डिस्टेंस सेंसर दूरी मापने में मदद करता है।"}, {"q": "रोबोट की स्थिति या दिशा का पता लगाने में कौन-सा सेंसर सहायता करता है?", "options": ["नेविगेशन सेंसर", "लाइट सेंसर", "कॉन्टैक्ट सेंसर", "प्रेशर सेंसर"], "answer": "नेविगेशन सेंसर", "exp": "नेविगेशन सेंसर स्थिति और दिशा संबंधी जानकारी देता है।"}, {"q": "GPS का विस्तृत नाम क्या है?", "options": ["Global Positioning System", "General Power Sensor", "Ground Processing Signal", "Global Programming Software"], "answer": "Global Positioning System", "exp": "GPS स्थान निर्धारण प्रणाली है।"}, {"q": "रोबोट को अपनी दिशा ज्ञात करने में कौन-सा सेंसर मदद करता है?", "options": ["कंपास सेंसर", "करंट सेंसर", "साउंड सेंसर", "प्रेशर सेंसर"], "answer": "कंपास सेंसर", "exp": "कंपास सेंसर दिशा की जानकारी देता है।"}, {"q": "रोबोट को आसपास का दृश्य प्राप्त करने के लिए किस उपकरण की आवश्यकता होती है?", "options": ["कैमरा", "बैटरी", "ग्रिपर", "मोटर"], "answer": "कैमरा", "exp": "विजन सिस्टम कैमरे से दृश्य डेटा प्राप्त करता है।"}, {"q": "Infrared Sensor वस्तुओं का पता लगाने के लिए किस प्रकार की तरंगों का उपयोग करता है?", "options": ["अवरक्त तरंगें", "ध्वनि तरंगें", "जल तरंगें", "पराबैंगनी तरंगें"], "answer": "अवरक्त तरंगें", "exp": "इन्फ्रारेड सेंसर अवरक्त विकिरण का उपयोग करता है।"}, {"q": "Ultrasonic Sensor दूरी या वस्तु का पता लगाने के लिए कौन-सी तरंगें भेजता है?", "options": ["उच्च आवृत्ति की ध्वनि तरंगें", "पराबैंगनी किरणें", "दृश्य प्रकाश", "केवल रेडियोधर्मी कण"], "answer": "उच्च आवृत्ति की ध्वनि तरंगें", "exp": "अल्ट्रासोनिक सेंसर उच्च आवृत्ति ध्वनि से दूरी/वस्तु पहचानता है।"}, {"q": "Photoresistor का प्रतिरोध मुख्यतः किस कारक के बदलने पर बदलता है?", "options": ["प्रकाश की तीव्रता", "ध्वनि की आवृत्ति", "दबाव", "रोबोट के वजन"], "answer": "प्रकाश की तीव्रता", "exp": "फोटोरेसिस्टर का प्रतिरोध प्रकाश के अनुसार बदलता है।"}, {"q": "किस सेंसर का उपयोग किसी सतह या वस्तु पर लगने वाले दबाव को मापने में होता है?", "options": ["प्रेशर सेंसर", "लाइट सेंसर", "GPS", "कंपास सेंसर"], "answer": "प्रेशर सेंसर", "exp": "प्रेशर सेंसर दबाव मापता है।"}, {"q": "विद्युत परिपथ में Potential Difference मापने के लिए कौन-सा सेंसर प्रयोग किया जाता है?", "options": ["वोल्टेज सेंसर", "साउंड सेंसर", "डिस्टेंस सेंसर", "टेम्परेचर सेंसर"], "answer": "वोल्टेज सेंसर", "exp": "वोल्टेज सेंसर विद्युत वोल्टेज की निगरानी करता है।"}, {"q": "किस सेंसर से परिपथ में बहने वाली Electric Current को मापा जाता है?", "options": ["करंट सेंसर", "कॉन्टैक्ट सेंसर", "GPS", "लाइट सेंसर"], "answer": "करंट सेंसर", "exp": "करंट सेंसर परिपथ में प्रवाहित धारा मापता है।"}, {"q": "Hydraulic Actuator किस माध्यम के दबाव से गति उत्पन्न करता है?", "options": ["हाइड्रोलिक एक्चुएटर", "लाइट सेंसर", "न्यूमैटिक एक्चुएटर", "इलेक्ट्रिक एक्चुएटर"], "answer": "हाइड्रोलिक एक्चुएटर", "exp": "हाइड्रोलिक एक्चुएटर द्रव दबाव का उपयोग करता है।"}, {"q": "Pneumatic Actuator को गति देने के लिए किसका उपयोग किया जाता है?", "options": ["न्यूमैटिक एक्चुएटर", "कंपास सेंसर", "इलेक्ट्रिक एक्चुएटर", "हाइड्रोलिक एक्चुएटर"], "answer": "न्यूमैटिक एक्चुएटर", "exp": "न्यूमैटिक प्रणाली संपीड़ित हवा का उपयोग करती है।"}, {"q": "Electric Actuator किस प्रकार की ऊर्जा को यांत्रिक गति में बदलता है?", "options": ["इलेक्ट्रिक एक्चुएटर", "न्यूमैटिक एक्चुएटर", "हाइड्रोलिक एक्चुएटर", "प्रेशर सेंसर"], "answer": "इलेक्ट्रिक एक्चुएटर", "exp": "इलेक्ट्रिक एक्चुएटर विद्युत ऊर्जा से चलता है।"}, {"q": "वस्तु को पकड़ने या थामने के लिए End-Effector के रूप में सामान्यतः क्या लगाया जाता है?", "options": ["ग्रिपर", "कंपास", "GPS", "फोटोरेसिस्टर"], "answer": "ग्रिपर", "exp": "ग्रिपर वस्तुओं को पकड़ता और संभालता है।"}, {"q": "औद्योगिक रोबोट में वेल्डिंग करने के लिए किस प्रकार का End-Effector लगाया जाता है?", "options": ["वेल्डिंग टॉर्च", "कंपास", "GPS रिसीवर", "साउंड सेंसर"], "answer": "वेल्डिंग टॉर्च", "exp": "वेल्डिंग टॉर्च रोबोटिक आर्म के अंतिम सिरे पर कार्य करती है।"}, {"q": "Surgical Robot का प्रमुख उपयोग किस क्षेत्र में किया जाता है?", "options": ["शल्य चिकित्सा में सहायता", "फर्श साफ करने में", "हवाई फोटोग्राफी में", "वेल्डिंग में"], "answer": "शल्य चिकित्सा में सहायता", "exp": "सर्जिकल रोबोट डॉक्टरों को ऑपरेशन में सहायता करते हैं।"}, {"q": "अंतरिक्ष में मानव-सदृश कार्य करने के लिए विकसित Robonaut का उपयोग कहाँ होता है?", "options": ["अंतरिक्ष कार्यक्रमों में", "कपड़ा सिलने में", "फसल कटाई में", "घरेलू सफाई में"], "answer": "अंतरिक्ष कार्यक्रमों में", "exp": "रोबोनॉट अंतरिक्ष संबंधी कार्यों में उपयोग किए जाते हैं।"}, {"q": "AMR का पूरा नाम क्या है?", "options": ["Autonomous Mobile Robot", "Automatic Manual Rotor", "Advanced Mechanical Relay", "Aerial Motion Radar"], "answer": "Autonomous Mobile Robot", "exp": "AMR स्वायत्त मोबाइल रोबोट है।"}, {"q": "उड़ान भरकर कार्य करने वाला Drone किस श्रेणी का रोबोट माना जाता है?", "options": ["उड़ने वाला रोबोट", "स्थिर रोबोट", "केवल पानी में चलने वाला रोबोट", "भूमिगत रोबोट"], "answer": "उड़ने वाला रोबोट", "exp": "पाठ्यांश में ड्रोन को उड़ने वाला रोबोट बताया गया है।"}, {"q": "घर में सफाई जैसे कार्य करने वाला रोबोट किसका उदाहरण है?", "options": ["वैक्यूम क्लीनिंग रोबोट", "रोबोनॉट", "सर्जिकल रोबोट", "औद्योगिक वेल्डिंग आर्म"], "answer": "वैक्यूम क्लीनिंग रोबोट", "exp": "घरेलू रोबोट सफाई और घरेलू सहायता में उपयोग होते हैं।"}, {"q": "सैन्य क्षेत्र में रोबोट का उपयोग मुख्यतः किस उद्देश्य से किया जाता है?", "options": ["निगरानी और विस्फोटक पहचान", "कक्षा में पढ़ाना", "कपड़े धोना", "भोजन पकाना"], "answer": "निगरानी और विस्फोटक पहचान", "exp": "सेना रोबोट जोखिमपूर्ण सैन्य कार्यों में उपयोगी हैं।"}, {"q": "कारखानों में Industrial Robot से सामान्यतः किस प्रकार के कार्य कराए जाते हैं?", "options": ["वेल्डिंग और पैकेजिंग", "कविता लेखन", "संगीत रचना", "घरेलू सफाई"], "answer": "वेल्डिंग और पैकेजिंग", "exp": "औद्योगिक रोबोट निर्माण, वेल्डिंग और पैकेजिंग में उपयोग होते हैं।"}, {"q": "Collaborative Robot को संक्षेप में Cobot कहा जाता है; इसका आशय क्या है?", "options": ["मानव के साथ सहयोग करने वाला रोबोट", "केवल उड़ने वाला रोबोट", "सर्जरी करने वाला रोबोट", "केवल मनोरंजन रोबोट"], "answer": "मानव के साथ सहयोग करने वाला रोबोट", "exp": "कोबोट मानव श्रमिकों के साथ सहयोग के लिए बनाए जाते हैं।"}, {"q": "रोबोट के उपयोग से मिलने वाला एक प्रमुख लाभ कौन-सा है?", "options": ["बेहतर सटीकता", "हमेशा कम उत्पादकता", "अधिक मानवीय त्रुटियाँ", "ऊर्जा की कोई जरूरत नहीं"], "answer": "बेहतर सटीकता", "exp": "रोबोट नियंत्रित कार्यों में सटीकता बढ़ा सकते हैं।"}, {"q": "रोबोट के बढ़ते उपयोग से उत्पन्न हो सकने वाली एक समस्या क्या है?", "options": ["प्रारंभिक लागत अधिक होना", "ऊर्जा की आवश्यकता न होना", "कभी रखरखाव न होना", "हर परिस्थिति में मानव जैसा निर्णय"], "answer": "प्रारंभिक लागत अधिक होना", "exp": "रोबोटिक प्रणाली की खरीद और स्थापना महँगी हो सकती है।"}, {"q": "रोबोट की कार्यक्षमता की एक महत्वपूर्ण सीमा कौन-सी हो सकती है?", "options": ["कुछ स्थितियों में मानवीय निर्णय की कमी", "असीमित बुद्धिमत्ता", "अनंत ऊर्जा", "रखरखाव की शून्य आवश्यकता"], "answer": "कुछ स्थितियों में मानवीय निर्णय की कमी", "exp": "रोबोट की क्षमताएँ उसके डिजाइन और प्रोग्राम से सीमित होती हैं।"}, {"q": "रोबोटिक्स में Python Programming Language का उपयोग मुख्यतः किस काम के लिए किया जाता है?", "options": ["प्रोटोटाइप और परीक्षण", "धातु गलाना", "बैटरी बनाना", "हाइड्रोलिक द्रव बनाना"], "answer": "प्रोटोटाइप और परीक्षण", "exp": "Python रोबोटिक्स में प्रोटोटाइप, परीक्षण और ऑटोमेशन में उपयोगी है।"}, {"q": "Robotics में MATLAB का उपयोग किस प्रकार के कार्यों में सहायक होता है?", "options": ["मॉडलिंग और सिमुलेशन", "घरेलू सफाई", "ध्वनि रिकॉर्डिंग", "धातु वेल्डिंग"], "answer": "मॉडलिंग और सिमुलेशन", "exp": "MATLAB मॉडलिंग, सिमुलेशन और नियंत्रण विश्लेषण में उपयोगी है।"}];
+    const quizTitle = "Robotics Part 2: Components, Types & Tools (MCQ)";
+    let currentIdx = 0;
+    const userAnswers = new Array(quizData.length).fill(null);
+    let quizFinished = false;
+
+    function esc(s) {
+      return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    let timerSeconds = 0;
+    const timerInterval = setInterval(() => {
+      if (quizFinished) return;
+      timerSeconds++;
+      const m = String(Math.floor(timerSeconds/60)).padStart(2,'0');
+      const s = String(timerSeconds%60).padStart(2,'0');
+      document.getElementById('timer').textContent = `Time: ${m}:${s}`;
+    }, 1000);
+
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    const quizContent = document.getElementById('quiz-content');
+    const progressBar = document.getElementById('progress-bar');
+    const quizStatus = document.getElementById('quiz-status');
+
+    function updateUI() {
+      const pct = ((currentIdx + 1) / quizData.length) * 100;
+      progressBar.style.width = pct + '%';
+      quizStatus.textContent = `Question ${currentIdx + 1} of ${quizData.length}`;
+      prevBtn.disabled = currentIdx === 0;
+      if (currentIdx === quizData.length - 1) {
+        nextBtn.style.display = 'none';
+        submitBtn.style.display = 'inline-flex';
+      } else {
+        nextBtn.style.display = 'inline-flex';
+        submitBtn.style.display = 'none';
+      }
+      const q = quizData[currentIdx];
+      quizContent.innerHTML = `
+        <div class="question-text">${currentIdx + 1}. ${esc(q.q)}</div>
+        <div class="options-grid">
+          ${q.options.map((opt, k) => `
+            <button class="option-btn ${userAnswers[currentIdx] === opt ? 'selected' : ''}" onclick="selectOption(${k})">
+              ${esc(opt)}
+            </button>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    window.selectOption = function(k) {
+      if (quizFinished) return;
+      userAnswers[currentIdx] = quizData[currentIdx].options[k];
+      updateUI();
+    };
+
+    prevBtn.onclick = () => { if (currentIdx > 0) { currentIdx--; updateUI(); } };
+    nextBtn.onclick = () => { if (currentIdx < quizData.length - 1) { currentIdx++; updateUI(); } };
+
+    submitBtn.onclick = () => {
+      quizFinished = true;
+      clearInterval(timerInterval);
+      let score = 0;
+      quizData.forEach((q, i) => { if (userAnswers[i] === q.answer) score++; });
+      saveQuizResult(quizTitle, score, quizData.length);
+      let scorePercent = Math.round((score / quizData.length) * 100);
+      let heading = scorePercent >= 70 ? ' Congratulations! ' : ' Keep Practicing!';
+      if (scorePercent >= 70) { startConfetti(); playVictorySound(); }
+      quizContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">${heading}</h3>
+          <div style="font-size: 3rem; font-weight: bold; color: var(--success); margin-bottom: 0.5rem;">${score} / ${quizData.length}</div>
+          <p style="font-size: 1.1rem; color: var(--text-muted);">You scored ${scorePercent}% in ${timerSeconds} seconds.</p>
+        </div>
+        <div class="feedback-list">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem;">Question Review</h4>
+          ${quizData.map((q, i) => {
+            const isCorrect = userAnswers[i] === q.answer;
+            return `<div class="feedback-item">
+              <p><strong>Q${i+1}: ${esc(q.q)}</strong></p>
+              <p style="margin-top: 0.25rem;">
+                ${isCorrect ? `<span class="correct-ans"> Correct: ${esc(q.answer)}</span>` : `<span class="user-wrong"> Your answer: ${esc(userAnswers[i] || 'Unanswered')}</span> <span class="correct-ans"> Correct: ${esc(q.answer)}</span>`}
+              </p>
+              ${q.exp ? `<p style="margin-top: 0.25rem; color: var(--text-muted); font-size: 0.95rem;">${esc(q.exp)}</p>` : ''}
+            </div>`;
+          }).join('')}
+        </div>
+      `;
+      prevBtn.style.display = 'none';
+      submitBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+      const restartBtn = document.createElement('button');
+      restartBtn.className = 'btn btn-primary';
+      restartBtn.textContent = 'Retry Quiz';
+      restartBtn.onclick = () => location.reload();
+      document.querySelector('.quiz-footer').appendChild(restartBtn);
+    };
+
+    updateUI();
+  </script>
+
+  <script>
+    // Mobile Hamburger Menu Logic
+    document.addEventListener('DOMContentLoaded', function() {
+      if (window.hamburgerInitialized) return;
+      window.hamburgerInitialized = true;
+      const hamburgerBtn = document.getElementById('hamburger');
+      const navList = document.getElementById('nav-list');
+      if (hamburgerBtn && navList) {
+        hamburgerBtn.addEventListener('click', function() {
+          navList.classList.toggle('active');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

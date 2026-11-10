@@ -1,0 +1,805 @@
+{
+  "title": "Robotics - Part-2 - 50 MCQ Quiz",
+  "questions": [
+    {
+      "id": 1,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Introduction, Origin & History of Robotics",
+      "question": "रोबोटिक्स किस तकनीकी क्षेत्र का अध्ययन है?",
+      "options": [
+        "रोबोटों का डिजाइन, निर्माण और नियंत्रण",
+        "केवल नेटवर्किंग",
+        "केवल लेखांकन",
+        "केवल वेब डिजाइन"
+      ],
+      "answer": "A. रोबोटों का डिजाइन, निर्माण और नियंत्रण — रोबोटिक्स में रोबोट का डिजाइन, निर्माण, संचालन और नियंत्रण शामिल है।"
+    },
+    {
+      "id": 2,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Introduction, Origin & History of Robotics",
+      "question": "रोबोटिक्स किन प्रमुख इंजीनियरिंग क्षेत्रों के मेल से विकसित हुआ है?",
+      "options": [
+        "इलेक्ट्रॉनिक्स, मैकेनिकल इंजीनियरिंग और कंप्यूटर साइंस",
+        "केवल रसायन विज्ञान",
+        "केवल साहित्य",
+        "इतिहास, भूगोल और संगीत"
+      ],
+      "answer": "A. इलेक्ट्रॉनिक्स, मैकेनिकल इंजीनियरिंग और कंप्यूटर साइंस — पाठ्यांश इन तीन तकनीकी क्षेत्रों का उल्लेख करता है।"
+    },
+    {
+      "id": 3,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Introduction, Origin & History of Robotics",
+      "question": "R.U.R. नाटक में 'Robot' शब्द सबसे पहले किसने प्रस्तुत किया था?",
+      "options": [
+        "कारेल कैपेक",
+        "एलन ट्यूरिंग",
+        "चार्ल्स बैबेज",
+        "आइज़ैक असिमोव"
+      ],
+      "answer": "A. कारेल कैपेक — पुस्तक के अनुसार 1921 में कारेल कैपेक के नाटक R.U.R. में यह शब्द आया।"
+    },
+    {
+      "id": 4,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Introduction, Origin & History of Robotics",
+      "question": "'Robot' शब्द की उत्पत्ति किस भाषा से मानी जाती है?",
+      "options": [
+        "चेक (Czech)",
+        "लैटिन",
+        "फ्रेंच",
+        "ग्रीक"
+      ],
+      "answer": "A. चेक (Czech) — पाठ्यांश में रोबोट शब्द का मूल चेक भाषा बताया गया है।"
+    },
+    {
+      "id": 5,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Introduction, Origin & History of Robotics",
+      "question": "चेक भाषा के 'Robota' शब्द का सही अर्थ क्या है?",
+      "options": [
+        "जबरन काम या श्रम",
+        "स्वतंत्र उड़ान",
+        "विद्युत ऊर्जा",
+        "कृत्रिम बुद्धिमत्ता"
+      ],
+      "answer": "A. जबरन काम या श्रम — चेक शब्द Robota का अर्थ जबरन काम/श्रम बताया गया है।"
+    },
+    {
+      "id": 6,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Asimov's Three Laws of Robotics",
+      "question": "रोबोटिक्स के प्रसिद्ध तीन नियम किस वैज्ञानिक-लेखक ने दिए थे?",
+      "options": [
+        "आइज़ैक असिमोव",
+        "टिम बर्नर्स-ली",
+        "कारेल कैपेक",
+        "जॉन मैकार्थी"
+      ],
+      "answer": "A. आइज़ैक असिमोव — तीन नियम आइज़ैक असिमोव ने दिए।"
+    },
+    {
+      "id": 7,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Asimov's Three Laws of Robotics",
+      "question": "असिमोव के प्रथम नियम के अनुसार रोबोट के लिए सबसे महत्वपूर्ण प्रतिबंध क्या है?",
+      "options": [
+        "मानव को हानि न पहुँचाना",
+        "तेज गति से चलना",
+        "रोबोट का रंग बदलना",
+        "बैटरी चार्ज करना"
+      ],
+      "answer": "A. मानव को हानि न पहुँचाना — प्रथम नियम मानव को हानि पहुँचाने से रोकता है।"
+    },
+    {
+      "id": 8,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Asimov's Three Laws of Robotics",
+      "question": "द्वितीय नियम के अंतर्गत रोबोट को किसका पालन करना चाहिए?",
+      "options": [
+        "मानव के आदेशों का पालन",
+        "रोबोट का रंग बदलना",
+        "सभी सेंसर बंद करना",
+        "केवल बैटरी बचाना"
+      ],
+      "answer": "A. मानव के आदेशों का पालन — द्वितीय नियम प्रथम नियम के अधीन मानव के आदेश मानने से संबंधित है।"
+    },
+    {
+      "id": 9,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Asimov's Three Laws of Robotics",
+      "question": "असिमोव के तृतीय नियम में रोबोट को किसकी रक्षा करने की अनुमति दी गई है?",
+      "options": [
+        "अपने अस्तित्व की रक्षा",
+        "मानव को आदेश देना",
+        "दूसरे रोबोट को बंद करना",
+        "ऊर्जा उत्पन्न करना"
+      ],
+      "answer": "A. अपने अस्तित्व की रक्षा — तृतीय नियम रोबोट के अपने अस्तित्व की रक्षा से संबंधित है।"
+    },
+    {
+      "id": 10,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट के सभी कार्यों को नियंत्रित करने वाला मुख्य भाग कौन-सा है?",
+      "options": [
+        "कंट्रोलर",
+        "ग्रिपर",
+        "पहिया",
+        "बैटरी"
+      ],
+      "answer": "A. कंट्रोलर — कंट्रोलर निर्देशों को संसाधित करके रोबोट की गतिविधियाँ नियंत्रित करता है।"
+    },
+    {
+      "id": 11,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट में निर्देशों को संसाधित करने का काम कौन करता है?",
+      "options": [
+        "CPU",
+        "स्पीकर",
+        "प्रिंटर",
+        "मॉनिटर"
+      ],
+      "answer": "A. CPU — CPU निर्देशों और डेटा का प्रसंस्करण करता है।"
+    },
+    {
+      "id": 12,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट अपने आसपास के वातावरण की जानकारी किस घटक से प्राप्त करता है?",
+      "options": [
+        "सेंसर",
+        "एंड-इफेक्टर",
+        "पावर सप्लाई",
+        "एक्चुएटर"
+      ],
+      "answer": "A. सेंसर — सेंसर वातावरण से डेटा प्राप्त करते हैं।"
+    },
+    {
+      "id": 13,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट में वास्तविक गति या क्रिया उत्पन्न करने की जिम्मेदारी किसकी होती है?",
+      "options": [
+        "एक्चुएटर",
+        "प्रोग्राम",
+        "सेंसर",
+        "कंट्रोलर स्क्रीन"
+      ],
+      "answer": "A. एक्चुएटर — एक्चुएटर नियंत्रण संकेत को भौतिक गति में बदलता है।"
+    },
+    {
+      "id": 14,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "Robotic Arm के अंतिम सिरे पर लगा कार्य करने वाला भाग क्या कहलाता है?",
+      "options": [
+        "एंड-इफेक्टर",
+        "GPS",
+        "CPU",
+        "RAM"
+      ],
+      "answer": "A. एंड-इफेक्टर — एंड-इफेक्टर पकड़ने, काटने या वेल्डिंग जैसे कार्य करता है।"
+    },
+    {
+      "id": 15,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट को आवश्यक ऊर्जा की आपूर्ति कौन-सा घटक करता है?",
+      "options": [
+        "पावर सप्लाई",
+        "एंड-इफेक्टर",
+        "कंपास",
+        "ग्रिपर"
+      ],
+      "answer": "A. पावर सप्लाई — पावर सप्लाई रोबोट के घटकों को ऊर्जा देती है।"
+    },
+    {
+      "id": 16,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Robot Components, Control & Program",
+      "question": "रोबोट को दिए गए कार्यों और निर्देशों के क्रमबद्ध समूह को क्या कहते हैं?",
+      "options": [
+        "प्रोग्राम",
+        "सेंसर",
+        "मोटर",
+        "फ्रेम"
+      ],
+      "answer": "A. प्रोग्राम — प्रोग्राम बताता है कि रोबोट कौन-सा कार्य कब करेगा।"
+    },
+    {
+      "id": 17,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "यदि रोबोट को प्रकाश की उपस्थिति पहचाननी हो, तो कौन-सा सेंसर उपयोगी होगा?",
+      "options": [
+        "लाइट सेंसर",
+        "प्रेशर सेंसर",
+        "साउंड सेंसर",
+        "करंट सेंसर"
+      ],
+      "answer": "A. लाइट सेंसर — लाइट सेंसर प्रकाश की उपस्थिति/तीव्रता पहचानता है।"
+    },
+    {
+      "id": 18,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "आसपास की ध्वनि का पता लगाने के लिए रोबोट में कौन-सा सेंसर लगाया जाता है?",
+      "options": [
+        "साउंड सेंसर",
+        "टेम्परेचर सेंसर",
+        "कॉन्टैक्ट सेंसर",
+        "वोल्टेज सेंसर"
+      ],
+      "answer": "A. साउंड सेंसर — साउंड सेंसर ध्वनि संकेतों को पहचानता है।"
+    },
+    {
+      "id": 19,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर की सहायता से रोबोट तापमान का पता लगा सकता है?",
+      "options": [
+        "टेम्परेचर सेंसर",
+        "GPS",
+        "कॉन्टैक्ट सेंसर",
+        "लाइट सेंसर"
+      ],
+      "answer": "A. टेम्परेचर सेंसर — टेम्परेचर सेंसर तापमान में परिवर्तन मापता है।"
+    },
+    {
+      "id": 20,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर से किसी वस्तु के सीधे संपर्क या स्पर्श का पता चलता है?",
+      "options": [
+        "कॉन्टैक्ट सेंसर",
+        "प्रॉक्सिमिटी सेंसर",
+        "GPS",
+        "करंट सेंसर"
+      ],
+      "answer": "A. कॉन्टैक्ट सेंसर — कॉन्टैक्ट सेंसर संपर्क होने पर प्रतिक्रिया देता है।"
+    },
+    {
+      "id": 21,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "बिना संपर्क में आए पास की वस्तु का पता लगाने के लिए कौन-सा सेंसर उपयुक्त है?",
+      "options": [
+        "प्रॉक्सिमिटी सेंसर",
+        "प्रेशर सेंसर",
+        "वोल्टेज सेंसर",
+        "कॉन्टैक्ट सेंसर"
+      ],
+      "answer": "A. प्रॉक्सिमिटी सेंसर — प्रॉक्सिमिटी सेंसर बिना भौतिक संपर्क के निकटता पहचानता है।"
+    },
+    {
+      "id": 22,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट और किसी वस्तु के बीच की दूरी ज्ञात करने के लिए कौन-सा सेंसर काम आता है?",
+      "options": [
+        "डिस्टेंस सेंसर",
+        "साउंड सेंसर",
+        "करंट सेंसर",
+        "टेम्परेचर सेंसर"
+      ],
+      "answer": "A. डिस्टेंस सेंसर — डिस्टेंस सेंसर दूरी मापने में मदद करता है।"
+    },
+    {
+      "id": 23,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट की स्थिति या दिशा का पता लगाने में कौन-सा सेंसर सहायता करता है?",
+      "options": [
+        "नेविगेशन सेंसर",
+        "लाइट सेंसर",
+        "कॉन्टैक्ट सेंसर",
+        "प्रेशर सेंसर"
+      ],
+      "answer": "A. नेविगेशन सेंसर — नेविगेशन सेंसर स्थिति और दिशा संबंधी जानकारी देता है।"
+    },
+    {
+      "id": 24,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "GPS का विस्तृत नाम क्या है?",
+      "options": [
+        "Global Positioning System",
+        "General Power Sensor",
+        "Ground Processing Signal",
+        "Global Programming Software"
+      ],
+      "answer": "A. Global Positioning System — GPS स्थान निर्धारण प्रणाली है।"
+    },
+    {
+      "id": 25,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट को अपनी दिशा ज्ञात करने में कौन-सा सेंसर मदद करता है?",
+      "options": [
+        "कंपास सेंसर",
+        "करंट सेंसर",
+        "साउंड सेंसर",
+        "प्रेशर सेंसर"
+      ],
+      "answer": "A. कंपास सेंसर — कंपास सेंसर दिशा की जानकारी देता है।"
+    },
+    {
+      "id": 26,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "रोबोट को आसपास का दृश्य प्राप्त करने के लिए किस उपकरण की आवश्यकता होती है?",
+      "options": [
+        "कैमरा",
+        "बैटरी",
+        "ग्रिपर",
+        "मोटर"
+      ],
+      "answer": "A. कैमरा — विजन सिस्टम कैमरे से दृश्य डेटा प्राप्त करता है।"
+    },
+    {
+      "id": 27,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "Infrared Sensor वस्तुओं का पता लगाने के लिए किस प्रकार की तरंगों का उपयोग करता है?",
+      "options": [
+        "अवरक्त तरंगें",
+        "ध्वनि तरंगें",
+        "जल तरंगें",
+        "पराबैंगनी तरंगें"
+      ],
+      "answer": "A. अवरक्त तरंगें — इन्फ्रारेड सेंसर अवरक्त विकिरण का उपयोग करता है।"
+    },
+    {
+      "id": 28,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "Ultrasonic Sensor दूरी या वस्तु का पता लगाने के लिए कौन-सी तरंगें भेजता है?",
+      "options": [
+        "उच्च आवृत्ति की ध्वनि तरंगें",
+        "पराबैंगनी किरणें",
+        "दृश्य प्रकाश",
+        "केवल रेडियोधर्मी कण"
+      ],
+      "answer": "A. उच्च आवृत्ति की ध्वनि तरंगें — अल्ट्रासोनिक सेंसर उच्च आवृत्ति ध्वनि से दूरी/वस्तु पहचानता है।"
+    },
+    {
+      "id": 29,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "Photoresistor का प्रतिरोध मुख्यतः किस कारक के बदलने पर बदलता है?",
+      "options": [
+        "प्रकाश की तीव्रता",
+        "ध्वनि की आवृत्ति",
+        "दबाव",
+        "रोबोट के वजन"
+      ],
+      "answer": "A. प्रकाश की तीव्रता — फोटोरेसिस्टर का प्रतिरोध प्रकाश के अनुसार बदलता है।"
+    },
+    {
+      "id": 30,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर का उपयोग किसी सतह या वस्तु पर लगने वाले दबाव को मापने में होता है?",
+      "options": [
+        "प्रेशर सेंसर",
+        "लाइट सेंसर",
+        "GPS",
+        "कंपास सेंसर"
+      ],
+      "answer": "A. प्रेशर सेंसर — प्रेशर सेंसर दबाव मापता है।"
+    },
+    {
+      "id": 31,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "विद्युत परिपथ में Potential Difference मापने के लिए कौन-सा सेंसर प्रयोग किया जाता है?",
+      "options": [
+        "वोल्टेज सेंसर",
+        "साउंड सेंसर",
+        "डिस्टेंस सेंसर",
+        "टेम्परेचर सेंसर"
+      ],
+      "answer": "A. वोल्टेज सेंसर — वोल्टेज सेंसर विद्युत वोल्टेज की निगरानी करता है।"
+    },
+    {
+      "id": 32,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Sensors & Detection",
+      "question": "किस सेंसर से परिपथ में बहने वाली Electric Current को मापा जाता है?",
+      "options": [
+        "करंट सेंसर",
+        "कॉन्टैक्ट सेंसर",
+        "GPS",
+        "लाइट सेंसर"
+      ],
+      "answer": "A. करंट सेंसर — करंट सेंसर परिपथ में प्रवाहित धारा मापता है।"
+    },
+    {
+      "id": 33,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators & End-Effectors",
+      "question": "Hydraulic Actuator किस माध्यम के दबाव से गति उत्पन्न करता है?",
+      "options": [
+        "हाइड्रोलिक एक्चुएटर",
+        "लाइट सेंसर",
+        "न्यूमैटिक एक्चुएटर",
+        "इलेक्ट्रिक एक्चुएटर"
+      ],
+      "answer": "A. हाइड्रोलिक एक्चुएटर — हाइड्रोलिक एक्चुएटर द्रव दबाव का उपयोग करता है।"
+    },
+    {
+      "id": 34,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators & End-Effectors",
+      "question": "Pneumatic Actuator को गति देने के लिए किसका उपयोग किया जाता है?",
+      "options": [
+        "न्यूमैटिक एक्चुएटर",
+        "कंपास सेंसर",
+        "इलेक्ट्रिक एक्चुएटर",
+        "हाइड्रोलिक एक्चुएटर"
+      ],
+      "answer": "A. न्यूमैटिक एक्चुएटर — न्यूमैटिक प्रणाली संपीड़ित हवा का उपयोग करती है।"
+    },
+    {
+      "id": 35,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators & End-Effectors",
+      "question": "Electric Actuator किस प्रकार की ऊर्जा को यांत्रिक गति में बदलता है?",
+      "options": [
+        "इलेक्ट्रिक एक्चुएटर",
+        "न्यूमैटिक एक्चुएटर",
+        "हाइड्रोलिक एक्चुएटर",
+        "प्रेशर सेंसर"
+      ],
+      "answer": "A. इलेक्ट्रिक एक्चुएटर — इलेक्ट्रिक एक्चुएटर विद्युत ऊर्जा से चलता है।"
+    },
+    {
+      "id": 36,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators & End-Effectors",
+      "question": "वस्तु को पकड़ने या थामने के लिए End-Effector के रूप में सामान्यतः क्या लगाया जाता है?",
+      "options": [
+        "ग्रिपर",
+        "कंपास",
+        "GPS",
+        "फोटोरेसिस्टर"
+      ],
+      "answer": "A. ग्रिपर — ग्रिपर वस्तुओं को पकड़ता और संभालता है।"
+    },
+    {
+      "id": 37,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Actuators & End-Effectors",
+      "question": "औद्योगिक रोबोट में वेल्डिंग करने के लिए किस प्रकार का End-Effector लगाया जाता है?",
+      "options": [
+        "वेल्डिंग टॉर्च",
+        "कंपास",
+        "GPS रिसीवर",
+        "साउंड सेंसर"
+      ],
+      "answer": "A. वेल्डिंग टॉर्च — वेल्डिंग टॉर्च रोबोटिक आर्म के अंतिम सिरे पर कार्य करती है।"
+    },
+    {
+      "id": 38,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "Surgical Robot का प्रमुख उपयोग किस क्षेत्र में किया जाता है?",
+      "options": [
+        "शल्य चिकित्सा में सहायता",
+        "फर्श साफ करने में",
+        "हवाई फोटोग्राफी में",
+        "वेल्डिंग में"
+      ],
+      "answer": "A. शल्य चिकित्सा में सहायता — सर्जिकल रोबोट डॉक्टरों को ऑपरेशन में सहायता करते हैं।"
+    },
+    {
+      "id": 39,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "अंतरिक्ष में मानव-सदृश कार्य करने के लिए विकसित Robonaut का उपयोग कहाँ होता है?",
+      "options": [
+        "अंतरिक्ष कार्यक्रमों में",
+        "कपड़ा सिलने में",
+        "फसल कटाई में",
+        "घरेलू सफाई में"
+      ],
+      "answer": "A. अंतरिक्ष कार्यक्रमों में — रोबोनॉट अंतरिक्ष संबंधी कार्यों में उपयोग किए जाते हैं।"
+    },
+    {
+      "id": 40,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "AMR का पूरा नाम क्या है?",
+      "options": [
+        "Autonomous Mobile Robot",
+        "Automatic Manual Rotor",
+        "Advanced Mechanical Relay",
+        "Aerial Motion Radar"
+      ],
+      "answer": "A. Autonomous Mobile Robot — AMR स्वायत्त मोबाइल रोबोट है।"
+    },
+    {
+      "id": 41,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "उड़ान भरकर कार्य करने वाला Drone किस श्रेणी का रोबोट माना जाता है?",
+      "options": [
+        "उड़ने वाला रोबोट",
+        "स्थिर रोबोट",
+        "केवल पानी में चलने वाला रोबोट",
+        "भूमिगत रोबोट"
+      ],
+      "answer": "A. उड़ने वाला रोबोट — पाठ्यांश में ड्रोन को उड़ने वाला रोबोट बताया गया है।"
+    },
+    {
+      "id": 42,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "घर में सफाई जैसे कार्य करने वाला रोबोट किसका उदाहरण है?",
+      "options": [
+        "वैक्यूम क्लीनिंग रोबोट",
+        "रोबोनॉट",
+        "सर्जिकल रोबोट",
+        "औद्योगिक वेल्डिंग आर्म"
+      ],
+      "answer": "A. वैक्यूम क्लीनिंग रोबोट — घरेलू रोबोट सफाई और घरेलू सहायता में उपयोग होते हैं।"
+    },
+    {
+      "id": 43,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "सैन्य क्षेत्र में रोबोट का उपयोग मुख्यतः किस उद्देश्य से किया जाता है?",
+      "options": [
+        "निगरानी और विस्फोटक पहचान",
+        "कक्षा में पढ़ाना",
+        "कपड़े धोना",
+        "भोजन पकाना"
+      ],
+      "answer": "A. निगरानी और विस्फोटक पहचान — सेना रोबोट जोखिमपूर्ण सैन्य कार्यों में उपयोगी हैं।"
+    },
+    {
+      "id": 44,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "कारखानों में Industrial Robot से सामान्यतः किस प्रकार के कार्य कराए जाते हैं?",
+      "options": [
+        "वेल्डिंग और पैकेजिंग",
+        "कविता लेखन",
+        "संगीत रचना",
+        "घरेलू सफाई"
+      ],
+      "answer": "A. वेल्डिंग और पैकेजिंग — औद्योगिक रोबोट निर्माण, वेल्डिंग और पैकेजिंग में उपयोग होते हैं।"
+    },
+    {
+      "id": 45,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Types & Applications of Robots",
+      "question": "Collaborative Robot को संक्षेप में Cobot कहा जाता है; इसका आशय क्या है?",
+      "options": [
+        "मानव के साथ सहयोग करने वाला रोबोट",
+        "केवल उड़ने वाला रोबोट",
+        "सर्जरी करने वाला रोबोट",
+        "केवल मनोरंजन रोबोट"
+      ],
+      "answer": "A. मानव के साथ सहयोग करने वाला रोबोट — कोबोट मानव श्रमिकों के साथ सहयोग के लिए बनाए जाते हैं।"
+    },
+    {
+      "id": 46,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Advantages, Problems & Limitations",
+      "question": "रोबोट के उपयोग से मिलने वाला एक प्रमुख लाभ कौन-सा है?",
+      "options": [
+        "बेहतर सटीकता",
+        "हमेशा कम उत्पादकता",
+        "अधिक मानवीय त्रुटियाँ",
+        "ऊर्जा की कोई जरूरत नहीं"
+      ],
+      "answer": "A. बेहतर सटीकता — रोबोट नियंत्रित कार्यों में सटीकता बढ़ा सकते हैं।"
+    },
+    {
+      "id": 47,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Advantages, Problems & Limitations",
+      "question": "रोबोट के बढ़ते उपयोग से उत्पन्न हो सकने वाली एक समस्या क्या है?",
+      "options": [
+        "प्रारंभिक लागत अधिक होना",
+        "ऊर्जा की आवश्यकता न होना",
+        "कभी रखरखाव न होना",
+        "हर परिस्थिति में मानव जैसा निर्णय"
+      ],
+      "answer": "A. प्रारंभिक लागत अधिक होना — रोबोटिक प्रणाली की खरीद और स्थापना महँगी हो सकती है।"
+    },
+    {
+      "id": 48,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Advantages, Problems & Limitations",
+      "question": "रोबोट की कार्यक्षमता की एक महत्वपूर्ण सीमा कौन-सी हो सकती है?",
+      "options": [
+        "कुछ स्थितियों में मानवीय निर्णय की कमी",
+        "असीमित बुद्धिमत्ता",
+        "अनंत ऊर्जा",
+        "रखरखाव की शून्य आवश्यकता"
+      ],
+      "answer": "A. कुछ स्थितियों में मानवीय निर्णय की कमी — रोबोट की क्षमताएँ उसके डिजाइन और प्रोग्राम से सीमित होती हैं।"
+    },
+    {
+      "id": 49,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Tools",
+      "question": "रोबोटिक्स में Python Programming Language का उपयोग मुख्यतः किस काम के लिए किया जाता है?",
+      "options": [
+        "प्रोटोटाइप और परीक्षण",
+        "धातु गलाना",
+        "बैटरी बनाना",
+        "हाइड्रोलिक द्रव बनाना"
+      ],
+      "answer": "A. प्रोटोटाइप और परीक्षण — Python रोबोटिक्स में प्रोटोटाइप, परीक्षण और ऑटोमेशन में उपयोगी है।"
+    },
+    {
+      "id": 50,
+      "unit": "Unit: Robotics",
+      "chapter": "Chapter: Robotics",
+      "type": "Multiple Choice Question",
+      "difficulty": "Not specified in source",
+      "topic": "Programming Languages & Tools",
+      "question": "Robotics में MATLAB का उपयोग किस प्रकार के कार्यों में सहायक होता है?",
+      "options": [
+        "मॉडलिंग और सिमुलेशन",
+        "घरेलू सफाई",
+        "ध्वनि रिकॉर्डिंग",
+        "धातु वेल्डिंग"
+      ],
+      "answer": "A. मॉडलिंग और सिमुलेशन — MATLAB मॉडलिंग, सिमुलेशन और नियंत्रण विश्लेषण में उपयोगी है।"
+    }
+  ]
+}
